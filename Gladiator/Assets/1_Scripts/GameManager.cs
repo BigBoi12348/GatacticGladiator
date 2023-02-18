@@ -17,11 +17,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _lastSceneID;
     [SerializeField] private int _currentSceneID;
 
-
-    [Header("Saving Data Variables")]
-    const string SAVEDATAPATH = "gameData";
-
-
     public int CurrentSceneID{get{return _currentSceneID;} private set{_currentSceneID = value;}}
     public int LastSceneID{get{return _lastSceneID;} private set{_lastSceneID = value;}}
 
@@ -84,13 +79,11 @@ public class GameManager : MonoBehaviour
 
     public void UnFreezeGame()
     {
-        Debug.Log("Unfreeze");
         Time.timeScale = 1;
     }
 
-    public void FreezeGame(bool x)
+    public void FreezeGame()
     {
-        Debug.Log("freeze");
         Time.timeScale = 0;
     }
 }

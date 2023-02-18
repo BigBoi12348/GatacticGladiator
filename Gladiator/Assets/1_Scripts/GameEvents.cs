@@ -4,10 +4,10 @@ using UnityEngine;
 
 public static class GameEvents
 {
-    public delegate void PlayerFinsihedGame(bool x);
+    public delegate void PlayerFinsihedGame();
     public delegate void PlayerStartedGame();
     public delegate void GameStartSetUp();
-    public delegate void GameEndSetUp(bool x);
+    public delegate void GameEndSetUp();
 
     public static PlayerFinsihedGame playerFinsihedGame;
     public static PlayerStartedGame playerStartGame;
