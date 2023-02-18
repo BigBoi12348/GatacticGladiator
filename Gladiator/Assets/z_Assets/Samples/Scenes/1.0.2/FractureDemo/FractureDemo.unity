@@ -252,6 +252,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -357,6 +360,7 @@ Transform:
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 3.06, z: 0}
   m_LocalScale: {x: 0.9, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -451,6 +455,7 @@ Transform:
   m_LocalRotation: {x: 0.8622336, y: -0.13428119, z: 0.3845223, w: 0.3011054}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -467,8 +472,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Version: 1
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &344579128
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +562,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2005373690}
   m_RootOrder: 0
@@ -709,6 +721,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 874231561}
   m_Father: {fileID: 0}
@@ -823,6 +836,7 @@ Transform:
   m_LocalRotation: {x: 0.3254401, y: -0.6336271, z: 0.3340736, w: 0.61725223}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -839,8 +853,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Version: 1
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &874231560
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +889,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 470671843}
   m_RootOrder: 0
@@ -1048,6 +1069,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1255,6 +1277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1287,6 +1310,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1879,6 +1903,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -1930,6 +1957,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -1981,6 +2011,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2032,6 +2065,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2083,6 +2119,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2134,6 +2173,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2185,6 +2227,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2236,6 +2281,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2287,6 +2335,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2338,6 +2389,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2389,6 +2443,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2440,6 +2497,9 @@ MonoBehaviour:
     maxRefractureCount: 1
     invokeCallbacks: 0
   callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
     onCompleted:
       m_PersistentCalls:
         m_Calls:
@@ -2483,6 +2543,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: -0.7071068}
   m_LocalPosition: {x: -5, y: 3, z: -1.223}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 344579131}
   m_Father: {fileID: 0}
@@ -2596,6 +2657,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 100}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
