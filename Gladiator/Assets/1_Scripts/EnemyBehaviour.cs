@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class EnemyBehaviour : MonoBehaviour
-{
+{   
     [Header("Enemy Movement")]
     [SerializeField] private float _enemyMovementSpeed;
     [SerializeField] private float _enemyMovementSpeedModifier;
@@ -15,15 +16,32 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float _bleedOutStrength;
     [SerializeField] private float _bleedOutModifier;
     
+
     [Header("Body Parts")]
     [SerializeField] private EnemyBodyPart[] enemyBodyParts;
-    
+
+
+    [Header("References")]
+    [SerializeField] private AIDestinationSetter _aIDestinationSetter;
+    [SerializeField] private AIPath _aIPath;
+    [SerializeField] private Collider _groundDetectCollider;
+
     private void Awake() 
     {
         foreach (var enemyBodyPart in enemyBodyParts)
         {
             enemyBodyPart.Init(this);
         }
+    }
+
+    public void Init(Transform playerTarget)
+    {
+        _aIDestinationSetter.target = playerTarget;
+    }
+    
+    private void Start() 
+    {
+        _aIPath.maxSpeed = _enemyMovementSpeed;
     }
 
     private void Update()
@@ -57,6 +75,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Death()
     {
-        
+        _aIPath.canMove = false;
+        _aIDestinationSetter.enabled = false;
+        //_groundDetectCollider.enabled = false;
+        InGameLevelManager.Instance.EnemyHasDied();
     }
 }

@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(0);
         }
-        GameEvents.gameStartSetUp?.Invoke();;
+        GameEvents.gameStartSetUp?.Invoke();
     }
 
     public void UnFreezeGame()
