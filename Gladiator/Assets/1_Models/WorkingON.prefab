@@ -339,7 +339,7 @@ MonoBehaviour:
     enableReslicing: 1
     maxResliceCount: 20
     detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: d06351cfb6550f84ab9816049d3d6119, type: 2}
+    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
     invokeCallbacks: 1
@@ -500,7 +500,7 @@ MonoBehaviour:
     enableReslicing: 1
     maxResliceCount: 20
     detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: d06351cfb6550f84ab9816049d3d6119, type: 2}
+    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
     invokeCallbacks: 1
@@ -661,7 +661,7 @@ MonoBehaviour:
     enableReslicing: 1
     maxResliceCount: 20
     detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: d06351cfb6550f84ab9816049d3d6119, type: 2}
+    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
     invokeCallbacks: 1
@@ -839,7 +839,7 @@ MonoBehaviour:
     enableReslicing: 1
     maxResliceCount: 20
     detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: d06351cfb6550f84ab9816049d3d6119, type: 2}
+    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
     invokeCallbacks: 1
@@ -982,7 +982,7 @@ MonoBehaviour:
     enableReslicing: 1
     maxResliceCount: 20
     detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: d06351cfb6550f84ab9816049d3d6119, type: 2}
+    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
     invokeCallbacks: 1
@@ -1126,7 +1126,7 @@ MonoBehaviour:
     enableReslicing: 1
     maxResliceCount: 20
     detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: d06351cfb6550f84ab9816049d3d6119, type: 2}
+    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
     invokeCallbacks: 1
@@ -1254,7 +1254,7 @@ MonoBehaviour:
     enableReslicing: 1
     maxResliceCount: 20
     detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: d06351cfb6550f84ab9816049d3d6119, type: 2}
+    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
     invokeCallbacks: 1
