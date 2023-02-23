@@ -842,7 +842,7 @@ MonoBehaviour:
     insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
     textureScale: {x: 1, y: 1}
     textureOffset: {x: 0, y: 0}
-    invokeCallbacks: 1
+    invokeCallbacks: 0
   callbackOptions:
     onFracture:
       m_PersistentCalls:
