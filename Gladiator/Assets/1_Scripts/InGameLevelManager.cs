@@ -7,7 +7,7 @@ public class InGameLevelManager : MonoBehaviour
     public static InGameLevelManager Instance;
 
     [Header(":sa")]
-    private int _totalEnemiesCounter;
+    [SerializeField]private int _totalEnemiesCounter;
     public int CurrentRound{get; private set;}
 
 
@@ -29,12 +29,14 @@ public class InGameLevelManager : MonoBehaviour
 
     private void Start() 
     {
+        Debug.Log("dumb");
         GameEvents.gameStartSetUp?.Invoke();
     }
 
     private void OnEnable() 
     {
         GameEvents.gameStartSetUp += GameIsStarting;
+        GameEvents.playerStartGame += GameStarted;
         GameEvents.gameEndSetUp += GameEndSetUp;
         GameEvents.playerFinsihedGame += EndOfRound;
     }
@@ -43,6 +45,7 @@ public class InGameLevelManager : MonoBehaviour
     {
         GameEvents.gameStartSetUp -= GameIsStarting;
         GameEvents.gameEndSetUp -= GameEndSetUp;
+        GameEvents.playerStartGame -= GameStarted;
         GameEvents.playerFinsihedGame -= EndOfRound;
     }
 
@@ -51,14 +54,19 @@ public class InGameLevelManager : MonoBehaviour
         _totalEnemiesCounter = _enemySpawnerManager.TotalEnemiesSpawningThisRound;
     }
 
+    private void GameStarted()
+    {
+        _totalEnemiesCounter = _enemySpawnerManager.TotalEnemiesSpawningThisRound;
+    }
+
     private void GameEndSetUp()
     {
-
+        GameEvents.playerFinsihedGame?.Invoke();
     }
 
     private void EndOfRound()
     {
-        
+        GameManager.Instance.LoadThisScene(2);
     }
     
     public void EnemyHasDied()

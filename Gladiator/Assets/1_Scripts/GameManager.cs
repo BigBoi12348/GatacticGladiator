@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("Scene IDs")]
     const int MAINMENUSCENE = 0;
     const int GAMESCENE = 1;
+    const int UPGRADESCENE = 2;
 
 
     [Header("Scene Control Variables")]
@@ -34,16 +35,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start() 
+    {
+        //This is cause there is no menu yet
+        //GameEvents.gameStartSetUp?.Invoke();
+    }
+    
     private void OnEnable() 
     {
-        GameEvents.playerStartGame += UnFreezeGame;
-        GameEvents.playerFinsihedGame += FreezeGame;
+        //GameEvents.playerStartGame += UnFreezeGame;
+        //GameEvents.playerFinsihedGame += FreezeGame;
     }
 
     private void OnDisable() 
     {
-        GameEvents.playerStartGame -= UnFreezeGame;
-        GameEvents.playerFinsihedGame -= FreezeGame;
+        //GameEvents.playerStartGame -= UnFreezeGame;
+        //GameEvents.playerFinsihedGame -= FreezeGame;
     }
 
     public void LoadThisScene(int levelID)
@@ -67,15 +74,15 @@ public class GameManager : MonoBehaviour
         _currentSceneID = SceneManager.GetActiveScene().buildIndex;
     }
 
-    public IEnumerator StartGame()
-    {
-        //Makes sure that the Scene is the GAME Scene so that the events that are called are actually received
-        while (_currentSceneID != GAMESCENE)
-        {
-            yield return new WaitForSecondsRealtime(0);
-        }
-        GameEvents.gameStartSetUp?.Invoke();
-    }
+    // public IEnumerator StartGame()
+    // {
+    //     //Makes sure that the Scene is the GAME Scene so that the events that are called are actually received
+    //     while (_currentSceneID != GAMESCENE)
+    //     {
+    //         yield return new WaitForSecondsRealtime(0);
+    //     }
+    //     GameEvents.gameStartSetUp?.Invoke();
+    // }
 
     public void UnFreezeGame()
     {

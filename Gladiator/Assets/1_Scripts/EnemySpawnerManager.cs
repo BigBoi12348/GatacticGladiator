@@ -7,7 +7,7 @@ public class EnemySpawnerManager : MonoBehaviour
     [SerializeField] private Transform _playerTransform;
 
     [Header("Enemy Spawn Control")]
-    private bool _canSpawn;
+    [SerializeField] private bool _canSpawn;
     [SerializeField] private float _spawnInterval;
     private float _spawnTimer;
     [SerializeField] private int _currentDifficultyRank;
@@ -41,7 +41,15 @@ public class EnemySpawnerManager : MonoBehaviour
 
     void Start()
     {
-        
+        //_canSpawn = false;
+        if(RoundData.DifficultyRank > 0)
+        {
+            _currentDifficultyRank = RoundData.DifficultyRank;
+        }
+        else
+        {
+            _currentDifficultyRank = 10;
+        }
     }
 
     void Update()
@@ -70,11 +78,14 @@ public class EnemySpawnerManager : MonoBehaviour
     
     private void GameIsStarting()
     {
+        Debug.Log("DUNN");
         Mathf.Pow(_currentDifficultyRank, 1.2f);
 
         int tempDifficultyScore = _currentDifficultyRank;
         int tempCurrentRound = InGameLevelManager.Instance.CurrentRound;
         _enemiesToSpawn = new List<GameObject>();
+
+        Debug.Log(tempDifficultyScore);
 
         while (tempDifficultyScore > 0)
         {
@@ -91,14 +102,18 @@ public class EnemySpawnerManager : MonoBehaviour
             GameObject tempEnemyObj = tempEnemyToChoseFrom[randNum].EnemyObj;
             tempDifficultyScore -= tempEnemyToChoseFrom[randNum].DifficultyRank;
             _enemiesToSpawn.Add(tempEnemyObj);
+            TotalEnemiesSpawningThisRound++;
         }
 
-        _canSpawn = true;
+        Debug.Log("excuse");
+        RoundData.DifficultyRank = _currentDifficultyRank;
+        GameEvents.playerStartGame?.Invoke();
     }
 
     private void PlayerHasStartedGame()
     {
-
+        Debug.Log("NO way");
+        _canSpawn = true;
     }
 
     private void GameEndSetUp()
@@ -110,7 +125,7 @@ public class EnemySpawnerManager : MonoBehaviour
     {
         foreach (Transform enemyTransform in _enemyContainer)
         {
-            Destroy(enemyTransform);
+            Destroy(enemyTransform.gameObject);
         }
     }
 

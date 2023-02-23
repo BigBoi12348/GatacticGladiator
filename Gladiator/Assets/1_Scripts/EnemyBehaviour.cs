@@ -15,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float _totalBleedOut;
     [SerializeField] private float _bleedOutStrength;
     [SerializeField] private float _bleedOutModifier;
+    private bool _alreadyDead;
     
 
     [Header("Body Parts")]
@@ -62,22 +63,27 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void BodyPartLost(bool doIDie, float bleedingStrength)
     {
-        if(doIDie)
+        if(!_alreadyDead)
         {
-            Death();
-        }
-        else
-        {
-            _bodyPartMissing = true;
-            _bleedOutModifier += bleedingStrength;
+            if(doIDie)
+            {
+                Death();
+            }
+            else
+            {
+                _bodyPartMissing = true;
+                _bleedOutModifier += bleedingStrength;
+            }
         }
     }
 
     private void Death()
     {
+        _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
         //_groundDetectCollider.enabled = false;
         InGameLevelManager.Instance.EnemyHasDied();
+        Destroy(this);
     }
 }

@@ -18,12 +18,12 @@ public class EnemyBodyPart : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
-        Debug.Log(other.gameObject.layer);
-        Debug.Log(_playerWeapon);
-        if(other.gameObject.layer == _playerWeapon)
+        Debug.Log(other.gameObject.name);
+        if(other.gameObject.CompareTag("Player"))
         {
+            GetComponent<MeshCollider>().enabled = false;
             _enemyBehaviour.BodyPartLost(_doIKillInstantly, _myBleedOutStrength);
             Destroy(this);
-        } 
+        }
     }
 }
