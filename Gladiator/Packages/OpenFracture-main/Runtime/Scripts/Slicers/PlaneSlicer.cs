@@ -36,8 +36,8 @@ public class PlaneSlicer : MonoBehaviour
         {
             this.transform.Rotate(Vector3.forward, -RotationSensitivity, Space.Self);
         }
-
-        if (Input.GetButton("Fire1")) 
+            //Ronana Loves
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             var mesh = this.GetComponent<MeshFilter>().sharedMesh;
             var center = mesh.bounds.center;
