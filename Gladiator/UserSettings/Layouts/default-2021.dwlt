@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357.3334
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 24
+  controlID: 45
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 22
+  controlID: 58
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 23
+  controlID: 44
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 195
+  controlID: 66
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 240
+  controlID: 59
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -14.065001, y: 2.8482904, z: 1.2987509}
     speed: 2
-    m_Value: {x: -14.065001, y: 2.8482902, z: 1.2987509}
+    m_Value: {x: -14.065001, y: 2.8482904, z: 1.2987509}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -687,11 +687,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.18798517, y: 0.4594222, z: -0.100404926, w: 0.8625723}
     speed: 2
-    m_Value: {x: 0.18907759, y: 0.46044433, z: -0.10135199, w: 0.8613759}
+    m_Value: {x: 0.18798517, y: 0.4594222, z: -0.100404926, w: 0.8625723}
   m_Size:
-    m_Target: 0.9032872
+    m_Target: 5.7373314
     speed: 2
-    m_Value: 0.9032874
+    m_Value: 5.490269
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1009,23 +1009,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1881ffff
-      m_LastClickedID: -32488
-      m_ExpandedIDs: 2481ffff24f3ffff28f3ffffb8f6ffffbef6fffff4faffff7a770000b4920000509500006a9500007a950000
+      m_SelectedIDs: e2b70000
+      m_LastClickedID: 0
+      m_ExpandedIDs: cc91ffff4894ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Cube
-        m_OriginalName: Cube
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -32488
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 2}
       m_SearchString: 
@@ -1076,22 +1076,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/1_Models
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/1_Models
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\1027368\Documents\GitHub\GatacticGladiator\Gladiator
+  m_LastProjectPath: C:\Users\domar\OneDrive\Documents\GitHub\GatacticGladiator\Gladiator
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 00700000
-    m_LastClickedID: 28672
-    m_ExpandedIDs: 000000000070000000ca9a3b
+    m_SelectedIDs: ea040100
+    m_LastClickedID: 66794
+    m_ExpandedIDs: 00000000e804010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1119,7 +1119,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000000700000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000287400003a5f0000385f0000c27c00005a620000f6610000848c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1252,14 +1252,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\1027368\Documents\GitHub\GatacticGladiator\Gladiator
+  m_LastProjectPath: C:\Users\domar\OneDrive\Documents\GitHub\GatacticGladiator\Gladiator
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d6710000
-    m_LastClickedID: 29142
-    m_ExpandedIDs: 000000000070000000ca9a3b
+    m_SelectedIDs: f6040100
+    m_LastClickedID: 66806
+    m_ExpandedIDs: 00000000e804010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1287,7 +1287,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000000700000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1326,7 +1326,7 @@ MonoBehaviour:
         y: 0
         width: 0
         height: 0
-      m_UserData: 29142
+      m_UserData: 66806
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -1384,22 +1384,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/1_Models
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 95
   m_LastFolders:
-  - Assets/1_Models
+  - Assets
   m_LastFoldersGridSize: 95
-  m_LastProjectPath: C:\Users\1027368\Documents\GitHub\GatacticGladiator\Gladiator
+  m_LastProjectPath: C:\Users\domar\OneDrive\Documents\GitHub\GatacticGladiator\Gladiator
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ca710000
-    m_LastClickedID: 29130
-    m_ExpandedIDs: 000000000070000000ca9a3b
+    m_SelectedIDs: e8040100
+    m_LastClickedID: 66792
+    m_ExpandedIDs: 00000000e804010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1427,7 +1427,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000000700000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: ea700000489a0000f6710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1601,14 +1601,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\1027368\Documents\GitHub\GatacticGladiator\Gladiator
+  m_LastProjectPath: C:\Users\domar\OneDrive\Documents\GitHub\GatacticGladiator\Gladiator
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 00700000
-    m_LastClickedID: 28672
-    m_ExpandedIDs: 000000000070000000ca9a3b
+    m_SelectedIDs: e8040100
+    m_LastClickedID: 66792
+    m_ExpandedIDs: 00000000e804010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1636,7 +1636,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000000700000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
