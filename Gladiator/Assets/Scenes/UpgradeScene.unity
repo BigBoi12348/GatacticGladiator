@@ -832,6 +832,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 861823068}
     m_Modifications:
+    - target: {fileID: 4117723868662935726, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4117723868887068406, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
       propertyPath: m_text
       value: By goun, we don't mean made for weddings, but for massacres.
@@ -846,6 +850,18 @@ PrefabInstance:
       propertyPath: m_text
       value: The Gladiators Goun
       objectReference: {fileID: 0}
+    - target: {fileID: 4117723869354304752, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
+      propertyPath: m_fontSize
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117723869354304752, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117723869525295152, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 14ed2cebce7e91f4987d5d91494ebd04, type: 3}
     - target: {fileID: 4117723869525295153, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -942,6 +958,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: a9631a9d03916e149bbd4b799f4a9b7d, type: 3}
+    - target: {fileID: 4117723869676306423, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
 --- !u!224 &633236943 stripped
@@ -2877,6 +2897,10 @@ PrefabInstance:
       propertyPath: m_text
       value: The Bold Blocker
       objectReference: {fileID: 0}
+    - target: {fileID: 4117723869525295152, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 48849f47f155a1a49a60da9f20303450, type: 3}
     - target: {fileID: 4117723869525295153, guid: b1f108d76fe9cba449635db31f4df314, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
