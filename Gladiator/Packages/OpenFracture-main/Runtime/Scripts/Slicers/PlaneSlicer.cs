@@ -11,7 +11,17 @@ public class PlaneSlicer : MonoBehaviour
     [SerializeField] private float _timeSwordSliceDelay;
     [SerializeField] private bool _canSlice;
 
-   
+    //public void Update()
+    //{
+    //    if (Input.GetKey(KeyCode.Q))
+    //    {
+    //        this.transform.Rotate(Vector3.forward, RotationSensitivity, Space.Self);
+    //    }
+    //    if (Input.GetKey(KeyCode.E))
+    //    {
+    //        this.transform.Rotate(Vector3.forward, -RotationSensitivity, Space.Self);
+    //    }
+    //}
     public void OnTriggerStay(Collider collider)
     {
         var material = collider.gameObject.GetComponent<MeshRenderer>().material;
