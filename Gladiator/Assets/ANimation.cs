@@ -13,13 +13,20 @@ public class ANimation : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !isPlaying)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isPlaying)
         {
-            
+
             animator.SetTrigger("Slice");
             isPlaying = true;
             Debug.Log("hit");
         }
+        //if (Input.GetMouseButtonDown(0) && !isPlaying)
+        //{
+
+        //    animator.SetTrigger("Slice");
+        //    isPlaying = true;
+        //    Debug.Log("hit");
+        //}
     }
 
     public void AnimationFinished()
