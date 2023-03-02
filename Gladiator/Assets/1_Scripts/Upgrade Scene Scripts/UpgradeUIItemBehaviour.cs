@@ -7,6 +7,7 @@ using TMPro;
 public class UpgradeUIItemBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject _informationObject;
+    [SerializeField] private GameObject _hoverEffectObject;
 
     [Header("Information Data")]
     [SerializeField] private string _weaponName;
@@ -19,17 +20,19 @@ public class UpgradeUIItemBehaviour : MonoBehaviour
 
     void Start()
     {
-        _weaponField.text = _weaponName;
-        _weaponDescriptionField.text = _weaponDescription;
+        //_weaponField.text = _weaponName;
+        //_weaponDescriptionField.text = _weaponDescription;
     }
 
     private void OnMouseEnter() 
     {
         _informationObject.SetActive(true);    
+        _hoverEffectObject.SetActive(true);
     }
 
     private void OnMouseExit() 
     {
         _informationObject.SetActive(false);
+        _hoverEffectObject.SetActive(false);
     }
 }
