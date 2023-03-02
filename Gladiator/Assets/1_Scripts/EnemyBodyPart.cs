@@ -18,7 +18,7 @@ public class EnemyBodyPart : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(other.gameObject.name);
         if(other.gameObject.CompareTag("Player"))
         {
             GetComponent<MeshCollider>().enabled = false;

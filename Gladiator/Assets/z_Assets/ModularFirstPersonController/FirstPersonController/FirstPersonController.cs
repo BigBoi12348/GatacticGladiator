@@ -18,6 +18,7 @@ public class FirstPersonController : MonoBehaviour
 {
     public WeaponBehaviour _weaponBehaviour;
     private Rigidbody rb;
+    float camRotation;
 
     #region Camera Movement Variables
 
@@ -132,6 +133,14 @@ public class FirstPersonController : MonoBehaviour
 
     #endregion
 
+    #region Player Animations
+    [Header("Animation Variables")]
+    [SerializeField] private Animator _playerAnim;
+    private int _basicNextCounter;
+    [SerializeField] private float _nextAnimTotalTimeBuffer;
+    [SerializeField] private float _nextAnimTimeBuffer;
+    #endregion
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -199,10 +208,50 @@ public class FirstPersonController : MonoBehaviour
         #endregion
     }
 
-    float camRotation;
-
     private void Update()
     {
+        #region Attack
+        if(Input.GetMouseButtonDown(0))
+        {
+            switch (_basicNextCounter)
+            {
+                case 0:
+                    Debug.Log("Reaching");
+                    _playerAnim.SetBool("TryingToHit", true);
+                    _basicNextCounter++;
+                    _nextAnimTimeBuffer = 0;
+                    break;
+                case 1:
+                    _playerAnim.SetBool("TryingToHit", true);
+                    _nextAnimTimeBuffer = 0;
+                    _basicNextCounter = 0;
+                    break;
+                // case 2:
+                //     _basicNextCounter = 0;
+                //     break;
+            }
+            //_playerAnim.SetBool("TryingToHit", false);
+        }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            
+        }
+
+        if(_basicNextCounter != 0)
+        {
+            if(_nextAnimTimeBuffer >= _nextAnimTotalTimeBuffer)
+            {
+                _basicNextCounter = 0;
+                _playerAnim.SetBool("TryingToHit", false);
+            }
+            else
+            {
+                _nextAnimTimeBuffer += Time.deltaTime;
+            }
+        }
+        #endregion
+
         #region Camera
 
         // Control camera movement

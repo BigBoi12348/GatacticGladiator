@@ -9,6 +9,7 @@ public class UpgradeSceneManager : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
         _exitButton.onClick.AddListener(GoBackToGame);
     }
     

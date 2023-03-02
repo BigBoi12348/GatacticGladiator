@@ -78,14 +78,11 @@ public class EnemySpawnerManager : MonoBehaviour
     
     private void GameIsStarting()
     {
-        Debug.Log("DUNN");
         Mathf.Pow(_currentDifficultyRank, 1.2f);
 
         int tempDifficultyScore = _currentDifficultyRank;
         int tempCurrentRound = InGameLevelManager.Instance.CurrentRound;
         _enemiesToSpawn = new List<GameObject>();
-
-        Debug.Log(tempDifficultyScore);
 
         while (tempDifficultyScore > 0)
         {
@@ -105,14 +102,14 @@ public class EnemySpawnerManager : MonoBehaviour
             TotalEnemiesSpawningThisRound++;
         }
 
-        Debug.Log("excuse");
+        //Debug.Log("excuse");
         RoundData.DifficultyRank = _currentDifficultyRank;
         GameEvents.playerStartGame?.Invoke();
     }
 
     private void PlayerHasStartedGame()
     {
-        Debug.Log("NO way");
+        //Debug.Log("NO way");
         _canSpawn = true;
     }
 

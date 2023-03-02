@@ -26,6 +26,7 @@ public class UpgradeUIItemBehaviour : MonoBehaviour
 
     private void OnMouseEnter() 
     {
+        Debug.Log("Mouse Enter");
         _informationObject.SetActive(true);    
         _hoverEffectObject.SetActive(true);
     }

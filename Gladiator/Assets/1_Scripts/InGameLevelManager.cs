@@ -29,7 +29,6 @@ public class InGameLevelManager : MonoBehaviour
 
     private void Start() 
     {
-        Debug.Log("dumb");
         GameEvents.gameStartSetUp?.Invoke();
     }
 
