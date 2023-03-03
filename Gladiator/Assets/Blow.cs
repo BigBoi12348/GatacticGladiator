@@ -22,15 +22,15 @@ public class Blow : MonoBehaviour
         {
             radius.SetActive(false);
         }
-        if (Input.GetKey(KeyCode.C))
-        {
-            Physics.gravity = new Vector3(0,1, 0); 
-        }
+        //if (Input.GetKey(KeyCode.C))
+        //{
+            //Physics.gravity = new Vector3(0,1, 0); 
+        //}
 
-        if (Input.GetKey(KeyCode.V))
-        {
-            Physics.gravity = new Vector3(0, -9.81f, 0);
-        }
+        //if (Input.GetKey(KeyCode.V))
+        //{
+            //Physics.gravity = new Vector3(0, -9.81f, 0);
+       // }
 
         //{
         //    Physics.gravity = new Vector3(0, -9.81f, 0);
