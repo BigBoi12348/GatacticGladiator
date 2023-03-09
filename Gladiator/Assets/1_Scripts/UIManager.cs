@@ -16,20 +16,26 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _mainWaveText;
     [SerializeField] private TMP_Text _subWaveText;
     [SerializeField] private TMP_Text _enemiesLeftText;
+    [SerializeField] private GameObject _waveComplete;
 
 
     private void OnEnable() 
     {
         GameEvents.gameStartSetUp += GameIsStarting;
         GameEvents.playerStartGame += GameStarted;
+        GameEvents.gameEndSetUp += EndGameSetup;
     }
 
     private void OnDisable() 
     {
         GameEvents.gameStartSetUp -= GameIsStarting;
         GameEvents.playerStartGame -= GameStarted;
+        GameEvents.gameEndSetUp -= EndGameSetup;
     }
-
+    private void EndGameSetup()
+    {
+        _waveComplete.SetActive(true);
+    }
     private void GameIsStarting()
     {
         _mainWaveText.text = "Wave " + RoundData.Wave.ToString();
