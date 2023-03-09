@@ -141,17 +141,18 @@ public class ViewManager : MonoBehaviour
             //_subViews[i].Hide();
         }
         
-        if(_views.Length > 0)
-        {
-            if(GameManager.Instance.LastSceneID == 0)
-            {
-                Show(intialStartingView, true);
-            }
-            else
-            {
-                Show(newStartingView, true);
-            }
-        }
+        Show(intialStartingView, true);
+        // if(_views.Length > 0)
+        // {
+        //     if(GameManager.Instance.LastSceneID == 0)
+        //     {
+        //         Show(intialStartingView, true);
+        //     }
+        //     else
+        //     {
+        //         //Show(newStartingView, true);
+        //     }
+        // }
     }
 
     public static T GetView<T>() where T : View

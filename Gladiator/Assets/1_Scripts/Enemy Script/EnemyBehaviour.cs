@@ -23,6 +23,13 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private EnemyBodyPart[] enemyBodyParts;
 
 
+    [Header("Animations")]
+    [SerializeField] private Animator _enemyAnim;
+    [SerializeField] private float _totalAttackCoolDown;
+    [SerializeField] private float _attackCoolDown;
+    const string ATTACK = "Stable Sword Outward Slash";
+
+
     [Header("References")]
     [SerializeField] private AIDestinationSetter _aIDestinationSetter;
     [SerializeField] private AIPath _aIPath;
@@ -61,8 +68,34 @@ public class EnemyBehaviour : MonoBehaviour
             }
         }
         
+        
+        if(_aIPath.reachedEndOfPath)
+        {
+            if(_enemyAnim != null)
+            {
+                if(_attackCoolDown <= 0)
+                {
+                    _enemyAnim.Play(ATTACK);
+                    _attackCoolDown = _totalAttackCoolDown;
+                }
+            }
+            else if(_playerTransform.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
+            {
+                if(_attackCoolDown <= 0)
+                {
+                    playerHealth.TakeDamage(5);
+                    _attackCoolDown = _totalAttackCoolDown;  
+                }
+            }
+        }
+        
+        if(_attackCoolDown > 0)
+        {
+            _attackCoolDown -= Time.deltaTime;
+        }
+        
+
         transform.LookAt(_playerTransform);
-        //Fix Enemy Rotation
         // float angle = Vector3.Angle(transform.position, _playerTransform.position);
         // Debug.Log(angle);
         // transform.localEulerAngles = new Vector3(0,angle,0);

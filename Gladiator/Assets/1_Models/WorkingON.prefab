@@ -70,6 +70,9 @@ MonoBehaviour:
   - {fileID: 912885910180685758}
   - {fileID: 8608908621286493073}
   - {fileID: 1163166869352073983}
+  _enemyAnim: {fileID: 0}
+  _totalAttackCoolDown: 5
+  _attackCoolDown: 0
   _aIDestinationSetter: {fileID: 687825691835362904}
   _aIPath: {fileID: 687825691835362906}
   _groundDetectCollider: {fileID: 687825691835362897}
@@ -108,9 +111,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 3
+  slowdownDistance: 1
   pickNextWaypointDist: 2
-  endReachedDistance: 2
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0

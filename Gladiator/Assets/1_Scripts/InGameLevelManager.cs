@@ -64,6 +64,7 @@ public class InGameLevelManager : MonoBehaviour
     private void GameEndSetUp()
     {
         RoundData.Wave++;
+        RoundData.PlayerPoints += 3;
         GameEvents.playerFinsihedGame?.Invoke();
     }
 
