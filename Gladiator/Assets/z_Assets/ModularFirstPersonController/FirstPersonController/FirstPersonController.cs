@@ -138,7 +138,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private Animator _playerAnim;
     [SerializeField] private int _numOfClicks;
     [SerializeField] float lastClickedTime = 0;
-    float maxComboDelay = 1;
+    float maxComboDelay = 0.8f;
 
     //[Header("Animation Clips")]
     //[SerializeField] private AnimationClip _leftSliceAnimClip;
