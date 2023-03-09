@@ -90,7 +90,6 @@ public class EnemyBehaviour : MonoBehaviour
         _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
-        //_groundDetectCollider.enabled = false;
         InGameLevelManager.Instance.EnemyHasDied();
         Destroy(this);
     }

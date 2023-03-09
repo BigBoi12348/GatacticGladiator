@@ -5,9 +5,9 @@ using UnityEngine;
 public class InGameLevelManager : MonoBehaviour
 {   
     public static InGameLevelManager Instance;
+    private UIManager uIManager;
 
-    [Header(":sa")]
-    [SerializeField]private int _totalEnemiesCounter;
+    public int _totalEnemiesCounter{get; private set;}
     public int CurrentRound{get; private set;}
 
 
@@ -24,7 +24,8 @@ public class InGameLevelManager : MonoBehaviour
         {
             Destroy(this);
         }
-        CurrentRound = 1;
+
+        uIManager = FindObjectOfType<UIManager>();
     }
 
     private void Start() 
@@ -50,16 +51,19 @@ public class InGameLevelManager : MonoBehaviour
 
     private void GameIsStarting()
     {
-        _totalEnemiesCounter = _enemySpawnerManager.TotalEnemiesSpawningThisRound;
+        CurrentRound = RoundData.Wave;
+        //_totalEnemiesCounter = _enemySpawnerManager.TotalEnemiesSpawningThisRound;
     }
 
     private void GameStarted()
     {
         _totalEnemiesCounter = _enemySpawnerManager.TotalEnemiesSpawningThisRound;
+        uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
     }
 
     private void GameEndSetUp()
     {
+        RoundData.Wave++;
         GameEvents.playerFinsihedGame?.Invoke();
     }
 
@@ -71,6 +75,8 @@ public class InGameLevelManager : MonoBehaviour
     public void EnemyHasDied()
     {
         _totalEnemiesCounter--;
+        uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
+
         if(_totalEnemiesCounter <= 0)
         {
             Debug.Log("GameEndSetUp");

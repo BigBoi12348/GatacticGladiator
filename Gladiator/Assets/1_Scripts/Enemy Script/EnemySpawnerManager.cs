@@ -41,15 +41,7 @@ public class EnemySpawnerManager : MonoBehaviour
 
     void Start()
     {
-        //_canSpawn = false;
-        if(RoundData.DifficultyRank > 0)
-        {
-            _currentDifficultyRank = RoundData.DifficultyRank;
-        }
-        else
-        {
-            _currentDifficultyRank = 10;
-        }
+        
     }
 
     void Update()
@@ -78,7 +70,14 @@ public class EnemySpawnerManager : MonoBehaviour
     
     private void GameIsStarting()
     {
-        Mathf.Pow(_currentDifficultyRank, 1.2f);
+        if(RoundData.DifficultyRank > 0)
+        {
+            _currentDifficultyRank = RoundData.DifficultyRank;
+        }
+        else
+        {
+            _currentDifficultyRank = 5;
+        }
 
         int tempDifficultyScore = _currentDifficultyRank;
         int tempCurrentRound = InGameLevelManager.Instance.CurrentRound;
@@ -103,7 +102,7 @@ public class EnemySpawnerManager : MonoBehaviour
         }
 
         //Debug.Log("excuse");
-        RoundData.DifficultyRank = _currentDifficultyRank;
+        RoundData.DifficultyRank = (int)Mathf.Pow(_currentDifficultyRank, 1.2f);
         GameEvents.playerStartGame?.Invoke();
     }
 

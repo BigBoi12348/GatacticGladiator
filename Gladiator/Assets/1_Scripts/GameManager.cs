@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Start() 
     {
+        RoundData.Wave = 1;
         //This is cause there is no menu yet
         //GameEvents.gameStartSetUp?.Invoke();
     }

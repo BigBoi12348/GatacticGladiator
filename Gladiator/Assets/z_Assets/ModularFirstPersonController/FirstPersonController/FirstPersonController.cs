@@ -136,9 +136,13 @@ public class FirstPersonController : MonoBehaviour
     #region Player Animations
     [Header("Animation Variables")]
     [SerializeField] private Animator _playerAnim;
-    private int _basicNextCounter;
-    [SerializeField] private float _nextAnimTotalTimeBuffer;
-    [SerializeField] private float _nextAnimTimeBuffer;
+    [SerializeField] private int _numOfClicks;
+    [SerializeField] float lastClickedTime = 0;
+    float maxComboDelay = 1;
+
+    //[Header("Animation Clips")]
+    //[SerializeField] private AnimationClip _leftSliceAnimClip;
+    //[SerializeField] private AnimationClip _rightSliceAnimClip;
     #endregion
 
     private void Awake()
@@ -208,28 +212,64 @@ public class FirstPersonController : MonoBehaviour
         #endregion
     }
 
+    private void OnClick()
+    {
+        lastClickedTime = Time.time;
+        _numOfClicks++;
+        if(_numOfClicks == 1)
+        {
+            _playerAnim.SetBool("LeftSlice", true);
+        }
+
+        _numOfClicks = Mathf.Clamp(_numOfClicks, 0, 2);
+
+        if(_numOfClicks >= 2 && _playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && _playerAnim.GetCurrentAnimatorStateInfo(0).IsName("LeftSlice"))
+        {
+            Debug.Log("Right Slice");
+            _playerAnim.SetBool("RightSlice", true); 
+            _playerAnim.SetBool("LeftSlice", false);
+        }
+    }
+
     private void Update()
     {
         #region Attack
+
+        if(_playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && _playerAnim.GetCurrentAnimatorStateInfo(0).IsName("LeftSlice"))
+        {
+            //_playerAnim.SetBool("LeftSlice", false);
+        }
+        if(_playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && _playerAnim.GetCurrentAnimatorStateInfo(0).IsName("RightSlice"))
+        {
+            _playerAnim.SetBool("RightSlice", false);
+            _numOfClicks = 0;
+        }
+
+        if(Time.time - lastClickedTime > maxComboDelay)
+        {
+            _playerAnim.SetBool("LeftSlice", false);
+            _numOfClicks = 0;
+        }
         if(Input.GetMouseButtonDown(0))
         {
-            switch (_basicNextCounter)
-            {
-                case 0:
-                    Debug.Log("Reaching");
-                    _playerAnim.SetBool("TryingToHit", true);
-                    _basicNextCounter++;
-                    _nextAnimTimeBuffer = 0;
-                    break;
-                case 1:
-                    _playerAnim.SetBool("TryingToHit", true);
-                    _nextAnimTimeBuffer = 0;
-                    _basicNextCounter = 0;
-                    break;
-                // case 2:
-                //     _basicNextCounter = 0;
-                //     break;
-            }
+            OnClick();
+            // switch (_basicNextCounter)
+            // {
+            //     case 0:
+            //         Debug.Log("Reaching");
+            //         _playerAnim.SetBool("LeftSlice", true);
+            //         _basicNextCounter++;
+            //         _nextAnimTimeBuffer = 0;
+            //         break;
+            //     case 1:
+            //         _playerAnim.SetBool("RightSlice", true);
+            //         _nextAnimTimeBuffer = 0;
+            //         _basicNextCounter = 0;
+            //         break;
+            //     // case 2:
+            //     //     _basicNextCounter = 0;
+            //     //     break;
+            // }
             //_playerAnim.SetBool("TryingToHit", false);
         }
 
@@ -238,18 +278,18 @@ public class FirstPersonController : MonoBehaviour
             
         }
 
-        if(_basicNextCounter != 0)
-        {
-            if(_nextAnimTimeBuffer >= _nextAnimTotalTimeBuffer)
-            {
-                _basicNextCounter = 0;
-                _playerAnim.SetBool("TryingToHit", false);
-            }
-            else
-            {
-                _nextAnimTimeBuffer += Time.deltaTime;
-            }
-        }
+        // if(_basicNextCounter != 0)
+        // {
+        //     if(_nextAnimTimeBuffer >= _nextAnimTotalTimeBuffer)
+        //     {
+        //         _basicNextCounter = 0;
+        //         _playerAnim.SetBool("TryingToHit", false);
+        //     }
+        //     else
+        //     {
+        //         _nextAnimTimeBuffer += Time.deltaTime;
+        //     }
+        // }
         #endregion
 
         #region Camera

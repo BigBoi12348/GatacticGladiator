@@ -66,7 +66,7 @@ public class PlaneSlicer : MonoBehaviour
 
         // Cast a ray and find the nearest object
         RaycastHit[] hits = Physics.BoxCastAll(this.transform.position, extents, this.transform.forward, this.transform.rotation, extents.z);
-        Debug.Log("SLiced enemy");
+        //Debug.Log("SLiced enemy");
         foreach (RaycastHit hit in hits)
         {
             var obj = hit.collider.gameObject;
