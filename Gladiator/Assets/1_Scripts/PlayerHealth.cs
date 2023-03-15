@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     private void Awake() 
     {
         currentHealth = maxHealth;
-        TakeDamage(20);
+        //TakeDamage(20);
     }
 
     private void OnCollisionEnter(Collision other) 

@@ -13,6 +13,7 @@ public class InGameLevelManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private EnemySpawnerManager _enemySpawnerManager;
+    [SerializeField] private AnimationClip _waveComplete;
 
     private void Awake() 
     {
@@ -65,9 +66,13 @@ public class InGameLevelManager : MonoBehaviour
     {
         RoundData.Wave++;
         RoundData.PlayerPoints += 3;
+        StartCoroutine(delayFinishGame());
+    }
+    IEnumerator delayFinishGame()
+    {
+        yield return new WaitForSecondsRealtime(_waveComplete.length);
         GameEvents.playerFinsihedGame?.Invoke();
     }
-
     private void EndOfRound()
     {
         GameManager.Instance.LoadThisScene(2);

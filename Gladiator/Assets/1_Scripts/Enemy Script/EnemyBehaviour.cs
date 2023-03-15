@@ -123,6 +123,10 @@ public class EnemyBehaviour : MonoBehaviour
         _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
+        if(_enemyAnim != null)
+        {
+            _enemyAnim.enabled = false;
+        }
         InGameLevelManager.Instance.EnemyHasDied();
         Destroy(this);
     }
