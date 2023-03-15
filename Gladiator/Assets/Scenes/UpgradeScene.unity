@@ -5532,7 +5532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &675732428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8799,7 +8799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1112523573
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8949,7 +8949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0f8c350ebd1c749b3aaab2fdcd1231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intialStartingView: {fileID: 675732429}
+  intialStartingView: {fileID: 1112523574}
   newStartingView: {fileID: 0}
   _views:
   - {fileID: 1112523574}
@@ -13530,7 +13530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a9631a9d03916e149bbd4b799f4a9b7d, type: 3}
+  m_Texture: {fileID: 2800000, guid: 78435c67ade07f944b2f0e3026b8a822, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
