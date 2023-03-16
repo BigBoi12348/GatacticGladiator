@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game:\n\nIn 2695, at an arena on alien planet, a human gladiator must
+  m_text: "Game:\n\nIn 2695, at an arena on an alien planet, a human gladiator must
     survive all fights/rounds and beat the governor\u2019s champion. \r\n\r\nEach
     fight won earns them rewards/upgrades and gets them closer to earning their freedom.\r\n\nDiscover
     unique abilities that will aid you in battle.\n\nHow long can you go for?\n\n\n"
