@@ -27,6 +27,7 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     [SerializeField] private GameObject _hoverUI;
     [SerializeField] private GameObject _alreadyBoughtUI;
     [SerializeField] private GameObject _infoBoxUI;
+    [SerializeField] private AudioSource _boughtSound;
 
 
     [Header("Images to choose from")]
@@ -44,28 +45,28 @@ public class UpgradeSlotBehaviour : MonoBehaviour
         {
             _imageSymbol.texture = _swordImage;
 
-            // if(_thisUpgradeRank >= PlayerUpgradesData.AttackAttribute)
-            // {
-            //     LockMe();
-            // }
+            if(_thisUpgradeRank <= PlayerUpgradesData.AttackAttribute)
+            {
+                LockMe();
+            }
         }
         else if(_upgradeType == UpgradeType.Shield)
         {
             _imageSymbol.texture = _shieldImage;
 
-            // if(_thisUpgradeRank >= PlayerUpgradesData.ShieldAttribute)
-            // {
-            //     LockMe();
-            // }
+            if(_thisUpgradeRank <= PlayerUpgradesData.ShieldAttribute)
+            {
+                LockMe();
+            }
         }
         else if(_upgradeType == UpgradeType.Ability)
         {
             _imageSymbol.texture = _abilityImage;
 
-            // if(_thisUpgradeRank >= PlayerUpgradesData.AbilityAttribute)
-            // {
-            //     LockMe();
-            // }
+            if(_thisUpgradeRank <= PlayerUpgradesData.AbilityAttribute)
+            {
+                LockMe();
+            }
         }
 
     }
@@ -86,7 +87,7 @@ public class UpgradeSlotBehaviour : MonoBehaviour
 
     public void TryToUnlockMe()
     {
-        if(!alreadyBought)
+        if(!alreadyBought && CheckIfInOrder())
         {
             bool didBuy = UpgradeSceneManager.Instance.TryUpgradeThisTier(_thisUpgradeRank, _upgradeCost, _upgradeType);
 
@@ -103,10 +104,50 @@ public class UpgradeSlotBehaviour : MonoBehaviour
         }
     }
 
+    private bool CheckIfInOrder()
+    {
+        if(_upgradeType == UpgradeType.Sword)
+        {
+            if(PlayerUpgradesData.AttackAttribute == _thisUpgradeRank-1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if(_upgradeType == UpgradeType.Shield)
+        {
+            if(PlayerUpgradesData.ShieldAttribute == _thisUpgradeRank-1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if(_upgradeType == UpgradeType.Ability)
+        {
+            if(PlayerUpgradesData.AbilityAttribute == _thisUpgradeRank-1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
+    }
+
     private void LockMe()
     {
         alreadyBought = true;
         _alreadyBoughtUI.SetActive(true);
+        _boughtSound.Play();
+
         HoverOff();
 
         _upgradeSlotButton.enabled = false;

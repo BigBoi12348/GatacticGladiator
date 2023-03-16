@@ -276,18 +276,21 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        if (dashCooldownTimer > 0)
+        if(PlayerUpgradesData.AbilityAttribute == 1)
         {
-            dashCooldownTimer -= Time.deltaTime;
-        }
-        else
-        {
-            if (Input.GetKeyDown(dashKey) && !isDashing)
+            if (dashCooldownTimer > 0)
             {
-                isDashing = true;
-                dashStartPosition = transform.position;
-                dashTimer = dashDuration;
-                rb.velocity = Vector3.zero;
+                dashCooldownTimer -= Time.deltaTime;
+            }
+            else
+            {
+                if (Input.GetKeyDown(dashKey) && !isDashing)
+                {
+                    isDashing = true;
+                    dashStartPosition = transform.position;
+                    dashTimer = dashDuration;
+                    rb.velocity = Vector3.zero;
+                }
             }
         }
     

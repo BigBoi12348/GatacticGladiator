@@ -7,7 +7,7 @@ public static class GameEvents
     public delegate void PlayerFinsihedGame();
     public delegate void PlayerStartedGame();
     public delegate void GameStartSetUp();
-    public delegate void GameEndSetUp();
+    public delegate void GameEndSetUp(bool didPlayerWin);
 
     public static PlayerFinsihedGame playerFinsihedGame;
     public static PlayerStartedGame playerStartGame;

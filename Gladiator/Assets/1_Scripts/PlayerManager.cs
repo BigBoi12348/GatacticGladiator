@@ -4,15 +4,46 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("References")]
+    [SerializeField] private Animator _playerAnim;
+
+
+    private void Awake() 
     {
-        
+        if(_playerAnim )
+        {
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start() 
     {
-        
+        if(_playerAnim == null )
+        {
+            _playerAnim = GameObject.FindGameObjectWithTag("PlayerAnimator").GetComponent<Animator>();
+        }
+
+        switch (PlayerUpgradesData.AttackAttribute)
+        {
+            case 0:
+                _playerAnim.speed = 1f;
+                break;
+            case 1:
+                _playerAnim.speed = 1.25f;
+                break;
+            case 2:
+                _playerAnim.speed = 1.5f;
+                break;
+            case 3:
+                _playerAnim.speed = 1.75f;
+                break;
+            case 4:
+                _playerAnim.speed = 2f;
+                break;
+            case 5:
+            
+                break;
+           
+        }
     }
 }

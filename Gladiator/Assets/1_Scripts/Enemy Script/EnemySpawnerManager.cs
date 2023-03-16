@@ -112,7 +112,7 @@ public class EnemySpawnerManager : MonoBehaviour
         _canSpawn = true;
     }
 
-    private void GameEndSetUp()
+    private void GameEndSetUp(bool cum)
     {
         
     }

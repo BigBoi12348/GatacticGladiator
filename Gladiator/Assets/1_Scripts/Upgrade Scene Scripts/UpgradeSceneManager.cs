@@ -58,7 +58,7 @@ public class UpgradeSceneManager : MonoBehaviour
             switch (upGradeRank)
             {
                 case 1:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AttackAttribute = upGradeRank;
                         return true;
@@ -68,7 +68,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 2:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AttackAttribute = upGradeRank;
                         return true;
@@ -78,7 +78,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 3:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AttackAttribute = upGradeRank;
                         return true;
@@ -88,7 +88,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 4:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AttackAttribute = upGradeRank;
                         return true;
@@ -98,7 +98,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 5:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AttackAttribute = upGradeRank;
                         return true;
@@ -114,7 +114,7 @@ public class UpgradeSceneManager : MonoBehaviour
             switch (upGradeRank)
             {
                 case 1:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.ShieldAttribute = upGradeRank;
                         return true;
@@ -124,7 +124,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 2:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.ShieldAttribute = upGradeRank;
                         return true;
@@ -134,7 +134,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 3:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.ShieldAttribute = upGradeRank;
                         return true;
@@ -144,7 +144,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 4:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.ShieldAttribute = upGradeRank;
                         return true;
@@ -154,7 +154,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 5:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.ShieldAttribute = upGradeRank;
                         return true;
@@ -170,7 +170,7 @@ public class UpgradeSceneManager : MonoBehaviour
             switch (upGradeRank)
             {
                 case 1:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AbilityAttribute = upGradeRank;
                         return true;
@@ -180,7 +180,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 2:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AbilityAttribute = upGradeRank;
                         return true;
@@ -190,7 +190,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 3:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AbilityAttribute = upGradeRank;
                         return true;
@@ -200,7 +200,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 4:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AbilityAttribute = upGradeRank;
                         return true;
@@ -210,7 +210,7 @@ public class UpgradeSceneManager : MonoBehaviour
                         return false;
                     }
                 case 5:
-                    if(upGradeCost >= RoundData.PlayerPoints)
+                    if(upGradeCost <= RoundData.PlayerPoints)
                     {
                         PlayerUpgradesData.AbilityAttribute = upGradeRank;
                         return true;

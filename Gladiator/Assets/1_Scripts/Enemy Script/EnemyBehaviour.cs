@@ -31,6 +31,7 @@ public class EnemyBehaviour : MonoBehaviour
 
 
     [Header("References")]
+    [SerializeField] private EnemyWeaponBehaviour _enemyWeaponBehaviour;
     [SerializeField] private AIDestinationSetter _aIDestinationSetter;
     [SerializeField] private AIPath _aIPath;
     [SerializeField] private Collider _groundDetectCollider;
@@ -78,6 +79,7 @@ public class EnemyBehaviour : MonoBehaviour
                 {
                     _enemyAnim.Play(ATTACK);
                     _attackCoolDown = _totalAttackCoolDown;
+                    StartCoroutine(_enemyWeaponBehaviour.Activate());
                 }
             }
             else if(_playerTransform.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
@@ -122,10 +124,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Death()
     {
-        Debug.Log("death");
+        //Debug.Log("death");
         _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
+        _enemyWeaponBehaviour.enabled = false;
         if(_enemyAnim != null)
         {
             _enemyAnim.enabled = false;

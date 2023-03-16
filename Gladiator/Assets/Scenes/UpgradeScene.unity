@@ -5645,6 +5645,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeCost
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeType
       value: 1
       objectReference: {fileID: 0}
@@ -7341,6 +7345,18 @@ PrefabInstance:
     - target: {fileID: 573330228859994990, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_text
       value: Sword Upgrade [II]
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 573330229758849335, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_text
@@ -11688,6 +11704,10 @@ PrefabInstance:
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeCost
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 573330229965329397, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_fontSize

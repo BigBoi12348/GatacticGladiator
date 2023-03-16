@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _subWaveText;
     [SerializeField] private TMP_Text _enemiesLeftText;
     [SerializeField] private GameObject _waveComplete;
+    [SerializeField] private GameObject _playerLost;
 
 
     private void OnEnable() 
@@ -32,9 +33,16 @@ public class UIManager : MonoBehaviour
         GameEvents.playerStartGame -= GameStarted;
         GameEvents.gameEndSetUp -= EndGameSetup;
     }
-    private void EndGameSetup()
+    private void EndGameSetup(bool didPlayerWin)
     {
-        _waveComplete.SetActive(true);
+        if(didPlayerWin)
+        {
+            _waveComplete.SetActive(true);
+        }
+        else
+        {   
+            _playerLost.SetActive(true);
+        }
     }
     private void GameIsStarting()
     {

@@ -53,7 +53,6 @@ public class InGameLevelManager : MonoBehaviour
     private void GameIsStarting()
     {
         CurrentRound = RoundData.Wave;
-        //_totalEnemiesCounter = _enemySpawnerManager.TotalEnemiesSpawningThisRound;
     }
 
     private void GameStarted()
@@ -62,17 +61,39 @@ public class InGameLevelManager : MonoBehaviour
         uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
     }
 
-    private void GameEndSetUp()
+    private void GameEndSetUp(bool didPlayerWin)
     {
-        RoundData.Wave++;
-        RoundData.PlayerPoints += 3;
-        StartCoroutine(delayFinishGame());
+        if(didPlayerWin)
+        {
+            RoundData.Wave++;
+            RoundData.PlayerPoints += 3;
+            //StartCoroutine(delayFinishGame(didPlayerWin));
+        }
+        else if(!didPlayerWin)
+        {
+            RoundData.Wave = 1;
+            RoundData.PlayerPoints = 0;
+            RoundData.DifficultyRank = 0;
+            PlayerUpgradesData.AttackAttribute = 0;
+            PlayerUpgradesData.ShieldAttribute = 0;
+            PlayerUpgradesData.AbilityAttribute = 0;
+        }
+        StartCoroutine(delayFinishGame(didPlayerWin));
     }
-    IEnumerator delayFinishGame()
+
+    IEnumerator delayFinishGame(bool didPlayerWin)
     {
         yield return new WaitForSecondsRealtime(_waveComplete.length);
-        GameEvents.playerFinsihedGame?.Invoke();
+        if(didPlayerWin)
+        {
+            GameEvents.playerFinsihedGame?.Invoke();
+        }
+        else if(!didPlayerWin)
+        {
+            GameManager.Instance.LoadThisScene(0);
+        }
     }
+
     private void EndOfRound()
     {
         GameManager.Instance.LoadThisScene(2);
@@ -80,13 +101,12 @@ public class InGameLevelManager : MonoBehaviour
     
     public void EnemyHasDied()
     {
-        Debug.Log("Enemy died");
         _totalEnemiesCounter--;
         uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
 
         if(_totalEnemiesCounter == 0)
         {
-            GameEvents.gameEndSetUp?.Invoke();
+            GameEvents.gameEndSetUp?.Invoke(true);
         }
     }
 }
