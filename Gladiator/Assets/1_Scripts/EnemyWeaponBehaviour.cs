@@ -29,9 +29,9 @@ public class EnemyWeaponBehaviour : MonoBehaviour
 
     public IEnumerator Activate()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.45f);
         _weaponCollider.enabled = true;
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.65f);
         _weaponCollider.enabled = false;
     }
 
