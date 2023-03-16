@@ -95,8 +95,9 @@ public class EnemyBehaviour : MonoBehaviour
             _attackCoolDown -= Time.deltaTime;
         }
         
-
-        transform.LookAt(_playerTransform);
+        Vector3 playerPos = new Vector3(_playerTransform.position.x, transform.position.y, _playerTransform.position.z);
+ 
+        transform.LookAt(playerPos);
         // float angle = Vector3.Angle(transform.position, _playerTransform.position);
         // Debug.Log(angle);
         // transform.localEulerAngles = new Vector3(0,angle,0);

@@ -521,7 +521,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3912541846818709475}
   - component: {fileID: 460394296860270500}
-  - component: {fileID: 362104153394694135}
   - component: {fileID: 362104153394694132}
   - component: {fileID: 362104153394694133}
   - component: {fileID: 362104153394694138}
@@ -649,20 +648,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.37238297, y: 1.3486246, z: -0.038228557}
     m_Extent: {x: 0.22393915, y: 0.12000966, z: 0.11210774}
   m_DirtyAABB: 0
---- !u!64 &362104153394694135
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362104153394694136}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1911799151899089756, guid: b341d09cc57a4e44db23e6204eb93bb6, type: 3}
 --- !u!33 &362104153394694132
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1556,7 +1541,6 @@ GameObject:
   m_Component:
   - component: {fileID: 423440253138755836}
   - component: {fileID: 5297915997815009428}
-  - component: {fileID: 5297915997815009427}
   - component: {fileID: 5297915997815009424}
   - component: {fileID: 5297915997815009425}
   - component: {fileID: 5297915997815009430}
@@ -1684,20 +1668,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.372378, y: 1.348614, z: -0.038151156}
     m_Extent: {x: 0.22392696, y: 0.120663166, z: 0.1121666}
   m_DirtyAABB: 0
---- !u!64 &5297915997815009427
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962648203886458755}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1691176538817941287, guid: b341d09cc57a4e44db23e6204eb93bb6, type: 3}
 --- !u!33 &5297915997815009424
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4189,9 +4159,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 3
+  slowdownDistance: 4
   pickNextWaypointDist: 2
-  endReachedDistance: 2
+  endReachedDistance: 3
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0

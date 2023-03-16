@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyBodyPart : MonoBehaviour
 {
     private EnemyBehaviour _enemyBehaviour;
-    [SerializeField] private LayerMask _playerWeapon;
 
     [Header("Function")]
     [SerializeField] private bool _doIKillInstantly;
@@ -19,15 +18,8 @@ public class EnemyBodyPart : MonoBehaviour
     private void OnCollisionEnter(Collision other) 
     {
         Debug.Log(other.gameObject.name);
-        // if(other.gameObject.TryGetComponent<WeaponBehaviour>(out WeaponBehaviour weaponBehaviour))
-        // {
-        //     Debug.Log("Gat");
-        // }
-        //if(other.gameObject.CompareTag("Player"))
-        if(other.gameObject.name.Equals("Cube"))
-        {
-            Debug.Log("CUbe");
-        }   
+
+        if(other.gameObject.CompareTag("Player")) 
         {
             //GetComponent<MeshCollider>().enabled = false;
             _enemyBehaviour.BodyPartLost(_doIKillInstantly, _myBleedOutStrength);
