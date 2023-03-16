@@ -21,7 +21,7 @@ TagManager:
   - EnemyColliderLayer
   - EnemyTriggerLayer
   - EnemyWeapon
-  - 
+  - Block
   - 
   - 
   - FloorLayer
