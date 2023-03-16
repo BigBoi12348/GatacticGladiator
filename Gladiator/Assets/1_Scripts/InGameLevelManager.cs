@@ -80,12 +80,12 @@ public class InGameLevelManager : MonoBehaviour
     
     public void EnemyHasDied()
     {
+        Debug.Log("Enemy died");
         _totalEnemiesCounter--;
         uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
 
-        if(_totalEnemiesCounter <= 0)
+        if(_totalEnemiesCounter == 0)
         {
-            Debug.Log("GameEndSetUp");
             GameEvents.gameEndSetUp?.Invoke();
         }
     }

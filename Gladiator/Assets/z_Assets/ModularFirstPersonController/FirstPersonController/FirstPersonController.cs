@@ -132,6 +132,29 @@ public class FirstPersonController : MonoBehaviour
     private float timer = 0;
 
     #endregion
+    
+    #region Abilites
+    [Header("Dashing")]
+    // public Transform Orientation;
+    // public Transform playerCam;
+    // private PlayerMovementDashing pm;
+    // public float dashForce;
+    // public float dashUpwardForce;
+    // public float dashDuration;
+    // public KeyCode dashKey;
+    // public float dashCd;
+    // private float dashCdTimer;
+    [SerializeField] private float dashDistance = 5f;
+    [SerializeField] private float dashDuration = 0.5f;
+    [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private KeyCode dashKey = KeyCode.Space;
+
+    private bool isDashing = false;
+    private Vector3 dashStartPosition;
+    private float dashTimer = 0f;
+    private float dashCooldownTimer = 0f;
+
+    #endregion
 
     #region Player Animations
     [Header("Animation Variables")]
@@ -165,6 +188,7 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
+        //pm = GetComponent<PlayerMovementDashing>();
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -231,8 +255,43 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    // private void Dash()
+    // {
+    //     Vector3 forceToApply = Orientation.forward * dashForce + Orientation.up * dashUpwardForce;
+    //     rb.AddForce(forceToApply, ForceMode.Impulse);
+
+    //     Invoke(nameof(ResetDash), dashDuration);
+    // }
+    private Vector3 GetDashDirection()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        if (direction.magnitude == 0)
+        {
+            direction = transform.forward;
+        }
+        return direction;
+    }
+
     private void Update()
     {
+        if (dashCooldownTimer > 0)
+        {
+            dashCooldownTimer -= Time.deltaTime;
+        }
+        else
+        {
+            if (Input.GetKeyDown(dashKey) && !isDashing)
+            {
+                isDashing = true;
+                dashStartPosition = transform.position;
+                dashTimer = dashDuration;
+                rb.velocity = Vector3.zero;
+            }
+        }
+    
+
         #region Attack
 
         if(_playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && _playerAnim.GetCurrentAnimatorStateInfo(0).IsName("LeftSlice"))
@@ -456,6 +515,24 @@ public class FirstPersonController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isDashing)
+        {
+            if (dashTimer > 0)
+            {
+                float distance = Vector3.Distance(dashStartPosition, transform.position);
+                if (distance < dashDistance)
+                {
+                    rb.AddForce(transform.forward * (dashDistance / dashDuration), ForceMode.Impulse);
+                }
+                dashTimer -= Time.deltaTime;
+            }
+            else
+            {
+                isDashing = false;
+                dashCooldownTimer = dashCooldown;
+            }
+        }
+
         #region Movement
 
         if (playerCanMove)
@@ -617,7 +694,6 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 }
-
 
 
 // Custom Editor

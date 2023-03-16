@@ -6,11 +6,12 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth{get; private set;}
+    bool dead;
 
     private void Awake() 
     {
+        dead = false;
         currentHealth = maxHealth;
-        //TakeDamage(20);
     }
 
     private void OnCollisionEnter(Collision other) 
@@ -24,9 +25,11 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        if(currentHealth <= 0)
+        if(currentHealth <= 0 && !dead)
         {
+            dead = true;
             GameEvents.gameEndSetUp?.Invoke();
+            Destroy(this);
         }
     }
 }

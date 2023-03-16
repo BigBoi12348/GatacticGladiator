@@ -8315,7 +8315,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29172
+  m_Name: pb_Mesh100340
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18302,7 +18302,7 @@ MonoBehaviour:
   enableJump: 1
   jumpKey: 32
   jumpPower: 4.4
-  enableCrouch: 1
+  enableCrouch: 0
   holdToCrouch: 1
   crouchKey: 306
   crouchHeight: 0.75
@@ -18311,6 +18311,10 @@ MonoBehaviour:
   joint: {fileID: 4459864849673019604}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
+  dashDistance: 3
+  dashDuration: 0.25
+  dashCooldown: 1
+  dashKey: 101
   _playerAnim: {fileID: 2659847365957046793}
   _numOfClicks: 0
   lastClickedTime: 0
@@ -18393,7 +18397,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4459864850776571074}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15, y: 1.79, z: 2}
   m_LocalScale: {x: 1, y: 1.44, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18401,7 +18405,7 @@ Transform:
   - {fileID: 4459864849673019604}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4459864850776571087
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19296,7 +19300,7 @@ BoxCollider:
   m_GameObject: {fileID: 382034369050532247}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.001021959, y: 0.00053914817, z: 0.0064103594}
   m_Center: {x: -0.00009205599, y: -0.00003477989, z: 0.0017015581}
