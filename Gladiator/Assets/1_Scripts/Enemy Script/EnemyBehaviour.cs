@@ -37,6 +37,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Awake() 
     {
+        _bodyPartMissing = false;
         foreach (var enemyBodyPart in enemyBodyParts)
         {
             enemyBodyPart.Init(this);
@@ -120,6 +121,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Death()
     {
+        Debug.Log("death");
         _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
