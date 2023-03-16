@@ -128,7 +128,10 @@ public class EnemyBehaviour : MonoBehaviour
         _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
-        _enemyWeaponBehaviour.enabled = false;
+        if(_enemyWeaponBehaviour != null)
+        {
+            _enemyWeaponBehaviour.enabled = false;
+        }
         if(_enemyAnim != null)
         {
             _enemyAnim.enabled = false;
