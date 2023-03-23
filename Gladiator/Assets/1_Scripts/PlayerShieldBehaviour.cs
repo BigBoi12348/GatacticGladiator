@@ -20,6 +20,8 @@ public class PlayerShieldBehaviour : MonoBehaviour
     [SerializeField] private Slider _energyShieldSlider;
     [SerializeField] private Slider _otherEnergyShieldSlider;
 
+    private bool _secondLock;
+
     public void Init(Blocking tempBlocking)
     {
         blocking = tempBlocking;
@@ -47,32 +49,57 @@ public class PlayerShieldBehaviour : MonoBehaviour
 
     private void Update() 
     {
-        if(_isBlocking)
+        if (_isBlocking)
         {
-            if(_currentEnergy > 0)
+            _secondLock = false;
+            if (_currentEnergy > 0)
             {
                 _currentEnergy -= Time.deltaTime*_decreaseRate;
             }
             else
             {
-                _isBlocking = false;
+                StartCoroutine(blocking.AllowShieldBlockAgain());
             }
         }
-        else if (!_shieldLocked)
-        {
-            _currentEnergy = MaxTotalEnergy;
-            StartCoroutine(blocking.AllowShieldBlockAgain());
-            _shieldLocked = true;
-        }
-        else if(_currentEnergy < MaxTotalEnergy)
+        else if (_currentEnergy < MaxTotalEnergy)
         {
             _currentEnergy += Time.deltaTime*_chargeRate;
         }
-        else if(_currentEnergy > 10)
+        else if (_currentEnergy >= MaxTotalEnergy && !_secondLock)
         {
-            _shieldLocked = false;
+            _secondLock = true;
+            _currentEnergy = MaxTotalEnergy;
+            StartCoroutine(blocking.AllowShieldBlockAgain());
         }
+
         _energyShieldSlider.value = _currentEnergy;
         _otherEnergyShieldSlider.value = _currentEnergy;
+        //if(_isBlocking)
+        //{
+        //    if(_currentEnergy > 0)
+        //    {
+        //        _currentEnergy -= Time.deltaTime*_decreaseRate;
+        //    }
+        //    else
+        //    {
+        //        _isBlocking = false;
+        //    }
+        //}
+        //else if (!_shieldLocked)
+        //{
+        //    _currentEnergy = MaxTotalEnergy;
+        //    StartCoroutine(blocking.AllowShieldBlockAgain());
+        //    _shieldLocked = true;
+        //}
+        //else if(_currentEnergy < MaxTotalEnergy)
+        //{
+        //    _currentEnergy += Time.deltaTime*_chargeRate;
+        //}
+        //else if(_currentEnergy > 10)
+        //{
+        //    _shieldLocked = false;
+        //}
+        //_energyShieldSlider.value = _currentEnergy;
+        //_otherEnergyShieldSlider.value = _currentEnergy;
     }
 }
