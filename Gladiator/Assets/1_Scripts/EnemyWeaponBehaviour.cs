@@ -6,6 +6,7 @@ public class EnemyWeaponBehaviour : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Collider _weaponCollider;
+    [SerializeField] private int WeaponDamage;
     bool alreadyHit;
 
     private void Start() 
@@ -21,7 +22,7 @@ public class EnemyWeaponBehaviour : MonoBehaviour
             if(other.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
             {
                 alreadyHit = true;
-                playerHealth.TakeDamage(15);
+                playerHealth.TakeDamage(WeaponDamage);
                 StartCoroutine(HitDelay());
             }
         }

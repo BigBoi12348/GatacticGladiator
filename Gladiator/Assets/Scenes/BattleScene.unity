@@ -8687,6 +8687,9 @@ MonoBehaviour:
     StartSpawnWave: 1
   - EnemyObj: {fileID: 7333921120246751172, guid: 5065562aca3a71e449ba067879fbec4c, type: 3}
     DifficultyRank: 2
+    StartSpawnWave: 1
+  - EnemyObj: {fileID: 7333921120246751172, guid: 780c49327d2564a449c56049774d2344, type: 3}
+    DifficultyRank: 2
     StartSpawnWave: 4
 --- !u!1 &685920155
 GameObject:
@@ -10802,7 +10805,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31138
+  m_Name: pb_Mesh29304
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
