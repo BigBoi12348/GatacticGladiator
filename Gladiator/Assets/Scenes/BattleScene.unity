@@ -266,6 +266,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2599516272935602426, guid: dc161b13c33d7fc47865a00badaf83b2, type: 3}
   m_PrefabInstance: {fileID: 74459693}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &88178244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6233561530155481283, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+  m_PrefabInstance: {fileID: 4242006190778469840}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &91177596
 GameObject:
   m_ObjectHideFlags: 0
@@ -10821,7 +10832,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31146
+  m_Name: pb_Mesh29342
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23269,6 +23280,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6992827545570943678, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992827545570943678, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729397753050846832, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729397753050846832, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729397753050846832, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
 --- !u!4 &4246522515808869822
@@ -24327,6 +24358,8 @@ MonoBehaviour:
   unBlocked: {fileID: 6177532775690283063}
   Blocked: {fileID: 965101125}
   playerCollider: {fileID: 4459864850776571085}
+  slider: {fileID: 88178244}
+  decreaseSpeed: 0.2
 --- !u!224 &4459864851010196220
 RectTransform:
   m_ObjectHideFlags: 0

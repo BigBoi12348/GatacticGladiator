@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Blocking : MonoBehaviour
 {
     public GameObject unBlocked;
     public GameObject Blocked;
     public Collider playerCollider;
+    public Slider slider;
+    public float decreaseSpeed = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,18 @@ public class Blocking : MonoBehaviour
             playerCollider.enabled = true;
         }
 
+        if (Input.GetMouseButton(1))
+        {
+            slider.value -= decreaseSpeed * Time.deltaTime;
+        }
+        if(slider.value <= 0)
+        {
+            Blocked.SetActive(false);
+            unBlocked.SetActive(false);
+            playerCollider.enabled = true;
+        }
+    
 
-    }
+
+}
 }
