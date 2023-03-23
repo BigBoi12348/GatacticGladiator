@@ -58,16 +58,20 @@ public class PlayerShieldBehaviour : MonoBehaviour
                 _isBlocking = false;
             }
         }
+        else if (!_shieldLocked)
+        {
+            _currentEnergy = MaxTotalEnergy;
+            StartCoroutine(blocking.AllowShieldBlockAgain());
+            _shieldLocked = true;
+        }
         else if(_currentEnergy < MaxTotalEnergy)
         {
             _currentEnergy += Time.deltaTime*_chargeRate;
         }
-        else if(_shieldLocked)
+        else if(_currentEnergy > 10)
         {
-            _currentEnergy = MaxTotalEnergy;
-            StartCoroutine(blocking.AllowShieldBlockAgain());
+            _shieldLocked = false;
         }
-
         _energyShieldSlider.value = _currentEnergy;
         _otherEnergyShieldSlider.value = _currentEnergy;
     }

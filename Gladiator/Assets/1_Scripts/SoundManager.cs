@@ -62,9 +62,14 @@ public class SoundManager : MonoBehaviour
             
             if(sound == Sound.PlayerAttack)
             {
+                audioSource.volume = (0.5f);
                 audioSource.pitch = Random.Range(0.95f, 1.1f);
-                audioSource.panStereo = Random.Range(0.9f, 1.1f); 
+                //audioSource.panStereo = Random.Range(0.9f, 1.1f); 
                 audioSource.reverbZoneMix = Random.Range(0.9f, 1.05f);
+            }
+            if(sound == Sound.DashEffect)
+            {
+                audioSource.volume = (0.2f);
             }
             audioSource.Play();
 

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class WeaponSound : MonoBehaviour
 {
+    public Transform player;
     public void SwordSingSoundEffect()
     {
-        SoundManager.Instance.PlaySound3D(SoundManager.Sound.PlayerAttack, transform.position);
+        SoundManager.Instance.PlaySound3D(SoundManager.Sound.PlayerAttack, player.position);
     }
 }

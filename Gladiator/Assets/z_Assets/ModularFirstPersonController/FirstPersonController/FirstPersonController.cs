@@ -270,7 +270,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        if(PlayerUpgradesData.AbilityAttribute >= 0)
+        if(PlayerUpgradesData.AbilityAttribute >= 1)
         {
             if (dashCooldownTimer > 0)
             {
