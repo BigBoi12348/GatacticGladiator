@@ -144,7 +144,7 @@ public class FirstPersonController : MonoBehaviour
     // public KeyCode dashKey;
     // public float dashCd;
     // private float dashCdTimer;
-    [SerializeField] private float dashDistance = 5f;
+    [SerializeField] private float dashForce = 5f;
     [SerializeField] private float dashDuration = 0.5f;
     [SerializeField] private float dashCooldown = 1f;
     [SerializeField] private KeyCode dashKey = KeyCode.Space;
@@ -262,21 +262,25 @@ public class FirstPersonController : MonoBehaviour
 
     //     Invoke(nameof(ResetDash), dashDuration);
     // }
-    private Vector3 GetDashDirection()
+    private Vector3 GetDashDirection(Transform forwardT)
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-        if (direction.magnitude == 0)
+
+        Vector3 direction = new Vector3();
+        direction = forwardT.forward * vertical + forwardT.right * horizontal;
+
+        if (horizontal == 0 && vertical == 0)
         {
-            direction = transform.forward;
+            Debug.Log("NO keys");
+            direction = forwardT.forward;
         }
-        return direction;
+        return direction.normalized;
     }
 
     private void Update()
     {
-        if(PlayerUpgradesData.AbilityAttribute == 1)
+        if(PlayerUpgradesData.AbilityAttribute >= 0)
         {
             if (dashCooldownTimer > 0)
             {
@@ -286,10 +290,12 @@ public class FirstPersonController : MonoBehaviour
             {
                 if (Input.GetKeyDown(dashKey) && !isDashing)
                 {
+                    Debug.Log("cap");
                     isDashing = true;
-                    dashStartPosition = transform.position;
+                    //dashStartPosition = transform.position;
                     dashTimer = dashDuration;
                     rb.velocity = Vector3.zero;
+                    Dash();
                 }
             }
         }
@@ -315,24 +321,6 @@ public class FirstPersonController : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             OnClick();
-            // switch (_basicNextCounter)
-            // {
-            //     case 0:
-            //         Debug.Log("Reaching");
-            //         _playerAnim.SetBool("LeftSlice", true);
-            //         _basicNextCounter++;
-            //         _nextAnimTimeBuffer = 0;
-            //         break;
-            //     case 1:
-            //         _playerAnim.SetBool("RightSlice", true);
-            //         _nextAnimTimeBuffer = 0;
-            //         _basicNextCounter = 0;
-            //         break;
-            //     // case 2:
-            //     //     _basicNextCounter = 0;
-            //     //     break;
-            // }
-            //_playerAnim.SetBool("TryingToHit", false);
         }
 
         if(Input.GetMouseButtonDown(1))
@@ -340,18 +328,6 @@ public class FirstPersonController : MonoBehaviour
             
         }
 
-        // if(_basicNextCounter != 0)
-        // {
-        //     if(_nextAnimTimeBuffer >= _nextAnimTotalTimeBuffer)
-        //     {
-        //         _basicNextCounter = 0;
-        //         _playerAnim.SetBool("TryingToHit", false);
-        //     }
-        //     else
-        //     {
-        //         _nextAnimTimeBuffer += Time.deltaTime;
-        //     }
-        // }
         #endregion
 
         #region Camera
@@ -516,17 +492,27 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    private void Dash()
+    {
+        Transform forwardT = transform;
+        Vector3 direction = GetDashDirection(forwardT);
+        Vector3 forceToApply = direction * dashForce;
+
+        rb.AddForce(forceToApply, ForceMode.Impulse);
+    }
+
     void FixedUpdate()
     {
         if (isDashing)
         {
             if (dashTimer > 0)
             {
-                float distance = Vector3.Distance(dashStartPosition, transform.position);
-                if (distance < dashDistance)
-                {
-                    rb.AddForce(transform.forward * (dashDistance / dashDuration), ForceMode.Impulse);
-                }
+                //float distance = Vector3.Distance(GetDashDirection(), transform.position);
+
+                // Vector3 forceToApply = _orientation.forward * dashForce;
+
+                // rb.AddForce(forceToApply, ForceMode.Impulse);
+                
                 dashTimer -= Time.deltaTime;
             }
             else

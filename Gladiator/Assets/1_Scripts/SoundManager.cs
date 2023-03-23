@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public enum Sound
     {
-        Win, Lose, UIClickEnter, UIClickExit
+        PlayerAttack, Lose, UIClickEnter, UIClickExit
     }
 
     public static SoundManager Instance;
@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour
 
 
     [Header("UI Sounds")]
-    public SoundAudioClip[] UiSounds;
+    public SoundAudioClip[] Sounds;
 
     private void Awake() 
     {
@@ -97,7 +97,7 @@ public class SoundManager : MonoBehaviour
 
     private AudioClip GetAudioClip(Sound sound)
     {
-        foreach (SoundAudioClip soundAudioClip in UiSounds)
+        foreach (SoundAudioClip soundAudioClip in Sounds)
         {
             if(soundAudioClip.SoundType == sound)
             {
