@@ -16,6 +16,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float _totalBleedOut;
     [SerializeField] private float _bleedOutStrength;
     [SerializeField] private float _bleedOutModifier;
+    [SerializeField] private GameObject _deathSymbol;
     private bool _alreadyDead;
     
 
@@ -128,6 +129,7 @@ public class EnemyBehaviour : MonoBehaviour
         _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
+        _deathSymbol.SetActive(true);
         if(_enemyWeaponBehaviour != null)
         {
             _enemyWeaponBehaviour.enabled = false;
