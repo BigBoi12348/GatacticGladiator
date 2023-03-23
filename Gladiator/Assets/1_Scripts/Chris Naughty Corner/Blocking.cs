@@ -5,45 +5,59 @@ using UnityEngine.UI;
 
 public class Blocking : MonoBehaviour
 {
-    public GameObject unBlocked;
-    public GameObject Blocked;
-    public Collider playerCollider;
-    public Slider slider;
-    public float decreaseSpeed = 1f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButton(1))
-        {
-            unBlocked.SetActive(false);
-            Blocked.SetActive(true);
-            playerCollider.enabled = false;
-        }
-        else
-        {
-            unBlocked.SetActive(true);
-            Blocked.SetActive(false);
-            playerCollider.enabled = true;
-        }
-
-        if (Input.GetMouseButton(1))
-        {
-            slider.value -= decreaseSpeed * Time.deltaTime;
-        }
-        if(slider.value <= 0)
-        {
-            Blocked.SetActive(false);
-            unBlocked.SetActive(false);
-            playerCollider.enabled = true;
-        }
+    [Header("References")]
+    [SerializeField] private PlayerShieldBehaviour playerShieldBehaviour;
     
 
+    [Header("Chris Art")]
+    public Transform shieldTransform;
+    //public MeshRenderer UnBlockedMesh;
+    public GameObject UnBlockedBattery;
+    //public MeshRenderer BlockedMesh;
+    public GameObject BlockedBattery;
+    public Collider playerCollider;
 
-}
+
+    [Header("Control Varaibles")]
+    public bool IAmBlocking;
+    private bool ShieldLock;
+
+    void Start()
+    {
+        playerShieldBehaviour.Init(this);
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButton(1) && !ShieldLock)
+        {
+            //UnBlockedMesh.enabled = false;
+            UnBlockedBattery.SetActive(false);
+            BlockedBattery.SetActive(true);
+            //BlockedMesh.enabled = true;
+            playerCollider.enabled = false;
+            playerShieldBehaviour._isBlocking = true;
+        }
+        else
+        {   
+            //UnBlockedMesh.enabled = true;
+            UnBlockedBattery.SetActive(true);
+            //BlockedMesh.enabled = true;
+            BlockedBattery.SetActive(false);
+            playerCollider.enabled = true;
+            playerShieldBehaviour._isBlocking = false;
+        }
+
+        // if(IAmBlocking)
+        // {
+
+        // }
+    }
+
+    public IEnumerator AllowShieldBlockAgain()
+    {
+        ShieldLock = true;
+        yield return new WaitForSeconds(2f);
+        ShieldLock = false;
+    }
 }

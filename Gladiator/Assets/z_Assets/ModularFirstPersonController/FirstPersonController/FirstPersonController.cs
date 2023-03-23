@@ -135,15 +135,6 @@ public class FirstPersonController : MonoBehaviour
     
     #region Abilites
     [Header("Dashing")]
-    // public Transform Orientation;
-    // public Transform playerCam;
-    // private PlayerMovementDashing pm;
-    // public float dashForce;
-    // public float dashUpwardForce;
-    // public float dashDuration;
-    // public KeyCode dashKey;
-    // public float dashCd;
-    // private float dashCdTimer;
     [SerializeField] private float dashForce = 5f;
     [SerializeField] private float dashDuration = 0.5f;
     [SerializeField] private float dashCooldown = 1f;
@@ -246,7 +237,7 @@ public class FirstPersonController : MonoBehaviour
         }
 
         _numOfClicks = Mathf.Clamp(_numOfClicks, 0, 2);
-
+    
         if(_numOfClicks >= 2 && _playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && _playerAnim.GetCurrentAnimatorStateInfo(0).IsName("LeftSlice"))
         {
             Debug.Log("Right Slice");
@@ -272,7 +263,6 @@ public class FirstPersonController : MonoBehaviour
 
         if (horizontal == 0 && vertical == 0)
         {
-            Debug.Log("NO keys");
             direction = forwardT.forward;
         }
         return direction.normalized;
@@ -494,6 +484,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Dash()
     {
+        SoundManager.Instance.PlaySound3D(SoundManager.Sound.DashEffect, transform.position);
         Transform forwardT = transform;
         Vector3 direction = GetDashDirection(forwardT);
         Vector3 forceToApply = direction * dashForce;

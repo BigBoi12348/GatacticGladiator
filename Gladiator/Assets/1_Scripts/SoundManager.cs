@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public enum Sound
     {
-        PlayerAttack, Lose, UIClickEnter, UIClickExit
+        PlayerAttack, DashEffect, Lose, UIClickEnter, UIClickExit
     }
 
     public static SoundManager Instance;
@@ -15,7 +15,7 @@ public class SoundManager : MonoBehaviour
     private static AudioSource oneShotAudioSource;
 
 
-    [Header("UI Sounds")]
+    [Header("Sounds")]
     public SoundAudioClip[] Sounds;
 
     private void Awake() 
@@ -34,7 +34,6 @@ public class SoundManager : MonoBehaviour
 
     private static void Init()
     {
-        
         soundTimerDictionary = new Dictionary<Sound, float>();
         //soundTimerDictionary[Sound.play] = 0f;
     }
@@ -56,11 +55,17 @@ public class SoundManager : MonoBehaviour
     {
         if(CanPlaySound(sound))
         {
-            UnityEngine.GameObject soundGameObject = new UnityEngine.GameObject("Sound");
+            GameObject soundGameObject = new GameObject("Sound");
             soundGameObject.transform.position = position;
             AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
             audioSource.clip = GetAudioClip(sound);
             
+            if(sound == Sound.PlayerAttack)
+            {
+                audioSource.pitch = Random.Range(0.95f, 1.1f);
+                audioSource.panStereo = Random.Range(0.9f, 1.1f); 
+                audioSource.reverbZoneMix = Random.Range(0.9f, 1.05f);
+            }
             audioSource.Play();
 
             Destroy(soundGameObject, audioSource.clip.length);
