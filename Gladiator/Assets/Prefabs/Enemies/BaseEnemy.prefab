@@ -7763,7 +7763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponCollider: {fileID: 9022991666347894215}
-  WeaponDamage: 0
+  WeaponDamage: 15
 --- !u!4 &730681385641298897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 93f572a20801ce24997c13c688c03b03, type: 3}

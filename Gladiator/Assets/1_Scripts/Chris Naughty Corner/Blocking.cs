@@ -6,6 +6,7 @@ public class Blocking : MonoBehaviour
 {
     public GameObject unBlocked;
     public GameObject Blocked;
+    public Collider playerCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,15 @@ public class Blocking : MonoBehaviour
         {
             unBlocked.SetActive(false);
             Blocked.SetActive(true);
+            playerCollider.enabled = false;
         }
         else
         {
             unBlocked.SetActive(true);
             Blocked.SetActive(false);
+            playerCollider.enabled = true;
         }
+
+
     }
 }
