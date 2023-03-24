@@ -6169,7 +6169,7 @@ MonoBehaviour:
   _enemyAnim: {fileID: 4065816011520564996}
   _totalAttackCoolDown: 5
   _attackCoolDown: 0
-  _enemyWeaponBehaviour: {fileID: 4791411402509982439}
+  _enemyWeaponBehaviour: {fileID: 3176214322861911717}
   _aIDestinationSetter: {fileID: 1764986156352767934}
   _aIPath: {fileID: 2740254262578184790}
   _groundDetectCollider: {fileID: 7497232879670771251}
@@ -6632,7 +6632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponCollider: {fileID: 3358499928394938349}
-  WeaponDamage: 0
+  WeaponDamage: 25
 --- !u!1 &7691104867465851266
 GameObject:
   m_ObjectHideFlags: 0

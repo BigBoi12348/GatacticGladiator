@@ -8679,7 +8679,7 @@ MonoBehaviour:
     DifficultyRank: 2
     StartSpawnWave: 2
   - EnemyObj: {fileID: 7333921120246751172, guid: 780c49327d2564a449c56049774d2344, type: 3}
-    DifficultyRank: 2
+    DifficultyRank: 3
     StartSpawnWave: 4
 --- !u!1 &682340829
 GameObject:
