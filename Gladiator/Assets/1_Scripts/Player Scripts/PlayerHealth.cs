@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
         
 
     }
-    private void OnTriggerStay(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if (other.name.Equals("PoisonFogLevel"))
         {
