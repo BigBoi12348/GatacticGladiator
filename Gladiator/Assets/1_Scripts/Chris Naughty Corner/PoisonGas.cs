@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class PoisonGas : MonoBehaviour
 {
-    public float damageAmount = 10f;
+    //public float damageAmount = 10.0f; // amount of damage per second
+    //public float damageInterval = 1.0f; // interval in seconds between damage ticks
 
-    private void OnParticleCollision(GameObject other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                int damageInt = Mathf.RoundToInt(damageAmount);
-                playerHealth.TakeDamage(damageInt);
-                Debug.Log("Player took " + damageAmount + " damage from particles.");
-            }
-        }
-    }
+    //private float timeSinceLastDamage = 0.0f;
+
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        timeSinceLastDamage += Time.deltaTime;
+    //        if (timeSinceLastDamage >= damageInterval)
+    //        {
+    //            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+    //            if (playerHealth != null)
+    //            {
+    //                playerHealth.TakeDamage(damageAmount);
+    //            }
+    //            timeSinceLastDamage -= damageInterval;
+    //        }
+    //    }
+    //}
 }
