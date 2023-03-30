@@ -813,18 +813,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 396181526855389898, guid: e6b46973e08eab446a5c2db0f4835212, type: 3}
   m_PrefabInstance: {fileID: 942116384079984519}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &312549794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312549791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341253c33f60ff14aa3be6f3bc0f7c46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &312549795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -836,7 +824,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 200, y: 1, z: 200}
+  m_Size: {x: 200, y: 5, z: 200}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &315170076
 GameObject:
@@ -7551,7 +7539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967078966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.00235}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00235}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.007}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7582,7 +7570,7 @@ BoxCollider:
   m_GameObject: {fileID: 1967078966}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.9999999, y: 1, z: 1.1855679}
   m_Center: {x: 0.0000000072926225, y: -0.00000017876641, z: 0.09278267}
@@ -9179,6 +9167,10 @@ PrefabInstance:
     - target: {fileID: 2391808541691971949, guid: e6b46973e08eab446a5c2db0f4835212, type: 3}
       propertyPath: TrailModule.colorOverLifetime.maxColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109522443398116597, guid: e6b46973e08eab446a5c2db0f4835212, type: 3}
+      propertyPath: m_Name
+      value: PoisonParticleSystem
       objectReference: {fileID: 0}
     - target: {fileID: 5885281729685496909, guid: e6b46973e08eab446a5c2db0f4835212, type: 3}
       propertyPath: m_Materials.Array.size
@@ -13735,7 +13727,6 @@ GameObject:
   - component: {fileID: 4459864850776571088}
   - component: {fileID: 4459864850776571090}
   - component: {fileID: 4459864850776571091}
-  - component: {fileID: 4459864850776571092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -13873,7 +13864,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4459864850776571074}
   m_Material: {fileID: 13400000, guid: 307427d673d210345bb50677bfffc7e8, type: 2}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -13930,6 +13921,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  poisin: 5
+  damageAmount: 10
+  attackInterval: 3
 --- !u!114 &4459864850776571090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13966,20 +13960,6 @@ MonoBehaviour:
   _isBlocking: 0
   _energyShieldSlider: {fileID: 4242006190778469841}
   _otherEnergyShieldSlider: {fileID: 1861486184}
---- !u!136 &4459864850776571092
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4459864850776571074}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.9999999
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!224 &4459864851010196220
 RectTransform:
   m_ObjectHideFlags: 0
