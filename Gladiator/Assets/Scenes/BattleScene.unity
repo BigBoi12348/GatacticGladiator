@@ -2012,6 +2012,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475721843}
   m_CullTransparentMesh: 1
+--- !u!1 &481559588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 481559589}
+  m_Layer: 0
+  m_Name: JumpPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &481559589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481559588}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.967, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4459864850776571086}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &487219618
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,7 +2279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d327cd6cfb3516d49ad96107a8b6d8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSensitivity: 1
   _timeSwordSliceDelay: 0
   _canSlice: 1
 --- !u!65 &514161079
@@ -2595,6 +2625,10 @@ PrefabInstance:
     - target: {fileID: 8784473259360314027, guid: 5d4a7e831127e654287b3fc1e36af5d7, type: 3}
       propertyPath: m_Name
       value: PoisonFogLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784473259360314027, guid: 5d4a7e831127e654287b3fc1e36af5d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d4a7e831127e654287b3fc1e36af5d7, type: 3}
@@ -3226,13 +3260,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 682340830}
-  m_Layer: 16
-  m_Name: JumpPoint
+  - component: {fileID: 682340831}
+  m_Layer: 6
+  m_Name: PlayerGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &682340830
 Transform:
   m_ObjectHideFlags: 0
@@ -3241,13 +3276,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682340829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.022, z: 0}
+  m_LocalPosition: {x: 0, y: -1.062, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4459864850776571086}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &682340831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682340829}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.060388174, z: 1}
+  m_Center: {x: 0, y: 0.018959967, z: 0}
 --- !u!1 &685920155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,7 +4566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d327cd6cfb3516d49ad96107a8b6d8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSensitivity: 1
   _timeSwordSliceDelay: 0
   _canSlice: 1
 --- !u!23 &816654530
@@ -5443,7 +5490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &965101126
 Transform:
   m_ObjectHideFlags: 0
@@ -9929,11 +9976,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4197886902432779938, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4197886902432779938, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4242006190357212298, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_Name
@@ -10334,7 +10381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d327cd6cfb3516d49ad96107a8b6d8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSensitivity: 1
   _timeSwordSliceDelay: 0
   _canSlice: 1
 --- !u!65 &1967078969
@@ -11567,7 +11613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &219328566044877777
 Transform:
   m_ObjectHideFlags: 0
@@ -14192,7 +14238,7 @@ MonoBehaviour:
   _blade: {fileID: 2669180456348947014, guid: 48925ef9ec4bb4f4badda6f1c635a14e, type: 3}
   _entityContainer: {fileID: 167330598}
   _attackPoint: {fileID: 551302862}
-  _cam: {fileID: 4411907364852930429}
+  _cam: {fileID: 4459864849487795793}
 --- !u!4 &2685244979643172155
 Transform:
   m_ObjectHideFlags: 0
@@ -14865,7 +14911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d327cd6cfb3516d49ad96107a8b6d8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSensitivity: 1
   _timeSwordSliceDelay: 0
   _canSlice: 0
 --- !u!23 &3052785539499929682
@@ -16119,11 +16164,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4197886902432779938, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4197886902432779938, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4242006190357212298, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_Name
@@ -16506,7 +16551,7 @@ GameObject:
   - component: {fileID: 4459864849487795798}
   - component: {fileID: 4459864849487795799}
   - component: {fileID: 4459864849487795800}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -16684,7 +16729,7 @@ GameObject:
   - component: {fileID: 4459864849648989907}
   - component: {fileID: 4459864849648989917}
   - component: {fileID: 4459864849648989906}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: CrosshairAndStamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16771,7 +16816,7 @@ Transform:
   m_Children:
   - {fileID: 4459864849487795793}
   m_Father: {fileID: 4459864850776571086}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4459864849673019605
 GameObject:
@@ -16782,7 +16827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4459864849673019604}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16972,7 +17017,7 @@ MonoBehaviour:
   playerCanMove: 1
   walkSpeed: 5
   maxVelocityChange: 10
-  _jumpPoint: {fileID: 682340830}
+  _jumpPoint: {fileID: 481559589}
   enableSprint: 1
   unlimitedSprint: 1
   sprintKey: 304
@@ -16990,6 +17035,9 @@ MonoBehaviour:
   enableJump: 1
   jumpKey: 32
   jumpPower: 4.4
+  playerGroundlayerMask:
+    serializedVersion: 2
+    m_Bits: 32768
   enableCrouch: 0
   holdToCrouch: 0
   crouchKey: 306
@@ -17090,6 +17138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.44, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 481559589}
   - {fileID: 682340830}
   - {fileID: 4459864849673019604}
   m_Father: {fileID: 0}

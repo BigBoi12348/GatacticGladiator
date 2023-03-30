@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerShieldBehaviour : MonoBehaviour
 {
     private Blocking blocking;
+    
 
     [Header("Energy ")]
     [SerializeField] private float _currentEnergy;

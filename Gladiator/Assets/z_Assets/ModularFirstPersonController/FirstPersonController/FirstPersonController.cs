@@ -102,7 +102,7 @@ public class FirstPersonController : MonoBehaviour
 
     // Internal Variables
     private bool isGrounded = false;
-
+    [SerializeField] private LayerMask playerGroundlayerMask;
     #endregion
 
     #region Crouch
@@ -594,10 +594,10 @@ public class FirstPersonController : MonoBehaviour
         Vector3 origin = _jumpPoint.position; //new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
         Vector3 direction = _jumpPoint.TransformDirection(Vector3.down);
         float distance = .75f;
+        Debug.DrawRay(origin, direction * distance, Color.red);
 
-        if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
+        if (Physics.Raycast(origin, direction, out RaycastHit hit, distance, playerGroundlayerMask))
         {
-            Debug.DrawRay(origin, direction * distance, Color.red);
 
             isGrounded = true;
         }

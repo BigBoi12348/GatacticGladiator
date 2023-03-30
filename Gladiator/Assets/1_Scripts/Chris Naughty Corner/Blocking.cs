@@ -7,7 +7,8 @@ public class Blocking : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private PlayerShieldBehaviour playerShieldBehaviour;
-    
+    [SerializeField] private PlayerHealth _playerhealth;
+
 
     [Header("Chris Art")]
     public Transform shieldTransform;
@@ -35,7 +36,8 @@ public class Blocking : MonoBehaviour
             UnBlockedBattery.SetActive(false);
             BlockedBattery.SetActive(true);
             //BlockedMesh.enabled = true;
-            playerCollider.enabled = false;
+            //playerCollider.enabled = false;
+            _playerhealth.TakeNoDamage = true;
             playerShieldBehaviour._isBlocking = true;
         }
         else
@@ -44,7 +46,8 @@ public class Blocking : MonoBehaviour
             UnBlockedBattery.SetActive(true);
             //BlockedMesh.enabled = true;
             BlockedBattery.SetActive(false);
-            playerCollider.enabled = true;
+            _playerhealth.TakeNoDamage = false;
+            //playerCollider.enabled = true;
             playerShieldBehaviour._isBlocking = false;
         }
 

@@ -10,10 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public float poisin = 0.1f;
     bool dead;
   
-    public int damageAmount = 10;
-    public float attackInterval = 0.4f;
-
-    private bool canAttack = true;
+    public bool TakeNoDamage;
 
     private void Awake() 
     {
@@ -21,7 +18,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
    
-
     private void OnCollisionEnter(Collision other) 
     {
         if(other.gameObject.CompareTag("EnemyWeapon"))
@@ -35,27 +31,27 @@ public class PlayerHealth : MonoBehaviour
         
 
     }
-    private  void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.name.Equals("PoisonFogLevel"))
         {
 
             //TakeDamage(1);
             PoisonDamage(0.02f);
-            
-
-
         }
     }
    
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0 && !dead)
+        if(!TakeNoDamage)
         {
-            dead = true;
-            GameEvents.gameEndSetUp?.Invoke(false);
-            Destroy(this);
+            currentHealth -= damage;
+            if (currentHealth <= 0 && !dead)
+            {
+                dead = true;
+                GameEvents.gameEndSetUp?.Invoke(false);
+                Destroy(this);
+            }
         }
     }
     public void PoisonDamage(float damage)

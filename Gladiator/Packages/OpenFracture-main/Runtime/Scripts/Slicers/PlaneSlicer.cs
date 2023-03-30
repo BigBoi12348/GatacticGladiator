@@ -6,8 +6,6 @@ using UnityEngine.TestTools;
 [ExcludeFromCoverage]
 public class PlaneSlicer : MonoBehaviour
 {
-    public float RotationSensitivity = 1f;
-
     [SerializeField] private float _timeSwordSliceDelay;
     [SerializeField] private bool _canSlice;
 

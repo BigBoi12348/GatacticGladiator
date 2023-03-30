@@ -83,7 +83,13 @@ public class InGameLevelManager : MonoBehaviour
 
     IEnumerator delayFinishGame(bool didPlayerWin)
     {
+        if(!didPlayerWin)
+        {
+            GameManager.Instance.FreezeGame();
+        }
+
         yield return new WaitForSecondsRealtime(_waveComplete.length);
+
         if(didPlayerWin)
         {
             GameEvents.playerFinsihedGame?.Invoke();

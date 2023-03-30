@@ -18,9 +18,9 @@ public class SwordBladeUpgrade : MonoBehaviour
 
             Rigidbody tempBladeRb = tempBlade.GetComponent<Rigidbody>();
 
-            Vector3 forceToAdd = _cam.transform.forward * 5 + transform.up * 1;
+            Vector3 forceToAdd = _cam.transform.forward * 1;
 
-            tempBladeRb.AddForce(forceToAdd,ForceMode.Impulse);
+            //tempBladeRb.AddForce(forceToAdd,ForceMode.Impulse);
         }
     }
 }
