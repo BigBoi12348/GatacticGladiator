@@ -19667,7 +19667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShieldBehaviour: {fileID: 4459864850776571091}
-  _playerhealth: {fileID: 0}
+  _playerhealth: {fileID: 4459864850776571089}
   shieldTransform: {fileID: 0}
   UnBlockedBattery: {fileID: 1861486185}
   BlockedBattery: {fileID: 965101125}
