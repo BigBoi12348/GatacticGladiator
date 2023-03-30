@@ -40,7 +40,7 @@ public class PlayerManager : MonoBehaviour
                 _playerAnim.speed = 2f;
                 break;
             case 5:
-            
+                _playerAnim.speed = 2f;
                 break;
            
         }

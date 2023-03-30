@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public enum Sound
     {
-        PlayerAttack, DashEffect, Lose, UIClickEnter, UIClickExit
+        PlayerAttack, DashEffect, EnemyDeath, Lose, UIClickEnter, UIClickExit
     }
 
     public static SoundManager Instance;
@@ -68,6 +68,10 @@ public class SoundManager : MonoBehaviour
                 audioSource.reverbZoneMix = Random.Range(0.9f, 1.05f);
             }
             if(sound == Sound.DashEffect)
+            {
+                audioSource.volume = (0.2f);
+            }
+            if(sound == Sound.EnemyDeath)
             {
                 audioSource.volume = (0.2f);
             }
