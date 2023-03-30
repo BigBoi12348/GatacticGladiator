@@ -14,13 +14,13 @@ public class SwordBladeUpgrade : MonoBehaviour
     {
         if(PlayerUpgradesData.AttackAttribute >= 0)
         {
-            GameObject tempBlade = Instantiate(_blade, _attackPoint.position, _cam.rotation, _entityContainer);
+            GameObject tempBlade = Instantiate(_blade, _attackPoint.position, _cam.rotation);
 
             Rigidbody tempBladeRb = tempBlade.GetComponent<Rigidbody>();
 
-            Vector3 forceToAdd = _cam.transform.forward * 1;
+            Vector3 forceToAdd = _cam.transform.forward * 20f;
 
-            //tempBladeRb.AddForce(forceToAdd,ForceMode.Impulse);
+            tempBladeRb.AddForce(forceToAdd,ForceMode.Impulse);
         }
     }
 }

@@ -139,6 +139,7 @@ public class EnemyBehaviour : MonoBehaviour
             _enemyAnim.enabled = false;
         }
         InGameLevelManager.Instance.EnemyHasDied();
+        SoundManager.Instance.PlaySound3D(SoundManager.Sound.EnemyDeath, transform.position);
         Destroy(this);
     }
 }
