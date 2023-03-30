@@ -1031,6 +1031,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSensitivity: 0.5
+  _timeSwordSliceDelay: 0
+  _canSlice: 0
 --- !u!65 &834818196
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1533,6 +1535,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSensitivity: 0.5
+  _timeSwordSliceDelay: 0
+  _canSlice: 0
 --- !u!65 &949256251
 BoxCollider:
   m_ObjectHideFlags: 0
