@@ -20,6 +20,11 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(20);
         }
+        //if (other.gameObject.CompareTag("Poison"))
+        //{
+        //    TakeDamage(1);
+        //}
+
     }
 
     public void TakeDamage(int damage)

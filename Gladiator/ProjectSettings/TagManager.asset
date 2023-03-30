@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - EnemyWeapon
   - PlayerAnimator
+  - Poison
   layers:
   - Default
   - TransparentFX
