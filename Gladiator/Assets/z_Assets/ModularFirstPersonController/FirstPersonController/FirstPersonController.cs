@@ -63,7 +63,7 @@ public class FirstPersonController : MonoBehaviour
 
     // Internal Variables
     private bool isWalking = false;
-
+    [SerializeField] private Transform _jumpPoint; 
     #region Sprint
 
     public bool enableSprint = true;
@@ -591,13 +591,14 @@ public class FirstPersonController : MonoBehaviour
     // Sets isGrounded based on a raycast sent straigth down from the player object
     private void CheckGround()
     {
-        Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
-        Vector3 direction = transform.TransformDirection(Vector3.down);
+        Vector3 origin = _jumpPoint.position; //new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
+        Vector3 direction = _jumpPoint.TransformDirection(Vector3.down);
         float distance = .75f;
 
         if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
         {
             Debug.DrawRay(origin, direction * distance, Color.red);
+
             isGrounded = true;
         }
         else

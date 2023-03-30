@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6748180247550949644}
   - component: {fileID: 3259352214260372524}
   - component: {fileID: 8179701034206473326}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PoisonParticleSystem
   m_TagString: Poison
   m_Icon: {fileID: 0}
@@ -4838,7 +4838,7 @@ GameObject:
   - component: {fileID: 2680795280777177558}
   - component: {fileID: 8179701034216180214}
   - component: {fileID: 8179701034685818437}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PoisonFogLevel
   m_TagString: Poison
   m_Icon: {fileID: 0}
