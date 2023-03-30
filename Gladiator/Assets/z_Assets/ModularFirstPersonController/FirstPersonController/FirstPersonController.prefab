@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponBehaviour: {fileID: 0}
   playerCamera: {fileID: 4459864851310106426}
   fov: 60
   invertCamera: 0
@@ -173,6 +174,13 @@ MonoBehaviour:
   joint: {fileID: 4459864851508666808}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
+  dashForce: 5
+  dashDuration: 0.5
+  dashCooldown: 1
+  dashKey: 32
+  _playerAnim: {fileID: 0}
+  _numOfClicks: 0
+  lastClickedTime: 0
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0
