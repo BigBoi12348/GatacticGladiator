@@ -37,11 +37,11 @@ public class PlayerHealth : MonoBehaviour
     }
     private  void OnTriggerStay(Collider other)
     {
-        if (other.name.Equals("PoisonFog_Updated"))
+        if (other.name.Equals("PoisonFogLevel"))
         {
 
             //TakeDamage(1);
-            PoisonDamage(0.03f);
+            PoisonDamage(0.02f);
             
 
 
