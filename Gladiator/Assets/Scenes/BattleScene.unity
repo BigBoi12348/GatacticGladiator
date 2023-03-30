@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-64650
+  m_Name: pb_Mesh-9474
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1119,6 +1119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gas Pit
       objectReference: {fileID: 0}
+    - target: {fileID: 5244011072728057673, guid: af7a58acc3618304fa2c1e78c837445d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5244011072728057678, guid: af7a58acc3618304fa2c1e78c837445d, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -1305,6 +1309,11 @@ PrefabInstance:
       objectReference: {fileID: 10409280}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7a58acc3618304fa2c1e78c837445d, type: 3}
+--- !u!1 &108007711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5244011072728057673, guid: af7a58acc3618304fa2c1e78c837445d, type: 3}
+  m_PrefabInstance: {fileID: 108007710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &131479451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,7 +1810,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-64608
+  m_Name: pb_Mesh-9432
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3898,6 +3907,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4dcb5fe7d685a4abccf2051aa4fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 4661475051029600500}
+  - {fileID: 716760450}
+  - {fileID: 108007711}
   _enemySpawnerManager: {fileID: 679215275}
   _waveComplete: {fileID: 7400000, guid: 5d5545c2d08e4984ea1db4e908a088d9, type: 2}
 --- !u!1 &679215273
@@ -5009,6 +5022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28aed992d5c46204f89271df8c092324, type: 3}
+--- !u!1 &716760450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3190433683212469757, guid: 28aed992d5c46204f89271df8c092324, type: 3}
+  m_PrefabInstance: {fileID: 716760449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730664639
 GameObject:
   m_ObjectHideFlags: 0
@@ -12448,7 +12466,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-64636
+  m_Name: pb_Mesh-9460
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12706,7 +12724,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-64622
+  m_Name: pb_Mesh-9446
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12870,7 +12888,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-64584
+  m_Name: pb_Mesh-9408
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19972,7 +19990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4661475052589343464, guid: 89d32ccdb901694469d130c2d6676575, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4661475052589343471, guid: 89d32ccdb901694469d130c2d6676575, type: 3}
       propertyPath: m_RootOrder
@@ -20036,6 +20054,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89d32ccdb901694469d130c2d6676575, type: 3}
+--- !u!1 &4661475051029600500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4661475052589343464, guid: 89d32ccdb901694469d130c2d6676575, type: 3}
+  m_PrefabInstance: {fileID: 4661475051029600499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4674962933195526720
 Transform:
   m_ObjectHideFlags: 0

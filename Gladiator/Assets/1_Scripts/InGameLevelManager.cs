@@ -9,6 +9,7 @@ public class InGameLevelManager : MonoBehaviour
 
     public int _totalEnemiesCounter{get; private set;}
     public int CurrentRound{get; private set;}
+    public GameObject[] levels;
 
 
     [Header("References")]
@@ -52,7 +53,12 @@ public class InGameLevelManager : MonoBehaviour
 
     private void GameIsStarting()
     {
+        for(int i = 0; i < levels.Length; i++)
+        {
+            levels[i].SetActive(false);
+        }
         CurrentRound = RoundData.Wave;
+        levels[Random.Range(0, 3)].SetActive(true);
     }
 
     private void GameStarted()
