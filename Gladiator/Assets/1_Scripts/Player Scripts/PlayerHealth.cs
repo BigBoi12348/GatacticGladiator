@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -19,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
         dead = false;
         currentHealth = maxHealth;
     }
+   
 
     private void OnCollisionEnter(Collision other) 
     {
@@ -39,7 +41,8 @@ public class PlayerHealth : MonoBehaviour
         {
 
             //TakeDamage(1);
-            PoisonDamage(0.05f);
+            PoisonDamage(0.03f);
+            
 
 
         }
@@ -64,6 +67,7 @@ public class PlayerHealth : MonoBehaviour
             GameEvents.gameEndSetUp?.Invoke(false);
             Destroy(this);
         }
+       
     }
 
 }
