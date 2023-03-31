@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    private PlayerHealth playerHealth;
+    [SerializeField]private PlayerHealth playerHealth;
 
     [Header("Player Health UI")]
     [SerializeField] private Slider _healthSlider;
@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
         GameEvents.playerStartGame -= GameStarted;
         GameEvents.gameEndSetUp -= EndGameSetup;
     }
+    
     private void EndGameSetup(bool didPlayerWin)
     {
         if(didPlayerWin)
@@ -44,6 +45,7 @@ public class UIManager : MonoBehaviour
             _playerLost.SetActive(true);
         }
     }
+    
     private void GameIsStarting()
     {
         _mainWaveText.text = "Wave " + RoundData.Wave.ToString();

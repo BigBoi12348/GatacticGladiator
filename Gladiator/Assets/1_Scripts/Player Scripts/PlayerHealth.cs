@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
         {
 
             //TakeDamage(1);
-            PoisonDamage(0.02f);
+            PoisonDamage(0.03f);
         }
     }
    
