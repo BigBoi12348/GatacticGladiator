@@ -52,6 +52,14 @@ public class InGameLevelManager : MonoBehaviour
         GameEvents.playerFinsihedGame -= EndOfRound;
     }
 
+    private void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            
+        }
+    }
+
     private void GameIsStarting()
     {
         for(int i = 0; i < levels.Length; i++)
