@@ -3429,7 +3429,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3f9989bfe53436742a544d2f7f96efb4, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -9620,6 +9620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerAnim: {fileID: 2659847365957046793}
   playerShieldBehaviour: {fileID: 4459864850776571091}
+  firstPersonController: {fileID: 4459864850776571080}
 --- !u!1 &1252007719
 GameObject:
   m_ObjectHideFlags: 0
@@ -10413,7 +10414,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3f9989bfe53436742a544d2f7f96efb4, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

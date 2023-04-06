@@ -7,11 +7,32 @@ public class PlayerManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private Animator _playerAnim;
     [SerializeField] private PlayerShieldBehaviour playerShieldBehaviour;
+    [SerializeField] private FirstPersonController firstPersonController;
+
     private void Awake() 
     {
         if(_playerAnim )
         {
 
+        }
+        firstPersonController.enabled = true;
+    }
+
+    private void OnEnable() 
+    {
+        GameEvents.gameEndSetUp += EndGameSetUp;
+    }
+
+    private void OnDisable() 
+    {
+        GameEvents.gameEndSetUp -= EndGameSetUp;
+    }
+
+    private void EndGameSetUp(bool didPlayerWin)
+    {
+        if(!didPlayerWin)
+        {
+            firstPersonController.enabled = false;
         }
     }
 
