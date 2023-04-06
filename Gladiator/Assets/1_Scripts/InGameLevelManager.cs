@@ -32,6 +32,7 @@ public class InGameLevelManager : MonoBehaviour
 
     private void Start() 
     {
+        GameManager.Instance.UnFreezeGame();
         GameEvents.gameStartSetUp?.Invoke();
     }
 
