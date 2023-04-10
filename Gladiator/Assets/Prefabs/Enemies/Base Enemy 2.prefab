@@ -6116,6 +6116,7 @@ GameObject:
   - component: {fileID: 4065816011520564996}
   - component: {fileID: 7532345787955916885}
   - component: {fileID: 7497232879670771251}
+  - component: {fileID: -768149286636114188}
   m_Layer: 0
   m_Name: Base Enemy 2
   m_TagString: Untagged
@@ -6306,6 +6307,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.33153388, y: 0.03759531, z: 0.28692335}
   m_Center: {x: 0.0050737113, y: -0.043752503, z: 0.045788534}
+--- !u!114 &-768149286636114188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7333921120246751172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c7d3804645a5d4a97602c5e91b4305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fractured: {fileID: 7658186372537572353, guid: 02d82a4efefe99549bff982352b706bb, type: 3}
+  breakforce: 500
 --- !u!1 &7440114662744836891
 GameObject:
   m_ObjectHideFlags: 0

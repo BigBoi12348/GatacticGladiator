@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 687825691835362897}
   - component: {fileID: 687825691835362896}
   - component: {fileID: 687825691835362899}
+  - component: {fileID: 2446744800249270465}
   m_Layer: 9
   m_Name: Basic_Enemy
   m_TagString: Untagged
@@ -241,6 +242,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2446744800249270465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687825691835362898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c7d3804645a5d4a97602c5e91b4305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fractured: {fileID: 7658186372537572353, guid: 02d82a4efefe99549bff982352b706bb, type: 3}
+  breakforce: 200
 --- !u!1 &687825691881964541
 GameObject:
   m_ObjectHideFlags: 0
