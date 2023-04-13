@@ -12,7 +12,7 @@ public class SwordBladeUpgrade : MonoBehaviour
 
     public void ShootOutBlade()
     {
-        if(PlayerUpgradesData.AttackAttribute >= 0)
+        if(PlayerUpgradesData.AttackAttribute >= 5)
         {
             GameObject tempBlade = Instantiate(_blade, _attackPoint.position, _cam.rotation);
 

@@ -280,7 +280,6 @@ public class FirstPersonController : MonoBehaviour
             {
                 if (Input.GetKeyDown(dashKey) && !isDashing)
                 {
-                    Debug.Log("cap");
                     isDashing = true;
                     //dashStartPosition = transform.position;
                     dashTimer = dashDuration;
