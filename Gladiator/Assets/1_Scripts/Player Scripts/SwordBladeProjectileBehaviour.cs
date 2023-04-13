@@ -11,11 +11,7 @@ public class SwordBladeProjectileBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.gameObject.TryGetComponent<EnemyBodyPart>(out EnemyBodyPart enemyBodyPart))
-        {
-            enemyBodyPart.DestroyMe();
-            ProjectileDeath(); 
-        }
+        ProjectileDeath();         
     }
 
     // private void OnTriggerEnter(Colliod other) 

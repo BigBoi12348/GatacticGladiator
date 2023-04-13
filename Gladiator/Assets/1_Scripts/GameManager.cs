@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadThisScene(int levelID)
     {
-        Debug.Log("Load Scene");
         StartCoroutine(LoadSceneAsync(levelID));
     }
 

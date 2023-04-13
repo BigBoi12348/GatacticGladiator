@@ -85,8 +85,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
-        if (other.CompareTag("PlayerWeapon"))
+        if(other.CompareTag("PlayerWeapon"))
         {
             Breaking();
             Death();
@@ -97,12 +96,22 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //_rb.useGravity = false;
         GameObject frac = Instantiate(fractured, transform.position, transform.rotation);
-        foreach(Rigidbody rb in frac.GetComponentsInChildren<Rigidbody>())
+        
+        foreach (Transform child in frac.transform)
         {
-            rb.useGravity = false;
-            Vector3 force = (rb.transform.position - transform.position).normalized * breakforce;
-            rb.AddForce(force);
+            if(child.TryGetComponent<Rigidbody>(out Rigidbody rb))
+            {
+                rb.useGravity = false;
+                Vector3 force = (rb.transform.position - transform.position).normalized * breakforce;
+                rb.AddForce(force);
+            }
         }
+        // foreach(Rigidbody rb in frac.GetComponentsInChildren<Rigidbody>())
+        // {
+        //     rb.useGravity = false;
+        //     Vector3 force = (rb.transform.position - transform.position).normalized * breakforce;
+        //     rb.AddForce(force);
+        // }
         Destroy(gameObject);
     }
 
