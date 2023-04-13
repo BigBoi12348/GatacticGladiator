@@ -6319,7 +6319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c7d3804645a5d4a97602c5e91b4305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fractured: {fileID: 7658186372537572353, guid: 02d82a4efefe99549bff982352b706bb, type: 3}
+  fractured: {fileID: 7658186372537572353, guid: 4156acbf88bca3348950d86685246a40, type: 3}
   breakforce: 500
 --- !u!1 &7440114662744836891
 GameObject:
