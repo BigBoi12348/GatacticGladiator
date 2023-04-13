@@ -5,6 +5,10 @@ using Pathfinding;
 
 public class EnemyBehaviour : MonoBehaviour
 {   
+    [Header("Fracure Variables")]
+    public GameObject fractured;
+    public float breakforce;
+    
     Transform _playerTransform;
     [Header("Enemy Movement")]
     [SerializeField] private float _enemyMovementSpeed;
@@ -12,16 +16,8 @@ public class EnemyBehaviour : MonoBehaviour
     
 
     [Header("Bleed Out values")]
-    private bool _bodyPartMissing;
-    [SerializeField] private float _totalBleedOut;
-    [SerializeField] private float _bleedOutStrength;
-    [SerializeField] private float _bleedOutModifier;
     [SerializeField] private GameObject _deathSymbol;
     private bool _alreadyDead;
-    
-
-    [Header("Body Parts")]
-    [SerializeField] private EnemyBodyPart[] enemyBodyParts;
 
 
     [Header("Animations")]
@@ -39,11 +35,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Awake() 
     {
-        _bodyPartMissing = false;
-        foreach (var enemyBodyPart in enemyBodyParts)
-        {
-            enemyBodyPart.Init(this);
-        }
+
     }
 
     public void Init(Transform playerTarget)
@@ -58,20 +50,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     private void Update()
-    {
-        if(_bodyPartMissing)
-        {
-            if(_totalBleedOut > 0)
-            {
-                _totalBleedOut -= _bleedOutStrength + _bleedOutModifier;
-            }
-            else
-            {
-                Death();
-            }
-        }
-        
-        
+    {      
         if(_aIPath.reachedEndOfPath)
         {
             if(_enemyAnim != null)
@@ -101,26 +80,26 @@ public class EnemyBehaviour : MonoBehaviour
         Vector3 playerPos = new Vector3(_playerTransform.position.x, transform.position.y, _playerTransform.position.z);
  
         transform.LookAt(playerPos);
-        // float angle = Vector3.Angle(transform.position, _playerTransform.position);
-        // Debug.Log(angle);
-        // transform.localEulerAngles = new Vector3(0,angle,0);
     }
 
-
-    public void BodyPartLost(bool doIDie, float bleedingStrength)
+    private void OnTriggerEnter(Collider other)
     {
-        if(!_alreadyDead)
+        if (other.CompareTag("Player"))
         {
-            if(doIDie)
-            {
-                Death();
-            }
-            else
-            {
-                _bodyPartMissing = true;
-                _bleedOutModifier += bleedingStrength;
-            }
+            Breaking();
+            Death();
         }
+    }
+
+    private void Breaking()
+    {
+        GameObject frac = Instantiate(fractured, transform.position, transform.rotation);
+        foreach(Rigidbody rb in frac.GetComponentsInChildren<Rigidbody>())
+        {
+            Vector3 force = (rb.transform.position - transform.position).normalized * breakforce;
+            rb.AddForce(force);
+        }
+        Destroy(gameObject);
     }
 
     private void Death()

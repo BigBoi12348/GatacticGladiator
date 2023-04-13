@@ -22,14 +22,14 @@ public class EnemyBodyPart : MonoBehaviour
         if(other.gameObject.CompareTag("Player")) 
         {
             //GetComponent<MeshCollider>().enabled = false;
-            _enemyBehaviour.BodyPartLost(_doIKillInstantly, _myBleedOutStrength);
+            //_enemyBehaviour.BodyPartLost(_doIKillInstantly, _myBleedOutStrength);
             Destroy(this);
         }
     }
 
     public void DestroyMe() 
     {
-        _enemyBehaviour.BodyPartLost(_doIKillInstantly, _myBleedOutStrength);
+        //_enemyBehaviour.BodyPartLost(_doIKillInstantly, _myBleedOutStrength);
         Destroy(this);
     }
 
