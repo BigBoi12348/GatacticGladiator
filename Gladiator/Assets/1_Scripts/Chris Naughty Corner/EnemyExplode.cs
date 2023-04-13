@@ -11,16 +11,16 @@ public class EnemyExplode : MonoBehaviour
     {
         
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.name.Equals("Collider"))
-    //    {
-    //        Debug.Log("ronan is hay");
-    //        breakthing();
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name.Equals("Collider"))
+        {
+            Debug.Log("ronan is hay");
+            breakthing();
+        }
+    }
 
-   
+
     void Update()
     {
         if (Input.GetKeyDown("f"))
