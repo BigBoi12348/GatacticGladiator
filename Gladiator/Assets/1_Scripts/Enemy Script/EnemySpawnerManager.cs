@@ -82,10 +82,11 @@ public class EnemySpawnerManager : MonoBehaviour
         int tempDifficultyScore = _currentDifficultyRank;
         int tempCurrentRound = InGameLevelManager.Instance.CurrentRound;
         _enemiesToSpawn = new List<GameObject>();
-
+        
         while (tempDifficultyScore > 0)
         {
             List<Enemy> tempEnemyToChoseFrom = new List<Enemy>();
+            Debug.Log(tempEnemyToChoseFrom);
             foreach (var enemy in enemyTypes)
             {
                 if(enemy.StartSpawnWave <= tempCurrentRound)
