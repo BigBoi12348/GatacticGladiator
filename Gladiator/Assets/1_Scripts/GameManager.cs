@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Scene IDs")]
-    const int MAINMENUSCENE = 0;
-    const int GAMESCENE = 1;
-    const int UPGRADESCENE = 2;
+    public const int MAINMENUSCENE = 0;
+    public const int GAMESCENE = 1;
+    public const int UPGRADESCENE = 2;
 
 
     [Header("Scene Control Variables")]
