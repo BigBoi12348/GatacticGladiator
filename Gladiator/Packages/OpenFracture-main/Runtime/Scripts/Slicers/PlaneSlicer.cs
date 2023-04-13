@@ -20,37 +20,35 @@ public class PlaneSlicer : MonoBehaviour
     //        this.transform.Rotate(Vector3.forward, -RotationSensitivity, Space.Self);
     //    }
     //}
-    public void OnTriggerStay(Collider collider)
-    {
-        var material = collider.gameObject.GetComponent<MeshRenderer>().material;
-        if (material.name.StartsWith("HighlightSlice"))
-        {
-            material.SetVector("CutPlaneNormal", this.transform.up);
-            material.SetVector("CutPlaneOrigin", this.transform.position);
-        }
-    }
+    // public void OnTriggerStay(Collider collider)
+    // {
+    //     var material = collider.gameObject.GetComponent<MeshRenderer>().material;
+    //     if (material.name.StartsWith("HighlightSlice"))
+    //     {
+    //         material.SetVector("CutPlaneNormal", this.transform.up);
+    //         material.SetVector("CutPlaneOrigin", this.transform.position);
+    //     }
+    // }
 
-    public void OnTriggerExit(Collider collider)
-    {
-        var material = collider.gameObject.GetComponent<MeshRenderer>().material;
-        if (material.name.StartsWith("HighlightSlice"))
-        {
-            material.SetVector("CutPlaneOrigin", Vector3.positiveInfinity);
-        }
-    }
-
-
+    // public void OnTriggerExit(Collider collider)
+    // {
+    //     var material = collider.gameObject.GetComponent<MeshRenderer>().material;
+    //     if (material.name.StartsWith("HighlightSlice"))
+    //     {
+    //         material.SetVector("CutPlaneOrigin", Vector3.positiveInfinity);
+    //     }
+    // }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(_canSlice)
-        {
-            Slice();
-        }
-    }
 
 
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if(_canSlice)
+    //     {
+    //         Slice();
+    //     }
+    // }
 
     private void Slice()
     {
