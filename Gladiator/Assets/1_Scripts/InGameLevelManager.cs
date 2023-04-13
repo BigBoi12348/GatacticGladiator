@@ -54,9 +54,9 @@ public class InGameLevelManager : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.P))
         {
-            
+            Debug.Log(RoundData.Wave);
         }
     }
 
@@ -66,7 +66,7 @@ public class InGameLevelManager : MonoBehaviour
         // {
         //     levels[i].SetActive(false);
         // }
-        // CurrentRound = RoundData.Wave;
+        CurrentRound = RoundData.Wave;
         // levels[Random.Range(0, 3)].SetActive(true);
     }
 
@@ -80,9 +80,9 @@ public class InGameLevelManager : MonoBehaviour
     {
         if(didPlayerWin)
         {
+            Debug.Log(RoundData.Wave);
             RoundData.Wave++;
             RoundData.PlayerPoints += 3;
-            //StartCoroutine(delayFinishGame(didPlayerWin));
         }
         else if(!didPlayerWin)
         {

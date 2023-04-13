@@ -61,7 +61,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0 && !dead)
         {
             dead = true;
-            GameEvents.gameEndSetUp?.Invoke(false);
+            //GameEvents.gameEndSetUp?.Invoke(false);
             Destroy(this);
         }
        

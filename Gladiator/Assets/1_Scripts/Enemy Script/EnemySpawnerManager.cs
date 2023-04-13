@@ -86,7 +86,6 @@ public class EnemySpawnerManager : MonoBehaviour
         while (tempDifficultyScore > 0)
         {
             List<Enemy> tempEnemyToChoseFrom = new List<Enemy>();
-            Debug.Log(tempEnemyToChoseFrom);
             foreach (var enemy in enemyTypes)
             {
                 if(enemy.StartSpawnWave <= tempCurrentRound)
@@ -96,20 +95,19 @@ public class EnemySpawnerManager : MonoBehaviour
             }
             int randNum = Random.Range(0,tempEnemyToChoseFrom.Count);
 
+            Debug.Log(tempEnemyToChoseFrom.Count);
             GameObject tempEnemyObj = tempEnemyToChoseFrom[randNum].EnemyObj;
             tempDifficultyScore -= tempEnemyToChoseFrom[randNum].DifficultyRank;
             _enemiesToSpawn.Add(tempEnemyObj);
             TotalEnemiesSpawningThisRound++;
         }
 
-        //Debug.Log("excuse");
         RoundData.DifficultyRank = (int)Mathf.Pow(_currentDifficultyRank, 1.2f);
         GameEvents.playerStartGame?.Invoke();
     }
 
     private void PlayerHasStartedGame()
     {
-        //Debug.Log("NO way");
         _canSpawn = true;
     }
 
