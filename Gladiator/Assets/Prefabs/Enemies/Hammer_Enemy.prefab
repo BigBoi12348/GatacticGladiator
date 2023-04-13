@@ -4489,7 +4489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d01b7209d6b534abef981d44e2237c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fractured: {fileID: 7658186372537572353, guid: 02d82a4efefe99549bff982352b706bb, type: 3}
+  fractured: {fileID: 7658186372537572353, guid: 7ff094c6e7c32f14198eb08ef539f7fc, type: 3}
   breakforce: 400
   _enemyMovementSpeed: 3
   _enemyMovementSpeedModifier: 0

@@ -6154,19 +6154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d01b7209d6b534abef981d44e2237c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fractured: {fileID: 7658186372537572353, guid: 4156acbf88bca3348950d86685246a40, type: 3}
+  breakforce: 400
   _enemyMovementSpeed: 3
   _enemyMovementSpeedModifier: 0
-  _totalBleedOut: 100
-  _bleedOutStrength: 0.1
-  _bleedOutModifier: 0
   _deathSymbol: {fileID: 676421926930221715}
-  enemyBodyParts:
-  - {fileID: 4530978592509473926}
-  - {fileID: 7003445349732919700}
-  - {fileID: 1480003071286286413}
-  - {fileID: 6502037678544752523}
-  - {fileID: 370619931636078532}
-  - {fileID: 5113846935473996062}
   _enemyAnim: {fileID: 4065816011520564996}
   _totalAttackCoolDown: 5
   _attackCoolDown: 0
@@ -6305,8 +6297,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.33153388, y: 0.03759531, z: 0.28692335}
-  m_Center: {x: 0.0050737113, y: -0.043752503, z: 0.045788534}
+  m_Size: {x: 0.33153388, y: 2.2, z: 0.28692335}
+  m_Center: {x: 0.0050737113, y: 0.96, z: 0.045788534}
 --- !u!114 &-768149286636114188
 MonoBehaviour:
   m_ObjectHideFlags: 0
