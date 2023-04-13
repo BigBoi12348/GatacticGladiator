@@ -9,6 +9,7 @@ TagManager:
   - EnemyWeapon
   - PlayerAnimator
   - Poison
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX
