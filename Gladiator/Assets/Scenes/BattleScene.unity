@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTransform: {fileID: 4459864850776571086}
   _canSpawn: 0
-  _spawnInterval: 1
+  _spawnInterval: 0.1
   _currentDifficultyRank: 10
   _enemyContainer: {fileID: 1532608564}
   _spawnLocations:
@@ -1097,10 +1097,10 @@ MonoBehaviour:
   enemyTypes:
   - EnemyObj: {fileID: 687825691835362898, guid: 80039f3b26aa34743902e23c86e3649a, type: 3}
     DifficultyRank: 1
-    StartSpawnWave: 2
-  - EnemyObj: {fileID: 7333921120246751172, guid: 5065562aca3a71e449ba067879fbec4c, type: 3}
-    DifficultyRank: 1
     StartSpawnWave: 1
+  - EnemyObj: {fileID: 7333921120246751172, guid: 5065562aca3a71e449ba067879fbec4c, type: 3}
+    DifficultyRank: 2
+    StartSpawnWave: 3
   - EnemyObj: {fileID: 7333921120246751172, guid: 780c49327d2564a449c56049774d2344, type: 3}
     DifficultyRank: 3
     StartSpawnWave: 4

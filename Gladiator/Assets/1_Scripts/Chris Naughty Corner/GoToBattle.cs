@@ -6,6 +6,9 @@ public class GoToBattle : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.LoadThisScene(GameManager.GAMESCENE);
+        if(other.CompareTag("Player"))
+        {
+            GameManager.Instance.LoadThisScene(GameManager.GAMESCENE);
+        }
     }
 }
