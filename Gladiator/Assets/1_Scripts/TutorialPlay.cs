@@ -14,6 +14,6 @@ public class TutorialPlay : MonoBehaviour
 
     public void Plays()
     {
-        GameManager.Instance.LoadThisScene(3);
+        GameManager.Instance.LoadThisScene(GameManager.TUTSCENE);
     }
 }

@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh172992
+  m_Name: pb_Mesh-36168
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -461,7 +461,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh173068
+  m_Name: pb_Mesh-36182
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -695,7 +695,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh172972
+  m_Name: pb_Mesh-36196
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1096,7 +1096,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh173030
+  m_Name: pb_Mesh-36336
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1260,7 +1260,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh172936
+  m_Name: pb_Mesh-36210
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1655,7 +1655,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh172958
+  m_Name: pb_Mesh-36350
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1819,7 +1819,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh173054
+  m_Name: pb_Mesh-36322
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1983,7 +1983,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh173006
+  m_Name: pb_Mesh-36308
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2456,6 +2456,10 @@ PrefabInstance:
     - target: {fileID: 6560137529533125263, guid: d85974a22cf6fde4b992f9e3bad42e50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560137529533125264, guid: d85974a22cf6fde4b992f9e3bad42e50, type: 3}
+      propertyPath: basespeed
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6560137529565478497, guid: d85974a22cf6fde4b992f9e3bad42e50, type: 3}
       propertyPath: m_Mesh
