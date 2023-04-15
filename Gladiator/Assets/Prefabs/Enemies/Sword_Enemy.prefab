@@ -5704,9 +5704,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fractured: {fileID: 7658186372537572353, guid: 4156acbf88bca3348950d86685246a40, type: 3}
-  breakforce: 150
+  breakforce: 300
   _rb: {fileID: 7532345787955916885}
-  _enemyMovementSpeed: 3
+  _enemyMovementSpeed: 7
   _enemyMovementSpeedModifier: 0
   _deathSymbol: {fileID: 676421926930221715}
   _enemyAnim: {fileID: 4065816011520564996}
@@ -5828,11 +5828,11 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7333921120246751172}
   serializedVersion: 2
-  m_Mass: 15
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
