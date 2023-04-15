@@ -30,8 +30,8 @@ TagManager:
   - WallsLayer
   - PoisonLayer
   - 
-  - 
-  - 
+  - Pieces
+  - PlayerOnlyDetection
   - 
   - 
   - 

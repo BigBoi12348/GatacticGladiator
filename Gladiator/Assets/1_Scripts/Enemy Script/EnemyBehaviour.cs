@@ -106,12 +106,6 @@ public class EnemyBehaviour : MonoBehaviour
                 rb.AddForce(force);
             }
         }
-        // foreach(Rigidbody rb in frac.GetComponentsInChildren<Rigidbody>())
-        // {
-        //     rb.useGravity = false;
-        //     Vector3 force = (rb.transform.position - transform.position).normalized * breakforce;
-        //     rb.AddForce(force);
-        // }
         Destroy(gameObject);
     }
 

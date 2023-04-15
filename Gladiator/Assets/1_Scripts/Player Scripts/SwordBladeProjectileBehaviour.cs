@@ -9,14 +9,9 @@ public class SwordBladeProjectileBehaviour : MonoBehaviour
         Invoke("ProjectileDeath", 8f);
     }   
 
-    private void OnTriggerEnter(Collider other) 
-    {
-        ProjectileDeath();         
-    }
-
-    // private void OnTriggerEnter(Colliod other) 
+    // private void OnTriggerEnter(Collider other) 
     // {
-        
+    //     ProjectileDeath();         
     // }
 
     private void ProjectileDeath() 

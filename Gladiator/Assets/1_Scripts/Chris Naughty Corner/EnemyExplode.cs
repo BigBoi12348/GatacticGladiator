@@ -15,10 +15,20 @@ public class EnemyExplode : MonoBehaviour
         }
     }
 
+    // private void OnCollisionEnter(Collision other) 
+    // {
+    //     Debug.Log(other.gameObject.tag);
+    //     if(other.gameObject.CompareTag("PlayerWeapon"))
+    //     {
+    //         Breaking();
+    //     }
+    // }
+
+
     private void Breaking()
     {
         //_rb.useGravity = false;
-        GameObject frac = Instantiate(fractured, transform.position, transform.rotation);
+        GameObject frac = Instantiate(fractured, transform.position, Quaternion.identity);
         
         foreach (Transform child in frac.transform)
         {
