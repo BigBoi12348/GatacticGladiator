@@ -270,7 +270,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        if(PlayerUpgradesData.AbilityAttribute >= 1)
+        if(PlayerUpgradesData.AbilityAttribute >= 0)
         {
             if (dashCooldownTimer > 0)
             {
@@ -484,6 +484,7 @@ public class FirstPersonController : MonoBehaviour
     private void Dash()
     {
         SoundManager.Instance.PlaySound3D(SoundManager.Sound.DashEffect, transform.position);
+        PostProcessingEffectManager.Instance.DashEffect(0.3f);
         Transform forwardT = transform;
         Vector3 direction = GetDashDirection(forwardT);
         Vector3 forceToApply = direction * dashForce;

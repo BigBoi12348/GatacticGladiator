@@ -22,14 +22,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.gameObject.CompareTag("EnemyWeapon"))
         {
+            Debug.Log("Health lost");
+            PostProcessingEffectManager.Instance.HurtEffect(0.4f);
             TakeDamage(20);
         }
-        //if (other.gameObject.CompareTag("Poison"))
-        //{
-        //    TakeDamage(1);
-        //}
-        
-
     }
     
     private void OnTriggerStay(Collider other)

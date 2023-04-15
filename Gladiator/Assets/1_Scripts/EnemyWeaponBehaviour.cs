@@ -24,6 +24,7 @@ public class EnemyWeaponBehaviour : MonoBehaviour
             if(other.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
             {
                 alreadyHit = true;
+                PostProcessingEffectManager.Instance.HurtEffect(0.1f);
                 playerHealth.TakeDamage(WeaponDamage);
                 StartCoroutine(HitDelay());
             }
