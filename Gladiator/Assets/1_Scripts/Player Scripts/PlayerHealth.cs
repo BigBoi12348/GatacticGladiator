@@ -22,8 +22,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.gameObject.CompareTag("EnemyWeapon"))
         {
-            Debug.Log("Health lost");
-            PostProcessingEffectManager.Instance.HurtEffect(0.4f);
+            if(!TakeNoDamage)
+            {
+                PostProcessingEffectManager.Instance.HurtEffect(0.4f);
+            }
             TakeDamage(20);
         }
     }
@@ -51,6 +53,18 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
+    // public void FireDamage()
+    // {
+    //     currentHealth -= damage;
+    //     if (currentHealth <= 0 && !dead)
+    //     {
+    //         dead = true;
+    //         GameEvents.gameEndSetUp?.Invoke(false);
+    //         Destroy(this);
+    //     }
+    // }
+
     public void PoisonDamage(float damage)
     {
         currentHealth -= damage;

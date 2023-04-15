@@ -19,12 +19,12 @@ public class AIShooting : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.position) < shootingRange && Time.time - lastShotTime > shootingDelay)
-        {
-            transform.LookAt(player.position);
-            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().velocity = (player.position - bullet.transform.position).normalized * 10;
-            lastShotTime = Time.time;
-        }
+        // if (Vector3.Distance(transform.position, player.position) < shootingRange && Time.time - lastShotTime > shootingDelay)
+        // {
+        //     transform.LookAt(player.position);
+        //     GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+        //     bullet.GetComponent<Rigidbody>().velocity = (player.position - bullet.transform.position).normalized * 10;
+        //     lastShotTime = Time.time;
+        // }
     }
 }
