@@ -23,6 +23,13 @@ public class EnemyExplode : MonoBehaviour
     //         Breaking();
     //     }
     // }
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Breaking();
+        }
+    }
 
 
     private void Breaking()
