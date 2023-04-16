@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
@@ -24,6 +25,9 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     [Range(1f, 2f)]
     [SerializeField] private float IncreaseHoverImageSize;
     [SerializeField] private EventTrigger eventTrigger;
+    [Header("Information")]
+    [SerializeField] private string _upgradeName;
+    [SerializeField] private VideoClip _videoOfUpgrade;
     [SerializeField] private GameObject _hoverUI;
     [SerializeField] private GameObject _alreadyBoughtUI;
     [SerializeField] private GameObject _infoBoxUI;
@@ -68,11 +72,12 @@ public class UpgradeSlotBehaviour : MonoBehaviour
                 LockMe();
             }
         }
-
     }
+
 
     public void HoverOn()
     {
+        UpgradeSceneManager.Instance.DisplayThisUpgradeSlot(_upgradeName, _videoOfUpgrade);
         _hoverUI.SetActive(true);
         _infoBoxUI.SetActive(true);
         _imageSymbol.transform.localScale = new Vector3(IncreaseHoverImageSize, IncreaseHoverImageSize, IncreaseHoverImageSize);

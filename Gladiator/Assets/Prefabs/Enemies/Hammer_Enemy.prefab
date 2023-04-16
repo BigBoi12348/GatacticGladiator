@@ -176,7 +176,6 @@ GameObject:
   - component: {fileID: 7495584254495229240}
   - component: {fileID: 7495584254495229241}
   - component: {fileID: 7495584254495229246}
-  - component: {fileID: 7495584254495229247}
   m_Layer: 0
   m_Name: Finger_03_001_end
   m_TagString: Untagged
@@ -265,33 +264,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7495584254495229247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384906729093104040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1ac885d6b125f44935bf90b4e492a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliceOptions:
-    enableReslicing: 1
-    maxResliceCount: 20
-    detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
-    textureScale: {x: 1, y: 1}
-    textureOffset: {x: 0, y: 0}
-    invokeCallbacks: 1
-  callbackOptions:
-    onFracture:
-      m_PersistentCalls:
-        m_Calls: []
-    onCompleted:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &509042075754451911
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +407,6 @@ GameObject:
   - component: {fileID: 8048695778172703254}
   - component: {fileID: 8048695778172703255}
   - component: {fileID: 8048695778172703252}
-  - component: {fileID: 8048695778172703253}
   m_Layer: 0
   m_Name: Finger_02_001
   m_TagString: Untagged
@@ -525,33 +496,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8048695778172703253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597825911017108888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1ac885d6b125f44935bf90b4e492a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliceOptions:
-    enableReslicing: 1
-    maxResliceCount: 20
-    detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
-    textureScale: {x: 1, y: 1}
-    textureOffset: {x: 0, y: 0}
-    invokeCallbacks: 1
-  callbackOptions:
-    onFracture:
-      m_PersistentCalls:
-        m_Calls: []
-    onCompleted:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &622514665395986346
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,7 +2542,6 @@ GameObject:
   - component: {fileID: 7129254596593018872}
   - component: {fileID: 7129254596593018873}
   - component: {fileID: 7129254596593018878}
-  - component: {fileID: 7129254596593018879}
   m_Layer: 0
   m_Name: Finger_01_001
   m_TagString: Untagged
@@ -2688,33 +2631,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7129254596593018879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5035462930449417544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1ac885d6b125f44935bf90b4e492a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliceOptions:
-    enableReslicing: 1
-    maxResliceCount: 20
-    detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
-    textureScale: {x: 1, y: 1}
-    textureOffset: {x: 0, y: 0}
-    invokeCallbacks: 1
-  callbackOptions:
-    onFracture:
-      m_PersistentCalls:
-        m_Calls: []
-    onCompleted:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &5084661854049894591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,7 +3987,6 @@ GameObject:
   - component: {fileID: 6719873180051158780}
   - component: {fileID: 6719873180051158781}
   - component: {fileID: 6719873180051158770}
-  - component: {fileID: 6719873180051158771}
   m_Layer: 0
   m_Name: Finger_03_001
   m_TagString: Untagged
@@ -4161,33 +4076,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6719873180051158771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6719873180051158769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1ac885d6b125f44935bf90b4e492a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliceOptions:
-    enableReslicing: 1
-    maxResliceCount: 20
-    detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
-    textureScale: {x: 1, y: 1}
-    textureOffset: {x: 0, y: 0}
-    invokeCallbacks: 1
-  callbackOptions:
-    onFracture:
-      m_PersistentCalls:
-        m_Calls: []
-    onCompleted:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &6869909245786964030
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,7 +4924,6 @@ GameObject:
   - component: {fileID: 8160066421335422586}
   - component: {fileID: 8160066421335422587}
   - component: {fileID: 8160066421335422584}
-  - component: {fileID: 8160066421335422585}
   m_Layer: 0
   m_Name: Hand_R
   m_TagString: Untagged
@@ -5129,33 +5016,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8160066421335422585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8160066421335422591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1ac885d6b125f44935bf90b4e492a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliceOptions:
-    enableReslicing: 1
-    maxResliceCount: 20
-    detectFloatingFragments: 1
-    insideMaterial: {fileID: 2100000, guid: 01af5d738c0d2714484b1b165b8f19af, type: 2}
-    textureScale: {x: 1, y: 1}
-    textureOffset: {x: 0, y: 0}
-    invokeCallbacks: 1
-  callbackOptions:
-    onFracture:
-      m_PersistentCalls:
-        m_Calls: []
-    onCompleted:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &8170824407247655250
 GameObject:
   m_ObjectHideFlags: 0

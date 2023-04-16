@@ -6,6 +6,7 @@ using TMPro;
 
 public class UpgradeUIItemBehaviour : MonoBehaviour
 {
+    
     [SerializeField] private GameObject _informationObject;
     [SerializeField] private GameObject _hoverEffectObject;
 
@@ -26,7 +27,6 @@ public class UpgradeUIItemBehaviour : MonoBehaviour
 
     private void OnMouseEnter() 
     {
-        Debug.Log("Mouse Enter");
         _informationObject.SetActive(true);    
         _hoverEffectObject.SetActive(true);
     }

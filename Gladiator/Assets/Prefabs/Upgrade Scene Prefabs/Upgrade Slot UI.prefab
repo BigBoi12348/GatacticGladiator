@@ -734,6 +734,8 @@ MonoBehaviour:
   _imageSymbol: {fileID: 573330229056640015}
   IncreaseHoverImageSize: 1.2
   eventTrigger: {fileID: 573330229856771534}
+  _upgradeName: 
+  _videoOfUpgrade: {fileID: 0}
   _hoverUI: {fileID: 573330228375595349}
   _alreadyBoughtUI: {fileID: 573330228745815417}
   _infoBoxUI: {fileID: 573330228776777994}
@@ -781,7 +783,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 5973179263919967325}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
