@@ -33,9 +33,10 @@ public class AITargeting : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab,bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-        Vector3 shootDirection = (target.position - bulletSpawnPoint.position).normalized;
+        Vector3 shootDirection = (transform.forward + transform.position - bulletSpawnPoint.position).normalized;
         bulletRigidbody.velocity = shootDirection * bulletSpeed;
+
     }
 }
