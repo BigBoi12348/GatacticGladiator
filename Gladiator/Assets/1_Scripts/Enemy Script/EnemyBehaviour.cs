@@ -5,11 +5,10 @@ using Pathfinding;
 
 public class EnemyBehaviour : MonoBehaviour
 {   
-    [Header("Fracure Variables")]
-    public GameObject fractured;
-    public float breakforce;
-    [SerializeField] private Rigidbody _rb;
-    
+    // [Header("Fracure Variables")]
+    // public GameObject fractured;
+    // public float breakforce;
+    //[SerializeField] private Rigidbody _rb;
     Transform _playerTransform;
     [Header("Enemy Movement")]
     [SerializeField] private float _enemyMovementSpeed;
@@ -18,6 +17,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     [Header("Bleed Out values")]
     [SerializeField] private GameObject _deathSymbol;
+    [SerializeField] private Transform _explodePoint;
     private bool _alreadyDead;
 
 
@@ -87,35 +87,26 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if(other.CompareTag("PlayerWeapon"))
         {
-            Breaking();
             Death();
         }
     }
 
     private void Breaking()
     {
-        //_rb.useGravity = false;
-        GameObject frac = Instantiate(fractured, transform.position, transform.rotation);
-
-        foreach (Transform child in frac.transform)
-        {
-            if(child.TryGetComponent<Rigidbody>(out Rigidbody rb))
-            {
-                //rb.useGravity = false;
-                Vector3 force = (rb.transform.position - transform.position).normalized * breakforce;
-                rb.AddForce(force);
-            }
-        }
-        Destroy(gameObject);
+        PiecesHandler tempPiecesHandler = EnemyManager.Instance.GetAnDeadEnemy(transform);
+        tempPiecesHandler.StartExplode(_explodePoint);
+        //Destroy(gameObject);
     }
 
     private void Death()
     {
-        //Debug.Log("death");
+        Breaking();
+
         _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
         _deathSymbol.SetActive(true);
+
         if(_enemyWeaponBehaviour != null)
         {
             _enemyWeaponBehaviour.enabled = false;
@@ -126,6 +117,6 @@ public class EnemyBehaviour : MonoBehaviour
         }
         InGameLevelManager.Instance.EnemyHasDied();
         SoundManager.Instance.PlaySound3D(SoundManager.Sound.EnemyDeath, transform.position);
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
