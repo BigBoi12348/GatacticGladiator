@@ -9813,7 +9813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa5b26197c795a488cbc456b84e5778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: {fileID: 0}
 --- !u!114 &7442434931619670366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12067,6 +12066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc79d034a9d0f3449e1a691953b8bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fpsCam: {fileID: 7442434930226168794}
   _blade: {fileID: 2669180456348947014, guid: 48925ef9ec4bb4f4badda6f1c635a14e, type: 3}
   _entityContainer: {fileID: 0}
   _attackPoint: {fileID: 6533676670177747778}

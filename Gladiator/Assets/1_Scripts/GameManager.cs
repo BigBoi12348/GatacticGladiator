@@ -74,17 +74,11 @@ public class GameManager : MonoBehaviour
         }
         
         _currentSceneID = SceneManager.GetActiveScene().buildIndex;
+        if(_currentSceneID == MAINMENUSCENE)
+        {
+            UnFreezeGame();
+        }
     }
-
-    // public IEnumerator StartGame()
-    // {
-    //     //Makes sure that the Scene is the GAME Scene so that the events that are called are actually received
-    //     while (_currentSceneID != GAMESCENE)
-    //     {
-    //         yield return new WaitForSecondsRealtime(0);
-    //     }
-    //     GameEvents.gameStartSetUp?.Invoke();
-    // }
 
     public void UnFreezeGame()
     {

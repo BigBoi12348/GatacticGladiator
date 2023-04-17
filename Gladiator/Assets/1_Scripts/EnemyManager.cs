@@ -8,14 +8,15 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager Instance;
     [SerializeField] private Transform _destoryedEnemyContainer;
     [SerializeField] private Transform _hidePoolObjects;
-    [SerializeField] private GameObject _destoryedEnemyState;
-    private ObjectPool<GameObject> _deadEnemyStatePool;
+    [SerializeField] private PiecesHandler _destoryedEnemyState;
+    private ObjectPool<PiecesHandler> _deadEnemyStatePool;
     private Transform _currentAskingObj;
+    
     private void Awake()
     {
         Instance = this;
 
-        _deadEnemyStatePool = new ObjectPool<GameObject>(() => 
+        _deadEnemyStatePool = new ObjectPool<PiecesHandler>(() => 
         {
             return Instantiate(_destoryedEnemyState, _hidePoolObjects.position, Quaternion.identity, _hidePoolObjects);
         }, deadEnemy => {
@@ -23,6 +24,7 @@ public class EnemyManager : MonoBehaviour
             deadEnemy.transform.rotation = _currentAskingObj.rotation;
             deadEnemy.transform.parent = _destoryedEnemyContainer;
         }, deadEnemy => {
+            deadEnemy.gameObject.SetActive(false);
             deadEnemy.transform.position = _hidePoolObjects.position;
             deadEnemy.transform.parent = _hidePoolObjects;
         }, deadEnemy => {
@@ -36,7 +38,7 @@ public class EnemyManager : MonoBehaviour
     {
         _currentAskingObj = _hidePoolObjects;
 
-        for (int i = 0; i < 150; i++)
+        for (int i = 0; i < 60; i++)
         {
             _deadEnemyStatePool.Get(); 
         }
@@ -44,7 +46,7 @@ public class EnemyManager : MonoBehaviour
 
     private void Start() 
     {
-        _deadEnemyStatePool.Get();
+        //_deadEnemyStatePool.Get();
     }
 
     private void Update() 
@@ -55,14 +57,14 @@ public class EnemyManager : MonoBehaviour
     public PiecesHandler GetAnDeadEnemy(Transform askingObj)
     {
         _currentAskingObj = askingObj;
-        GameObject deadEnemy = _deadEnemyStatePool.Get();
-        PiecesHandler tempPi = deadEnemy.GetComponent<PiecesHandler>();
-        tempPi.Init(this);
-        return tempPi;
+        PiecesHandler deadEnemy = _deadEnemyStatePool.Get();
+        deadEnemy.gameObject.SetActive(true);
+        deadEnemy.Init(this);
+        return deadEnemy;
     }
 
     public void ReturnDeadEnemy(PiecesHandler piecesHandler)
     {
-        
+        _deadEnemyStatePool.Release(piecesHandler);
     }
 }

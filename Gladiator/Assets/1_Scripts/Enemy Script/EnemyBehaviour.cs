@@ -16,7 +16,6 @@ public class EnemyBehaviour : MonoBehaviour
     
 
     [Header("Bleed Out values")]
-    [SerializeField] private GameObject _deathSymbol;
     [SerializeField] private Transform _explodePoint;
     private bool _alreadyDead;
 
@@ -32,7 +31,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private EnemyWeaponBehaviour _enemyWeaponBehaviour;
     [SerializeField] private AIDestinationSetter _aIDestinationSetter;
     [SerializeField] private AIPath _aIPath;
-    [SerializeField] private Collider _groundDetectCollider;
+    //[SerializeField] private Collider _groundDetectCollider;
 
     private void Awake() 
     {
@@ -105,7 +104,6 @@ public class EnemyBehaviour : MonoBehaviour
         _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
-        _deathSymbol.SetActive(true);
 
         if(_enemyWeaponBehaviour != null)
         {

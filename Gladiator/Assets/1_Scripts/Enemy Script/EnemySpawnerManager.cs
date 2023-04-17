@@ -88,14 +88,23 @@ public class EnemySpawnerManager : MonoBehaviour
             List<Enemy> tempEnemyToChoseFrom = new List<Enemy>();
             foreach (var enemy in enemyTypes)
             {
-                if(enemy.StartSpawnWave <= tempCurrentRound)
+                if(tempCurrentRound >= enemy.StartSpawnWave)
                 {
-                    tempEnemyToChoseFrom.Add(enemy);
+                    if(enemy.IsThereStopForThisEnemy)
+                    {
+                        if(tempCurrentRound <= enemy.StopSpawnWave)
+                        {
+                            tempEnemyToChoseFrom.Add(enemy);
+                        }
+                    }
+                    else
+                    {
+                        tempEnemyToChoseFrom.Add(enemy);
+                    }
                 }
             }
             int randNum = Random.Range(0,tempEnemyToChoseFrom.Count);
 
-            Debug.Log(tempEnemyToChoseFrom.Count);
             GameObject tempEnemyObj = tempEnemyToChoseFrom[randNum].EnemyObj;
             tempDifficultyScore -= tempEnemyToChoseFrom[randNum].DifficultyRank;
             _enemiesToSpawn.Add(tempEnemyObj);
@@ -141,4 +150,6 @@ public class Enemy
     public int DifficultyRank;
     [Tooltip("Limit when they can spawn until the wave coutner reaches it")]
     public int StartSpawnWave;
+    public bool IsThereStopForThisEnemy;
+    public int StopSpawnWave;
 }
