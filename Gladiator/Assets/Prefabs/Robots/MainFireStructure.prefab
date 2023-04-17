@@ -36065,12 +36065,12 @@ MonoBehaviour:
   - {fileID: 6675406643183089029}
   - {fileID: 480754094084944543}
   - {fileID: 6629781066826285330}
-  _projectilePrefab: {fileID: 3593911806257927959, guid: 74a9e5c3e6af65047816025ed8971ba2, type: 3}
+  _projectilePrefab: {fileID: 1587739918056136294, guid: 9df20f1d307157e4e819cdcdcecd25dd, type: 3}
   _projectileSpeed: 20
   TopObj: {fileID: 7360816408263372684}
-  _topRotation: {x: 0, y: 5, z: 0}
-  _topRotationSpeed: 10
-  durationTopSwitchRange: {x: 4, y: 8}
+  _topRotation: {x: 0, y: 1, z: 0}
+  _topRotationSpeed: 15
+  durationTopSwitchRange: {x: 3, y: 6}
   _fireArms:
   - {fileID: 3568047957239407253}
   - {fileID: 3525481671759486697}
@@ -36079,6 +36079,6 @@ MonoBehaviour:
   - {fileID: 575803127414333517}
   - {fileID: 6059412674407047436}
   baseObj: {fileID: 7360816408397997181}
-  _bottomRotation: {x: 0, y: 5, z: 0}
-  bottomRotationSpeed: 10
-  durationBottomSwitchRange: {x: 4, y: 17}
+  _bottomRotation: {x: 0, y: 1, z: 0}
+  bottomRotationSpeed: 4
+  durationBottomSwitchRange: {x: 6, y: 12}

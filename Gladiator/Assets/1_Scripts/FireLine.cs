@@ -47,7 +47,7 @@ public class FireLine : MonoBehaviour
         while (buringPlayer)
         {
             yield return new WaitForSeconds(0.1f);
-            playerHealth.TakeDamage(1);
+            playerHealth.TakeDamage(2);
         }
     }
 

@@ -9702,6 +9702,8 @@ MonoBehaviour:
   dashForce: 45
   dashDuration: 0.75
   dashCooldown: 1
+  upwardForce: 6
+  _lookUpThreshold: 0.3
   dashKey: 118
   _playerAnim: {fileID: 9098930713520981893}
   _numOfClicks: 0

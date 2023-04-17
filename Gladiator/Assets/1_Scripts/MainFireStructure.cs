@@ -93,7 +93,7 @@ public class MainFireStructure : MonoBehaviour
                 ranChoice = Random.Range(0, _shootingPoints.Length);  
             } while (CheckForRepeats(ranChoice, alreadyUsedGun));
 
-            GameObject newProjectile = Instantiate(_projectilePrefab, _shootingPoints[ranChoice].position, _shootingPoints[ranChoice].rotation) as GameObject;
+            GameObject newProjectile = Instantiate(_projectilePrefab, _shootingPoints[ranChoice].position, _shootingPoints[ranChoice].rotation * Quaternion.Euler(0,180,0)) as GameObject;
             Rigidbody projectileRigidbody = newProjectile.GetComponent<Rigidbody>(); 
             projectileRigidbody.velocity = _shootingPoints[ranChoice].transform.forward * _projectileSpeed;
 

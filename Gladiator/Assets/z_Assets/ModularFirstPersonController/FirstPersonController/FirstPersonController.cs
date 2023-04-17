@@ -138,8 +138,9 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float dashForce = 5f;
     [SerializeField] private float dashDuration = 0.5f;
     [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private float upwardForce;
+    [SerializeField] private float _lookUpThreshold;
     [SerializeField] private KeyCode dashKey = KeyCode.Space;
-
     private bool isDashing = false;
     private Vector3 dashStartPosition;
     private float dashTimer = 0f;
@@ -258,8 +259,11 @@ public class FirstPersonController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
+        
         Vector3 direction = new Vector3();
+
         direction = forwardT.forward * vertical + forwardT.right * horizontal;
+        direction = direction.normalized;
 
         if (horizontal == 0 && vertical == 0)
         {
@@ -487,9 +491,21 @@ public class FirstPersonController : MonoBehaviour
         PostProcessingEffectManager.Instance.DashEffect(0.3f);
         Transform forwardT = transform;
         Vector3 direction = GetDashDirection(forwardT);
-        Vector3 forceToApply = direction * dashForce;
+        Vector3 forceToApply = Vector3.zero;
+
+        Vector3 camDirection = playerCamera.transform.forward;
+        Vector3 upForce = Vector3.zero;
+        if(Vector3.Dot(camDirection, Vector3.up) > _lookUpThreshold)
+        {
+            forceToApply = direction * dashForce + transform.up * upwardForce;
+        }
+        else
+        {
+            forceToApply = direction * dashForce;
+        }
 
         rb.AddForce(forceToApply, ForceMode.Impulse);
+        rb.mass = 4f;
     }
 
     void FixedUpdate()
@@ -598,8 +614,8 @@ public class FirstPersonController : MonoBehaviour
 
         if (Physics.Raycast(origin, direction, out RaycastHit hit, distance, playerGroundlayerMask))
         {
-
             isGrounded = true;
+            rb.mass = 0.5f;
         }
         else
         {
