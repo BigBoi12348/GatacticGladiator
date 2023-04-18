@@ -145,13 +145,13 @@ public class InGameLevelManager : MonoBehaviour
         }
         else if(!didPlayerWin)
         {
-            GameManager.Instance.LoadThisScene(0);
+            GameManager.Instance.LoadThisScene(GameManager.MAINMENUSCENE);
         }
     }
 
     private void EndOfRound()
     {
-        GameManager.Instance.LoadThisScene(2);
+        GameManager.Instance.LoadThisScene(GameManager.UPGRADESCENE);
     }
     
     public void EnemyHasDied()

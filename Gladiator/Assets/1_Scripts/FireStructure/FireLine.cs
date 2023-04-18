@@ -13,6 +13,7 @@ public class FireLine : MonoBehaviour
 
     void Start()
     {
+        boxCol.enabled = false;
         _fireEmission = _fireArms.emission;
     }
     
