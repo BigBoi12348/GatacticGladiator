@@ -53,7 +53,7 @@ public class AIShooting : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Target").transform;
+        player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
