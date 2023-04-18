@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField]private PlayerHealth playerHealth;
+    [SerializeField] private PlayerHealth playerHealth;
 
     [Header("Player Health UI")]
     [SerializeField] private Slider _healthSlider;
@@ -67,5 +67,10 @@ public class UIManager : MonoBehaviour
     public void EnemiesLeftUpdate(int enemiesLeft)
     {
         _enemiesLeftText.text = enemiesLeft.ToString() + " Enemies left";
+    }
+
+    public void UpdatePlayerHealth()
+    {
+        _healthSlider.maxValue = RoundData.PlayerMaxHealth;
     }
 }

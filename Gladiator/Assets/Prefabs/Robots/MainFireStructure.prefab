@@ -2657,7 +2657,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -8403,7 +8403,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -15067,7 +15067,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -17572,7 +17572,7 @@ GameObject:
   - component: {fileID: 7360816408263372675}
   - component: {fileID: 7360816408263372674}
   - component: {fileID: 7360816408263372685}
-  m_Layer: 16
+  m_Layer: 15
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21324,7 +21324,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -27957,7 +27957,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -32816,7 +32816,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -36252,7 +36252,7 @@ MonoBehaviour:
   TopObj: {fileID: 7360816408263372684}
   _topRotation: {x: 0, y: 1, z: 0}
   _topRotationSpeed: 15
-  durationTopSwitchRange: {x: 3, y: 6}
+  durationTopSwitchRange: {x: 3, y: 5}
   _fireArms:
   - {fileID: 3568047957239407253}
   - {fileID: 3525481671759486697}

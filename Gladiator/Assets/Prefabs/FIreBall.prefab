@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7296574466081316633}
   - component: {fileID: 1587739918056136292}
   - component: {fileID: 1587739918056136295}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: FIreBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a46af3bc94f2144b7107f6b3a369d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _col: {fileID: 6735661557220309243}
 --- !u!135 &6735661557220309243
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -58,7 +59,7 @@ SphereCollider:
   m_GameObject: {fileID: 1587739918056136294}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 2.5
   m_Center: {x: -0.0056786537, y: 0.069603324, z: 0.067857265}
@@ -70,7 +71,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587739918056136294}
   serializedVersion: 2
-  m_Mass: 0.05
+  m_Mass: 0.01
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1

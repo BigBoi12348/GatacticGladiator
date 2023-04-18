@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth;
     public float currentHealth{get; private set;}
     public float poisin = 0.1f;
     bool dead;
   
     public bool TakeNoDamage;
+    public bool TakeNoFireDamage;
 
     private void Awake() 
     {
         dead = false;
+        maxHealth = RoundData.PlayerMaxHealth;
         currentHealth = maxHealth;
     }
    
@@ -29,15 +31,10 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(20);
         }
     }
-    
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.name.Equals("PoisonFogLevel"))
-        {
 
-            //TakeDamage(1);
-            PoisonDamage(0.03f);
-        }
+    public void AddHealth(int value)
+    {
+        currentHealth += value;
     }
    
     public void TakeDamage(int damage)
@@ -54,16 +51,20 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // public void FireDamage()
-    // {
-    //     currentHealth -= damage;
-    //     if (currentHealth <= 0 && !dead)
-    //     {
-    //         dead = true;
-    //         GameEvents.gameEndSetUp?.Invoke(false);
-    //         Destroy(this);
-    //     }
-    // }
+    public void TakeFireDamage(int damage)
+    {
+        if(!TakeNoFireDamage)
+        {
+            PostProcessingEffectManager.Instance.BurnEffect(0.1f);
+            currentHealth -= damage;
+            if (currentHealth <= 0 && !dead)
+            {
+                dead = true;
+                GameEvents.gameEndSetUp?.Invoke(false);
+                Destroy(this);
+            }
+        }
+    }
 
     public void PoisonDamage(float damage)
     {

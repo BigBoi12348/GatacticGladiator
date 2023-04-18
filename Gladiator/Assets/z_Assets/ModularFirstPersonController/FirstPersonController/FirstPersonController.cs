@@ -16,13 +16,12 @@ using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
-    public WeaponBehaviour _weaponBehaviour;
     private Rigidbody rb;
-    float camRotation;
 
     #region Camera Movement Variables
 
     public Camera playerCamera;
+    public Transform cameraMove;
 
     public float fov = 60f;
     public bool invertCamera = false;
@@ -41,18 +40,6 @@ public class FirstPersonController : MonoBehaviour
     private float pitch = 0.0f;
     private Image crosshairObject;
 
-    #region Camera Zoom Variables
-
-    public bool enableZoom = true;
-    public bool holdToZoom = false;
-    public KeyCode zoomKey = KeyCode.Mouse1;
-    public float zoomFOV = 30f;
-    public float zoomStepTime = 5f;
-
-    // Internal Variables
-    private bool isZoomed = false;
-
-    #endregion
     #endregion
 
     #region Movement Variables
@@ -78,7 +65,7 @@ public class FirstPersonController : MonoBehaviour
     // Sprint Bar
     public bool useSprintBar = true;
     public bool hideBarWhenFull = true;
-    public Image sprintBarBG;
+
     public Image sprintBar;
     public float sprintBarWidthPercent = .3f;
     public float sprintBarHeightPercent = .015f;
@@ -105,19 +92,6 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private LayerMask playerGroundlayerMask;
     #endregion
 
-    #region Crouch
-
-    public bool enableCrouch = true;
-    public bool holdToCrouch = true;
-    public KeyCode crouchKey = KeyCode.LeftControl;
-    public float crouchHeight = .75f;
-    public float speedReduction = .5f;
-
-    // Internal Variables
-    private bool isCrouched = false;
-    private Vector3 originalScale;
-
-    #endregion
     #endregion
 
     #region Head Bob
@@ -134,6 +108,8 @@ public class FirstPersonController : MonoBehaviour
     #endregion
     
     #region Abilites
+    private bool NotInAbilityState;
+
     [Header("Dashing")]
     [SerializeField] private float dashForce = 5f;
     [SerializeField] private float dashDuration = 0.5f;
@@ -146,6 +122,9 @@ public class FirstPersonController : MonoBehaviour
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
 
+    [Header("Shooting Fire Flames")]
+    private bool AmIShootingFireBeams;
+    private int NumberOfBeams;
     #endregion
 
     #region Player Animations
@@ -154,10 +133,6 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private int _numOfClicks;
     [SerializeField] float lastClickedTime = 0;
     float maxComboDelay = 0.8f;
-
-    //[Header("Animation Clips")]
-    //[SerializeField] private AnimationClip _leftSliceAnimClip;
-    //[SerializeField] private AnimationClip _rightSliceAnimClip;
     #endregion
 
     private void Awake()
@@ -168,7 +143,6 @@ public class FirstPersonController : MonoBehaviour
 
         // Set internal variables
         playerCamera.fieldOfView = fov;
-        originalScale = transform.localScale;
         jointOriginalPos = joint.localPosition;
 
         if (!unlimitedSprint)
@@ -195,37 +169,6 @@ public class FirstPersonController : MonoBehaviour
         {
             crosshairObject.gameObject.SetActive(false);
         }
-
-        #region Sprint Bar
-
-        sprintBarCG = GetComponentInChildren<CanvasGroup>();
-
-        if(useSprintBar)
-        {
-            sprintBarBG.gameObject.SetActive(true);
-            sprintBar.gameObject.SetActive(true);
-
-            float screenWidth = Screen.width;
-            float screenHeight = Screen.height;
-
-            sprintBarWidth = screenWidth * sprintBarWidthPercent;
-            sprintBarHeight = screenHeight * sprintBarHeightPercent;
-
-            sprintBarBG.rectTransform.sizeDelta = new Vector3(sprintBarWidth, sprintBarHeight, 0f);
-            sprintBar.rectTransform.sizeDelta = new Vector3(sprintBarWidth - 2, sprintBarHeight - 2, 0f);
-
-            if(hideBarWhenFull)
-            {
-                sprintBarCG.alpha = 0;
-            }
-        }
-        else
-        {
-            sprintBarBG.gameObject.SetActive(false);
-            sprintBar.gameObject.SetActive(false);
-        }
-
-        #endregion
     }
 
     private void OnClick()
@@ -246,13 +189,6 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    // private void Dash()
-    // {
-    //     Vector3 forceToApply = Orientation.forward * dashForce + Orientation.up * dashUpwardForce;
-    //     rb.AddForce(forceToApply, ForceMode.Impulse);
-
-    //     Invoke(nameof(ResetDash), dashDuration);
-    // }
     private Vector3 GetDashDirection(Transform forwardT)
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -273,6 +209,11 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if(!NotInAbilityState)
+        {
+
+        
+        #region Dash
         if(PlayerUpgradesData.AbilityAttribute >= 0)
         {
             if (dashCooldownTimer > 0)
@@ -291,7 +232,7 @@ public class FirstPersonController : MonoBehaviour
                 }
             }
         }
-    
+        #endregion
 
         #region Attack
 
@@ -313,11 +254,6 @@ public class FirstPersonController : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             OnClick();
-        }
-
-        if(Input.GetMouseButtonDown(1))
-        {
-            
         }
 
         #endregion
@@ -343,53 +279,8 @@ public class FirstPersonController : MonoBehaviour
             pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
 
             transform.localEulerAngles = new Vector3(0, yaw, 0);
-            playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+            cameraMove.transform.localEulerAngles = new Vector3(pitch, 0, 0);
         }
-
-        #region Camera Zoom
-
-        if (enableZoom)
-        {
-            // Changes isZoomed when key is pressed
-            // Behavior for toogle zoom
-            if(Input.GetKeyDown(zoomKey) && !holdToZoom && !isSprinting)
-            {
-                if (!isZoomed)
-                {
-                    isZoomed = true;
-                }
-                else
-                {
-                    isZoomed = false;
-                }
-            }
-
-            // Changes isZoomed when key is pressed
-            // Behavior for hold to zoom
-            if(holdToZoom && !isSprinting)
-            {
-                if(Input.GetKeyDown(zoomKey))
-                {
-                    isZoomed = true;
-                }
-                else if(Input.GetKeyUp(zoomKey))
-                {
-                    isZoomed = false;
-                }
-            }
-
-            // Lerps camera.fieldOfView to allow for a smooth transistion
-            if(isZoomed)
-            {
-                playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, zoomFOV, zoomStepTime * Time.deltaTime);
-            }
-            else if(!isZoomed && !isSprinting)
-            {
-                playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fov, zoomStepTime * Time.deltaTime);
-            }
-        }
-
-        #endregion
         #endregion
 
         #region Sprint
@@ -398,7 +289,6 @@ public class FirstPersonController : MonoBehaviour
         {
             if(isSprinting)
             {
-                isZoomed = false;
                 playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, sprintFOV, sprintFOVStepTime * Time.deltaTime);
 
                 // Drain sprint remaining while sprinting
@@ -453,34 +343,70 @@ public class FirstPersonController : MonoBehaviour
 
         #endregion
 
-        #region Crouch
-
-        if (enableCrouch)
-        {
-            if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
-            {
-                Crouch();
-            }
-            
-            if(Input.GetKeyDown(crouchKey) && holdToCrouch)
-            {
-                isCrouched = false;
-                Crouch();
-            }
-            else if(Input.GetKeyUp(crouchKey) && holdToCrouch)
-            {
-                isCrouched = true;
-                Crouch();
-            }
-        }
-
-        #endregion
-
         CheckGround();
 
         if(enableHeadBob)
         {
             HeadBob();
+        }
+
+        #region Abiltiy Buttons
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            NotInAbilityState = true;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Time.timeScale = 0.05f;
+            NumberOfBeams = GetNumberOfFireBeams();
+            AmIShootingFireBeams = true;
+            NotInAbilityState = true;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            NotInAbilityState = true;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            NotInAbilityState = true;
+        }
+        #endregion
+        }
+        else if(NotInAbilityState)
+        {
+            if(AmIShootingFireBeams)
+            {
+                if(NumberOfBeams != 0)
+                {
+                    Time.timeScale = 1;
+                }
+                if(Input.GetMouseButtonDown(0))
+                {
+                    ShootFireBeam();
+                    NumberOfBeams--;
+                }
+            }
+        }
+    }
+
+    private void ShootFireBeam()
+    {
+
+    }
+
+    private int GetNumberOfFireBeams()
+    {
+        if(KillComboHandler.KillComboCounter >= 40)
+        {
+            return 3;
+        }
+        else if(KillComboHandler.KillComboCounter >= 20)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
         }
     }
 
@@ -558,10 +484,6 @@ public class FirstPersonController : MonoBehaviour
                 {
                     isSprinting = true;
 
-                    if (isCrouched)
-                    {
-                        Crouch();
-                    }
 
                     if (hideBarWhenFull && !unlimitedSprint)
                     {
@@ -624,35 +546,8 @@ public class FirstPersonController : MonoBehaviour
             rb.AddForce(0f, jumpPower, 0f, ForceMode.Impulse);
             isGrounded = false;
         }
-
-        // When crouched and using toggle system, will uncrouch for a jump
-        if(isCrouched && !holdToCrouch)
-        {
-            Crouch();
-        }
     }
 
-    private void Crouch()
-    {
-        // Stands player up to full height
-        // Brings walkSpeed back up to original speed
-        if(isCrouched)
-        {
-            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
-            walkSpeed /= speedReduction;
-
-            isCrouched = false;
-        }
-        // Crouches player down to set height
-        // Reduces walkSpeed
-        else
-        {
-            transform.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
-            walkSpeed *= speedReduction;
-
-            isCrouched = true;
-        }
-    }
 
     private void HeadBob()
     {
@@ -662,11 +557,6 @@ public class FirstPersonController : MonoBehaviour
             if(isSprinting)
             {
                 timer += Time.deltaTime * (bobSpeed + sprintSpeed);
-            }
-            // Calculates HeadBob speed during crouched movement
-            else if (isCrouched)
-            {
-                timer += Time.deltaTime * (bobSpeed * speedReduction);
             }
             // Calculates HeadBob speed during walking
             else

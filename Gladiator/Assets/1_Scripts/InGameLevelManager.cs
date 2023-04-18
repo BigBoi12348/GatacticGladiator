@@ -9,6 +9,7 @@ public class InGameLevelManager : MonoBehaviour
 
     public int _totalEnemiesCounter{get; private set;}
     public int CurrentRound{get; private set;}
+
     [Header("Environments")]
     [SerializeField] private GameObject _plainLevel;
     [SerializeField] private GameObject _fireLevel;
@@ -18,6 +19,10 @@ public class InGameLevelManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private EnemySpawnerManager _enemySpawnerManager;
     [SerializeField] private AnimationClip _waveComplete;
+    [SerializeField] private PlayerHealth _playerHealth;
+    [SerializeField] private KillComboHandler killComboHandler;
+
+    private bool healOnKill;
 
     private void Awake() 
     {
@@ -37,6 +42,15 @@ public class InGameLevelManager : MonoBehaviour
     {
         GameManager.Instance.UnFreezeGame();
         GameEvents.gameStartSetUp?.Invoke();
+
+        if(PlayerUpgradesData.AttackThree)
+        {
+            healOnKill = true;
+        }
+        else
+        {
+            healOnKill = false;
+        }
     }
 
     private void OnEnable() 
@@ -53,14 +67,6 @@ public class InGameLevelManager : MonoBehaviour
         GameEvents.gameEndSetUp -= GameEndSetUp;
         GameEvents.playerStartGame -= GameStarted;
         GameEvents.playerFinsihedGame -= EndOfRound;
-    }
-
-    private void Update() 
-    {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log(RoundData.Wave);
-        }
     }
 
     private void GameIsStarting()
@@ -107,7 +113,6 @@ public class InGameLevelManager : MonoBehaviour
     {
         if(didPlayerWin)
         {
-            Debug.Log(RoundData.Wave);
             RoundData.Wave++;
             RoundData.PlayerPoints += 3;
         }
@@ -116,9 +121,11 @@ public class InGameLevelManager : MonoBehaviour
             RoundData.Wave = 1;
             RoundData.PlayerPoints = 0;
             RoundData.DifficultyRank = 0;
+            RoundData.PlayerMaxHealth = 100;
             PlayerUpgradesData.AttackAttribute = 0;
             PlayerUpgradesData.ShieldAttribute = 0;
             PlayerUpgradesData.AbilityAttribute = 0;
+            ResetPlayerUpgradeData();
         }
         StartCoroutine(delayFinishGame(didPlayerWin));
     }
@@ -152,9 +159,40 @@ public class InGameLevelManager : MonoBehaviour
         _totalEnemiesCounter--;
         uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
 
+        if(healOnKill)
+        {
+            if(KillComboHandler.KillComboCounter >= 25)
+            {
+                RoundData.PlayerMaxHealth++;
+                uIManager.UpdatePlayerHealth();
+            }
+            _playerHealth.AddHealth(1);
+        }
+
+        killComboHandler.AddToCombo(1);
+
         if(_totalEnemiesCounter == 0)
         {
             GameEvents.gameEndSetUp?.Invoke(true);
         }
+    }
+
+    private void ResetPlayerUpgradeData()
+    {
+        PlayerUpgradesData.AttackOne = false;
+        PlayerUpgradesData.AttackTwo = false;
+        PlayerUpgradesData.AttackThree = false;
+        PlayerUpgradesData.AttackFour = false;
+        PlayerUpgradesData.AttackFive = false;
+        PlayerUpgradesData.ShieldOne = false;
+        PlayerUpgradesData.ShieldTwo = false;
+        PlayerUpgradesData.ShieldThree = false;
+        PlayerUpgradesData.ShieldFour = false;
+        PlayerUpgradesData.ShieldFive = false;
+        PlayerUpgradesData.StarOne = false;
+        PlayerUpgradesData.StarTwo = false;
+        PlayerUpgradesData.StarThree = false;
+        PlayerUpgradesData.StarFour = false;
+        PlayerUpgradesData.StarFive = false;
     }
 }

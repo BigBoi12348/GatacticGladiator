@@ -10,9 +10,11 @@ public class PostProcessingEffectManager : MonoBehaviour
     //[SerializeField] private PostProcessVolume _volume;
     [SerializeField] private GameObject _hurtVolume;
     [SerializeField] private GameObject _dashEffect;
+    [SerializeField] private GameObject _burnEffect;
     private LensDistortion lensDistortion;
     Coroutine hurtCO;
     Coroutine dashCO;
+    Coroutine burnCO;
 
     private void Awake() => Instance = this;
 
@@ -51,5 +53,21 @@ public class PostProcessingEffectManager : MonoBehaviour
         _dashEffect.SetActive(true);
         yield return new WaitForSeconds(durationTilTurnOff);
         _dashEffect.SetActive(false);
+    }
+
+    public void BurnEffect(float durationTilTurnOff)
+    {
+        if(burnCO != null)
+        {
+            StopCoroutine(burnCO);
+        }
+        burnCO = StartCoroutine(DoBurnEffect(durationTilTurnOff));
+    }
+
+    private IEnumerator DoBurnEffect(float durationTilTurnOff)
+    {
+        _burnEffect.SetActive(true);
+        yield return new WaitForSeconds(durationTilTurnOff);
+        _burnEffect.SetActive(false);
     }
 }

@@ -40,7 +40,7 @@ public class MainFireStructure : MonoBehaviour
         if(RoundData.Wave > 0) //NEeds to be == 2
         {
             _howManyFireLanesActive = 1;
-            _howManyFireBallsActive = 2;
+            _howManyFireBallsActive = 5;
         }
         else if(RoundData.Wave == 4)
         {

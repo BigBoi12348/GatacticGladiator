@@ -8,4 +8,6 @@ public static class RoundData
     public static int DifficultyRank;
     public static int PlayerPoints;
     public static float SheildTotalEnergy;
+
+    public static int PlayerMaxHealth = 100;
 }

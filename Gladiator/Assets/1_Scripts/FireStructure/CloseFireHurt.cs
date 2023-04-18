@@ -30,7 +30,8 @@ public class CloseFireHurt : MonoBehaviour
         while (buringPlayer)
         {
             yield return new WaitForSeconds(0.1f);
-            playerHealth.TakeDamage(3);
+            playerHealth.TakeFireDamage(1);
+            CameraEffectsSystem.Instance.ShakeCamera(1.5f, 0.1f);
         }
     }
 }

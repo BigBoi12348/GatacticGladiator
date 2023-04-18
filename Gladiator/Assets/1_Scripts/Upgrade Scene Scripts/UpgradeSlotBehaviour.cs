@@ -19,12 +19,6 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     [SerializeField] private int _upgradeCost;
 
 
-    [Header("UI Elements")]
-    [SerializeField] private Button _upgradeSlotButton;
-    [SerializeField] private RawImage _imageSymbol;
-    [Range(1f, 2f)]
-    [SerializeField] private float IncreaseHoverImageSize;
-    [SerializeField] private EventTrigger eventTrigger;
     [Header("Information")]
     [SerializeField] private string _upgradeName;
     [SerializeField] private VideoClip _videoOfUpgrade;
@@ -32,10 +26,17 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     [SerializeField] private string _upgradeDescription;
     [TextArea(1,4)]
     [SerializeField] private string _upgradeComboBonus;
-    [SerializeField] private string _upgradeCostString;
+    private string _upgradeCostString;
+
+
+    [Header("UI Elements")]
+    [SerializeField] private Button _upgradeSlotButton;
+    [SerializeField] private RawImage _imageSymbol;
+    [Range(1f, 2f)]
+    [SerializeField] private float IncreaseHoverImageSize;
+    [SerializeField] private EventTrigger eventTrigger;
     [SerializeField] private GameObject _hoverUI;
     [SerializeField] private GameObject _alreadyBoughtUI;
-    [SerializeField] private GameObject _infoBoxUI;
     [SerializeField] private AudioSource _boughtSound;
 
 
@@ -88,15 +89,13 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     public void HoverOn()
     {
         UpgradeSceneManager.Instance.DisplayThisUpgradeSlot(_upgradeName, _videoOfUpgrade, _upgradeDescription, _upgradeComboBonus, _upgradeCostString);
-        //_hoverUI.SetActive(true);
-        //_infoBoxUI.SetActive(true);
+        _hoverUI.SetActive(true);
         _imageSymbol.transform.localScale = new Vector3(IncreaseHoverImageSize, IncreaseHoverImageSize, IncreaseHoverImageSize);
     }
 
     public void HoverOff()
     {
-        //_hoverUI.SetActive(false);
-        //_infoBoxUI.SetActive(false);
+        _hoverUI.SetActive(false);
         UpgradeSceneManager.Instance.HideInformationBoard();
         _imageSymbol.transform.localScale = new Vector3(1f, 1f, 1f);
     }

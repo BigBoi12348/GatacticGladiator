@@ -17,10 +17,8 @@ public class EnemyWeaponBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        Debug.Log(other.gameObject);
         if(!alreadyHit)
         {
-            Debug.Log(other.gameObject.name);
             if(other.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
             {
                 alreadyHit = true;
