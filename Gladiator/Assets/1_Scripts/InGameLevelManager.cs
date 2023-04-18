@@ -9,7 +9,10 @@ public class InGameLevelManager : MonoBehaviour
 
     public int _totalEnemiesCounter{get; private set;}
     public int CurrentRound{get; private set;}
-    //public GameObject[] levels;
+    [Header("Environments")]
+    [SerializeField] private GameObject _plainLevel;
+    [SerializeField] private GameObject _fireLevel;
+    [SerializeField] private GameObject _poisonLevel;
 
 
     [Header("References")]
@@ -62,12 +65,36 @@ public class InGameLevelManager : MonoBehaviour
 
     private void GameIsStarting()
     {
-        // for(int i = 0; i < levels.Length; i++)
-        // {
-        //     levels[i].SetActive(false);
-        // }
         CurrentRound = RoundData.Wave;
-        // levels[Random.Range(0, 3)].SetActive(true);
+
+        //Sets the level
+        _plainLevel.SetActive(false);
+        _fireLevel.SetActive(false);
+        _poisonLevel.SetActive(false);
+
+        if(CurrentRound == 1 || CurrentRound == 4)
+        {
+           _plainLevel.SetActive(true); 
+        }
+        else if(CurrentRound == 2 || CurrentRound == 5)
+        {
+            _fireLevel.SetActive(true);
+        }
+        else if(CurrentRound == 3 || CurrentRound == 6)
+        {
+            _poisonLevel.SetActive(true);
+        }
+        else if(CurrentRound >= 7)
+        {
+            if(CurrentRound % 2 == 0)
+            {
+                _fireLevel.SetActive(true);
+            }
+            else
+            {
+                _poisonLevel.SetActive(true);
+            }
+        }
     }
 
     private void GameStarted()

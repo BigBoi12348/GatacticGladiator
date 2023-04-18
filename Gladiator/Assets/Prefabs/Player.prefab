@@ -7408,7 +7408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6533676671580548027
 Transform:
   m_ObjectHideFlags: 0
@@ -9708,6 +9708,8 @@ MonoBehaviour:
   _playerAnim: {fileID: 9098930713520981893}
   _numOfClicks: 0
   lastClickedTime: 0
+  _timeSwordSliceDelay: 0
+  _canSlice: 0
 --- !u!114 &7442434931619670365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12069,7 +12071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsCam: {fileID: 7442434930226168794}
-  _blade: {fileID: 2669180456348947014, guid: 48925ef9ec4bb4f4badda6f1c635a14e, type: 3}
+  _blade: {fileID: 8334370258254746164, guid: 48925ef9ec4bb4f4badda6f1c635a14e, type: 3}
   _entityContainer: {fileID: 0}
   _attackPoint: {fileID: 6533676670177747778}
   _cam: {fileID: 7442434930226168797}

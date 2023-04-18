@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class SwordBladeProjectileBehaviour : MonoBehaviour
 {
-    private void Start() 
+    private int _amountOfHitsICanDo;
+    public void Init(int hitAmount)
     {
+        _amountOfHitsICanDo = hitAmount;
         Invoke("ProjectileDeath", 8f);
-    }   
+    }
+    
+    private void OnTriggerEnter(Collider other) 
+    {
+        if(_amountOfHitsICanDo <= 0)
+        {
+            _amountOfHitsICanDo -= 1;
+        }
+        else
+        {
+            ProjectileDeath();
+        }
+    }
 
-    // private void OnTriggerEnter(Collider other) 
-    // {
-    //     ProjectileDeath();         
-    // }
+    private void OnCollisionEnter(Collision other) 
+    {
+        ProjectileDeath();         
+    }
 
     private void ProjectileDeath() 
     {

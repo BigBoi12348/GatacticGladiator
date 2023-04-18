@@ -9,6 +9,16 @@ public class UpgradeSceneManager : MonoBehaviour
 {
     public static UpgradeSceneManager Instance;
 
+    [Header("Information Board")]
+    [SerializeField] private TMP_Text _upgradeTitle;
+    [SerializeField] private VideoPlayer _upgradeVideoPlayer;
+    [SerializeField] private TMP_Text _upgradeDescription;
+    [SerializeField] private TMP_Text _upgradeComboBonus;
+    [SerializeField] private TMP_Text _upgradeCost;
+    [SerializeField] private Animator _informationBoardAnim;
+    const string OPENINFOBOARD = "InformatioBoard_Open";
+    const string CLOSEINFOBOARD = "InformatioBoard_Close";
+
     [Header("Buttons")]
     //[SerializeField] private Button _inventoryButton;
     //[SerializeField] private Button _upgradesButton;
@@ -32,9 +42,19 @@ public class UpgradeSceneManager : MonoBehaviour
         _points.text = "Points: " + RoundData.PlayerPoints.ToString();
     }
 
-    public void DisplayThisUpgradeSlot(string UpgradeName, VideoClip videoClip)
+    public void DisplayThisUpgradeSlot(string UpgradeName, VideoClip videoClip, string UpgradeDescription, string UpgradeComboBonus, string UpgradeCost)
     {
+        _informationBoardAnim.Play(OPENINFOBOARD);
+        _upgradeTitle.text = UpgradeName;
+        _upgradeVideoPlayer.clip = videoClip;
+        _upgradeDescription.text = UpgradeDescription;
+        _upgradeComboBonus.text = UpgradeComboBonus;
+        _upgradeCost.text = "Cost: " + UpgradeCost;
+    }
 
+    public void HideInformationBoard()
+    {
+        _informationBoardAnim.Play(CLOSEINFOBOARD);
     }
     
     private void GoBackToGame()

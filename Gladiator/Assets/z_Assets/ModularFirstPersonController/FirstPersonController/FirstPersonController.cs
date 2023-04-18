@@ -241,7 +241,6 @@ public class FirstPersonController : MonoBehaviour
     
         if(_numOfClicks >= 2 && _playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && _playerAnim.GetCurrentAnimatorStateInfo(0).IsName("LeftSlice"))
         {
-            Debug.Log("Right Slice");
             _playerAnim.SetBool("RightSlice", true); 
             _playerAnim.SetBool("LeftSlice", false);
         }
@@ -505,7 +504,7 @@ public class FirstPersonController : MonoBehaviour
         }
 
         rb.AddForce(forceToApply, ForceMode.Impulse);
-        rb.mass = 4f;
+        rb.mass = 6f;
     }
 
     void FixedUpdate()
@@ -514,12 +513,6 @@ public class FirstPersonController : MonoBehaviour
         {
             if (dashTimer > 0)
             {
-                //float distance = Vector3.Distance(GetDashDirection(), transform.position);
-
-                // Vector3 forceToApply = _orientation.forward * dashForce;
-
-                // rb.AddForce(forceToApply, ForceMode.Impulse);
-                
                 dashTimer -= Time.deltaTime;
             }
             else

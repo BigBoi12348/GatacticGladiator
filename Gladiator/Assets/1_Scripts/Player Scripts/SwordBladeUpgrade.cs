@@ -7,14 +7,14 @@ public class SwordBladeUpgrade : MonoBehaviour
     [Header("Other")]
     [SerializeField] private Camera fpsCam;
     [Header("Blade Object")]
-    [SerializeField] private GameObject _blade;
+    [SerializeField] private SwordBladeProjectileBehaviour _blade;
     [SerializeField] private Transform _entityContainer;
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private Transform _cam;
 
     public void ShootOutBlade()
     {
-        if(PlayerUpgradesData.AttackAttribute >= 0)
+        if(PlayerUpgradesData.AttackAttribute >= 5)
         {
             Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
             RaycastHit hit;
@@ -31,9 +31,11 @@ public class SwordBladeUpgrade : MonoBehaviour
 
             Vector3 direction = targetPoint - _attackPoint.position;
 
-            GameObject tempBlade = Instantiate(_blade, _attackPoint.position, _cam.rotation);
+            SwordBladeProjectileBehaviour tempBlade = Instantiate(_blade, _attackPoint.position, _cam.rotation);
 
-            Vector3 forceToAdd = direction.normalized * 20f;
+            Vector3 forceToAdd = direction.normalized * 30f;
+
+            tempBlade.Init(3);
 
             Rigidbody tempBladeRb = tempBlade.GetComponent<Rigidbody>();
             tempBladeRb.AddForce(forceToAdd,ForceMode.Impulse);

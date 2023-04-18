@@ -28,6 +28,11 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     [Header("Information")]
     [SerializeField] private string _upgradeName;
     [SerializeField] private VideoClip _videoOfUpgrade;
+    [TextArea(1,5)]
+    [SerializeField] private string _upgradeDescription;
+    [TextArea(1,4)]
+    [SerializeField] private string _upgradeComboBonus;
+    [SerializeField] private string _upgradeCostString;
     [SerializeField] private GameObject _hoverUI;
     [SerializeField] private GameObject _alreadyBoughtUI;
     [SerializeField] private GameObject _infoBoxUI;
@@ -72,21 +77,27 @@ public class UpgradeSlotBehaviour : MonoBehaviour
                 LockMe();
             }
         }
+
+        if(_upgradeCostString == null)
+        {
+            _upgradeCostString = _upgradeCost.ToString();
+        }
     }
 
 
     public void HoverOn()
     {
-        UpgradeSceneManager.Instance.DisplayThisUpgradeSlot(_upgradeName, _videoOfUpgrade);
-        _hoverUI.SetActive(true);
-        _infoBoxUI.SetActive(true);
+        UpgradeSceneManager.Instance.DisplayThisUpgradeSlot(_upgradeName, _videoOfUpgrade, _upgradeDescription, _upgradeComboBonus, _upgradeCostString);
+        //_hoverUI.SetActive(true);
+        //_infoBoxUI.SetActive(true);
         _imageSymbol.transform.localScale = new Vector3(IncreaseHoverImageSize, IncreaseHoverImageSize, IncreaseHoverImageSize);
     }
 
     public void HoverOff()
     {
-        _hoverUI.SetActive(false);
-        _infoBoxUI.SetActive(false);
+        //_hoverUI.SetActive(false);
+        //_infoBoxUI.SetActive(false);
+        UpgradeSceneManager.Instance.HideInformationBoard();
         _imageSymbol.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 

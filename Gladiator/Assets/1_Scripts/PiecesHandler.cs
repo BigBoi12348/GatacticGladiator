@@ -73,10 +73,6 @@ public class PiecesHandler : MonoBehaviour
             {
                 SetUpNewPiecesPoisitons(piecesHandler);
             }
-            if(GUILayout.Button("PutTogether", GUILayout.Height(20)))
-            {
-                SetUpNewPiecesPoisitons(piecesHandler);
-            }
         }
 
         private void SetUpNewPiecesPoisitons(PiecesHandler piecesHandler)
