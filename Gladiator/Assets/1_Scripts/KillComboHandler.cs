@@ -50,6 +50,6 @@ public class KillComboHandler : MonoBehaviour
         }
         KillComboCounter += value;
         _killComboTimer = _killComboTotalTime;
-        _killComboAnim.Play(REOPEN);
+        _killComboAnim.Play(REOPEN, 0, 0);
     }
 }
