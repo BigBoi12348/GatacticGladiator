@@ -5666,7 +5666,7 @@ GameObject:
   - component: {fileID: 7497232879670771251}
   - component: {fileID: 7532345787955916885}
   - component: {fileID: 4065816011520564996}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Noob_Sword_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9803,7 +9803,6 @@ GameObject:
   - component: {fileID: 7442434931619670364}
   - component: {fileID: 7442434931619670366}
   - component: {fileID: 7442434931619670367}
-  - component: {fileID: 7442434931619670360}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9892,6 +9891,11 @@ MonoBehaviour:
   _lookUpThreshold: 0.3
   dashKey: 118
   _fireBeam: {fileID: 4364620476092667327, guid: 3a1ad0a4bc2a9c440a5eac10f874a0a1, type: 3}
+  _gravitySkillRadius: 10
+  _liftPower: 7
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _playerAnim: {fileID: 9098930713520981893}
   _numOfClicks: 0
   lastClickedTime: 0
@@ -10040,20 +10044,6 @@ MonoBehaviour:
   _isBlocking: 0
   _energyShieldSlider: {fileID: 798253417182283091}
   _otherEnergyShieldSlider: {fileID: 3588618380250943205}
---- !u!136 &7442434931619670360
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7442434931619670350}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7451993260418398660
 GameObject:
   m_ObjectHideFlags: 0

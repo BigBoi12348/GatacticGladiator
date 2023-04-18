@@ -5,10 +5,6 @@ using Pathfinding;
 
 public class EnemyBehaviour : MonoBehaviour
 {   
-    // [Header("Fracure Variables")]
-    // public GameObject fractured;
-    // public float breakforce;
-    //[SerializeField] private Rigidbody _rb;
     Transform _playerTransform;
     [Header("Enemy Movement")]
     [SerializeField] private float _enemyMovementSpeed;
@@ -61,15 +57,7 @@ public class EnemyBehaviour : MonoBehaviour
                     _attackCoolDown = _totalAttackCoolDown;
                     StartCoroutine(_enemyWeaponBehaviour.Activate());
                 }
-            }
-            else if(_playerTransform.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
-            {
-                if(_attackCoolDown <= 0)
-                {
-                    playerHealth.TakeDamage(5);
-                    _attackCoolDown = _totalAttackCoolDown;  
-                }
-            }
+            }  
         }
         
         if(_attackCoolDown > 0)
@@ -90,14 +78,19 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    public void StopEnemy()
+    {
+        _enemyAnim.enabled = false;
+        _aIPath.enabled = false;
+    }
+
     private void Breaking()
     {
         PiecesHandler tempPiecesHandler = EnemyManager.Instance.GetAnDeadEnemy(transform);
         tempPiecesHandler.StartExplode(_explodePoint);
-        //Destroy(gameObject);
     }
 
-    private void Death()
+    public void Death()
     {
         Breaking();
 

@@ -59,7 +59,7 @@ public class UpgradeSceneManager : MonoBehaviour
     
     private void GoBackToGame()
     {
-        GameManager.Instance.LoadThisScene(1);
+        GameManager.Instance.LoadThisScene(GameManager.GAMESCENE);
     }
 
     public void UpdateCurrentUIPlayerPoints()

@@ -145,6 +145,17 @@ public class FirstPersonController : MonoBehaviour
     private List<PlayerFireLane> _currentFireBeams;
     private bool AmIShootingFireBeams;
     private int NumberOfBeams;
+
+    [Header("Gravity Pound")]
+    [SerializeField] private float _gravitySkillRadius;
+    [SerializeField] private float _liftPower;
+    [SerializeField] private LayerMask _enemyLayer;
+    RaycastHit[] raycastGravityHits;
+    private bool AmIGravityLifting;
+    private bool FirstGravityCast;
+
+    [Header("Thanos Snap")]
+    private bool AmIUsingThanosSnap;
     #endregion
 
     #region Player Animations
@@ -446,28 +457,31 @@ public class FirstPersonController : MonoBehaviour
         }
 
         #region Abiltiy Buttons
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetKeyDown(KeyCode.Alpha1) && !NotInAbilityState)
         {
             if(PlayerUpgradesData.StarTwo)
             {
                 NotInAbilityState = true;
-
             }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.Alpha2) && !NotInAbilityState)
         {
             Time.timeScale = 0.1f;
+            PostProcessingEffectManager.Instance.StartSlowEffect();
             NumberOfBeams = GetNumberOfFireBeams();
             _currentFireBeams = new List<PlayerFireLane>();
             AmIShootingFireBeams = true;
             NotInAbilityState = true;
         }
-        if(Input.GetKeyDown(KeyCode.Alpha3))
+        if(Input.GetKeyDown(KeyCode.Alpha3) && !NotInAbilityState)
         {
+            FirstGravityCast = true;
+            AmIGravityLifting = true;
             NotInAbilityState = true;
         }
-        if(Input.GetKeyDown(KeyCode.Alpha4))
+        if(Input.GetKeyDown(KeyCode.Alpha4) && !NotInAbilityState)
         {
+            AmIUsingThanosSnap = true;
             NotInAbilityState = true;
         }
         #endregion
@@ -483,6 +497,8 @@ public class FirstPersonController : MonoBehaviour
                     {
                         fireLane.ShootThem();
                     }
+                    PostProcessingEffectManager.Instance.EndSlowEffect();
+                    CameraEffectsSystem.Instance.ShakeCamera(12, 0.3f);
                     AmIShootingFireBeams = false;
                     NotInAbilityState = false;
                 }
@@ -492,7 +508,49 @@ public class FirstPersonController : MonoBehaviour
                     NumberOfBeams--;
                 }
             }
+            if(AmIGravityLifting)
+            {
+                if(FirstGravityCast)
+                {
+                    StartCoroutine(GravityPound());
+                    FirstGravityCast = false;
+                }
+            }
+            if(AmIUsingThanosSnap)
+            {
+
+            }
         }
+    }
+
+    IEnumerator GravityPound()
+    {
+        CameraEffectsSystem.Instance.ShakeCamera(1, 1f);
+        RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, _gravitySkillRadius, Vector3.up, 5, _enemyLayer);
+        List<EnemyBehaviour> enemyBehaviours = new List<EnemyBehaviour>();
+        foreach (RaycastHit hit in raycastHits)
+        {
+            EnemyBehaviour enemyBehaviour = hit.transform.GetComponent<EnemyBehaviour>();
+            enemyBehaviour.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * (_liftPower), ForceMode.Impulse);
+            enemyBehaviour.StopEnemy();
+            enemyBehaviours.Add(enemyBehaviour);
+        }
+
+        yield return new WaitForSeconds(1.3f);
+
+        foreach (var enemyBehaviour in enemyBehaviours)
+        {
+            enemyBehaviour.transform.GetComponent<Rigidbody>().AddForce(Vector3.down * _liftPower*2, ForceMode.Impulse);
+        }
+        yield return new WaitForSeconds(0.35f);
+        CameraEffectsSystem.Instance.ShakeCamera(20, 0.5f);
+        foreach (var enemyBehaviour in enemyBehaviours)
+        {
+            enemyBehaviour.Death();
+        }
+
+        AmIGravityLifting = false;
+        NotInAbilityState = false;
     }
 
     private void ShootFireBeam()
