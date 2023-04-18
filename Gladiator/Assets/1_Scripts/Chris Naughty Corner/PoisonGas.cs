@@ -4,26 +4,33 @@ using UnityEngine;
 
 public class PoisonGas : MonoBehaviour
 {
-    public float damagePerSecond = 10.0f; // Amount of damage to apply per second
-    public float damageInterval = 1.0f; // Interval in seconds between damage ticks
+    bool buringPlayer;
+    Coroutine burnCo;
 
-    private float timeSinceLastDamage = 0.0f;
-
-    private void OntriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
         {
-            timeSinceLastDamage += Time.deltaTime;
-            if (timeSinceLastDamage >= damageInterval)
-            {
-                PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-                if (playerHealth != null)
-                {
-                    playerHealth.TakeDamage(Mathf.RoundToInt(damagePerSecond * damageInterval));
-                    Debug.Log("Player health: " + playerHealth.currentHealth); // Debug statement
-                }
-                timeSinceLastDamage -= damageInterval;
-            }
+            buringPlayer = true;
+            burnCo = StartCoroutine(BurnPlayer(playerHealth));
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
+        {
+            buringPlayer = false;
+            StopCoroutine(burnCo);
+        }
+    }
+
+    IEnumerator BurnPlayer(PlayerHealth playerHealth)
+    {
+        while (buringPlayer)
+        {
+            yield return new WaitForSeconds(0.8f);
+            playerHealth.TakeDamage(1);
         }
     }
 }
