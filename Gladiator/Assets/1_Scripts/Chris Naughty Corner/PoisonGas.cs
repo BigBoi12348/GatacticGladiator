@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class PoisonGas : MonoBehaviour
 {
-    bool buringPlayer;
-    Coroutine burnCo;
+    public float damagePerTick = 10f;
+    public float tickInterval = 1f;
+    public float radius = 1f;
 
-    private void OnTriggerEnter(Collider other)
+    private float nextTickTime;
+
+    void Update()
     {
-        if (other.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
+        if (Time.time >= nextTickTime)
         {
-            buringPlayer = true;
-            burnCo = StartCoroutine(BurnPlayer(playerHealth));
+            nextTickTime = Time.time + tickInterval;
+
+            Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+
+            foreach (Collider collider in colliders)
+            {
+                PlayerHealth health = collider.GetComponent<PlayerHealth>();
+                if (health != null)
+                {
+                    health.TakeDamage(1);
+                }
+            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnDrawGizmosSelected()
     {
-        if (other.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
-        {
-            buringPlayer = false;
-            StopCoroutine(burnCo);
-        }
-    }
-
-    IEnumerator BurnPlayer(PlayerHealth playerHealth)
-    {
-        while (buringPlayer)
-        {
-            yield return new WaitForSeconds(0.8f);
-            playerHealth.TakeDamage(1);
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
