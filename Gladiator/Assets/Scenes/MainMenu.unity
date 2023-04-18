@@ -1909,7 +1909,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5bd73caceeb4124499e29f08f28c6cd2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c1f08b6035eb4645acae8a87849d25a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2646,10 +2646,36 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game:\n\nIn 2695, at an arena on an alien planet, a human gladiator must
-    survive all battles and beat the governor\u2019s champion. \r\n\r\nEach fight
-    won earns them upgrades and gets them closer to earning their freedom.\r\n\nDiscover
-    unique abilities that will aid you in battle.\n\nHow long can you go for?\n\n\n"
+  m_text: 'Game:
+
+
+    In 2XXX, at an arena on an alien planet, you were taken and
+    made to fight against the most fearsome warriors.
+
+    
+
+    Your fate may be
+    sealed in this endless entourage of enemies.
+
+
+    But thats not stopping you
+    from showing them whos the true champion.
+
+
+    Fights that are won earn upgrades
+    that can make you unstoppable.
+
+
+    Discover unique abilities and strategies
+    that will aid you in battle.
+
+
+    How long can you go throughout this carnage
+    until you fall?
+
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d167dd2eec92143499f6ea986abad200, type: 2}
   m_sharedMaterial: {fileID: -15337761652585793, guid: d167dd2eec92143499f6ea986abad200, type: 2}
