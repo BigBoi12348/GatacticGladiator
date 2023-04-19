@@ -12,9 +12,13 @@ GameObject:
   - component: {fileID: 935074609475129252}
   - component: {fileID: 1276371147073268533}
   - component: {fileID: 1308628918581612315}
-  m_Layer: 0
+  - component: {fileID: 8565629720429207799}
+  - component: {fileID: 3096554187467865136}
+  - component: {fileID: 4650770011650804308}
+  - component: {fileID: 5965121690851610767}
+  m_Layer: 11
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,3 +104,59 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8565629720429207799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066819978308515344}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3886ce8bc166b146bf18ea7d9b653ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponCollider: {fileID: 3096554187467865136}
+  WeaponDamage: 30
+--- !u!64 &3096554187467865136
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066819978308515344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7929139438592967118, guid: a27163053c8c76744952c1baebad9153, type: 3}
+--- !u!114 &4650770011650804308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066819978308515344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41904b0c9c331c34f80b06a26619bb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  damageTag: Projectile
+  arrow: {fileID: 5066819978308515344}
+--- !u!65 &5965121690851610767
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066819978308515344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05844283, y: 0.038622256, z: 0.02840804}
+  m_Center: {x: -0.0000000018277702, y: 0.0006568174, z: -0.0042644176}

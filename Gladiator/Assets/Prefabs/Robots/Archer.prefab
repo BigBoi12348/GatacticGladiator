@@ -1960,8 +1960,8 @@ MonoBehaviour:
   _totalAttackCoolDown: 5
   _attackCoolDown: 0
   _enemyWeaponBehaviour: {fileID: 4791411402509982439, guid: 5065562aca3a71e449ba067879fbec4c, type: 3}
-  _aIDestinationSetter: {fileID: 1764986156352767934, guid: 5065562aca3a71e449ba067879fbec4c, type: 3}
-  _aIPath: {fileID: 2740254262578184790, guid: 5065562aca3a71e449ba067879fbec4c, type: 3}
+  _aIDestinationSetter: {fileID: 3050120818789187318}
+  _aIPath: {fileID: 3050120818789187316}
 --- !u!1 &3050120817759276341
 GameObject:
   m_ObjectHideFlags: 0

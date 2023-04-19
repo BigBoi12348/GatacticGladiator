@@ -54,7 +54,7 @@ public class AITargetShoot : MonoBehaviour
         {
             Rigidbody rb = Instantiate(projectile, attackPoint.position, Quaternion.Euler(0, 90, 0)).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            //rb.AddForce(transform.up * 8f, ForceMode.Impulse);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
