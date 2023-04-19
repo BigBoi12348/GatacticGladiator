@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public const int GAMESCENE = 2;
     public const int UPGRADESCENE = 3;
     public const int TUTSCENE = 4;
+    public const int CREDITS = 5;
 
 
     [Header("Scene Control Variables")]
