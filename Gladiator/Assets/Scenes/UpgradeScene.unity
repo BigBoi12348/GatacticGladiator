@@ -2015,7 +2015,7 @@ PrefabInstance:
     - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 78435c67ade07f944b2f0e3026b8a822, type: 3}
+      objectReference: {fileID: 2800000, guid: 466301080ada1244e8b66687d3c25bb2, type: 3}
     - target: {fileID: 573330229758849335, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_text
       value: Click on upgrade to purchase (2 Points)
@@ -3590,7 +3590,7 @@ PrefabInstance:
     - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 78435c67ade07f944b2f0e3026b8a822, type: 3}
+      objectReference: {fileID: 2800000, guid: 89b4c8b4ace2c8d49b15d39ac6715f51, type: 3}
     - target: {fileID: 573330229758849335, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_text
       value: Click on upgrade to purchase (2 Points)
