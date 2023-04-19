@@ -5,22 +5,28 @@ using Pathfinding;
 
 public class EnemyBehaviour : MonoBehaviour
 {   
-    Transform _playerTransform;
+    private enum EnemyType
+    {
+        Sword, Archer, Hammer, Axe
+    }
+    [SerializeField] private EnemyType _enemyType;
+    [SerializeField]Transform _playerTransform;
     [Header("Enemy Movement")]
     [SerializeField] private float _enemyMovementSpeed;
     [SerializeField] private float _enemyMovementSpeedModifier;
-    
+    [SerializeField] private float _angleOffset;
 
     [Header("Bleed Out values")]
     [SerializeField] private Transform _explodePoint;
     private bool _alreadyDead;
-
+    [Header("Archer Variables")]
+    [SerializeField] private bool _playerInAttackRange;
 
     [Header("Animations")]
     [SerializeField] private Animator _enemyAnim;
     [SerializeField] private float _totalAttackCoolDown;
     [SerializeField] private float _attackCoolDown;
-    const string ATTACK = "Stable Sword Outward Slash";
+    const string SWORDATTACK = "Stable Sword Outward Slash";
 
 
     [Header("References")]
@@ -47,17 +53,34 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Update()
     {      
+        if(_enemyType == EnemyType.Archer)
+        {
+            // if (Vector3.Distance(transform.position, _playerTransform.position) < 20)
+            // {
+            //     _playerInSightRange = true;
+            // }
+            // else
+            // {
+            //     _playerInSightRange = false;
+            // }
+            if (Vector3.Distance(transform.position , _playerTransform.position) < 20)
+            {
+                _playerInAttackRange = true;
+            }
+            else
+            {
+                _playerInAttackRange = false;
+            }
+        }
+        
         if(_aIPath.reachedEndOfPath)
         {
-            if(_enemyAnim != null)
+            if(_attackCoolDown <= 0)
             {
-                if(_attackCoolDown <= 0)
-                {
-                    _enemyAnim.Play(ATTACK);
-                    _attackCoolDown = _totalAttackCoolDown;
-                    StartCoroutine(_enemyWeaponBehaviour.Activate());
-                }
-            }  
+                _enemyAnim.Play(SWORDATTACK);
+                _attackCoolDown = _totalAttackCoolDown;
+                StartCoroutine(_enemyWeaponBehaviour.Activate());
+            }
         }
         
         if(_attackCoolDown > 0)
