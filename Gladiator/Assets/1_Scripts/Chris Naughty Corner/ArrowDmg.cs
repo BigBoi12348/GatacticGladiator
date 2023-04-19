@@ -5,7 +5,6 @@ using UnityEngine;
 public class ArrowDmg : MonoBehaviour
 {
     public int damageAmount = 10;
-    //public string damageTag = "Projectile";
     public GameObject arrow;
 
     private void OnTriggerEnter(Collider other)
