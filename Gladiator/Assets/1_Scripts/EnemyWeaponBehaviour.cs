@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class EnemyWeaponBehaviour : MonoBehaviour
 {
+    private enum WeaponType 
+    {
+        Melee, Projectile
+    }
+    [SerializeField] private WeaponType _weaponType;
+    //[SerializeField] private bool isWeaponAlreadyActive;
     [Header("References")]
     [SerializeField] private Collider _weaponCollider;
     [SerializeField] private int WeaponDamage;
@@ -11,7 +17,10 @@ public class EnemyWeaponBehaviour : MonoBehaviour
 
     private void Start() 
     {
-        _weaponCollider.enabled = false;
+        if(_weaponType == WeaponType.Melee)
+        {
+            _weaponCollider.enabled = false;
+        }
         alreadyHit = false;
     }
 
@@ -24,7 +33,14 @@ public class EnemyWeaponBehaviour : MonoBehaviour
                 alreadyHit = true;
                 PostProcessingEffectManager.Instance.HurtEffect(0.1f);
                 playerHealth.TakeDamage(WeaponDamage);
-                StartCoroutine(HitDelay());
+                if(_weaponType == WeaponType.Melee)
+                {
+                    StartCoroutine(HitDelay());
+                }
+                else if(_weaponType == WeaponType.Projectile)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

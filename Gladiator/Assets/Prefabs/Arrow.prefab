@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1276371147073268533}
   - component: {fileID: 1308628918581612315}
   - component: {fileID: 8565629720429207799}
-  - component: {fileID: 3096554187467865136}
+  - component: {fileID: 3507944557004399321}
   m_Layer: 11
   m_Name: Arrow
   m_TagString: Untagged
@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5066819978308515344}
-  m_LocalRotation: {x: -0.6904574, y: -0.15256566, z: 0.1525429, w: 0.69045126}
-  m_LocalPosition: {x: 0.67, y: -1.66, z: 0.07}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 175.65077}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -65.082, y: -90.002, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &935074609475129252
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -114,10 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3886ce8bc166b146bf18ea7d9b653ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponCollider: {fileID: 3096554187467865136}
+  _weaponType: 1
+  _weaponCollider: {fileID: 3507944557004399321}
   WeaponDamage: 30
---- !u!64 &3096554187467865136
-MeshCollider:
+--- !u!65 &3507944557004399321
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,8 +126,7 @@ MeshCollider:
   m_GameObject: {fileID: 5066819978308515344}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7929139438592967118, guid: a27163053c8c76744952c1baebad9153, type: 3}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05844283, y: 0.038622223, z: 0.028408041}
+  m_Center: {x: 0, y: 0.00065681245, z: -0.0042644176}

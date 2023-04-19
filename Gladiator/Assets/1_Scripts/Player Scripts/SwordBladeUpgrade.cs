@@ -14,31 +14,65 @@ public class SwordBladeUpgrade : MonoBehaviour
 
     public void ShootOutBlade()
     {
-        if(PlayerUpgradesData.AttackAttribute >= 5)
+        if(PlayerUpgradesData.AttackFive)
         {
-            Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
-            RaycastHit hit;
-            
-            Vector3 targetPoint;
-            if(Physics.Raycast(ray, out hit))
+            bool canShoot = false;
+            if(KillComboHandler.KillComboCounter >= 20)
             {
-                targetPoint = hit.point;
+                canShoot = true;
             }
             else
             {
-                targetPoint = ray.GetPoint(75);
+                int ranChance = Random.Range(1,101);
+                if(ranChance <= 60)
+                {
+                   canShoot = true; 
+                }
             }
 
-            Vector3 direction = targetPoint - _attackPoint.position;
+            if(canShoot)
+            {
+                Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
+                RaycastHit hit;
+                
+                Vector3 targetPoint;
+                if(Physics.Raycast(ray, out hit))
+                {
+                    targetPoint = hit.point;
+                }
+                else
+                {
+                    targetPoint = ray.GetPoint(75);
+                }
 
-            SwordBladeProjectileBehaviour tempBlade = Instantiate(_blade, _attackPoint.position, _cam.rotation);
+                Vector3 direction = targetPoint - _attackPoint.position;
 
-            Vector3 forceToAdd = direction.normalized * 30f;
+                SwordBladeProjectileBehaviour tempBlade = Instantiate(_blade, _attackPoint.position, _cam.rotation);
 
-            tempBlade.Init(3);
+                Vector3 forceToAdd = direction.normalized * 30f;
 
-            Rigidbody tempBladeRb = tempBlade.GetComponent<Rigidbody>();
-            tempBladeRb.AddForce(forceToAdd,ForceMode.Impulse);
+
+                tempBlade.Init(CheckNumOfHits());
+
+                Rigidbody tempBladeRb = tempBlade.GetComponent<Rigidbody>();
+                tempBladeRb.AddForce(forceToAdd,ForceMode.Impulse);
+            }
+        }
+    }
+
+    private int CheckNumOfHits()
+    {
+        if(KillComboHandler.KillComboCounter >= 30)
+        {
+            return 3;
+        }
+        else if(KillComboHandler.KillComboCounter >= 10)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
         }
     }
 }

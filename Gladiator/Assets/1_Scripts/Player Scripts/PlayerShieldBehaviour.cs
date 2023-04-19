@@ -11,7 +11,8 @@ public class PlayerShieldBehaviour : MonoBehaviour
     [Header("Energy ")]
     [SerializeField] private float _currentEnergy;
     public float MaxTotalEnergy{private get; set;}
-    [SerializeField] private float _chargeRate;
+    [SerializeField] private float _setChargeRate;
+    private float _chargeRate;
     [SerializeField] private float _decreaseRate;
     
 
@@ -21,7 +22,19 @@ public class PlayerShieldBehaviour : MonoBehaviour
     [SerializeField] private Slider _energyShieldSlider;
     [SerializeField] private Slider _otherEnergyShieldSlider;
 
+
+    [Header("Shield Recharge")]
+    private bool _doesSheildHaveRecharge;
     private bool _secondLock;
+
+    private void Start() 
+    {
+        if(PlayerUpgradesData.ShieldOne)
+        {
+            _chargeRate = _setChargeRate;
+            //_doesSheildHaveRecharge = true;
+        }
+    }
 
     public void Init(Blocking tempBlocking)
     {
@@ -75,32 +88,7 @@ public class PlayerShieldBehaviour : MonoBehaviour
 
         _energyShieldSlider.value = _currentEnergy;
         _otherEnergyShieldSlider.value = _currentEnergy;
-        //if(_isBlocking)
-        //{
-        //    if(_currentEnergy > 0)
-        //    {
-        //        _currentEnergy -= Time.deltaTime*_decreaseRate;
-        //    }
-        //    else
-        //    {
-        //        _isBlocking = false;
-        //    }
-        //}
-        //else if (!_shieldLocked)
-        //{
-        //    _currentEnergy = MaxTotalEnergy;
-        //    StartCoroutine(blocking.AllowShieldBlockAgain());
-        //    _shieldLocked = true;
-        //}
-        //else if(_currentEnergy < MaxTotalEnergy)
-        //{
-        //    _currentEnergy += Time.deltaTime*_chargeRate;
-        //}
-        //else if(_currentEnergy > 10)
-        //{
-        //    _shieldLocked = false;
-        //}
-        //_energyShieldSlider.value = _currentEnergy;
-        //_otherEnergyShieldSlider.value = _currentEnergy;
+        
+
     }
 }

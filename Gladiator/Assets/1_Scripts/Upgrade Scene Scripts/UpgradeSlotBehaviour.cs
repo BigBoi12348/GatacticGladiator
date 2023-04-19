@@ -53,29 +53,110 @@ public class UpgradeSlotBehaviour : MonoBehaviour
 
         if(_upgradeType == UpgradeType.Sword)
         {
-            _imageSymbol.texture = _swordImage;
-
-            if(_thisUpgradeRank <= PlayerUpgradesData.AttackAttribute)
+            switch (_thisUpgradeRank)
             {
-                LockMe();
+                case 1:
+                    if(PlayerUpgradesData.AttackOne)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 2:
+                    if(PlayerUpgradesData.AttackTwo)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 3:
+                    if(PlayerUpgradesData.AttackThree)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 4:
+                    if(PlayerUpgradesData.AttackFour)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 5:
+                    if(PlayerUpgradesData.AttackFive)
+                    {
+                        LockMe();
+                    }
+                    break;
             }
         }
         else if(_upgradeType == UpgradeType.Shield)
         {
-            _imageSymbol.texture = _shieldImage;
-
-            if(_thisUpgradeRank <= PlayerUpgradesData.ShieldAttribute)
+            switch (_thisUpgradeRank)
             {
-                LockMe();
+                case 1:
+                    if(PlayerUpgradesData.ShieldOne)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 2:
+                    if(PlayerUpgradesData.ShieldTwo)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 3:
+                    if(PlayerUpgradesData.ShieldThree)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 4:
+                    if(PlayerUpgradesData.ShieldFour)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 5:
+                    if(PlayerUpgradesData.ShieldFive)
+                    {
+                        LockMe();
+                    }
+                    break;
             }
         }
         else if(_upgradeType == UpgradeType.Ability)
         {
-            _imageSymbol.texture = _abilityImage;
-
-            if(_thisUpgradeRank <= PlayerUpgradesData.AbilityAttribute)
+            switch (_thisUpgradeRank)
             {
-                LockMe();
+                case 1:
+                    if(PlayerUpgradesData.StarOne)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 2:
+                    if(PlayerUpgradesData.StarTwo)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 3:
+                    if(PlayerUpgradesData.StarThree)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 4:
+                    if(PlayerUpgradesData.StarFour)
+                    {
+                        LockMe();
+                    }
+                    break;
+                case 5:
+                    if(PlayerUpgradesData.StarFive)
+                    {
+                        LockMe();
+                    }
+                    break;
             }
         }
 
@@ -102,7 +183,7 @@ public class UpgradeSlotBehaviour : MonoBehaviour
 
     public void TryToUnlockMe()
     {
-        if(!alreadyBought && CheckIfInOrder())
+        if(!alreadyBought)
         {
             bool didBuy = UpgradeSceneManager.Instance.TryUpgradeThisTier(_thisUpgradeRank, _upgradeCost, _upgradeType);
 
@@ -119,43 +200,43 @@ public class UpgradeSlotBehaviour : MonoBehaviour
         }
     }
 
-    private bool CheckIfInOrder()
-    {
-        if(_upgradeType == UpgradeType.Sword)
-        {
-            if(PlayerUpgradesData.AttackAttribute == _thisUpgradeRank-1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if(_upgradeType == UpgradeType.Shield)
-        {
-            if(PlayerUpgradesData.ShieldAttribute == _thisUpgradeRank-1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if(_upgradeType == UpgradeType.Ability)
-        {
-            if(PlayerUpgradesData.AbilityAttribute == _thisUpgradeRank-1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        return false;
-    }
+    // private bool CheckIfInOrder()
+    // {
+    //     if(_upgradeType == UpgradeType.Sword)
+    //     {
+    //         if(PlayerUpgradesData.AttackAttribute == _thisUpgradeRank-1)
+    //         {
+    //             return true;
+    //         }
+    //         else
+    //         {
+    //             return false;
+    //         }
+    //     }
+    //     else if(_upgradeType == UpgradeType.Shield)
+    //     {
+    //         if(PlayerUpgradesData.ShieldAttribute == _thisUpgradeRank-1)
+    //         {
+    //             return true;
+    //         }
+    //         else
+    //         {
+    //             return false;
+    //         }
+    //     }
+    //     else if(_upgradeType == UpgradeType.Ability)
+    //     {
+    //         if(PlayerUpgradesData.AbilityAttribute == _thisUpgradeRank-1)
+    //         {
+    //             return true;
+    //         }
+    //         else
+    //         {
+    //             return false;
+    //         }
+    //     }
+    //     return false;
+    // }
 
     private void LockMe()
     {

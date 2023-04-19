@@ -1576,6 +1576,10 @@ PrefabInstance:
       propertyPath: _upgradeType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _thisUpgradeRank
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
@@ -1756,6 +1760,10 @@ PrefabInstance:
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _thisUpgradeRank
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
@@ -4275,6 +4283,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _thisUpgradeRank
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
       value: '- x20: Poision and Fire can''t damage you under 20% Max health'
       objectReference: {fileID: 0}
@@ -5298,6 +5310,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _thisUpgradeRank
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
       value: Fire Shield
       objectReference: {fileID: 0}
@@ -5590,7 +5606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeCost
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeName
@@ -5607,7 +5623,7 @@ PrefabInstance:
         - x20: Guaranteed chance
         to spawn blade
 
-        - x25: Can go through three enemies'
+        - x30: Can go through three enemies'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeCostString

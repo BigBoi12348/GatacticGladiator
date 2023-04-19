@@ -12,6 +12,7 @@ public class KillComboHandler : MonoBehaviour
     public float _killComboTotalTime;
     private float _killComboTimer;
     private bool _isKillComboOn;
+    private bool ChanceToKillExtra;
 
     [Header("UI")]
     [SerializeField] private GameObject _killComboParent;
@@ -21,6 +22,14 @@ public class KillComboHandler : MonoBehaviour
     [SerializeField] private Animator _killComboAnim;
     const string REOPEN = "KillCombo_Start";
     
+    private void Start() 
+    {
+        if(PlayerUpgradesData.AttackTwo)
+        {
+            ChanceToKillExtra = true;
+        }
+    }
+
     private void OnEnable() 
     {
         
@@ -51,5 +60,22 @@ public class KillComboHandler : MonoBehaviour
         KillComboCounter += value;
         _killComboTimer = _killComboTotalTime;
         _killComboAnim.Play(REOPEN, 0, 0);
+
+        if(ChanceToKillExtra)
+        {
+            int ranChance = Random.Range(1,101);
+            if(ranChance <= 75)
+            {
+                KillComboCounter += 1;
+                StartCoroutine(FlashTextRed());
+            }
+        }
+    }
+    
+    IEnumerator FlashTextRed()
+    {
+        _killComboText.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        _killComboText.color = Color.white;
     }
 }

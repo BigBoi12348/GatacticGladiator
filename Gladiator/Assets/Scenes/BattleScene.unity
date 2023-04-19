@@ -10515,7 +10515,7 @@ MonoBehaviour:
   - {fileID: 619184035}
   - {fileID: 1008874535}
   enemyTypes:
-  - EnemyObj: {fileID: 0}
+  - EnemyObj: {fileID: 7333921120246751172, guid: fd7fd27f45913ee4aa06601f5b862941, type: 3}
     DifficultyRank: 1
     StartSpawnWave: 1
     IsThereStopForThisEnemy: 1
@@ -10534,7 +10534,12 @@ MonoBehaviour:
     DifficultyRank: 3
     StartSpawnWave: 4
     IsThereStopForThisEnemy: 1
-    StopSpawnWave: 0
+    StopSpawnWave: 8
+  - EnemyObj: {fileID: 6316840748443753182, guid: ae88c8755e3b61145851eba36048ceae, type: 3}
+    DifficultyRank: 4
+    StartSpawnWave: 4
+    IsThereStopForThisEnemy: 1
+    StopSpawnWave: 8
 --- !u!1 &730563809
 GameObject:
   m_ObjectHideFlags: 0
@@ -24293,8 +24298,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerAnim: {fileID: 2659847365957046793}
-  playerShieldBehaviour: {fileID: 4459864850776571091}
-  firstPersonController: {fileID: 4459864850776571080}
+  _playerShieldBehaviour: {fileID: 4459864850776571091}
+  _killComboHandler: {fileID: 64191580}
+  _firstPersonController: {fileID: 4459864850776571080}
 --- !u!1 &1266559793
 GameObject:
   m_ObjectHideFlags: 0
@@ -29045,7 +29051,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16420
+  m_Name: pb_Mesh-3805472
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -38760,20 +38766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4583fec642f3cd44940878f4ce8d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4459864850776571098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353237182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41904b0c9c331c34f80b06a26619bb57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 10
-  arrow: {fileID: 0}
 --- !u!114 &4708916056535330081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43907,7 +43899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7442434930226168797, guid: d227a1315cd963742b77e10dd860610d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 7442434930226168797, guid: d227a1315cd963742b77e10dd860610d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -43976,6 +43968,10 @@ PrefabInstance:
     - target: {fileID: 7442434931619670350, guid: d227a1315cd963742b77e10dd860610d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442434931619670367, guid: d227a1315cd963742b77e10dd860610d, type: 3}
+      propertyPath: _setChargeRate
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8104196287507649901, guid: d227a1315cd963742b77e10dd860610d, type: 3}
       propertyPath: _blade

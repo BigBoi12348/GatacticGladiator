@@ -76,7 +76,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 1:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AttackAttribute = upGradeRank;
+                        PlayerUpgradesData.AttackOne = true;
                         return true;
                     }
                     else
@@ -86,7 +86,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 2:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AttackAttribute = upGradeRank;
+                        PlayerUpgradesData.AttackTwo = true;
                         return true;
                     }
                     else
@@ -96,7 +96,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 3:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AttackAttribute = upGradeRank;
+                        PlayerUpgradesData.AttackThree = true;
                         return true;
                     }
                     else
@@ -106,7 +106,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 4:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AttackAttribute = upGradeRank;
+                        PlayerUpgradesData.AttackFour = true;
                         return true;
                     }
                     else
@@ -116,7 +116,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 5:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AttackAttribute = upGradeRank;
+                        PlayerUpgradesData.AttackFive = true;
                         return true;
                     }
                     else
@@ -132,7 +132,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 1:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.ShieldAttribute = upGradeRank;
+                        PlayerUpgradesData.ShieldOne = true;
                         return true;
                     }
                     else
@@ -142,7 +142,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 2:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.ShieldAttribute = upGradeRank;
+                        PlayerUpgradesData.ShieldTwo = true;
                         return true;
                     }
                     else
@@ -152,7 +152,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 3:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.ShieldAttribute = upGradeRank;
+                        PlayerUpgradesData.ShieldThree = true;
                         return true;
                     }
                     else
@@ -162,7 +162,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 4:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.ShieldAttribute = upGradeRank;
+                        PlayerUpgradesData.ShieldFour = true;
                         return true;
                     }
                     else
@@ -172,7 +172,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 5:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.ShieldAttribute = upGradeRank;
+                        PlayerUpgradesData.ShieldFive = true;
                         return true;
                     }
                     else
@@ -188,7 +188,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 1:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AbilityAttribute = upGradeRank;
+                        PlayerUpgradesData.StarOne = true;
                         return true;
                     }
                     else
@@ -198,7 +198,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 2:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AbilityAttribute = upGradeRank;
+                        PlayerUpgradesData.StarTwo = true;
                         return true;
                     }
                     else
@@ -208,7 +208,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 3:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AbilityAttribute = upGradeRank;
+                        PlayerUpgradesData.StarThree = true;
                         return true;
                     }
                     else
@@ -218,7 +218,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 4:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AbilityAttribute = upGradeRank;
+                        PlayerUpgradesData.StarFour = true;
                         return true;
                     }
                     else
@@ -228,7 +228,7 @@ public class UpgradeSceneManager : MonoBehaviour
                 case 5:
                     if(upGradeCost <= RoundData.PlayerPoints)
                     {
-                        PlayerUpgradesData.AbilityAttribute = upGradeRank;
+                        PlayerUpgradesData.StarFive = true;
                         return true;
                     }
                     else

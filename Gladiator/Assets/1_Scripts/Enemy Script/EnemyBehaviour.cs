@@ -10,17 +10,28 @@ public class EnemyBehaviour : MonoBehaviour
         Sword, Archer, Hammer, Axe
     }
     [SerializeField] private EnemyType _enemyType;
-    [SerializeField]Transform _playerTransform;
+    Transform _playerTransform;
     [Header("Enemy Movement")]
     [SerializeField] private float _enemyMovementSpeed;
     [SerializeField] private float _enemyMovementSpeedModifier;
     [SerializeField] private float _angleOffset;
 
+
     [Header("Bleed Out values")]
     [SerializeField] private Transform _explodePoint;
     private bool _alreadyDead;
+
+
     [Header("Archer Variables")]
-    [SerializeField] private bool _playerInAttackRange;
+    [SerializeField] private float _bowAttackRange;
+    [SerializeField] private float _arrowSpeed;
+    [SerializeField] private Transform _archerChild;
+    [SerializeField] private Transform _arrowAttackPoint;
+    [SerializeField] private Animator _enemyBowAnim;
+    [SerializeField] private AnimationClip _EnemyBowAnimClip;
+    const string SUBBOW = "Armature|Bow_Fire";
+    const string BOWATTACK = "Archer_Attack";
+
 
     [Header("Animations")]
     [SerializeField] private Animator _enemyAnim;
@@ -33,7 +44,6 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private EnemyWeaponBehaviour _enemyWeaponBehaviour;
     [SerializeField] private AIDestinationSetter _aIDestinationSetter;
     [SerializeField] private AIPath _aIPath;
-    //[SerializeField] private Collider _groundDetectCollider;
 
     private void Awake() 
     {
@@ -55,31 +65,37 @@ public class EnemyBehaviour : MonoBehaviour
     {      
         if(_enemyType == EnemyType.Archer)
         {
-            // if (Vector3.Distance(transform.position, _playerTransform.position) < 20)
-            // {
-            //     _playerInSightRange = true;
-            // }
-            // else
-            // {
-            //     _playerInSightRange = false;
-            // }
-            if (Vector3.Distance(transform.position , _playerTransform.position) < 20)
+            if (Vector3.Distance(transform.position , _playerTransform.position) < _bowAttackRange)
             {
-                _playerInAttackRange = true;
+                if(_attackCoolDown <= 0)
+                {
+                    _enemyAnim.Play(BOWATTACK);
+                    StartCoroutine(ShootTheBow());
+                    _attackCoolDown = _totalAttackCoolDown;
+                }
+                _aIPath.canMove = false;
             }
             else
             {
-                _playerInAttackRange = false;
+                _aIPath.canMove = true;
             }
         }
         
-        if(_aIPath.reachedEndOfPath)
+        if(_enemyType == EnemyType.Sword || _enemyType == EnemyType.Hammer)
         {
-            if(_attackCoolDown <= 0)
+            if(_aIPath.reachedEndOfPath)
             {
-                _enemyAnim.Play(SWORDATTACK);
-                _attackCoolDown = _totalAttackCoolDown;
-                StartCoroutine(_enemyWeaponBehaviour.Activate());
+                if(_attackCoolDown <= 0)
+                {
+                    _enemyAnim.Play(SWORDATTACK);
+                    _attackCoolDown = _totalAttackCoolDown;
+                    StartCoroutine(_enemyWeaponBehaviour.Activate());
+                }
+                _aIPath.canMove = false;
+            }
+            else
+            {
+                _aIPath.canMove = true;
             }
         }
         
@@ -91,6 +107,16 @@ public class EnemyBehaviour : MonoBehaviour
         Vector3 playerPos = new Vector3(_playerTransform.position.x, transform.position.y, _playerTransform.position.z);
  
         transform.LookAt(playerPos);
+    }
+
+    IEnumerator ShootTheBow()
+    {
+        _enemyBowAnim.Play(SUBBOW);
+        _archerChild.transform.eulerAngles = new Vector3(0,87,0);
+        yield return new WaitForSeconds(_EnemyBowAnimClip.length - 0.2f);
+        Rigidbody rb = Instantiate(_enemyWeaponBehaviour, _arrowAttackPoint.position, transform.rotation * Quaternion.Euler(0,180,0)).GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * _arrowSpeed, ForceMode.Impulse);
+        _archerChild.transform.eulerAngles = new Vector3(0,25,0);
     }
 
     private void OnTriggerEnter(Collider other)
