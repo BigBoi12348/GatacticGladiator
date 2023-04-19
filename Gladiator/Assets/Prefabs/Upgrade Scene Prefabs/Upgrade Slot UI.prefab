@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.4995, y: 7.5038}
-  m_SizeDelta: {x: 175.97, y: 252.881}
+  m_AnchoredPosition: {x: 0.00072098, y: -0.00091743}
+  m_SizeDelta: {x: 158.97, y: 153.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &573330228745815418
 CanvasRenderer:
@@ -60,14 +60,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18793106, g: 0.735849, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b6f415c5edbce514f9570f8d85773d68, type: 3}
+  m_Texture: {fileID: 2800000, guid: e15c58d0c72cf524981324327916d81f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -310,15 +310,14 @@ MonoBehaviour:
   _upgradeType: 0
   _thisUpgradeRank: 1
   _upgradeCost: 2
-  _upgradeSlotButton: {fileID: 573330229856771535}
-  _imageSymbol: {fileID: 573330229056640015}
-  IncreaseHoverImageSize: 1.2
-  eventTrigger: {fileID: 573330229856771534}
   _upgradeName: First
   _videoOfUpgrade: {fileID: 32900000, guid: 83e210da690bff8498694defa804a059, type: 3}
   _upgradeDescription: Eat my ass please
   _upgradeComboBonus: osafoanowgnogagwa
-  _upgradeCostString: 2
+  _upgradeSlotButton: {fileID: 573330229856771535}
+  _imageSymbol: {fileID: 573330229056640015}
+  IncreaseHoverImageSize: 1.2
+  eventTrigger: {fileID: 573330229856771534}
   _hoverUI: {fileID: 573330228375595349}
   _alreadyBoughtUI: {fileID: 573330228745815417}
   _boughtSound: {fileID: 2156113589787681072}

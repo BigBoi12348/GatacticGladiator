@@ -409,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: ce853e77d3e107345bf3f0da2c42f545, type: 3}
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!224 &255219639 stripped
@@ -1227,6 +1227,10 @@ PrefabInstance:
       propertyPath: _upgradeDescription
       value: '- Killing enemies will grant you health'
       objectReference: {fileID: 0}
+    - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!1 &581880390
@@ -2161,7 +2165,7 @@ PrefabInstance:
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: ce853e77d3e107345bf3f0da2c42f545, type: 3}
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!224 &875186914 stripped
@@ -3102,7 +3106,7 @@ PrefabInstance:
     - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 78435c67ade07f944b2f0e3026b8a822, type: 3}
+      objectReference: {fileID: 2800000, guid: 0beec291fdff18743a2efe327694fa1a, type: 3}
     - target: {fileID: 573330229758849335, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_text
       value: Click on upgrade to purchase (2 Points)
@@ -3250,7 +3254,7 @@ PrefabInstance:
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: ce853e77d3e107345bf3f0da2c42f545, type: 3}
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!224 &1163642285 stripped
@@ -3451,6 +3455,10 @@ PrefabInstance:
       propertyPath: _upgradeDescription
       value: You have a chance of gaining extra kill combo
       objectReference: {fileID: 0}
+    - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!1 &1249546738
@@ -3718,7 +3726,7 @@ PrefabInstance:
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: ce853e77d3e107345bf3f0da2c42f545, type: 3}
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!224 &1358015689 stripped
@@ -4038,7 +4046,7 @@ PrefabInstance:
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: ce853e77d3e107345bf3f0da2c42f545, type: 3}
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!224 &1399439216 stripped
@@ -4824,6 +4832,10 @@ PrefabInstance:
       propertyPath: _upgradeDescription
       value: Player will now attack even faster
       objectReference: {fileID: 0}
+    - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!1 &1779923507
@@ -5590,6 +5602,10 @@ PrefabInstance:
       value: Every time you slash, you have a chance that a blade will be shot out
         that can kill an enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!1 &2082431214
@@ -6247,6 +6263,10 @@ PrefabInstance:
       propertyPath: _upgradeDescription
       value: Player will now attack faster
       objectReference: {fileID: 0}
+    - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 9a3586533de35164b8e49cbb83db42d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
 --- !u!4 &598434552312753169
