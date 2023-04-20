@@ -12,21 +12,21 @@ public class LeverInteract : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Mouse0))
-        //{
-        //    animator.Play("AsD");
-        //}
+    //private void Update()
+    //{
+    //    //if (Input.GetKeyDown(KeyCode.Mouse0))
+    //    //{
+    //    //    animator.Play("AsD");
+    //    //}
 
-    }
-    private void OnTriggerStay(Collider other)
+    //}
+    private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && player /*&& other.CompareTag("Player")*/)
+        Debug.Log(other.name);
+        if (other.CompareTag("Player"))
         {
             animator.Play("AsD");
         }
-        
     }
 }
 
