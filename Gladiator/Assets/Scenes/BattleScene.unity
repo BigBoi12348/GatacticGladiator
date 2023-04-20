@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1309798679}
-  m_IndirectSpecularColor: {r: 1359.8848, g: 803.34375, b: 889.2178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10707,42 +10707,42 @@ MonoBehaviour:
     IsThereStopForThisEnemy: 1
     StopSpawnWave: 11
   - EnemyObj: {fileID: 7333921120246751172, guid: f8a0e04916d6810478ec9b053bd746e2, type: 3}
-    DifficultyRank: 5
+    DifficultyRank: 4
     StartSpawnWave: 8
     IsThereStopForThisEnemy: 1
     StopSpawnWave: 13
   - EnemyObj: {fileID: 6316840748443753182, guid: c987970de589023419ec832bfd75026b, type: 3}
-    DifficultyRank: 7
+    DifficultyRank: 4
     StartSpawnWave: 8
     IsThereStopForThisEnemy: 1
     StopSpawnWave: 14
   - EnemyObj: {fileID: 7333921120246751172, guid: be5e57ef50aaf9d41b97ff0f5f30c107, type: 3}
-    DifficultyRank: 6
+    DifficultyRank: 4
     StartSpawnWave: 9
     IsThereStopForThisEnemy: 1
     StopSpawnWave: 13
   - EnemyObj: {fileID: 7333921120246751172, guid: e4a1901fea312804bbfba342065a7895, type: 3}
-    DifficultyRank: 8
+    DifficultyRank: 4
     StartSpawnWave: 10
     IsThereStopForThisEnemy: 1
     StopSpawnWave: 15
   - EnemyObj: {fileID: 7333921120246751172, guid: 780c49327d2564a449c56049774d2344, type: 3}
-    DifficultyRank: 10
+    DifficultyRank: 4
     StartSpawnWave: 12
     IsThereStopForThisEnemy: 0
     StopSpawnWave: 0
   - EnemyObj: {fileID: 6316840748443753182, guid: ae88c8755e3b61145851eba36048ceae, type: 3}
-    DifficultyRank: 12
+    DifficultyRank: 5
     StartSpawnWave: 13
     IsThereStopForThisEnemy: 0
     StopSpawnWave: 0
   - EnemyObj: {fileID: 7333921120246751172, guid: ee210e6e8fbc8f5499d94f0b4961aa3c, type: 3}
-    DifficultyRank: 12
+    DifficultyRank: 5
     StartSpawnWave: 13
     IsThereStopForThisEnemy: 0
     StopSpawnWave: 0
   - EnemyObj: {fileID: 7333921120246751172, guid: 5065562aca3a71e449ba067879fbec4c, type: 3}
-    DifficultyRank: 14
+    DifficultyRank: 5
     StartSpawnWave: 14
     IsThereStopForThisEnemy: 0
     StopSpawnWave: 0
