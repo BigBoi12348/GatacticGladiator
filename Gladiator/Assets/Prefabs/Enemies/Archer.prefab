@@ -1222,7 +1222,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b58221df3ec220d49af1acf2694028f8, type: 2}
+  - {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1448,7 +1448,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b58221df3ec220d49af1acf2694028f8, type: 2}
+  - {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2998,7 +2998,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b58221df3ec220d49af1acf2694028f8, type: 2}
+  - {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4413,8 +4413,8 @@ MonoBehaviour:
   _enemyMovementSpeedModifier: 0
   _angleOffset: 0
   _explodePoint: {fileID: 7919589954808390031}
-  _bowAttackRange: 20
-  _arrowSpeed: 50
+  _bowAttackRange: 35
+  _arrowSpeed: 60
   _archerChild: {fileID: 422702349743331876}
   _arrowAttackPoint: {fileID: 168608945904179795}
   _enemyBowAnim: {fileID: 8779381993248244534}
@@ -5143,7 +5143,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0df5d4c68f8750e4f819215d06f88b14, type: 2}
+  - {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6073,7 +6073,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b58221df3ec220d49af1acf2694028f8, type: 2}
+  - {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

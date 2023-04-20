@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 454edd4db255d1f4eaed2a70f2f996c4, type: 2}
+  - {fileID: 2100000, guid: 428c9910e0ebe7345abd44ae4296d26d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponType: 1
   _weaponCollider: {fileID: 3507944557004399321}
-  WeaponDamage: 30
+  WeaponDamage: 10
 --- !u!65 &3507944557004399321
 BoxCollider:
   m_ObjectHideFlags: 0

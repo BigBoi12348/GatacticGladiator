@@ -4684,7 +4684,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c140d4b2d0485e943bae2b175ff11c01, type: 2}
+  - {fileID: 2100000, guid: 428c9910e0ebe7345abd44ae4296d26d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5752,7 +5752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyType: 0
-  _enemyMovementSpeed: 5
+  _enemyMovementSpeed: 3
   _enemyMovementSpeedModifier: 0
   _angleOffset: 0
   _explodePoint: {fileID: 5578946142074058885}
@@ -7194,7 +7194,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c140d4b2d0485e943bae2b175ff11c01, type: 2}
+  - {fileID: 2100000, guid: 428c9910e0ebe7345abd44ae4296d26d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

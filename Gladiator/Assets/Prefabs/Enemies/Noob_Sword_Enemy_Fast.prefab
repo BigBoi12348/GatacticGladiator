@@ -5707,7 +5707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyType: 0
-  _enemyMovementSpeed: 9
+  _enemyMovementSpeed: 6
   _enemyMovementSpeedModifier: 0
   _angleOffset: 0
   _explodePoint: {fileID: 5578946142074058885}

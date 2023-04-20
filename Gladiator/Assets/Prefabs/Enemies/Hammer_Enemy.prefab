@@ -3798,7 +3798,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1fba5370873a284419fab1a099a8016f, type: 2}
+  - {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4468,6 +4468,7 @@ MonoBehaviour:
   _enemyAnim: {fileID: 4065816011520564996}
   _totalAttackCoolDown: 5
   _attackCoolDown: 0
+  _wallStopper: {fileID: 0}
   _enemyWeaponBehaviour: {fileID: 4791411402509982439}
   _aIDestinationSetter: {fileID: 1764986156352767934}
   _aIPath: {fileID: 2740254262578184790}
@@ -5496,7 +5497,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1fba5370873a284419fab1a099a8016f, type: 2}
+  - {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5778,6 +5779,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 93f572a20801ce24997c13c688c03b03, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
     - target: {fileID: 919132149155446097, guid: 93f572a20801ce24997c13c688c03b03, type: 3}
       propertyPath: m_Name
       value: Battle hammer
@@ -5825,7 +5830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponType: 0
   _weaponCollider: {fileID: 9022991666347894215}
-  WeaponDamage: 15
+  WeaponDamage: 35
 --- !u!4 &730681385641298897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 93f572a20801ce24997c13c688c03b03, type: 3}
