@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Animations")]
     [SerializeField] private Animator _whiteScreenAnim;
-    const string FLASHWHITE = "FlashWhite";
+    const string FLASHWHITE = "WhiteScreen";
     private void OnEnable() 
     {
         GameEvents.gameStartSetUp += GameIsStarting;

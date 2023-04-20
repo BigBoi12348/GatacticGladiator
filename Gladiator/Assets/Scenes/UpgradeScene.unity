@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1359.8848, g: 803.34375, b: 889.2178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -229,10 +229,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 573330228745815419, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: b6f415c5edbce514f9570f8d85773d68, type: 3}
     - target: {fileID: 573330228776777994, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -363,7 +359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
@@ -2020,10 +2016,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 573330228745815419, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: b6f415c5edbce514f9570f8d85773d68, type: 3}
     - target: {fileID: 573330228776777994, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2154,7 +2146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
@@ -3122,10 +3114,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 573330228745815419, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: b6f415c5edbce514f9570f8d85773d68, type: 3}
     - target: {fileID: 573330228776777994, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3612,10 +3600,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 573330228745815419, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: b6f415c5edbce514f9570f8d85773d68, type: 3}
     - target: {fileID: 573330228776777994, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3750,7 +3734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
@@ -3936,10 +3920,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 573330228745815419, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: b6f415c5edbce514f9570f8d85773d68, type: 3}
     - target: {fileID: 573330228776777994, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4070,7 +4050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus

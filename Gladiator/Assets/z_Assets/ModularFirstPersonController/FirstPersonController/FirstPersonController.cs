@@ -144,6 +144,9 @@ public class FirstPersonController : MonoBehaviour
 
 
     [Header("Force Field")]
+    [SerializeField] private float _forceFieldSkillRadius;
+    [SerializeField] private Transform _centrePoint;
+    [SerializeField] private LayerMask _enemyForceFieldLayer;
     private bool AmIForceField;
 
     [Header("Shooting Fire Flames")]
@@ -472,6 +475,7 @@ public class FirstPersonController : MonoBehaviour
         {
             if(PlayerUpgradesData.StarTwo)
             {
+                Debug.Log("Force field");
                 AmIForceField = true;
                 NotInAbilityState = true;
             }
@@ -490,7 +494,7 @@ public class FirstPersonController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Alpha3) && !NotInAbilityState)
         {
-            if(PlayerUpgradesData.StarFour)
+            //if(PlayerUpgradesData.StarFour)
             {
                 FirstGravityCast = true;
                 AmIGravityLifting = true;
@@ -499,7 +503,7 @@ public class FirstPersonController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Alpha4) && !NotInAbilityState)
         {
-            if(PlayerUpgradesData.StarFive)
+            //if(PlayerUpgradesData.StarFive)
             {
                 AmIUsingThanosSnap = true;
                 NotInAbilityState = true;
@@ -511,8 +515,9 @@ public class FirstPersonController : MonoBehaviour
         {
             if(AmIForceField)
             {
-                StartCoroutine(ForceField());
+                Debug.Log("Force s");
                 AmIForceField = false;
+                StartCoroutine(ForceField());
             }
             if(AmIShootingFireBeams)
             {
@@ -550,17 +555,18 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    private IEnumerator ForceField()
+    IEnumerator ForceField()
     {
-        CameraEffectsSystem.Instance.ShakeCamera(15, 1f);
-        RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, _gravitySkillRadius, Vector3.up, 5, _enemyLayer);
+        CameraEffectsSystem.Instance.ShakeCamera(15, 0.1f);
+        RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, _forceFieldSkillRadius, Vector3.up, 5, _enemyForceFieldLayer);
 
-        foreach (var hit in raycastHits)
+        foreach (RaycastHit hit in raycastHits)
         {
-            if(hit.transform.TryGetComponent<Rigidbody>(out Rigidbody rb))
-            {
-                Vector3 force = (rb.transform.position - transform.position).normalized * 30;
-                rb.AddForce(force);
+            Debug.Log(hit.transform.name);
+            if(hit.transform.TryGetComponent<Rigidbody>(out Rigidbody enemyRb))
+            { 
+                enemyRb.AddExplosionForce(30, _centrePoint.position, _forceFieldSkillRadius, 0 ,ForceMode.Impulse);
+                hit.transform.GetComponent<EnemyBehaviour>().StopEnemy();
             }
         }
         
@@ -623,7 +629,7 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    private IEnumerator KillHalfOfEnemies()
+    IEnumerator KillHalfOfEnemies()
     {
         Time.timeScale = 0.1f;
         InGameLevelManager.Instance.FlashScreenWhite();
@@ -637,10 +643,10 @@ public class FirstPersonController : MonoBehaviour
                 enemyBehaviours.Add(enemyBehaviour);
             }
         }
-        yield return new WaitForSeconds(_durationTilWhite.length);
+        yield return new WaitForSecondsRealtime(_durationTilWhite.length);
 
         int num = KillComboHandler.KillComboCounter/2;
-
+        
         for (int i = 0; i < num; i++)
         {
             if(enemyBehaviours[i] != null)
@@ -648,6 +654,8 @@ public class FirstPersonController : MonoBehaviour
                 enemyBehaviours[i].Thanosnaped();
             }
         }
+
+        KillComboHandler.SetCombo(num);
         
         Time.timeScale = 1f;
         NotInAbilityState = false;
@@ -658,7 +666,7 @@ public class FirstPersonController : MonoBehaviour
         SoundManager.Instance.PlaySound3D(SoundManager.Sound.DashEffect, transform.position);
         PostProcessingEffectManager.Instance.DashEffect(0.3f);
 
-        _dashBehaviour.StartDash();
+        //_dashBehaviour.StartDash();
 
         Transform forwardT = transform;
         Vector3 direction = GetDashDirection(forwardT);

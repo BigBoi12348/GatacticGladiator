@@ -34,7 +34,7 @@ TagManager:
   - PlayerOnlyDetection
   - EnemyProjectiles
   - EnemyGround
-  - 
+  - DashLayer
   - 
   - 
   - 

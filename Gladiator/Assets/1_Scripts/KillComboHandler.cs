@@ -79,6 +79,11 @@ public class KillComboHandler : MonoBehaviour
             KillComboCounter -= value;
         }
     }
+
+    public static void SetCombo(int value)
+    {
+        KillComboCounter = value;
+    }
     
     IEnumerator FlashTextRed()
     {

@@ -1434,6 +1434,37 @@ Transform:
   m_Father: {fileID: 5975326341160579373}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2495270402355737256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2757772827775543061}
+  m_Layer: 0
+  m_Name: CentrePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2757772827775543061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2495270402355737256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7442434931619670338}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2510807534031084988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,6 +3651,65 @@ Transform:
   m_Father: {fileID: 7442434930226168797}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -1.3, y: 90, z: -43.3}
+--- !u!1 &5424948695118306313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7296756351945769600}
+  - component: {fileID: 240117240022981548}
+  - component: {fileID: 8318704502203366599}
+  m_Layer: 13
+  m_Name: DashBehaviour
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7296756351945769600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424948695118306313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.632, z: 1.265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7442434930226168797}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &240117240022981548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424948695118306313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ef79765b75d6e43a72ef7213125d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dashCol: {fileID: 8318704502203366599}
+--- !u!65 &8318704502203366599
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424948695118306313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6861748, y: 1.7588204, z: 0.45601338}
+  m_Center: {x: -0.0705103, y: -0.041733515, z: -0.27199337}
 --- !u!1 &5452524218927184107
 GameObject:
   m_ObjectHideFlags: 0
@@ -9420,6 +9510,7 @@ Transform:
   - {fileID: 4640869089534325864}
   - {fileID: 5463273093993841839}
   - {fileID: 6533676670298739658}
+  - {fileID: 7296756351945769600}
   m_Father: {fileID: 7442434930173113688}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9825,6 +9916,7 @@ Transform:
   - {fileID: 6533676670918562217}
   - {fileID: 6533676670044611666}
   - {fileID: 7442434930173113688}
+  - {fileID: 2757772827775543061}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9884,18 +9976,27 @@ MonoBehaviour:
   joint: {fileID: 7442434930173113688}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
-  dashForce: 45
+  dashForce: 20
+  upgradedDashForceAdd: 25
   dashDuration: 0.75
   dashCooldown: 1
   upwardForce: 6
   _lookUpThreshold: 0.3
   dashKey: 118
+  _dashBehaviour: {fileID: 240117240022981548}
+  _forceFieldSkillRadius: 20
+  _centrePoint: {fileID: 2757772827775543061}
+  _enemyForceFieldLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _fireBeam: {fileID: 4364620476092667327, guid: 3a1ad0a4bc2a9c440a5eac10f874a0a1, type: 3}
   _gravitySkillRadius: 10
   _liftPower: 7
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 4194816
+  _enemyContainer: {fileID: 0}
+  _durationTilWhite: {fileID: 7400000, guid: 4c3bc6bb8bd8f55499865530ddccc7f4, type: 2}
   _playerAnim: {fileID: 9098930713520981893}
   _numOfClicks: 0
   lastClickedTime: 0

@@ -17,7 +17,7 @@ public class PiecesHandler : MonoBehaviour
     [Header("References")]
     [SerializeField] private List<Vector3> piecePositions;
     [SerializeField] private List<Vector3> pieceRotations;
-    [SerializeField] private Rigidbody[] rbs;
+    [SerializeField] private List<Rigidbody> rbs;
     private EnemyManager _enemyManager;
 
     public void Init(EnemyManager enemyManager)
@@ -83,6 +83,7 @@ public class PiecesHandler : MonoBehaviour
             {
                 piecesHandler.pieceRotations.Add(child.eulerAngles);
                 piecesHandler.piecePositions.Add(child.position);
+                piecesHandler.rbs.Add(child.GetComponent<Rigidbody>());
             }
         }
     }

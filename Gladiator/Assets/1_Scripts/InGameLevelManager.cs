@@ -112,6 +112,7 @@ public class InGameLevelManager : MonoBehaviour
 
     private void GameEndSetUp(bool didPlayerWin)
     {
+        Time.timeScale = 1f;
         if(didPlayerWin)
         {
             RoundData.Wave++;
