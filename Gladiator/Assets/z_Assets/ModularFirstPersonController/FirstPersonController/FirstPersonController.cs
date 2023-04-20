@@ -241,6 +241,22 @@ public class FirstPersonController : MonoBehaviour
             dashForce += upgradedDashForceAdd;
         }
         NotInAbilityState = false;
+
+        //Timers
+        dashCooldownTimer = dashTotalCooldown;
+        isDashing = false;
+        
+        _forceFieldTimer = _forceFieldCoolDownTime;
+        _canUseForceField = false;
+
+        _fireBeamsTimer = _fireBeamsCoolDownTime;
+        _canUseFireBeams = false;
+
+        _gravityPoundTimer = _gravityPoundCoolDownTime;
+        _canUseGravityPound = false;
+
+        _thanosSnapTimer = _thanosSnapCoolDownTime;
+        _canUseThanosSnap = false;
     }
 
     private void OnClick()
@@ -483,41 +499,10 @@ public class FirstPersonController : MonoBehaviour
         }
 
         #region Abiltiy Buttons
-        if(!_canUseForceField)
-        {
-            if(_forceFieldTimer < 0)
-            {
-                _canUseForceField = true;
-            }
-            _forceFieldTimer -= Time.deltaTime;
-        }
-        if(!_canUseFireBeams)
-        {
-            if(_fireBeamsTimer < 0)
-            {
-                _canUseFireBeams = true;
-            }
-            _fireBeamsTimer -= Time.deltaTime;
-        }
-        if(!_canUseGravityPound)
-        {
-            if(_gravityPoundTimer < 0)
-            {
-                _canUseGravityPound = true;
-            }
-            _gravityPoundTimer -= Time.deltaTime;
-        }
-        if(!_canUseThanosSnap)
-        {
-            if(_thanosSnapTimer < 0)
-            {
-                _canUseThanosSnap = true;
-            }
-            _thanosSnapTimer -= Time.deltaTime;
-        }
+        
         if(Input.GetKeyDown(KeyCode.Alpha1) && !NotInAbilityState && _canUseForceField)
         {
-            //if(PlayerUpgradesData.StarTwo)
+            if(PlayerUpgradesData.StarTwo)
             {
                 AmIForceField = true;
                 NotInAbilityState = true;
@@ -588,15 +573,54 @@ public class FirstPersonController : MonoBehaviour
                 if(FirstGravityCast)
                 {
                     FirstGravityCast = false;
+                    _gravityPoundTimer = _gravityPoundCoolDownTime;
+                    _canUseGravityPound = false;
                     StartCoroutine(GravityPound());
                 }
             }
             if(AmIUsingThanosSnap)
             {
                 AmIUsingThanosSnap = false;
+                _thanosSnapTimer = _thanosSnapCoolDownTime;
+                _canUseThanosSnap = false;
                 StartCoroutine(KillHalfOfEnemies());
             }
         }
+
+        #region AbilityTimers
+        if(!_canUseForceField)
+        {
+            if(_forceFieldTimer < 0)
+            {
+                _canUseForceField = true;
+            }
+            _forceFieldTimer -= Time.deltaTime;
+        }
+        if(!_canUseFireBeams)
+        {
+            if(_fireBeamsTimer < 0)
+            {
+                _canUseFireBeams = true;
+            }
+            _fireBeamsTimer -= Time.deltaTime;
+        }
+        if(!_canUseGravityPound)
+        {
+            if(_gravityPoundTimer < 0)
+            {
+                _canUseGravityPound = true;
+            }
+            _gravityPoundTimer -= Time.deltaTime;
+        }
+        if(!_canUseThanosSnap)
+        {
+            if(_thanosSnapTimer < 0)
+            {
+                _canUseThanosSnap = true;
+            }
+            _thanosSnapTimer -= Time.deltaTime;
+        }
+        #endregion
     }
 
     IEnumerator ForceField()
@@ -655,8 +679,7 @@ public class FirstPersonController : MonoBehaviour
         {
             enemyBehaviour.Death();
         }
-        _gravityPoundTimer = _gravityPoundCoolDownTime;
-        _canUseGravityPound = false;
+        
         AmIGravityLifting = false;
         NotInAbilityState = false;
     }
@@ -710,9 +733,8 @@ public class FirstPersonController : MonoBehaviour
         }
 
         KillComboHandler.SetCombo(num);
-        _thanosSnapTimer = _thanosSnapCoolDownTime;
-        _canUseThanosSnap = false;
         Time.timeScale = 1f;
+        
         NotInAbilityState = false;
     }
 
@@ -726,7 +748,7 @@ public class FirstPersonController : MonoBehaviour
             _dashBehaviour.StartDash();
             if(KillComboHandler.KillComboCounter >= 25)
             {
-                _playerCol.enabled = true;
+                _playerCol.enabled = false;
                 StartCoroutine(ActivteMyColAgain());
             }
         }
@@ -748,7 +770,7 @@ public class FirstPersonController : MonoBehaviour
 
         rb.AddForce(forceToApply, ForceMode.Impulse);
         rb.mass = 6f;
-        
+
         isDashing = false;
         dashCooldownTimer = dashTotalCooldown;
     }

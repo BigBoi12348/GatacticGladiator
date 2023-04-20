@@ -50,10 +50,14 @@ public class EnemyWeaponBehaviour : MonoBehaviour
                 {
                     if(checkCombo)
                     {
-                        if(KillComboHandler.KillComboCounter >= 80)
+                        if(KillComboHandler.KillComboCounter < 75)
                         {
                             playerHealth.TakeDamage(WeaponDamage);
                         }
+                    }
+                    else
+                    {
+                        playerHealth.TakeDamage(WeaponDamage);
                     }
                     Destroy(gameObject);
                 }

@@ -4,34 +4,17 @@ using UnityEngine;
 
 public class PoisonGas : MonoBehaviour
 {
-    public float damagePerTick = 10f;
-    public float tickInterval = 1f;
-    public float radius = 1f;
+    [SerializeField] private PlayerHealth _playerHealth;
+    [SerializeField] private float _tickInterval;
     private float nextTickTime;
 
-    
     void Update()
     {
-        if (Time.time >= nextTickTime)
-        {
-            nextTickTime = Time.time + tickInterval;
-
-            Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
-
-            foreach (Collider collider in colliders)
-            {
-                PlayerHealth health = collider.GetComponent<PlayerHealth>();
-                if (health != null)
-                {
-                    health.TakePoisonDamage(2);
-                }
-            }
+        if (nextTickTime < 0)
+        {  
+            nextTickTime = _tickInterval;
+            _playerHealth.TakePoisonDamage(2);       
         }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        nextTickTime -= Time.deltaTime;
     }
 }

@@ -12,12 +12,9 @@ public class PlayerHealth : MonoBehaviour
     private bool AmIABeast;
     public bool TakeNoDamage;
     public bool TakeNoFireDamage;
-
+    private int _extraHealth = 0;
     private void Awake() 
     {
-        dead = false;
-        maxHealth = RoundData.PlayerMaxHealth;
-        currentHealth = maxHealth;
         if(PlayerUpgradesData.ShieldTwo)
         {
             AmIResilient = true;
@@ -34,6 +31,13 @@ public class PlayerHealth : MonoBehaviour
         {
             AmIABeast = false;
         }
+        if(PlayerUpgradesData.ShieldFive)
+        {
+            _extraHealth = 50;
+        }
+        dead = false;
+        maxHealth = RoundData.PlayerMaxHealth + _extraHealth;
+        currentHealth = maxHealth;
     }
    
     private void OnCollisionEnter(Collision other) 

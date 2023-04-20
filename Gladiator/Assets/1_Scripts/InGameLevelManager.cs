@@ -73,7 +73,7 @@ public class InGameLevelManager : MonoBehaviour
     private void GameIsStarting()
     {
         CurrentRound = RoundData.Wave;
-
+        
         //Sets the level
         _plainLevel.SetActive(false);
         _fireLevel.SetActive(false);
@@ -116,7 +116,7 @@ public class InGameLevelManager : MonoBehaviour
         if(didPlayerWin)
         {
             RoundData.Wave++;
-            RoundData.PlayerPoints += 3;
+            RoundData.PlayerPoints += 30;
         }
         else if(!didPlayerWin)
         {

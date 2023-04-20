@@ -19,7 +19,7 @@ public class AbilityUiManager : MonoBehaviour
     bool thirdOpen;
     bool fourthOpen;
     bool fifthOpen;
-    
+
     [Header("Ability UI")]
     [SerializeField] private Slider _firstAbilitySlider;
     [SerializeField] private TMP_Text _firstTextTimer;
@@ -66,31 +66,75 @@ public class AbilityUiManager : MonoBehaviour
         }
 
         _firstAbilitySlider.maxValue = _firstPersonController.GetTotalDashTime;
+        _secondAbilitySlider.maxValue = _firstPersonController.GetTotalForceFieldTime;
+        _thirdAbilitySlider.maxValue = _firstPersonController.GetTotalFireBeamsTime;
+        _fourthAbilitySlider.maxValue = _firstPersonController.GetTotalGravityPoundTime;
+        _fifthAbilitySlider.maxValue = _firstPersonController.GetTotalThanosSnapTime;
     }
 
     void Update()
     {
-        _firstAbilitySlider.value = _firstPersonController.dashCooldownTimer;
-        _firstTextTimer.text = Mathf.RoundToInt(_firstPersonController.dashCooldownTimer).ToString();
+        if(_firstPersonController.dashCooldownTimer > 0)
+        {
+            _firstAbilitySlider.value = _firstPersonController.dashCooldownTimer;
+            _firstTextTimer.text = Mathf.RoundToInt(_firstPersonController.dashCooldownTimer).ToString();
+            _firstTextTimer.enabled = true;
+        }
+        else
+        {
+            _firstTextTimer.enabled = false;
+        }
         if(secondOpen)
         {
-            _secondAbilitySlider.value = _firstPersonController.dashCooldownTimer;
-            _secondTextTimer.text = Mathf.RoundToInt(_firstPersonController.dashCooldownTimer).ToString();
+            if(_firstPersonController._forceFieldTimer > 0)
+            {
+                _secondAbilitySlider.value = _firstPersonController._forceFieldTimer;
+                _secondTextTimer.text = Mathf.RoundToInt(_firstPersonController._forceFieldTimer).ToString();
+                _secondTextTimer.enabled = true;
+            }
+            else
+            {
+                _secondTextTimer.enabled = false;
+            }
         }
         if(thirdOpen)
         {
-            _thirdAbilitySlider.value = _firstPersonController.dashCooldownTimer;
-            _thirdTextTimer.text = Mathf.RoundToInt(_firstPersonController.dashCooldownTimer).ToString();
+            if(_firstPersonController._fireBeamsTimer > 0)
+            {
+                _thirdAbilitySlider.value = _firstPersonController._fireBeamsTimer;
+                _thirdTextTimer.text = Mathf.RoundToInt(_firstPersonController._fireBeamsTimer).ToString();
+                _thirdTextTimer.enabled = true;
+            }
+            else
+            {
+                _thirdTextTimer.enabled = false;
+            }
         }
         if(fourthOpen)
         {
-            _fourthAbilitySlider.value = _firstPersonController.dashCooldownTimer;
-            _fourthTextTimer.text = Mathf.RoundToInt(_firstPersonController.dashCooldownTimer).ToString();
+            if(_firstPersonController._gravityPoundTimer > 0)
+            {
+                _fourthAbilitySlider.value = _firstPersonController._gravityPoundTimer;
+                _fourthTextTimer.text = Mathf.RoundToInt(_firstPersonController._gravityPoundTimer).ToString();
+                _fourthTextTimer.enabled = true;
+            }
+            else
+            {
+                _fourthTextTimer.enabled = false;
+            }
         }
         if(fifthOpen)
         {
-            _fifthAbilitySlider.value = _firstPersonController.dashCooldownTimer;
-            _fifthTextTimer.text = Mathf.RoundToInt(_firstPersonController.dashCooldownTimer).ToString();
+            if(_firstPersonController._thanosSnapTimer > 0)
+            {
+                _fifthAbilitySlider.value = _firstPersonController._thanosSnapTimer;
+                _fifthTextTimer.text = Mathf.RoundToInt(_firstPersonController._thanosSnapTimer).ToString();
+                _fourthTextTimer.enabled = true;
+            }
+            else
+            {
+                _fourthTextTimer.enabled = false;
+            }
         }
     }
 }

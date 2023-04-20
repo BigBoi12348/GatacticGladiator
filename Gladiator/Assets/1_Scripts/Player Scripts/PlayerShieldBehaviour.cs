@@ -15,7 +15,7 @@ public class PlayerShieldBehaviour : MonoBehaviour
     private float _chargeRateMutli;
     private float _chargeRate;
     [SerializeField] private float _decreaseRate;
-    
+    private float extraShieldEnergy;
 
     [Header("Shield Variables")]
     public bool _isBlocking;
@@ -33,6 +33,11 @@ public class PlayerShieldBehaviour : MonoBehaviour
         if(PlayerUpgradesData.ShieldOne)
         {
             _chargeRate = _setChargeRate;
+        }
+
+        if(PlayerUpgradesData.ShieldFive)
+        {
+            extraShieldEnergy = 50;
         }
     }
 
@@ -53,7 +58,7 @@ public class PlayerShieldBehaviour : MonoBehaviour
 
     public void ReadyPlayerShield() 
     {
-        MaxTotalEnergy = RoundData.SheildTotalEnergy;
+        MaxTotalEnergy = RoundData.SheildTotalEnergy + extraShieldEnergy;
         _currentEnergy = MaxTotalEnergy;
         _energyShieldSlider.maxValue = MaxTotalEnergy;
         _energyShieldSlider.value = _currentEnergy;

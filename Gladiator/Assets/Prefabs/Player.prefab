@@ -9949,12 +9949,12 @@ MonoBehaviour:
   zoomFOV: 30
   zoomStepTime: 5
   playerCanMove: 1
-  walkSpeed: 5
+  walkSpeed: 7
   maxVelocityChange: 10
   _jumpPoint: {fileID: 6533676670918562217}
   enableSprint: 0
   unlimitedSprint: 1
-  sprintKey: 304
+  sprintKey: 13
   sprintSpeed: 7
   sprintDuration: 5
   sprintCooldown: 0.5
@@ -9978,13 +9978,14 @@ MonoBehaviour:
   dashForce: 20
   upgradedDashForceAdd: 25
   dashDuration: 0.75
-  dashCooldown: 3
   upwardForce: 6
   _lookUpThreshold: 0.3
-  dashKey: 118
+  dashKey: 304
   _dashBehaviour: {fileID: 240117240022981548}
-  _forceFieldStrength: 0
-  _extraForceFieldStrength: 0
+  dashTimer: 0
+  dashTotalCooldown: 4
+  _forceFieldStrength: 20
+  _extraForceFieldStrength: 20
   _forceFieldSkillRadius: 20
   _centrePoint: {fileID: 2757772827775543061}
   _enemyForceFieldLayer:
