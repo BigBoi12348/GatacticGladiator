@@ -12,6 +12,7 @@ public class PlayerShieldBehaviour : MonoBehaviour
     [SerializeField] private float _currentEnergy;
     public float MaxTotalEnergy{private get; set;}
     [SerializeField] private float _setChargeRate;
+    private float _chargeRateMutli;
     private float _chargeRate;
     [SerializeField] private float _decreaseRate;
     
@@ -32,7 +33,6 @@ public class PlayerShieldBehaviour : MonoBehaviour
         if(PlayerUpgradesData.ShieldOne)
         {
             _chargeRate = _setChargeRate;
-            //_doesSheildHaveRecharge = true;
         }
     }
 
@@ -77,7 +77,7 @@ public class PlayerShieldBehaviour : MonoBehaviour
         }
         else if (_currentEnergy < MaxTotalEnergy)
         {
-            _currentEnergy += Time.deltaTime*_chargeRate;
+            _currentEnergy += Time.deltaTime*(_chargeRate*_chargeRateMutli);
         }
         else if (_currentEnergy >= MaxTotalEnergy && !_secondLock)
         {
@@ -88,5 +88,29 @@ public class PlayerShieldBehaviour : MonoBehaviour
 
         _energyShieldSlider.value = _currentEnergy;
         _otherEnergyShieldSlider.value = _currentEnergy;
+        
+        if(PlayerUpgradesData.ShieldOne)
+        {
+            if(KillComboHandler.KillComboCounter >= 20)
+            {
+                _chargeRateMutli = 2;
+            }
+            else
+            {
+                _chargeRateMutli = 1;
+            }
+        }
+    }
+
+    public void AddRecharge(int value)
+    {
+        if(_currentEnergy + value <= MaxTotalEnergy)
+        {
+            _currentEnergy += value;
+        }
+        else
+        {
+            _currentEnergy = MaxTotalEnergy;
+        }
     }
 }

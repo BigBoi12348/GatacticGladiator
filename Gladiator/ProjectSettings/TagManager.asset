@@ -24,7 +24,7 @@ TagManager:
   - EnemyTriggerLayer
   - EnemyWeapon
   - Block
-  - 
+  - PlayerDash
   - 
   - FloorLayer
   - WallsLayer

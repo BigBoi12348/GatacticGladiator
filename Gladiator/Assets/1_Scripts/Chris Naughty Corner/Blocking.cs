@@ -41,11 +41,9 @@ public class Blocking : MonoBehaviour
     {
         if (Input.GetMouseButton(1) && !ShieldLock)
         {
-            //UnBlockedMesh.enabled = false;
             UnBlockedBattery.SetActive(false);
             BlockedBattery.SetActive(true);
-            //BlockedMesh.enabled = true;
-            //playerCollider.enabled = false;
+
             _playerhealth.TakeNoDamage = true;
             
             _antiParticleEffect.SetActive(_canBlockFire);
@@ -64,6 +62,11 @@ public class Blocking : MonoBehaviour
             _playerhealth.TakeNoFireDamage = false;
             playerShieldBehaviour._isBlocking = false;
         }
+    }
+
+    private void OnCollisionEnter(Collision other) 
+    {
+        Debug.Log("Cap");
     }
 
     public IEnumerator AllowShieldBlockAgain()

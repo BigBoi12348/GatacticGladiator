@@ -5,7 +5,7 @@ using UnityEngine;
 public class InGameLevelManager : MonoBehaviour
 {   
     public static InGameLevelManager Instance;
-    private UIManager uIManager;
+    private UIManager _uIManager;
 
     public int _totalEnemiesCounter{get; private set;}
     public int CurrentRound{get; private set;}
@@ -20,6 +20,7 @@ public class InGameLevelManager : MonoBehaviour
     [SerializeField] private EnemySpawnerManager _enemySpawnerManager;
     [SerializeField] private AnimationClip _waveComplete;
     [SerializeField] private PlayerHealth _playerHealth;
+    [SerializeField] private PlayerShieldBehaviour _playerShieldBehaviour;
     [SerializeField] private KillComboHandler killComboHandler;
 
     private bool healOnKill;
@@ -35,7 +36,7 @@ public class InGameLevelManager : MonoBehaviour
             Destroy(this);
         }
 
-        uIManager = FindObjectOfType<UIManager>();
+        _uIManager = FindObjectOfType<UIManager>();
     }
 
     private void Start() 
@@ -106,7 +107,7 @@ public class InGameLevelManager : MonoBehaviour
     private void GameStarted()
     {
         _totalEnemiesCounter = _enemySpawnerManager.TotalEnemiesSpawningThisRound;
-        uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
+        _uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
     }
 
     private void GameEndSetUp(bool didPlayerWin)
@@ -157,24 +158,41 @@ public class InGameLevelManager : MonoBehaviour
     public void EnemyHasDied()
     {
         _totalEnemiesCounter--;
-        uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
+        _uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
 
         if(healOnKill)
         {
             if(KillComboHandler.KillComboCounter >= 25)
             {
                 RoundData.PlayerMaxHealth++;
-                uIManager.UpdatePlayerHealth();
+                _uIManager.UpdatePlayerHealth();
             }
             _playerHealth.AddHealth(1);
         }
 
         killComboHandler.AddToCombo(1);
 
+        if(PlayerUpgradesData.ShieldOne)
+        {
+            if(KillComboHandler.KillComboCounter >= 55)
+            {
+                int chance = Random.Range(1,101);
+                if(chance <= 25)
+                {
+                    _playerShieldBehaviour.AddRecharge(5);
+                }
+            }
+        }
+
         if(_totalEnemiesCounter == 0)
         {
             GameEvents.gameEndSetUp?.Invoke(true);
         }
+    }
+
+    public void FlashScreenWhite()
+    {
+        _uIManager.WhiteScreen();
     }
 
     private void ResetPlayerUpgradeData()
