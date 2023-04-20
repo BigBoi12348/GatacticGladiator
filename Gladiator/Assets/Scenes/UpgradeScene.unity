@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1359.8848, g: 803.34375, b: 889.2178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1573,12 +1573,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeName
+      value: Reflection
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeComboBonus
+      value: '- '
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeDescription
+      value: Any projections that are blocked has a high chance to shoot back
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
@@ -1764,6 +1776,18 @@ PrefabInstance:
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeComboBonus
+      value: '- 40x: Blocking has a chance to kill melee enemies that hit you
+
+        -
+        75x: Player cannot go below 10health but every tick of damage reduces kill
+        combo'
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeDescription
+      value: Move faster, Longer Shield life and more health
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
@@ -2592,7 +2616,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: N/A
+      value: '- 20x: Faster Recharge
+
+        - 55x: Kills have a chance to give
+        recharge back '
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
@@ -3233,7 +3260,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 10x: Dashing kills the enemy you bump into'
+      value: '- 10x: Dashing kills the enemy you bump into
+
+        - 25x: Cannot
+        be hurt by projectiles during dash
+
+        - 45x: Kills all enemies you
+        dash through'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
@@ -3461,7 +3494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 45x: Gain permanent attack speed'
+      value: '- 65x: Gain permanent attack speed'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeCostString
@@ -3708,12 +3741,24 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeName
+      value: Force Field
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeComboBonus
+      value: '- '
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeDescription
+      value: Force Field pushes enemies and projectiles away from you within a radius
       objectReference: {fileID: 0}
     - target: {fileID: 573330229965329394, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4276,7 +4321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeName
-      value: Fire & Poison Resitant
+      value: Resilient
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeType
@@ -4288,7 +4333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- x20: Poision and Fire can''t damage you under 20% Max health'
+      value: '- x30: Poision and Fire can''t damage you under 20% Max health'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
@@ -5303,7 +5348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeName
-      value: Fire Shield
+      value: Element Shield
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeType
@@ -5314,8 +5359,13 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _upgradeComboBonus
+      value: '- 30x: Faster element Charge'
+      objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: Fire Shield
+      value: Allows you to block elements found in environments and use it to shoot
+        a beam once you've collected enough
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
@@ -5618,12 +5668,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- x10: Can go through two enemies
+      value: '- x30: Can go through two enemies
 
         - x20: Guaranteed chance
         to spawn blade
 
-        - x30: Can go through three enemies'
+        - x75: Can go through three enemies'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeCostString

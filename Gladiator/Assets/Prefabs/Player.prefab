@@ -9895,7 +9895,7 @@ MonoBehaviour:
   _liftPower: 7
   _enemyLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4194816
   _playerAnim: {fileID: 9098930713520981893}
   _numOfClicks: 0
   lastClickedTime: 0
@@ -9912,7 +9912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  poisin: 5
   TakeNoDamage: 0
   TakeNoFireDamage: 0
 --- !u!33 &7442434931619670339
@@ -10019,12 +10018,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824c3a6be1fd5c4419e416fe0193b6a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShieldBehaviour: {fileID: 7442434931619670367}
-  _playerhealth: {fileID: 7442434931619670365}
   shieldTransform: {fileID: 0}
   UnBlockedBattery: {fileID: 6949874973588881248}
   BlockedBattery: {fileID: 6533676670298739657}
-  playerCollider: {fileID: 7442434931619670337}
+  _antiParticleEffect: {fileID: 8127488065289182218}
+  playerShieldBehaviour: {fileID: 7442434931619670367}
+  _playerhealth: {fileID: 7442434931619670365}
   IAmBlocking: 0
 --- !u!114 &7442434931619670367
 MonoBehaviour:
@@ -10039,7 +10038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentEnergy: 0
-  _chargeRate: 0
+  _setChargeRate: 0
   _decreaseRate: 20
   _isBlocking: 0
   _energyShieldSlider: {fileID: 798253417182283091}
@@ -12695,5 +12694,10 @@ MonoBehaviour:
 --- !u!4 &6533676671274038487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4242006190357212299, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+  m_PrefabInstance: {fileID: 6949874973480867932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8127488065289182218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1204793314532754518, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
   m_PrefabInstance: {fileID: 6949874973480867932}
   m_PrefabAsset: {fileID: 0}

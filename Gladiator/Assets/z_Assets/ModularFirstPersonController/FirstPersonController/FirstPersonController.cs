@@ -130,6 +130,7 @@ public class FirstPersonController : MonoBehaviour
     private bool NotInAbilityState;
     [Header("Dashing")]
     [SerializeField] private float dashForce = 5f;
+    [SerializeField] private float upgradedDashForceAdd;
     [SerializeField] private float dashDuration = 0.5f;
     [SerializeField] private float dashCooldown = 1f;
     [SerializeField] private float upwardForce;
@@ -202,7 +203,10 @@ public class FirstPersonController : MonoBehaviour
         {
             crosshairObject.gameObject.SetActive(false);
         }
-
+        if(PlayerUpgradesData.StarOne)
+        {
+            dashForce += upgradedDashForceAdd;
+        }
         NotInAbilityState = false;
     }
 
@@ -571,7 +575,7 @@ public class FirstPersonController : MonoBehaviour
         }
         else
         {
-            return 3;
+            return 1;
         }
     }
 

@@ -55,6 +55,12 @@ public class PlayerManager : MonoBehaviour
             _playerAnim.speed += 0.5f;
         }
 
+        if(PlayerUpgradesData.ShieldFive)
+        {
+            _firstPersonController.walkSpeed += 4;
+            _firstPersonController.sprintSpeed += 5;
+        }
+
         // switch (PlayerUpgradesData.AttackAttribute)
         // {
         //     case 0:

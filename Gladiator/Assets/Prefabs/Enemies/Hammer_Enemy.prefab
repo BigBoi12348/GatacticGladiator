@@ -4236,7 +4236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 684469015646758137}
   - component: {fileID: 6917280276361179625}
-  m_Layer: 9
+  m_Layer: 22
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4454,10 +4454,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d01b7209d6b534abef981d44e2237c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyType: 0
   _enemyMovementSpeed: 4
   _enemyMovementSpeedModifier: 0
-  _deathSymbol: {fileID: 7357145565115126712}
+  _angleOffset: 0
   _explodePoint: {fileID: 8075992714396791286}
+  _bowAttackRange: 0
+  _arrowSpeed: 0
+  _archerChild: {fileID: 0}
+  _arrowAttackPoint: {fileID: 0}
+  _enemyBowAnim: {fileID: 0}
+  _EnemyBowAnimClip: {fileID: 0}
   _enemyAnim: {fileID: 4065816011520564996}
   _totalAttackCoolDown: 5
   _attackCoolDown: 0
@@ -5816,6 +5823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3886ce8bc166b146bf18ea7d9b653ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponType: 0
   _weaponCollider: {fileID: 9022991666347894215}
   WeaponDamage: 15
 --- !u!4 &730681385641298897 stripped
@@ -5935,10 +5943,5 @@ PrefabInstance:
 --- !u!224 &1810454838419797352 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8579893763728594273, guid: ee618dab530a7bd4fb39a93eb57d65e3, type: 3}
-  m_PrefabInstance: {fileID: 7940375000233009161}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7357145565115126712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 587777025998123953, guid: ee618dab530a7bd4fb39a93eb57d65e3, type: 3}
   m_PrefabInstance: {fileID: 7940375000233009161}
   m_PrefabAsset: {fileID: 0}

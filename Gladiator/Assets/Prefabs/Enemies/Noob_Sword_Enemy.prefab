@@ -5705,9 +5705,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d01b7209d6b534abef981d44e2237c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyType: 0
   _enemyMovementSpeed: 5
   _enemyMovementSpeedModifier: 0
+  _angleOffset: 0
   _explodePoint: {fileID: 5578946142074058885}
+  _bowAttackRange: 0
+  _arrowSpeed: 0
+  _archerChild: {fileID: 0}
+  _arrowAttackPoint: {fileID: 0}
+  _enemyBowAnim: {fileID: 0}
+  _EnemyBowAnimClip: {fileID: 0}
   _enemyAnim: {fileID: 4065816011520564996}
   _totalAttackCoolDown: 5
   _attackCoolDown: 0
@@ -5857,7 +5865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6390109629853689546}
   - component: {fileID: 7644562299977787983}
-  m_Layer: 9
+  m_Layer: 22
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6248,6 +6256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3886ce8bc166b146bf18ea7d9b653ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponType: 0
   _weaponCollider: {fileID: 3358499928394938349}
   WeaponDamage: 5
 --- !u!1 &7691104867465851266

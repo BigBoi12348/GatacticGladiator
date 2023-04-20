@@ -44,10 +44,10 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private EnemyWeaponBehaviour _enemyWeaponBehaviour;
     [SerializeField] private AIDestinationSetter _aIDestinationSetter;
     [SerializeField] private AIPath _aIPath;
-
+    bool alreadyDying;
     private void Awake() 
     {
-
+        alreadyDying = false;
     }
 
     public void Init(Transform playerTarget)
@@ -141,22 +141,27 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Death()
     {
-        Breaking();
-
-        _alreadyDead = true;
-        _aIPath.canMove = false;
-        _aIDestinationSetter.enabled = false;
-
-        if(_enemyWeaponBehaviour != null)
+        if(!alreadyDying)
         {
-            _enemyWeaponBehaviour.enabled = false;
+            alreadyDying = true;
+        
+            Breaking();
+
+            _alreadyDead = true;
+            _aIPath.canMove = false;
+            _aIDestinationSetter.enabled = false;
+
+            if(_enemyWeaponBehaviour != null)
+            {
+                _enemyWeaponBehaviour.enabled = false;
+            }
+            if(_enemyAnim != null)
+            {
+                _enemyAnim.enabled = false;
+            }
+            InGameLevelManager.Instance.EnemyHasDied();
+            SoundManager.Instance.PlaySound3D(SoundManager.Sound.EnemyDeath, transform.position);
+            Destroy(gameObject);
         }
-        if(_enemyAnim != null)
-        {
-            _enemyAnim.enabled = false;
-        }
-        InGameLevelManager.Instance.EnemyHasDied();
-        SoundManager.Instance.PlaySound3D(SoundManager.Sound.EnemyDeath, transform.position);
-        Destroy(gameObject);
     }
 }

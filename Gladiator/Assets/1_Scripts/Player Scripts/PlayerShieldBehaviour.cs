@@ -88,7 +88,5 @@ public class PlayerShieldBehaviour : MonoBehaviour
 
         _energyShieldSlider.value = _currentEnergy;
         _otherEnergyShieldSlider.value = _currentEnergy;
-        
-
     }
 }

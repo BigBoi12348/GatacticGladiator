@@ -71,6 +71,14 @@ public class KillComboHandler : MonoBehaviour
             }
         }
     }
+
+    public static void RemoveCombo(int value)
+    {
+        if(KillComboCounter > 0)
+        {
+            KillComboCounter -= value;
+        }
+    }
     
     IEnumerator FlashTextRed()
     {

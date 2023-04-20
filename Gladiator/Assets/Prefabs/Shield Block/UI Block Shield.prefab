@@ -377,7 +377,7 @@ ParticleSystemForceField:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204793314532754518}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Parameters:
     m_Shape: 3
     m_StartRange: 0.5

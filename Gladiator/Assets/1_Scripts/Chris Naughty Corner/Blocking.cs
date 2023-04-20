@@ -5,27 +5,36 @@ using UnityEngine.UI;
 
 public class Blocking : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private PlayerShieldBehaviour playerShieldBehaviour;
-    [SerializeField] private PlayerHealth _playerhealth;
-
-
-    [Header("Chris Art")]
+    [Header("Objects")]
     public Transform shieldTransform;
     //public MeshRenderer UnBlockedMesh;
     public GameObject UnBlockedBattery;
     //public MeshRenderer BlockedMesh;
     public GameObject BlockedBattery;
-    public Collider playerCollider;
+    [SerializeField] private GameObject _antiParticleEffect;
+
+
+    [Header("References")]
+    [SerializeField] private PlayerShieldBehaviour playerShieldBehaviour;
+    [SerializeField] private PlayerHealth _playerhealth;
 
 
     [Header("Control Varaibles")]
     public bool IAmBlocking;
     private bool ShieldLock;
+    bool _canBlockFire;
 
     void Start()
     {
         playerShieldBehaviour.Init(this);
+        if(PlayerUpgradesData.ShieldThree)
+        {
+            _canBlockFire = true;
+        }
+        else
+        {
+            _canBlockFire = false;
+        }
     }
 
     void Update()
@@ -38,6 +47,10 @@ public class Blocking : MonoBehaviour
             //BlockedMesh.enabled = true;
             //playerCollider.enabled = false;
             _playerhealth.TakeNoDamage = true;
+            
+            _antiParticleEffect.SetActive(_canBlockFire);
+            _playerhealth.TakeNoFireDamage = _canBlockFire;
+            
             playerShieldBehaviour._isBlocking = true;
         }
         else
@@ -48,13 +61,9 @@ public class Blocking : MonoBehaviour
             BlockedBattery.SetActive(false);
             _playerhealth.TakeNoDamage = false;
             //playerCollider.enabled = true;
+            _playerhealth.TakeNoFireDamage = false;
             playerShieldBehaviour._isBlocking = false;
         }
-
-        // if(IAmBlocking)
-        // {
-
-        // }
     }
 
     public IEnumerator AllowShieldBlockAgain()

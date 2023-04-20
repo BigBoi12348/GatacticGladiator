@@ -29,7 +29,7 @@ public class EnemyManager : MonoBehaviour
             deadEnemy.transform.parent = _hidePoolObjects;
         }, deadEnemy => {
             Destroy(deadEnemy);
-        }, true, 150, 500);
+        }, true, 101, 500);
 
         PreLoad();
     }
@@ -37,10 +37,15 @@ public class EnemyManager : MonoBehaviour
     private void PreLoad()
     {
         _currentAskingObj = _hidePoolObjects;
-
-        for (int i = 0; i < 60; i++)
+        List<PiecesHandler> piecesHandlers = new List<PiecesHandler>();
+        for (int i = 0; i < 100; i++)
         {
-            _deadEnemyStatePool.Get(); 
+            piecesHandlers.Add(_deadEnemyStatePool.Get()); 
+        }
+
+        for (int i = 0; i < 100; i++)
+        {
+            _deadEnemyStatePool.Release(piecesHandlers[i]);
         }
     }
 

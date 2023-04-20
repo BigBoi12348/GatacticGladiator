@@ -23,7 +23,7 @@ public class PoisonGas : MonoBehaviour
                 PlayerHealth health = collider.GetComponent<PlayerHealth>();
                 if (health != null)
                 {
-                    health.TakeDamage(2);
+                    health.TakePoisonDamage(2);
                 }
             }
         }
