@@ -473,7 +473,7 @@ public class FirstPersonController : MonoBehaviour
         #region Abiltiy Buttons
         if(Input.GetKeyDown(KeyCode.Alpha1) && !NotInAbilityState)
         {
-            //if(PlayerUpgradesData.StarTwo)
+            if(PlayerUpgradesData.StarTwo)
             {
                 Debug.Log("Force field");
                 AmIForceField = true;
@@ -503,7 +503,7 @@ public class FirstPersonController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Alpha4) && !NotInAbilityState)
         {
-            if(PlayerUpgradesData.StarFive)
+            //if(PlayerUpgradesData.StarFive)
             {
                 AmIUsingThanosSnap = true;
                 NotInAbilityState = true;
@@ -643,10 +643,10 @@ public class FirstPersonController : MonoBehaviour
                 enemyBehaviours.Add(enemyBehaviour);
             }
         }
-        yield return new WaitForSeconds(_durationTilWhite.length);
+        yield return new WaitForSecondsRealtime(_durationTilWhite.length);
 
         int num = KillComboHandler.KillComboCounter/2;
-
+        
         for (int i = 0; i < num; i++)
         {
             if(enemyBehaviours[i] != null)
@@ -654,6 +654,8 @@ public class FirstPersonController : MonoBehaviour
                 enemyBehaviours[i].Thanosnaped();
             }
         }
+
+        KillComboHandler.SetCombo(num);
         
         Time.timeScale = 1f;
         NotInAbilityState = false;

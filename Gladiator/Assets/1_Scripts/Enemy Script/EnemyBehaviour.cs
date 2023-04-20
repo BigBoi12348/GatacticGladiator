@@ -41,12 +41,13 @@ public class EnemyBehaviour : MonoBehaviour
 
 
     [Header("References")]
+    [SerializeField] private Collider _wallStopper;
     [SerializeField] private EnemyWeaponBehaviour _enemyWeaponBehaviour;
     [SerializeField] private AIDestinationSetter _aIDestinationSetter;
     [SerializeField] private AIPath _aIPath;
     bool alreadyDying;
 
-
+    bool locked;
     bool hasBetterDash;
     private void Awake() 
     {
@@ -61,6 +62,7 @@ public class EnemyBehaviour : MonoBehaviour
     
     private void Start() 
     {
+        _wallStopper.enabled = false;
         _aIPath.maxSpeed = _enemyMovementSpeed;
         if(PlayerUpgradesData.StarOne)
         {
@@ -116,8 +118,11 @@ public class EnemyBehaviour : MonoBehaviour
         }
         
         Vector3 playerPos = new Vector3(_playerTransform.position.x, transform.position.y, _playerTransform.position.z);
- 
-        transform.LookAt(playerPos);
+
+        if(!locked)
+        {
+            transform.LookAt(playerPos);
+        }
     }
 
     IEnumerator ShootTheBow()
@@ -156,6 +161,8 @@ public class EnemyBehaviour : MonoBehaviour
     {
         _enemyAnim.enabled = false;
         _aIPath.enabled = false;
+        locked = true;
+        _wallStopper.enabled = true;
         StartCoroutine(BringItBack());
     }
 
@@ -164,6 +171,8 @@ public class EnemyBehaviour : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         _enemyAnim.enabled = true;
         _aIPath.enabled = true;
+        _wallStopper.enabled = false;
+        locked = false;
     }
 
     private void Breaking()

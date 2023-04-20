@@ -9976,15 +9976,15 @@ MonoBehaviour:
   joint: {fileID: 7442434930173113688}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
-  dashForce: 45
-  upgradedDashForceAdd: 0
+  dashForce: 20
+  upgradedDashForceAdd: 25
   dashDuration: 0.75
   dashCooldown: 1
   upwardForce: 6
   _lookUpThreshold: 0.3
   dashKey: 118
   _dashBehaviour: {fileID: 240117240022981548}
-  _forceFieldSkillRadius: 50
+  _forceFieldSkillRadius: 20
   _centrePoint: {fileID: 2757772827775543061}
   _enemyForceFieldLayer:
     serializedVersion: 2
@@ -9996,7 +9996,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4194816
   _enemyContainer: {fileID: 0}
-  _durationTilWhite: {fileID: 0}
+  _durationTilWhite: {fileID: 7400000, guid: 4c3bc6bb8bd8f55499865530ddccc7f4, type: 2}
   _playerAnim: {fileID: 9098930713520981893}
   _numOfClicks: 0
   lastClickedTime: 0
