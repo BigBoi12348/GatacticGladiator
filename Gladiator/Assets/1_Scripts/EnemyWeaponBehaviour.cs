@@ -14,6 +14,7 @@ public class EnemyWeaponBehaviour : MonoBehaviour
     [SerializeField] private Collider _weaponCollider;
     [SerializeField] private int WeaponDamage;
     bool alreadyHit;
+    bool checkCombo;
 
     private void Start() 
     {
@@ -22,6 +23,15 @@ public class EnemyWeaponBehaviour : MonoBehaviour
             _weaponCollider.enabled = false;
         }
         alreadyHit = false;
+
+        if(PlayerUpgradesData.StarFive)
+        {
+            checkCombo = true;
+        }
+        else
+        {
+            checkCombo = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -31,13 +41,20 @@ public class EnemyWeaponBehaviour : MonoBehaviour
             if(other.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
             {
                 alreadyHit = true;
-                playerHealth.TakeDamage(WeaponDamage);
                 if(_weaponType == WeaponType.Melee)
                 {
+                    playerHealth.TakeDamage(WeaponDamage);
                     StartCoroutine(HitDelay());
                 }
                 else if(_weaponType == WeaponType.Projectile)
                 {
+                    if(checkCombo)
+                    {
+                        if(KillComboHandler.KillComboCounter >= 80)
+                        {
+                            playerHealth.TakeDamage(WeaponDamage);
+                        }
+                    }
                     Destroy(gameObject);
                 }
             }

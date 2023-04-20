@@ -136,10 +136,15 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float upwardForce;
     [SerializeField] private float _lookUpThreshold;
     [SerializeField] private KeyCode dashKey = KeyCode.Space;
+    [SerializeField] private DashBehaviour _dashBehaviour;
     private bool isDashing = false;
     private Vector3 dashStartPosition;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
+
+
+    [Header("Force Field")]
+    private bool AmIForceField;
 
     [Header("Shooting Fire Flames")]
     [SerializeField] private PlayerFireLane _fireBeam;
@@ -156,6 +161,8 @@ public class FirstPersonController : MonoBehaviour
     private bool FirstGravityCast;
 
     [Header("Thanos Snap")]
+    [SerializeField] private Transform _enemyContainer; 
+    [SerializeField] private AnimationClip _durationTilWhite;
     private bool AmIUsingThanosSnap;
     #endregion
 
@@ -465,33 +472,48 @@ public class FirstPersonController : MonoBehaviour
         {
             if(PlayerUpgradesData.StarTwo)
             {
+                AmIForceField = true;
                 NotInAbilityState = true;
             }
         }
         if(Input.GetKeyDown(KeyCode.Alpha2) && !NotInAbilityState)
         {
-            Time.timeScale = 0.1f;
-            PostProcessingEffectManager.Instance.StartSlowEffect();
-            NumberOfBeams = GetNumberOfFireBeams();
-            _currentFireBeams = new List<PlayerFireLane>();
-            AmIShootingFireBeams = true;
-            NotInAbilityState = true;
+            if(PlayerUpgradesData.StarThree)
+            {
+                Time.timeScale = 0.1f;
+                PostProcessingEffectManager.Instance.StartSlowEffect();
+                NumberOfBeams = GetNumberOfFireBeams();
+                _currentFireBeams = new List<PlayerFireLane>();
+                AmIShootingFireBeams = true;
+                NotInAbilityState = true; 
+            }
         }
         if(Input.GetKeyDown(KeyCode.Alpha3) && !NotInAbilityState)
         {
-            FirstGravityCast = true;
-            AmIGravityLifting = true;
-            NotInAbilityState = true;
+            if(PlayerUpgradesData.StarFour)
+            {
+                FirstGravityCast = true;
+                AmIGravityLifting = true;
+                NotInAbilityState = true;
+            }
         }
         if(Input.GetKeyDown(KeyCode.Alpha4) && !NotInAbilityState)
         {
-            AmIUsingThanosSnap = true;
-            NotInAbilityState = true;
+            if(PlayerUpgradesData.StarFive)
+            {
+                AmIUsingThanosSnap = true;
+                NotInAbilityState = true;
+            }
         }
         #endregion
         #endregion
         else if(NotInAbilityState)
         {
+            if(AmIForceField)
+            {
+                StartCoroutine(ForceField());
+                AmIForceField = false;
+            }
             if(AmIShootingFireBeams)
             {
                 if(NumberOfBeams == 0)
@@ -522,9 +544,31 @@ public class FirstPersonController : MonoBehaviour
             }
             if(AmIUsingThanosSnap)
             {
-
+                StartCoroutine(KillHalfOfEnemies());
+                AmIUsingThanosSnap = false;
             }
         }
+    }
+
+    private IEnumerator ForceField()
+    {
+        CameraEffectsSystem.Instance.ShakeCamera(15, 1f);
+        RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, _gravitySkillRadius, Vector3.up, 5, _enemyLayer);
+
+        foreach (var hit in raycastHits)
+        {
+            if(hit.transform.TryGetComponent<Rigidbody>(out Rigidbody rb))
+            {
+                Vector3 force = (rb.transform.position - transform.position).normalized * 30;
+                rb.AddForce(force);
+            }
+        }
+        
+        yield return new WaitForSeconds(0.1f);
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(0.8f);
+        Time.timeScale = 1f;
+        NotInAbilityState = false;
     }
 
     IEnumerator GravityPound()
@@ -579,10 +623,43 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    private IEnumerator KillHalfOfEnemies()
+    {
+        Time.timeScale = 0.1f;
+        InGameLevelManager.Instance.FlashScreenWhite();
+
+        List<EnemyBehaviour> enemyBehaviours = new List<EnemyBehaviour>();
+
+        foreach (Transform enemy in _enemyContainer)
+        {
+            if(enemy.TryGetComponent<EnemyBehaviour>(out EnemyBehaviour enemyBehaviour))
+            {
+                enemyBehaviours.Add(enemyBehaviour);
+            }
+        }
+        yield return new WaitForSeconds(_durationTilWhite.length);
+
+        int num = KillComboHandler.KillComboCounter/2;
+
+        for (int i = 0; i < num; i++)
+        {
+            if(enemyBehaviours[i] != null)
+            {
+                enemyBehaviours[i].Thanosnaped();
+            }
+        }
+        
+        Time.timeScale = 1f;
+        NotInAbilityState = false;
+    }
+
     private void Dash()
     {
         SoundManager.Instance.PlaySound3D(SoundManager.Sound.DashEffect, transform.position);
         PostProcessingEffectManager.Instance.DashEffect(0.3f);
+
+        _dashBehaviour.StartDash();
+
         Transform forwardT = transform;
         Vector3 direction = GetDashDirection(forwardT);
         Vector3 forceToApply = Vector3.zero;

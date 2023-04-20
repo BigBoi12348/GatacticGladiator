@@ -45,6 +45,9 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private AIDestinationSetter _aIDestinationSetter;
     [SerializeField] private AIPath _aIPath;
     bool alreadyDying;
+
+
+    bool hasBetterDash;
     private void Awake() 
     {
         alreadyDying = false;
@@ -59,6 +62,14 @@ public class EnemyBehaviour : MonoBehaviour
     private void Start() 
     {
         _aIPath.maxSpeed = _enemyMovementSpeed;
+        if(PlayerUpgradesData.StarOne)
+        {
+            hasBetterDash = true;
+        }
+        else
+        {
+            hasBetterDash = false;
+        }
     }
 
     private void Update()
@@ -125,6 +136,21 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Death();
         }
+        else if(other.CompareTag("PlayerDash"))
+        {
+            if(other.TryGetComponent<DashBehaviour>(out DashBehaviour dashBehaviour))
+            {   
+                if(KillComboHandler.KillComboCounter >= 45)
+                {
+                    Death();
+                }
+                else if(KillComboHandler.KillComboCounter >= 10)
+                {
+                    dashBehaviour.TurnOffDashKill();
+                    Death();
+                }
+            }
+        }
     }
 
     public void StopEnemy()
@@ -163,5 +189,11 @@ public class EnemyBehaviour : MonoBehaviour
             SoundManager.Instance.PlaySound3D(SoundManager.Sound.EnemyDeath, transform.position);
             Destroy(gameObject);
         }
+    }
+
+    public void Thanosnaped()
+    {
+        InGameLevelManager.Instance.EnemyHasDied();
+        Destroy(gameObject);
     }
 }

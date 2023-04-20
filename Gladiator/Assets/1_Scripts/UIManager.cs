@@ -20,6 +20,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _playerLost;
 
 
+    [Header("Animations")]
+    [SerializeField] private Animator _whiteScreenAnim;
+    const string FLASHWHITE = "FlashWhite";
     private void OnEnable() 
     {
         GameEvents.gameStartSetUp += GameIsStarting;
@@ -62,6 +65,11 @@ public class UIManager : MonoBehaviour
     private void GameStarted()
     {
         //_enemiesLeftText.text = InGameLevelManager.Instance._totalEnemiesCounter.ToString() + " Enemies left";
+    }
+
+    public void WhiteScreen()
+    {
+        _whiteScreenAnim.Play(FLASHWHITE);
     }
 
     public void EnemiesLeftUpdate(int enemiesLeft)
