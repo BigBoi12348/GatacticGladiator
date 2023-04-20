@@ -498,10 +498,10 @@ RectTransform:
   m_Father: {fileID: 1958117059}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00024986267, y: -25.67}
-  m_SizeDelta: {x: 0.0005, y: -52.8498}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 36.7}
+  m_SizeDelta: {x: 6.1649, y: 3.481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446816223
 MonoBehaviour:
@@ -743,7 +743,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1180,41 +1180,26 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In the year 26XX, at an arena on an alien planet, you were taken and made
-    to fight against the most fearsome warriors.
-
-
-
-    Your fate may be sealed in
-    this endless entourage of enemies.
-
-
-
-    But that''s not stopping you from showing
-    them who''s the true champion.
-
-
-
-    Fights that are won earn upgrades that
-    can make you unstoppable.
-
-
-
-    Discover unique abilities and strategies that
-    will aid you in battle.
-
-
-
-    How long can you go throughout this carnage until
-    you fall?
-
-
-
-    This is...
-
-
-
-    GALACTIC GLADIATORS'
+  m_text: "\n\n\n\n\r\n\n\n\n\nBy \r\n\r\n\n\n\n\n\n\n\n\n\n\n\nInitial Concept\r\n\r\n\n\nChristian
+    Harb\r\n\r\n\n\nGame Programmers\r\n\r\n\n\nChristian Harb\r\nRonan Stannet\r\n\r\n\n\nGame
+    Designer\r\n\r\n\n\nDomara Oraham\r\n\r\n\n\nAudio\r\n\r\n\n\nCrowd Cheering
+    - Micha\xEBl Ghelfi Studious (Youtube)\r\nBattle Theme - Jon Presstone (Storyblocks)\r\nUpgrade
+    Menu Background Music - Cozy Ambience Sounds For Sleeping (Youtube)\r\nIntro,
+    Menu & Credits Background Music - Alexander Nakarada (Youtube)\r\nDash SFX -
+    (Audio Jungle)\r\nDeath Cry Male SFX - UNIVERSFIELD (Pixabay)\r\nDeath Cry Female
+    SFX - ritola27 (Pixabay)\r\nItem Upgraded SFX - All Sounds (Youtube)\r\nLight
+    Saber SFX - Sound Library (Youtube)\r\n\r\n\n\nArt (UI/Font/Background)\r\n\r\n\n\nAll
+    User Interface - Domara Oraham\r\nFont - wepfont (Font Space)\r\nSkybox - PULSAR
+    BYTES (Unity Asset Store)\r\n\r\n\n\nAnimations\r\n\r\n\n\nEnemy Animations -
+    Mixamo\r\nArms, Lever & Sword Animatios - Christian Harb\r\nIntro, Menu & Credits
+    Animations - Domara Oraham\r\nUpgrade Scene Transitions - Ronan Stannet\r\n\r\n\n\nModels\r\n\r\n\n\nBattle
+    Arena - Rixael (Sketchfab)\r\nLow Poly Arms - yalcinn1284 (Sketchfab)\r\nWeapons
+    - Drazen (Sketchfab)\r\nEnemy Models - Codewat Game Assets (Unity Asset Store)\r\nTutorial
+    Wall - NoobiePie (Sketchfab)\r\nFire Statue, Lever & Toxic Pipes - Christian
+    Harb\r\n\r\n\n\nEffects\r\n\r\n\n\nFire & Toxic Cloud - Christian Harb\r\nAll
+    Abilities - Ronan Stennet\r\n\r\n\n\nSpecial Thanks\r\n\r\n\n\nOur Lecturers\r\nOur
+    Playtesters\r\nOur Peers\r\n\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThank
+    You For Playing!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d167dd2eec92143499f6ea986abad200, type: 2}
   m_sharedMaterial: {fileID: -15337761652585793, guid: d167dd2eec92143499f6ea986abad200, type: 2}
@@ -1241,8 +1226,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.45
+  m_fontSizeBase: 0.45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1290,6 +1275,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676553589}
+  m_CullTransparentMesh: 1
+--- !u!1 &1699478872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699478873}
+  - component: {fileID: 1699478875}
+  - component: {fileID: 1699478874}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1699478873
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699478872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1958117059}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 31.4}
+  m_SizeDelta: {x: 3.7082, y: 3.7082}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1699478874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699478872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: de4fbd848aa5b644e94be14581ad9550, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1699478875
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699478872}
   m_CullTransparentMesh: 1
 --- !u!1 &1958044633
 GameObject:
@@ -1420,19 +1481,20 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958117058}
   m_LocalRotation: {x: 0.26785934, y: -0, z: -0, w: 0.96345806}
-  m_LocalPosition: {x: 0, y: 0, z: -7.3452}
+  m_LocalPosition: {x: 0, y: 0, z: -11.6279}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1676553590}
   - {fileID: 1446816222}
+  - {fileID: 1699478873}
   m_Father: {fileID: 1607020462}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 31.074, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -31.7988}
-  m_SizeDelta: {x: 9.8388, y: 58.2587}
+  m_AnchoredPosition: {x: 0, y: -39.102005}
+  m_SizeDelta: {x: 24.8694, y: 77.5571}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1958117060
 MonoBehaviour:
