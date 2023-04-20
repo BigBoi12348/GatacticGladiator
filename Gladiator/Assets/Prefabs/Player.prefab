@@ -9891,7 +9891,6 @@ GameObject:
   - component: {fileID: 7442434931619670336}
   - component: {fileID: 7442434931619670337}
   - component: {fileID: 7442434931619670341}
-  - component: {fileID: 7442434931619670364}
   - component: {fileID: 7442434931619670366}
   - component: {fileID: 7442434931619670367}
   m_Layer: 0
@@ -9953,7 +9952,7 @@ MonoBehaviour:
   walkSpeed: 5
   maxVelocityChange: 10
   _jumpPoint: {fileID: 6533676670918562217}
-  enableSprint: 1
+  enableSprint: 0
   unlimitedSprint: 1
   sprintKey: 304
   sprintSpeed: 7
@@ -9979,24 +9978,30 @@ MonoBehaviour:
   dashForce: 20
   upgradedDashForceAdd: 25
   dashDuration: 0.75
-  dashCooldown: 1
+  dashCooldown: 3
   upwardForce: 6
   _lookUpThreshold: 0.3
   dashKey: 118
   _dashBehaviour: {fileID: 240117240022981548}
+  _forceFieldStrength: 0
+  _extraForceFieldStrength: 0
   _forceFieldSkillRadius: 20
   _centrePoint: {fileID: 2757772827775543061}
   _enemyForceFieldLayer:
     serializedVersion: 2
     m_Bits: 512
+  _forceFieldCoolDownTime: 10
   _fireBeam: {fileID: 4364620476092667327, guid: 3a1ad0a4bc2a9c440a5eac10f874a0a1, type: 3}
+  _fireBeamsCoolDownTime: 10
   _gravitySkillRadius: 10
   _liftPower: 7
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 4194816
+  _gravityPoundCoolDownTime: 12
   _enemyContainer: {fileID: 0}
   _durationTilWhite: {fileID: 7400000, guid: 4c3bc6bb8bd8f55499865530ddccc7f4, type: 2}
+  _thanosSnapCoolDownTime: 25
   _playerAnim: {fileID: 9098930713520981893}
   _numOfClicks: 0
   lastClickedTime: 0
@@ -10095,18 +10100,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
---- !u!114 &7442434931619670364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7442434931619670350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fa5b26197c795a488cbc456b84e5778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7442434931619670366
 MonoBehaviour:
   m_ObjectHideFlags: 0

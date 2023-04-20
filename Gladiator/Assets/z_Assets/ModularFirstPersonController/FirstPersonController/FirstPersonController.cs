@@ -174,7 +174,6 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float _gravityPoundCoolDownTime;
     public float _gravityPoundTimer{get; private set;}
     private bool _canUseGravityPound;
-    RaycastHit[] raycastGravityHits;
     private bool AmIGravityLifting;
     private bool FirstGravityCast;
 
@@ -182,6 +181,9 @@ public class FirstPersonController : MonoBehaviour
     [Header("Thanos Snap")]
     [SerializeField] private Transform _enemyContainer; 
     [SerializeField] private AnimationClip _durationTilWhite;
+    [SerializeField] private float _thanosSnapCoolDownTime;
+    public float _thanosSnapTimer{get; private set;}
+    private bool _canUseThanosSnap;
     private bool AmIUsingThanosSnap;
     #endregion
 
@@ -500,6 +502,14 @@ public class FirstPersonController : MonoBehaviour
             }
             _gravityPoundTimer -= Time.deltaTime;
         }
+        if(!_canUseThanosSnap)
+        {
+            if(_thanosSnapTimer < 0)
+            {
+                _canUseThanosSnap = true;
+            }
+            _thanosSnapTimer -= Time.deltaTime;
+        }
         if(Input.GetKeyDown(KeyCode.Alpha1) && !NotInAbilityState && _canUseForceField)
         {
             //if(PlayerUpgradesData.StarTwo)
@@ -529,7 +539,7 @@ public class FirstPersonController : MonoBehaviour
                 NotInAbilityState = true;
             }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha4) && !NotInAbilityState)
+        if(Input.GetKeyDown(KeyCode.Alpha4) && !NotInAbilityState && _canUseThanosSnap)
         {
             if(PlayerUpgradesData.StarFive)
             {
@@ -640,7 +650,8 @@ public class FirstPersonController : MonoBehaviour
         {
             enemyBehaviour.Death();
         }
-
+        _gravityPoundTimer = _gravityPoundCoolDownTime;
+        _canUseGravityPound = false;
         AmIGravityLifting = false;
         NotInAbilityState = false;
     }
@@ -694,7 +705,8 @@ public class FirstPersonController : MonoBehaviour
         }
 
         KillComboHandler.SetCombo(num);
-        
+        _thanosSnapTimer = _thanosSnapCoolDownTime;
+        _canUseThanosSnap = false;
         Time.timeScale = 1f;
         NotInAbilityState = false;
     }
