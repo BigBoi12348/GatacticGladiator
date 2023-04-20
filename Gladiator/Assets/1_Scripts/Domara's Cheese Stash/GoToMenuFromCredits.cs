@@ -7,7 +7,7 @@ public class GoToMenuFromCredits : MonoBehaviour
 {
     private void Start()
     {
-        Invoke("StartMenu", 120);
+        Invoke("StartMenu", 62);
     }
     private void Update()
     {
