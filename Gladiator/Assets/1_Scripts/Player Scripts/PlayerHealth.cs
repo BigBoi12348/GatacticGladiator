@@ -117,7 +117,14 @@ public class PlayerHealth : MonoBehaviour
     {
         if(AmIResilient)
         {
-            damage -= 1;
+            if(KillComboHandler.KillComboCounter >= 45)
+            {
+                if(currentHealth - damage < maxHealth*0.2f)
+                {
+                    damage = 0;
+                    currentHealth = maxHealth*0.2f;
+                }
+            }
         }
         currentHealth -= damage;
         if (currentHealth <= 0 && !dead)

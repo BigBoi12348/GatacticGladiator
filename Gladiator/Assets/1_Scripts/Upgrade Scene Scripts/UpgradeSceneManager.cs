@@ -27,6 +27,10 @@ public class UpgradeSceneManager : MonoBehaviour
 
     void Start()
     {
+        if(GameManager.Instance.LastSceneID == 0)
+        {
+            RoundData.PlayerPoints = 150;
+        }
         if(Instance == null)
         {
             Instance = this;

@@ -4634,7 +4634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7976689118968566251}
   - component: {fileID: 9061650032582738752}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Wallstopper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

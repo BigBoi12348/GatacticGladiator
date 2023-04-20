@@ -64,11 +64,6 @@ public class Blocking : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other) 
-    {
-        Debug.Log("Cap");
-    }
-
     public IEnumerator AllowShieldBlockAgain()
     {
         ShieldLock = true;

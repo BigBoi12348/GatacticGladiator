@@ -13,7 +13,6 @@ public class SwordBladeProjectileBehaviour : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) 
     {
-        Debug.Log(other.name);
         if(_amountOfHitsICanDo <= 0)
         {
             _amountOfHitsICanDo -= 1;

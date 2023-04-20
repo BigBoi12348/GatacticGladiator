@@ -11,6 +11,7 @@ public class DashBehaviour : MonoBehaviour
         if(PlayerUpgradesData.StarOne)
         {
             gameObject.SetActive(true);
+            _dashCol.enabled = false;
         }
         else
         {

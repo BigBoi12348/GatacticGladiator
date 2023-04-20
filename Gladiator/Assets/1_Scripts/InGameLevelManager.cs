@@ -116,7 +116,7 @@ public class InGameLevelManager : MonoBehaviour
         if(didPlayerWin)
         {
             RoundData.Wave++;
-            RoundData.PlayerPoints += 30;
+            RoundData.PlayerPoints += 3;
         }
         else if(!didPlayerWin)
         {

@@ -24,7 +24,7 @@ public class SwordBladeUpgrade : MonoBehaviour
             else
             {
                 int ranChance = Random.Range(1,101);
-                if(ranChance <= 60)
+                if(ranChance <= 75)
                 {
                    canShoot = true; 
                 }

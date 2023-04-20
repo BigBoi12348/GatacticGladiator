@@ -111,7 +111,7 @@ public class EnemySpawnerManager : MonoBehaviour
             TotalEnemiesSpawningThisRound++;
         }
 
-        RoundData.DifficultyRank = (int)Mathf.Pow(_currentDifficultyRank, 1.2f);
+        RoundData.DifficultyRank = _currentDifficultyRank + (int)Mathf.Pow(_currentDifficultyRank, 0.6f);
         GameEvents.playerStartGame?.Invoke();
     }
 

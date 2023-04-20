@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1309798679}
-  m_IndirectSpecularColor: {r: 8395.039, g: 6233.375, b: 7364.7812, a: 1}
+  m_IndirectSpecularColor: {r: 1359.8848, g: 803.34375, b: 889.2178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2400,7 +2400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381239751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.24, y: 3, z: 19.76}
+  m_LocalPosition: {x: 30.14, y: 3, z: 25.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2504,7 +2504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446090400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.21, y: 3, z: -16.18}
+  m_LocalPosition: {x: -31.93, y: 3, z: -28.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9809,7 +9809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619184034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.94, y: 3, z: 7.43}
+  m_LocalPosition: {x: -15.2, y: 3, z: 38.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10454,13 +10454,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4dcb5fe7d685a4abccf2051aa4fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plainLevel: {fileID: 1835812057}
-  _fireLevel: {fileID: 1835812057}
+  _plainLevel: {fileID: 941325871}
+  _fireLevel: {fileID: 1690047974}
   _poisonLevel: {fileID: 1835812057}
   _enemySpawnerManager: {fileID: 679215275}
   _waveComplete: {fileID: 7400000, guid: 5d5545c2d08e4984ea1db4e908a088d9, type: 2}
   _playerHealth: {fileID: 4459864850776571089}
-  _playerShieldBehaviour: {fileID: 0}
+  _playerShieldBehaviour: {fileID: 4459864850776571091}
   killComboHandler: {fileID: 64191580}
 --- !u!43 &673235225
 Mesh:
@@ -10692,25 +10692,60 @@ MonoBehaviour:
     IsThereStopForThisEnemy: 1
     StopSpawnWave: 4
   - EnemyObj: {fileID: 7333921120246751172, guid: 3d02e100531d34b49ac1f9a16a8ab94f, type: 3}
-    DifficultyRank: 1
+    DifficultyRank: 2
     StartSpawnWave: 2
     IsThereStopForThisEnemy: 1
-    StopSpawnWave: 6
-  - EnemyObj: {fileID: 7333921120246751172, guid: 5065562aca3a71e449ba067879fbec4c, type: 3}
-    DifficultyRank: 2
+    StopSpawnWave: 7
+  - EnemyObj: {fileID: 6316840748443753182, guid: f3d61d1427e179349bdec5e45633fa57, type: 3}
+    DifficultyRank: 4
     StartSpawnWave: 3
     IsThereStopForThisEnemy: 1
-    StopSpawnWave: 8
-  - EnemyObj: {fileID: 7333921120246751172, guid: 780c49327d2564a449c56049774d2344, type: 3}
-    DifficultyRank: 3
+    StopSpawnWave: 9
+  - EnemyObj: {fileID: 7333921120246751172, guid: 3329f21378ef5fb4fac2360df6c09cac, type: 3}
+    DifficultyRank: 4
     StartSpawnWave: 4
     IsThereStopForThisEnemy: 1
-    StopSpawnWave: 8
-  - EnemyObj: {fileID: 6316840748443753182, guid: ae88c8755e3b61145851eba36048ceae, type: 3}
-    DifficultyRank: 1
-    StartSpawnWave: 2
+    StopSpawnWave: 11
+  - EnemyObj: {fileID: 7333921120246751172, guid: f8a0e04916d6810478ec9b053bd746e2, type: 3}
+    DifficultyRank: 5
+    StartSpawnWave: 8
     IsThereStopForThisEnemy: 1
-    StopSpawnWave: 8
+    StopSpawnWave: 13
+  - EnemyObj: {fileID: 6316840748443753182, guid: c987970de589023419ec832bfd75026b, type: 3}
+    DifficultyRank: 7
+    StartSpawnWave: 8
+    IsThereStopForThisEnemy: 1
+    StopSpawnWave: 14
+  - EnemyObj: {fileID: 7333921120246751172, guid: be5e57ef50aaf9d41b97ff0f5f30c107, type: 3}
+    DifficultyRank: 6
+    StartSpawnWave: 9
+    IsThereStopForThisEnemy: 1
+    StopSpawnWave: 13
+  - EnemyObj: {fileID: 7333921120246751172, guid: e4a1901fea312804bbfba342065a7895, type: 3}
+    DifficultyRank: 8
+    StartSpawnWave: 10
+    IsThereStopForThisEnemy: 1
+    StopSpawnWave: 15
+  - EnemyObj: {fileID: 7333921120246751172, guid: 780c49327d2564a449c56049774d2344, type: 3}
+    DifficultyRank: 10
+    StartSpawnWave: 12
+    IsThereStopForThisEnemy: 0
+    StopSpawnWave: 0
+  - EnemyObj: {fileID: 6316840748443753182, guid: ae88c8755e3b61145851eba36048ceae, type: 3}
+    DifficultyRank: 12
+    StartSpawnWave: 13
+    IsThereStopForThisEnemy: 0
+    StopSpawnWave: 0
+  - EnemyObj: {fileID: 7333921120246751172, guid: ee210e6e8fbc8f5499d94f0b4961aa3c, type: 3}
+    DifficultyRank: 12
+    StartSpawnWave: 13
+    IsThereStopForThisEnemy: 0
+    StopSpawnWave: 0
+  - EnemyObj: {fileID: 7333921120246751172, guid: 5065562aca3a71e449ba067879fbec4c, type: 3}
+    DifficultyRank: 14
+    StartSpawnWave: 14
+    IsThereStopForThisEnemy: 0
+    StopSpawnWave: 0
 --- !u!1 &730563809
 GameObject:
   m_ObjectHideFlags: 0
@@ -22688,7 +22723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3532635818843937073, guid: b4c31446accd2e849b49b859e036861c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4990360122502816728, guid: b4c31446accd2e849b49b859e036861c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -22708,6 +22743,11 @@ PrefabInstance:
       objectReference: {fileID: 7555185752953191562, guid: 9b85196eb2847f54f942804db4e59add, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c31446accd2e849b49b859e036861c, type: 3}
+--- !u!1 &941325871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3532635818843937073, guid: b4c31446accd2e849b49b859e036861c, type: 3}
+  m_PrefabInstance: {fileID: 941325870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &954826851
 GameObject:
   m_ObjectHideFlags: 0
@@ -24809,7 +24849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287308323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.94, y: 3, z: -4.1}
+  m_LocalPosition: {x: 38.94, y: 3, z: -8.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26070,7 +26110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477875148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.11, y: 3, z: -28}
+  m_LocalPosition: {x: 15.13, y: 3, z: -37.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26327,7 +26367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546192147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.94, y: 3, z: 34.71}
+  m_LocalPosition: {x: 7.37, y: 3, z: 40.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30468,7 +30508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1835812058
 Transform:
   m_ObjectHideFlags: 0
@@ -46317,7 +46357,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
     collisionMode: 0
@@ -48378,8 +48418,16 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7442434930226168797, guid: d227a1315cd963742b77e10dd860610d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442434930226168797, guid: d227a1315cd963742b77e10dd860610d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442434930226168797, guid: d227a1315cd963742b77e10dd860610d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7442434930226168797, guid: d227a1315cd963742b77e10dd860610d, type: 3}
       propertyPath: m_LocalRotation.w
