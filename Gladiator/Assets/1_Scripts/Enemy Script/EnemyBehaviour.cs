@@ -132,31 +132,38 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
         if(other.CompareTag("PlayerWeapon"))
         {
             Death();
         }
-        else if(other.CompareTag("PlayerDash"))
-        {
-            if(other.TryGetComponent<DashBehaviour>(out DashBehaviour dashBehaviour))
-            {   
-                if(KillComboHandler.KillComboCounter >= 45)
-                {
-                    Death();
-                }
-                else if(KillComboHandler.KillComboCounter >= 10)
-                {
-                    dashBehaviour.TurnOffDashKill();
-                    Death();
-                }
+        else if(other.TryGetComponent<DashBehaviour>(out DashBehaviour dashBehaviour))
+        {   
+            if(KillComboHandler.KillComboCounter >= 45)
+            {
+                Death();
+            }
+            else if(KillComboHandler.KillComboCounter >= 10)
+            {
+                dashBehaviour.TurnOffDashKill();
+                Death();
             }
         }
+        
     }
 
     public void StopEnemy()
     {
         _enemyAnim.enabled = false;
         _aIPath.enabled = false;
+        StartCoroutine(BringItBack());
+    }
+
+    IEnumerator BringItBack()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _enemyAnim.enabled = true;
+        _aIPath.enabled = true;
     }
 
     private void Breaking()

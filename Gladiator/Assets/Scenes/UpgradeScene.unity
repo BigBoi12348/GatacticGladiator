@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
@@ -2154,7 +2154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
@@ -3750,7 +3750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
@@ -4070,7 +4070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus

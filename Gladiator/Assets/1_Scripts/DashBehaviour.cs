@@ -5,6 +5,18 @@ using UnityEngine;
 public class DashBehaviour : MonoBehaviour
 {
     [SerializeField] private Collider _dashCol;
+
+    private void Start() 
+    {
+        if(PlayerUpgradesData.StarOne)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
     public void StartDash()
     {
         if(KillComboHandler.KillComboCounter >= 10)
