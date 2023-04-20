@@ -160,13 +160,16 @@ public class EnemyBehaviour : MonoBehaviour
         
     }
 
-    public void StopEnemy()
+    public void StopEnemy(bool comesBack)
     {
         _enemyAnim.enabled = false;
         _aIPath.enabled = false;
         locked = true;
-        _wallStopper.enabled = true;
-        StartCoroutine(BringItBack());
+        if(comesBack)
+        {
+            _wallStopper.enabled = true;
+            StartCoroutine(BringItBack());
+        }
     }
 
     IEnumerator BringItBack()

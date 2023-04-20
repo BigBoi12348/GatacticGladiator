@@ -12,6 +12,7 @@ public class FirstPersonController : MonoBehaviour
 {
     public WeaponBehaviour _weaponBehaviour;
     private Rigidbody rb;
+    private Collider _playerCol;
     float camRotation;
 
     #region Camera Movement Variables
@@ -137,6 +138,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float _lookUpThreshold;
     [SerializeField] private KeyCode dashKey = KeyCode.Space;
     [SerializeField] private DashBehaviour _dashBehaviour;
+    private bool _hasBetterDash;
     private bool isDashing = false;
     private Vector3 dashStartPosition;
     private float dashTimer = 0f;
@@ -144,24 +146,38 @@ public class FirstPersonController : MonoBehaviour
 
 
     [Header("Force Field")]
+    [SerializeField] private float _forceFieldStrength;
+    [SerializeField] private float _extraForceFieldStrength;
     [SerializeField] private float _forceFieldSkillRadius;
     [SerializeField] private Transform _centrePoint;
     [SerializeField] private LayerMask _enemyForceFieldLayer;
+    [SerializeField] private float _forceFieldCoolDownTime;
+    public float _forceFieldTimer{get; private set;}
+    private bool _canUseForceField;
     private bool AmIForceField;
+
 
     [Header("Shooting Fire Flames")]
     [SerializeField] private PlayerFireLane _fireBeam;
+    [SerializeField] private float _fireBeamsCoolDownTime;
+    public float _fireBeamsTimer{get; private set;}
+    private bool _canUseFireBeams;
     private List<PlayerFireLane> _currentFireBeams;
     private bool AmIShootingFireBeams;
     private int NumberOfBeams;
+
 
     [Header("Gravity Pound")]
     [SerializeField] private float _gravitySkillRadius;
     [SerializeField] private float _liftPower;
     [SerializeField] private LayerMask _enemyLayer;
+    [SerializeField] private float _gravityPoundCoolDownTime;
+    public float _gravityPoundTimer{get; private set;}
+    private bool _canUseGravityPound;
     RaycastHit[] raycastGravityHits;
     private bool AmIGravityLifting;
     private bool FirstGravityCast;
+
 
     [Header("Thanos Snap")]
     [SerializeField] private Transform _enemyContainer; 
@@ -260,28 +276,22 @@ public class FirstPersonController : MonoBehaviour
     {
         if(!NotInAbilityState)
         #region NON-ABILITY
-        if(PlayerUpgradesData.AbilityAttribute >= 0)
+        if (dashCooldownTimer > 0)
         {
-            if (dashCooldownTimer > 0)
+            dashCooldownTimer -= Time.deltaTime;
+        }
+        else
+        {
+            if (Input.GetKeyDown(dashKey) && !isDashing)
             {
-                dashCooldownTimer -= Time.deltaTime;
-            }
-            else
-            {
-                if (Input.GetKeyDown(dashKey) && !isDashing)
-                {
-                    isDashing = true;
-                    //dashStartPosition = transform.position;
-                    dashTimer = dashDuration;
-                    rb.velocity = Vector3.zero;
-                    Dash();
-                }
+                isDashing = true;
+                dashTimer = dashDuration;
+                rb.velocity = Vector3.zero;
+                Dash();
             }
         }
-    
-
+        
         #region Attack
-
         if(_playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && _playerAnim.GetCurrentAnimatorStateInfo(0).IsName("LeftSlice"))
         {
             //_playerAnim.SetBool("LeftSlice", false);
@@ -300,11 +310,6 @@ public class FirstPersonController : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             OnClick();
-        }
-
-        if(Input.GetMouseButtonDown(1))
-        {
-            
         }
 
         #endregion
@@ -471,30 +476,53 @@ public class FirstPersonController : MonoBehaviour
         }
 
         #region Abiltiy Buttons
-        if(Input.GetKeyDown(KeyCode.Alpha1) && !NotInAbilityState)
+        if(!_canUseForceField)
+        {
+            if(_forceFieldTimer < 0)
+            {
+                _canUseForceField = true;
+            }
+            _forceFieldTimer -= Time.deltaTime;
+        }
+        if(!_canUseFireBeams)
+        {
+            if(_fireBeamsTimer < 0)
+            {
+                _canUseFireBeams = true;
+            }
+            _fireBeamsTimer -= Time.deltaTime;
+        }
+        if(!_canUseGravityPound)
+        {
+            if(_gravityPoundTimer < 0)
+            {
+                _canUseGravityPound = true;
+            }
+            _gravityPoundTimer -= Time.deltaTime;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha1) && !NotInAbilityState && _canUseForceField)
         {
             //if(PlayerUpgradesData.StarTwo)
             {
-                Debug.Log("Force field");
                 AmIForceField = true;
                 NotInAbilityState = true;
             }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2) && !NotInAbilityState)
+        if(Input.GetKeyDown(KeyCode.Alpha2) && !NotInAbilityState && _canUseFireBeams)
         {
             if(PlayerUpgradesData.StarThree)
             {
+                _currentFireBeams = new List<PlayerFireLane>();
                 Time.timeScale = 0.1f;
                 PostProcessingEffectManager.Instance.StartSlowEffect();
                 NumberOfBeams = GetNumberOfFireBeams();
-                _currentFireBeams = new List<PlayerFireLane>();
                 AmIShootingFireBeams = true;
                 NotInAbilityState = true; 
             }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha3) && !NotInAbilityState)
+        if(Input.GetKeyDown(KeyCode.Alpha3) && !NotInAbilityState && _canUseGravityPound)
         {
-            //if(PlayerUpgradesData.StarFour)
+            if(PlayerUpgradesData.StarFour)
             {
                 FirstGravityCast = true;
                 AmIGravityLifting = true;
@@ -503,7 +531,7 @@ public class FirstPersonController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Alpha4) && !NotInAbilityState)
         {
-            //if(PlayerUpgradesData.StarFive)
+            if(PlayerUpgradesData.StarFive)
             {
                 AmIUsingThanosSnap = true;
                 NotInAbilityState = true;
@@ -515,7 +543,6 @@ public class FirstPersonController : MonoBehaviour
         {
             if(AmIForceField)
             {
-                Debug.Log("Force s");
                 AmIForceField = false;
                 StartCoroutine(ForceField());
             }
@@ -530,6 +557,8 @@ public class FirstPersonController : MonoBehaviour
                     }
                     PostProcessingEffectManager.Instance.EndSlowEffect();
                     CameraEffectsSystem.Instance.ShakeCamera(12, 0.3f);
+                    _fireBeamsTimer = _fireBeamsCoolDownTime;
+                    _canUseFireBeams = false;
                     AmIShootingFireBeams = false;
                     NotInAbilityState = false;
                 }
@@ -543,37 +572,45 @@ public class FirstPersonController : MonoBehaviour
             {
                 if(FirstGravityCast)
                 {
-                    StartCoroutine(GravityPound());
                     FirstGravityCast = false;
+                    StartCoroutine(GravityPound());
                 }
             }
             if(AmIUsingThanosSnap)
             {
-                StartCoroutine(KillHalfOfEnemies());
                 AmIUsingThanosSnap = false;
+                StartCoroutine(KillHalfOfEnemies());
             }
         }
     }
 
     IEnumerator ForceField()
     {
-        CameraEffectsSystem.Instance.ShakeCamera(15, 0.1f);
         RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, _forceFieldSkillRadius, Vector3.up, 5, _enemyForceFieldLayer);
 
         foreach (RaycastHit hit in raycastHits)
         {
-            Debug.Log(hit.transform.name);
+            float usedForceStrength = 0;
+            if(KillComboHandler.KillComboCounter >= 20)
+            {
+                usedForceStrength = _forceFieldStrength + _extraForceFieldStrength;
+            }
+            else
+            {
+                usedForceStrength = _forceFieldStrength;
+            }
+
             if(hit.transform.TryGetComponent<Rigidbody>(out Rigidbody enemyRb))
             { 
-                enemyRb.AddExplosionForce(30, _centrePoint.position, _forceFieldSkillRadius, 0 ,ForceMode.Impulse);
-                hit.transform.GetComponent<EnemyBehaviour>().StopEnemy();
+                enemyRb.AddExplosionForce(usedForceStrength, _centrePoint.position, _forceFieldSkillRadius, 0 , ForceMode.Impulse);
+                hit.transform.GetComponent<EnemyBehaviour>().StopEnemy(true);
             }
         }
         
-        yield return new WaitForSeconds(0.1f);
-        Time.timeScale = 0.5f;
-        yield return new WaitForSeconds(0.8f);
-        Time.timeScale = 1f;
+        yield return new WaitForSeconds(0);
+        //Time.timeScale = 1f;
+        _forceFieldTimer = _forceFieldCoolDownTime;
+        _canUseForceField = false;
         NotInAbilityState = false;
     }
 
@@ -582,11 +619,12 @@ public class FirstPersonController : MonoBehaviour
         CameraEffectsSystem.Instance.ShakeCamera(1, 1f);
         RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, _gravitySkillRadius, Vector3.up, 5, _enemyLayer);
         List<EnemyBehaviour> enemyBehaviours = new List<EnemyBehaviour>();
+        
         foreach (RaycastHit hit in raycastHits)
         {
             EnemyBehaviour enemyBehaviour = hit.transform.GetComponent<EnemyBehaviour>();
             enemyBehaviour.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * (_liftPower), ForceMode.Impulse);
-            enemyBehaviour.StopEnemy();
+            enemyBehaviour.StopEnemy(false);
             enemyBehaviours.Add(enemyBehaviour);
         }
 
@@ -666,7 +704,15 @@ public class FirstPersonController : MonoBehaviour
         SoundManager.Instance.PlaySound3D(SoundManager.Sound.DashEffect, transform.position);
         PostProcessingEffectManager.Instance.DashEffect(0.3f);
 
-        //_dashBehaviour.StartDash();
+        if(_hasBetterDash)
+        {
+            _dashBehaviour.StartDash();
+            if(KillComboHandler.KillComboCounter >= 25)
+            {
+                _playerCol.enabled = true;
+                StartCoroutine(ActivteMyColAgain());
+            }
+        }
 
         Transform forwardT = transform;
         Vector3 direction = GetDashDirection(forwardT);
@@ -685,6 +731,12 @@ public class FirstPersonController : MonoBehaviour
 
         rb.AddForce(forceToApply, ForceMode.Impulse);
         rb.mass = 6f;
+    }
+
+    IEnumerator ActivteMyColAgain()
+    {
+        yield return new WaitForSeconds(dashDuration);
+        _playerCol.enabled = false;
     }
 
     void FixedUpdate()
