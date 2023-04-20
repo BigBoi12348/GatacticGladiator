@@ -129,11 +129,15 @@ public class FirstPersonController : MonoBehaviour
     
     #region Abilites
     private bool NotInAbilityState;
+    public float GetTotalDashTime{get{return dashTotalCooldown;}}
+    public float GetTotalForceFieldTime{get{return _forceFieldCoolDownTime;}}
+    public float GetTotalFireBeamsTime{get{return _fireBeamsCoolDownTime;}}
+    public float GetTotalGravityPoundTime{get{return _gravityPoundCoolDownTime;}}
+    public float GetTotalThanosSnapTime{get{return _thanosSnapCoolDownTime;}}
     [Header("Dashing")]
     [SerializeField] private float dashForce = 5f;
     [SerializeField] private float upgradedDashForceAdd;
     [SerializeField] private float dashDuration = 0.5f;
-    [SerializeField] private float dashCooldown = 1f;
     [SerializeField] private float upwardForce;
     [SerializeField] private float _lookUpThreshold;
     [SerializeField] private KeyCode dashKey = KeyCode.Space;
@@ -141,8 +145,9 @@ public class FirstPersonController : MonoBehaviour
     private bool _hasBetterDash;
     private bool isDashing = false;
     private Vector3 dashStartPosition;
-    private float dashTimer = 0f;
-    private float dashCooldownTimer = 0f;
+    public float dashTimer;
+    [SerializeField] private float dashTotalCooldown;
+    public float dashCooldownTimer{get; private set;}
 
 
     [Header("Force Field")]
@@ -743,6 +748,9 @@ public class FirstPersonController : MonoBehaviour
 
         rb.AddForce(forceToApply, ForceMode.Impulse);
         rb.mass = 6f;
+        
+        isDashing = false;
+        dashCooldownTimer = dashTotalCooldown;
     }
 
     IEnumerator ActivteMyColAgain()
@@ -753,18 +761,18 @@ public class FirstPersonController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isDashing)
-        {
-            if (dashTimer > 0)
-            {
-                dashTimer -= Time.deltaTime;
-            }
-            else
-            {
-                isDashing = false;
-                dashCooldownTimer = dashCooldown;
-            }
-        }
+        // if (isDashing)
+        // {
+        //     if (dashTimer > 0)
+        //     {
+        //         dashTimer -= Time.deltaTime;
+        //     }
+        //     else
+        //     {
+        //         isDashing = false;
+        //         dashCooldownTimer = dashTotalCooldown;
+        //     }
+        // }
 
         #region Movement
 
