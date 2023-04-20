@@ -4364,12 +4364,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyType: 1
-  _enemyMovementSpeed: 4
+  _enemyMovementSpeed: 2
   _enemyMovementSpeedModifier: 0
   _angleOffset: 0
   _explodePoint: {fileID: 7919589954808390031}
-  _bowAttackRange: 20
-  _arrowSpeed: 50
+  _bowAttackRange: 15
+  _arrowSpeed: 30
   _archerChild: {fileID: 422702349743331876}
   _arrowAttackPoint: {fileID: 168608945904179795}
   _enemyBowAnim: {fileID: 8779381993248244534}
@@ -4378,7 +4378,7 @@ MonoBehaviour:
   _totalAttackCoolDown: 5
   _attackCoolDown: 0
   _wallStopper: {fileID: 9061650032582738752}
-  _enemyWeaponBehaviour: {fileID: 8565629720429207799, guid: abb52fe73cc045541bb3de56598f085b, type: 3}
+  _enemyWeaponBehaviour: {fileID: 8565629720429207799, guid: f26d092261b026848802cc1a23814c4f, type: 3}
   _aIDestinationSetter: {fileID: 6316840748443753170}
   _aIPath: {fileID: 6316840748443753173}
 --- !u!114 &6316840748443753172
