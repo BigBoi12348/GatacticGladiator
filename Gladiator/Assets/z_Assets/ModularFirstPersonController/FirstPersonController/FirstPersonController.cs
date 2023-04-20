@@ -473,7 +473,7 @@ public class FirstPersonController : MonoBehaviour
         #region Abiltiy Buttons
         if(Input.GetKeyDown(KeyCode.Alpha1) && !NotInAbilityState)
         {
-            if(PlayerUpgradesData.StarTwo)
+            //if(PlayerUpgradesData.StarTwo)
             {
                 Debug.Log("Force field");
                 AmIForceField = true;

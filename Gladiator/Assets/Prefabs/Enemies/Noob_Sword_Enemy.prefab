@@ -3236,6 +3236,51 @@ Transform:
   m_Father: {fileID: 6231689274285457657}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5153441373516853976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6647875398288901084}
+  - component: {fileID: 642383677586789498}
+  m_Layer: 24
+  m_Name: WallStoper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6647875398288901084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153441373516853976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.082, y: 1.1734998, z: 0.051}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7965885646981727614}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &642383677586789498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153441373516853976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.59, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5221388801513759435
 GameObject:
   m_ObjectHideFlags: 0
@@ -5690,6 +5735,7 @@ Transform:
   - {fileID: 6202114995285540286}
   - {fileID: 4294939280921701713}
   - {fileID: 6390109629853689546}
+  - {fileID: 6647875398288901084}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5719,6 +5765,7 @@ MonoBehaviour:
   _enemyAnim: {fileID: 4065816011520564996}
   _totalAttackCoolDown: 5
   _attackCoolDown: 0
+  _wallStopper: {fileID: 642383677586789498}
   _enemyWeaponBehaviour: {fileID: 3176214322861911717}
   _aIDestinationSetter: {fileID: 1764986156352767934}
   _aIPath: {fileID: 2740254262578184790}

@@ -11,6 +11,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     [SerializeField] private EnemyType _enemyType;
     Transform _playerTransform;
+    Rigidbody myRb;
     [Header("Enemy Movement")]
     [SerializeField] private float _enemyMovementSpeed;
     [SerializeField] private float _enemyMovementSpeedModifier;
@@ -49,9 +50,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     bool locked;
     bool hasBetterDash;
+
     private void Awake() 
     {
         alreadyDying = false;
+        myRb = GetComponent<Rigidbody>();
     }
 
     public void Init(Transform playerTarget)
@@ -62,7 +65,7 @@ public class EnemyBehaviour : MonoBehaviour
     
     private void Start() 
     {
-        _wallStopper.enabled = false;
+        //_wallStopper.enabled = false;
         _aIPath.maxSpeed = _enemyMovementSpeed;
         if(PlayerUpgradesData.StarOne)
         {
@@ -173,6 +176,7 @@ public class EnemyBehaviour : MonoBehaviour
         _aIPath.enabled = true;
         _wallStopper.enabled = false;
         locked = false;
+        myRb.velocity = new Vector3(0,0,0);
     }
 
     private void Breaking()
