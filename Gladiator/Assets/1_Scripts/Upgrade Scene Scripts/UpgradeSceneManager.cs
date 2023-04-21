@@ -69,7 +69,7 @@ public class UpgradeSceneManager : MonoBehaviour
 
     public void UpdateCurrentUIPlayerPoints()
     {
-        _points.text = "Points: " + RoundData.PlayerPoints.ToString();
+        _points.text = "Credits: " + RoundData.PlayerPoints.ToString();
     }
 
     public bool TryUpgradeThisTier(int upGradeRank ,int upGradeCost, UpgradeSlotBehaviour.UpgradeType upgradeType)
