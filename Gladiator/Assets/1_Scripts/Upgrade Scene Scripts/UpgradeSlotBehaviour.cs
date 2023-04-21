@@ -162,14 +162,27 @@ public class UpgradeSlotBehaviour : MonoBehaviour
 
         if(_upgradeCostString == null)
         {
-            _upgradeCostString = _upgradeCost.ToString();
+            if(alreadyBought)
+            {
+                _upgradeCostString = "Collected";
+            }
+            else
+            {
+                _upgradeCostString = "Cost: " + _upgradeCost.ToString();
+            }
+        }
+
+        if(!alreadyBought)
+        {
+            _imageSymbol.color = new Color32(255,255,255,100);
         }
     }
 
 
     public void HoverOn()
     {
-        UpgradeSceneManager.Instance.DisplayThisUpgradeSlot(_upgradeName, _videoOfUpgrade, _upgradeDescription, _upgradeComboBonus, _upgradeCostString);
+        UpgradeSceneManager.Instance.DisplayThisUpgradeSlot(_upgradeName, _videoOfUpgrade, _upgradeDescription, _upgradeComboBonus, _upgradeCostString, FigureColor());
+        _imageSymbol.color = new Color32(255,255,255,255);
         _hoverUI.SetActive(true);
         _imageSymbol.transform.localScale = new Vector3(IncreaseHoverImageSize, IncreaseHoverImageSize, IncreaseHoverImageSize);
     }
@@ -177,6 +190,10 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     public void HoverOff()
     {
         _hoverUI.SetActive(false);
+        if(!alreadyBought)
+        {
+            _imageSymbol.color = new Color32(255,255,255,100);
+        }
         UpgradeSceneManager.Instance.HideInformationBoard();
         _imageSymbol.transform.localScale = new Vector3(1f, 1f, 1f);
     }
@@ -200,53 +217,36 @@ public class UpgradeSlotBehaviour : MonoBehaviour
         }
     }
 
-    // private bool CheckIfInOrder()
-    // {
-    //     if(_upgradeType == UpgradeType.Sword)
-    //     {
-    //         if(PlayerUpgradesData.AttackAttribute == _thisUpgradeRank-1)
-    //         {
-    //             return true;
-    //         }
-    //         else
-    //         {
-    //             return false;
-    //         }
-    //     }
-    //     else if(_upgradeType == UpgradeType.Shield)
-    //     {
-    //         if(PlayerUpgradesData.ShieldAttribute == _thisUpgradeRank-1)
-    //         {
-    //             return true;
-    //         }
-    //         else
-    //         {
-    //             return false;
-    //         }
-    //     }
-    //     else if(_upgradeType == UpgradeType.Ability)
-    //     {
-    //         if(PlayerUpgradesData.AbilityAttribute == _thisUpgradeRank-1)
-    //         {
-    //             return true;
-    //         }
-    //         else
-    //         {
-    //             return false;
-    //         }
-    //     }
-    //     return false;
-    // }
+    private Color32 FigureColor()
+    {
+        if(!alreadyBought)
+        {
+            if(RoundData.PlayerPoints >= _upgradeCost)
+            {
+                return new Color32(0,255,0,255);
+            }
+            else
+            {
+                return new Color32(255,0,5,255);
+            }
+        }
+        else
+        {
+            return new Color32(0,255,0,255);
+        }
+    }
 
     private void LockMe()
     {
         alreadyBought = true;
         _alreadyBoughtUI.SetActive(true);
         _boughtSound.Play();
-
+        
         HoverOff();
 
         _upgradeSlotButton.enabled = false;
-        eventTrigger.enabled = false;
+        _upgradeCostString = "Bought";
+        _imageSymbol.color = new Color32(255,255,255,255);
+        //eventTrigger.enabled = false;
     }
 }

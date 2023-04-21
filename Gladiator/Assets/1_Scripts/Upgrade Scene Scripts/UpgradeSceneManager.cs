@@ -29,7 +29,7 @@ public class UpgradeSceneManager : MonoBehaviour
     {
         if(GameManager.Instance.LastSceneID == 0)
         {
-            RoundData.PlayerPoints = 150;
+            RoundData.PlayerPoints = 30;
         }
         if(Instance == null)
         {
@@ -43,17 +43,18 @@ public class UpgradeSceneManager : MonoBehaviour
         //_inventoryButton.onClick.AddListener(GoToInventoryScreen);
         //_upgradesButton.onClick.AddListener(GoToUpgradesScreen);
         _exitButton.onClick.AddListener(GoBackToGame);
-        _points.text = "Points: " + RoundData.PlayerPoints.ToString();
+        _points.text = "Credits: " + RoundData.PlayerPoints.ToString();
     }
 
-    public void DisplayThisUpgradeSlot(string UpgradeName, VideoClip videoClip, string UpgradeDescription, string UpgradeComboBonus, string UpgradeCost)
+    public void DisplayThisUpgradeSlot(string UpgradeName, VideoClip videoClip, string UpgradeDescription, string UpgradeComboBonus, string UpgradeCost, Color32 colorOfUpgradeCost)
     {
         _informationBoardAnim.Play(OPENINFOBOARD);
         _upgradeTitle.text = UpgradeName;
         _upgradeVideoPlayer.clip = videoClip;
         _upgradeDescription.text = UpgradeDescription;
         _upgradeComboBonus.text = UpgradeComboBonus;
-        _upgradeCost.text = "Cost: " + UpgradeCost;
+        _upgradeCost.text = UpgradeCost;
+        _upgradeCost.color = colorOfUpgradeCost;
     }
 
     public void HideInformationBoard()

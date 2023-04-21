@@ -299,18 +299,22 @@ public class FirstPersonController : MonoBehaviour
     {
         if(!NotInAbilityState)
         #region NON-ABILITY
-        if (dashCooldownTimer > 0)
+
+        if(PlayerUpgradesData.StarOne)
         {
-            dashCooldownTimer -= Time.deltaTime;
-        }
-        else
-        {
-            if (Input.GetKeyDown(dashKey) && !isDashing)
+            if (dashCooldownTimer > 0)
             {
-                isDashing = true;
-                dashTimer = dashDuration;
-                rb.velocity = Vector3.zero;
-                Dash();
+                dashCooldownTimer -= Time.deltaTime;
+            }
+            else
+            {
+                if (Input.GetKeyDown(dashKey) && !isDashing)
+                {
+                    isDashing = true;
+                    dashTimer = dashDuration;
+                    rb.velocity = Vector3.zero;
+                    Dash();
+                }
             }
         }
         
