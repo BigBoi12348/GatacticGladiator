@@ -9966,8 +9966,8 @@ MonoBehaviour:
   playerGroundlayerMask:
     serializedVersion: 2
     m_Bits: 32768
-  enableCrouch: 1
-  holdToCrouch: 1
+  enableCrouch: 0
+  holdToCrouch: 0
   crouchKey: 306
   crouchHeight: 0.75
   speedReduction: 0.5

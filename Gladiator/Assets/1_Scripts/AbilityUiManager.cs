@@ -15,6 +15,7 @@ public class AbilityUiManager : MonoBehaviour
     [SerializeField] private GameObject _thirdAbility;
     [SerializeField] private GameObject _fourthAbility;
     [SerializeField] private GameObject _fifthAbility;
+    bool oneOpen;
     bool secondOpen;
     bool thirdOpen;
     bool fourthOpen;
@@ -34,11 +35,17 @@ public class AbilityUiManager : MonoBehaviour
 
     void Start()
     {
+        _firstAbility.SetActive(false);
         _secondAbility.SetActive(false);
         _thirdAbility.SetActive(false);
         _fourthAbility.SetActive(false);
         _fifthAbility.SetActive(false);
 
+        if(PlayerUpgradesData.StarOne)
+        {
+            _firstAbility.SetActive(true);
+            oneOpen = true;
+        }
         if(PlayerUpgradesData.StarTwo)
         {
             _secondAbility.SetActive(true);
@@ -74,7 +81,9 @@ public class AbilityUiManager : MonoBehaviour
 
     void Update()
     {
-        if(_firstPersonController.dashCooldownTimer > 0)
+        if(oneOpen)
+        {
+            if(_firstPersonController.dashCooldownTimer > 0)
         {
             _firstAbilitySlider.value = _firstPersonController.dashCooldownTimer;
             _firstTextTimer.text = Mathf.RoundToInt(_firstPersonController.dashCooldownTimer).ToString();
@@ -84,6 +93,8 @@ public class AbilityUiManager : MonoBehaviour
         {
             _firstTextTimer.enabled = false;
         }
+        }
+        
         if(secondOpen)
         {
             if(_firstPersonController._forceFieldTimer > 0)
