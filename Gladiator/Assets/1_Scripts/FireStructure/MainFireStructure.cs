@@ -37,20 +37,20 @@ public class MainFireStructure : MonoBehaviour
         _lowestTopSwitchDuration = durationTopSwitchRange.x;
         _highestTopSwitchDuration = durationTopSwitchRange.y;
 
-        if(RoundData.Wave > 6) 
+        if(RoundData.Wave > 0) //NEeds to be == 2
         {
-            _howManyFireLanesActive = 3;
+            _howManyFireLanesActive = 1;
             _howManyFireBallsActive = 5;
         }
-        else if(RoundData.Wave > 4)
+        else if(RoundData.Wave == 4)
         {
             _howManyFireLanesActive = 2;
             _howManyFireBallsActive = 3;
         }
         else
         {
-            _howManyFireLanesActive = 1;
-            _howManyFireBallsActive = 2;
+            _howManyFireLanesActive = 3;
+            _howManyFireBallsActive = 4;
         }
 
         SwitchBottomSection();
