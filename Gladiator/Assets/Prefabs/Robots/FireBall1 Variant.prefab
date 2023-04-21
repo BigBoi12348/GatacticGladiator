@@ -43,6 +43,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6586192631823791883, guid: 193c152f202b30c4ea2e83b76cf93b59, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d50bf0a12cd070d47beeae0b1dc04fd8, type: 2}
+    - target: {fileID: 6586192632606626232, guid: 193c152f202b30c4ea2e83b76cf93b59, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d50bf0a12cd070d47beeae0b1dc04fd8, type: 2}
     - target: {fileID: 6586192632606626233, guid: 193c152f202b30c4ea2e83b76cf93b59, type: 3}
       propertyPath: m_Name
       value: FireBall1 Variant
