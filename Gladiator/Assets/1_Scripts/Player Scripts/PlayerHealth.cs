@@ -74,7 +74,10 @@ public class PlayerHealth : MonoBehaviour
                     }
                 }
             }
-
+            if(AmIResilient)
+            {
+                damage -= 1;
+            }
             currentHealth -= damage;
             if (currentHealth <= 0 && !dead)
             {
@@ -87,7 +90,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeFireDamage(int damage)
     {
-        
         if(!TakeNoFireDamage)
         {
             PostProcessingEffectManager.Instance.BurnEffect(0.1f);
@@ -130,7 +132,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0 && !dead)
         {
             dead = true;
-            //GameEvents.gameEndSetUp?.Invoke(false);
+            GameEvents.gameEndSetUp?.Invoke(false);
             Destroy(this);
         }  
     }

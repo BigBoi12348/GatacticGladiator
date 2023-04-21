@@ -25,12 +25,8 @@ public class UpgradeSceneManager : MonoBehaviour
     [SerializeField] private Button _exitButton;
     [SerializeField] private TMP_Text _points;
 
-    void Start()
+    private void Awake() 
     {
-        if(GameManager.Instance.LastSceneID == 0)
-        {
-            RoundData.PlayerPoints = 30;
-        }
         if(Instance == null)
         {
             Instance = this;
@@ -39,6 +35,14 @@ public class UpgradeSceneManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+    void Start()
+    {
+        if(GameManager.Instance.LastSceneID == 0)
+        {
+            RoundData.PlayerPoints = 150;
+        }
+        
         Cursor.lockState = CursorLockMode.None;
         //_inventoryButton.onClick.AddListener(GoToInventoryScreen);
         //_upgradesButton.onClick.AddListener(GoToUpgradesScreen);
@@ -59,7 +63,10 @@ public class UpgradeSceneManager : MonoBehaviour
 
     public void HideInformationBoard()
     {
-        _informationBoardAnim.Play(CLOSEINFOBOARD);
+        if(_informationBoardAnim != null)
+        {
+            _informationBoardAnim.Play(CLOSEINFOBOARD);
+        }
     }
     
     private void GoBackToGame()

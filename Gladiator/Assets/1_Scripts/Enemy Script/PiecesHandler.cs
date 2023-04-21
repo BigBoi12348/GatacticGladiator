@@ -9,9 +9,12 @@ using UnityEditor;
 
 public class PiecesHandler : MonoBehaviour
 {
+    [SerializeField] private Material _litUpmat;
+    [SerializeField] private LayerMask _piecesLayer;
+
     [Header("Explosion Control Variables")]
     public float explosionForce = 10.0f;
-    public float explosionRadius = 5.0f;
+    public float explosionRadius;
     private Vector3 explosionPosition;
 
     [Header("References")]
@@ -19,23 +22,34 @@ public class PiecesHandler : MonoBehaviour
     [SerializeField] private List<Vector3> pieceRotations;
     [SerializeField] private List<Rigidbody> rbs;
     private EnemyManager _enemyManager;
-
-    public void Init(EnemyManager enemyManager)
+    bool _type;
+    bool _AmIOptimised;
+    public void Init(EnemyManager enemyManager, bool less, bool optimised)
     {
         _enemyManager = enemyManager;
+        _type = less;
+        _AmIOptimised = optimised;
     }
 
-    public void StartExplode(Transform pointOfExplosion)
+    public void StartExplode(Vector3 pointOfExplosion)
     {
-        explosionPosition = pointOfExplosion.position;
+        explosionPosition = pointOfExplosion;
         Explode();
     }
 
     private void Explode()
-    {
+    {   
+        if(!_AmIOptimised)
+        {
+            RaycastHit[] raycastHits = Physics.SphereCastAll(explosionPosition, 0.08f, Vector3.up, 1, _piecesLayer);
+            foreach (var ray in raycastHits)
+            {
+                ray.transform.GetComponent<MeshRenderer>().material = _litUpmat;
+            }
+        }
         foreach (var rb in rbs)
         {
-            rb.AddExplosionForce(explosionForce, explosionPosition, explosionRadius);
+            rb.AddExplosionForce(explosionForce, explosionPosition, explosionRadius, 0, ForceMode.Impulse);
         }
         StartCoroutine(ReturnThis());
     }
@@ -44,7 +58,7 @@ public class PiecesHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         NormalState();
-        _enemyManager.ReturnDeadEnemy(this);
+        _enemyManager.ReturnDeadEnemy(this, _type);
     }
 
     private void NormalState()
@@ -79,6 +93,7 @@ public class PiecesHandler : MonoBehaviour
         {
             piecesHandler.piecePositions = new List<Vector3>();
             piecesHandler.pieceRotations = new List<Vector3>();
+            piecesHandler.rbs = new List<Rigidbody>();
             foreach (Transform child in piecesHandler.transform)
             {
                 piecesHandler.pieceRotations.Add(child.eulerAngles);

@@ -2571,6 +2571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2184022928762827014}
   - component: {fileID: 4547872770526300670}
+  - component: {fileID: 1863171300710115197}
   m_Layer: 24
   m_Name: WallStoper
   m_TagString: Untagged
@@ -2606,6 +2607,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.59, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1863171300710115197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861569913244385413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8fd7d0f5f105447b44cb9ed913475f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBehaviour: {fileID: 6890729294358852055}
+  _wallLayer:
+    serializedVersion: 2
+    m_Bits: 65536
 --- !u!1 &5035462930449417544
 GameObject:
   m_ObjectHideFlags: 0
@@ -4500,11 +4517,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d01b7209d6b534abef981d44e2237c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyType: 0
-  _enemyMovementSpeed: 2
-  _enemyMovementSpeedModifier: 0
+  _enemyType: 2
+  _enemyWalkSpeed: 5
+  _enemyRunSpeed: 10
+  _totalAttackCoolDown: 5
+  _attackCoolDown: 0
+  _enemyAnimSpeedModifier: 1
   _angleOffset: 0
   _explodePoint: {fileID: 8075992714396791286}
+  _shootArrowBehaviour: {fileID: 0}
   _bowAttackRange: 0
   _arrowSpeed: 0
   _archerChild: {fileID: 0}
@@ -4512,9 +4533,8 @@ MonoBehaviour:
   _enemyBowAnim: {fileID: 0}
   _EnemyBowAnimClip: {fileID: 0}
   _enemyAnim: {fileID: 4065816011520564996}
-  _totalAttackCoolDown: 5
-  _attackCoolDown: 0
-  _wallStopper: {fileID: 4547872770526300670}
+  _attackAnimClip: {fileID: 7400000, guid: a5e9c0c3bb252aa4bb3f1fd17fc936db, type: 2}
+  _wallStopper: {fileID: 1863171300710115197}
   _enemyWeaponBehaviour: {fileID: 4791411402509982439}
   _aIDestinationSetter: {fileID: 1764986156352767934}
   _aIPath: {fileID: 2740254262578184790}
@@ -4629,8 +4649,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8495439, y: 1.7980889, z: 0.3819158}
-  m_Center: {x: 0, y: 0.97677857, z: 0}
+  m_Size: {x: 0.66640663, y: 1.7980889, z: 0.3819158}
+  m_Center: {x: 0.021708056, y: 0.97677857, z: 0}
 --- !u!95 &4065816011520564996
 Animator:
   serializedVersion: 5

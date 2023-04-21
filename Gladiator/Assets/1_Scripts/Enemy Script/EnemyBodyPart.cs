@@ -4,40 +4,15 @@ using UnityEngine;
 
 public class EnemyBodyPart : MonoBehaviour
 {
-    private EnemyBehaviour _enemyBehaviour;
-
-    [Header("Function")]
-    [SerializeField] private bool _doIKillInstantly;
-    [SerializeField] private float _myBleedOutStrength;
-
-    public void Init(EnemyBehaviour enemyBehaviour)
+    [SerializeField] private EnemyBehaviour _enemyBehaviour;
+    [SerializeField] private MeshCollider _meshCol;
+    
+    private void OnTriggerEnter(Collider other) 
     {
-        _enemyBehaviour = enemyBehaviour;
-    }
-
-    private void OnCollisionEnter(Collision other) 
-    {
-        Debug.Log(other.gameObject.name);
-
-        if(other.gameObject.CompareTag("Player")) 
+        if(other.tag == "PlayerWeapon")
         {
-            //GetComponent<MeshCollider>().enabled = false;
-            //_enemyBehaviour.BodyPartLost(_doIKillInstantly, _myBleedOutStrength);
-            Destroy(this);
+            Vector3 contact = _meshCol.ClosestPoint(other.ClosestPoint(other.transform.position));
+            _enemyBehaviour.UpdateExplodePoint(contact, false);
         }
     }
-
-    public void DestroyMe() 
-    {
-        //_enemyBehaviour.BodyPartLost(_doIKillInstantly, _myBleedOutStrength);
-        Destroy(this);
-    }
-
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     //if(other.name.Equals)
-    //     {
-
-    //     }
-    // }
 }

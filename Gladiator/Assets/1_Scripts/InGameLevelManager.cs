@@ -163,7 +163,7 @@ public class InGameLevelManager : MonoBehaviour
 
         if(healOnKill)
         {
-            if(KillComboHandler.KillComboCounter >= 25)
+            if(KillComboHandler.KillComboCounter >= 35)
             {
                 RoundData.PlayerMaxHealth++;
                 _uIManager.UpdatePlayerHealth();

@@ -59,9 +59,12 @@ public class EnemyWeaponBehaviour : MonoBehaviour
                     {
                         playerHealth.TakeDamage(WeaponDamage);
                     }
-                    Destroy(gameObject);
                 }
             }
+        }
+        if(_weaponType == WeaponType.Projectile)
+        {
+            Destroy(gameObject);
         }
     }
 

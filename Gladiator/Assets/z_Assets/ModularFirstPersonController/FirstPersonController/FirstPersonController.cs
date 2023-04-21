@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
-    public WeaponBehaviour _weaponBehaviour;
+    [SerializeField] private PlayerHealth _playerHealth;
     private Rigidbody rb;
     private Collider _playerCol;
     float camRotation;
@@ -152,11 +152,15 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Force Field")]
     [SerializeField] private float _forceFieldStrength;
-    [SerializeField] private float _extraForceFieldStrength;
     [SerializeField] private float _forceFieldSkillRadius;
+    [SerializeField] private float _extraForceFieldRadius;
+    float usedForceRange;
     [SerializeField] private Transform _centrePoint;
     [SerializeField] private LayerMask _enemyForceFieldLayer;
     [SerializeField] private float _forceFieldCoolDownTime;
+    [SerializeField] private float _forceFieldTotalDuration;
+    [SerializeField] private ParticleSystemForceField _forceFieldForceFieldEffect;
+    private float _forceFieldDuration;
     public float _forceFieldTimer{get; private set;}
     private bool _canUseForceField;
     private bool AmIForceField;
@@ -177,6 +181,8 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float _liftPower;
     [SerializeField] private LayerMask _enemyLayer;
     [SerializeField] private float _gravityPoundCoolDownTime;
+    [SerializeField] private float _firstRadiusIncrease;
+    [SerializeField] private float _secondRadiusIncrease;
     public float _gravityPoundTimer{get; private set;}
     private bool _canUseGravityPound;
     private bool AmIGravityLifting;
@@ -221,7 +227,7 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
-        //pm = GetComponent<PlayerMovementDashing>();
+        _forceFieldForceFieldEffect.enabled = false;
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -508,6 +514,21 @@ public class FirstPersonController : MonoBehaviour
         {
             if(PlayerUpgradesData.StarTwo)
             {
+                if(KillComboHandler.KillComboCounter >= 30)
+                {
+                    usedForceRange = _forceFieldSkillRadius + _extraForceFieldRadius;
+                }
+                else
+                {
+                    usedForceRange = _forceFieldSkillRadius;
+                }
+                if(PlayerUpgradesData.ShieldTwo)
+                {
+                    _playerHealth.TakeNoFireDamage = true;
+                    _forceFieldForceFieldEffect.endRange = usedForceRange;
+                    _forceFieldForceFieldEffect.enabled = true;
+                }
+                _forceFieldDuration = _forceFieldTotalDuration;
                 AmIForceField = true;
                 NotInAbilityState = true;
             }
@@ -547,8 +568,23 @@ public class FirstPersonController : MonoBehaviour
         {
             if(AmIForceField)
             {
-                AmIForceField = false;
-                StartCoroutine(ForceField());
+                if(_forceFieldDuration > 0)
+                {
+                    ForceField();
+                    _forceFieldDuration -= Time.deltaTime;
+                }
+                else
+                {
+                    if(PlayerUpgradesData.ShieldTwo)
+                    {
+                        _playerHealth.TakeNoFireDamage = true;
+                        _forceFieldForceFieldEffect.enabled = false;
+                    }
+                    _forceFieldTimer = _forceFieldCoolDownTime;
+                    _canUseForceField = false;
+                    NotInAbilityState = false;
+                    AmIForceField = false;
+                }               
             }
             if(AmIShootingFireBeams)
             {
@@ -627,40 +663,38 @@ public class FirstPersonController : MonoBehaviour
         #endregion
     }
 
-    IEnumerator ForceField()
+    private void ForceField()
     {
-        RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, _forceFieldSkillRadius, Vector3.up, 5, _enemyForceFieldLayer);
+        RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, usedForceRange, Vector3.up, 5, _enemyForceFieldLayer);
 
         foreach (RaycastHit hit in raycastHits)
         {
-            float usedForceStrength = 0;
-            if(KillComboHandler.KillComboCounter >= 20)
-            {
-                usedForceStrength = _forceFieldStrength + _extraForceFieldStrength;
-            }
-            else
-            {
-                usedForceStrength = _forceFieldStrength;
-            }
-
             if(hit.transform.TryGetComponent<Rigidbody>(out Rigidbody enemyRb))
             { 
-                enemyRb.AddExplosionForce(usedForceStrength, _centrePoint.position, _forceFieldSkillRadius, 0 , ForceMode.Impulse);
-                hit.transform.GetComponent<EnemyBehaviour>().StopEnemy(true);
+                enemyRb.AddExplosionForce(_forceFieldStrength, _centrePoint.position, _forceFieldSkillRadius, 0 , ForceMode.Impulse);
+                if(hit.transform.TryGetComponent<EnemyBehaviour>(out EnemyBehaviour enemyBehaviour))
+                {
+                    enemyBehaviour.StopEnemy(true);
+                }
             }
-        }
-        
-        yield return new WaitForSeconds(0);
-        //Time.timeScale = 1f;
-        _forceFieldTimer = _forceFieldCoolDownTime;
-        _canUseForceField = false;
-        NotInAbilityState = false;
+        }  
     }
 
     IEnumerator GravityPound()
     {
         CameraEffectsSystem.Instance.ShakeCamera(1, 1f);
-        RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, _gravitySkillRadius, Vector3.up, 5, _enemyLayer);
+        float usedGravityRadius = _gravitySkillRadius;
+
+        if(KillComboHandler.KillComboCounter >= 50)
+        {
+            usedGravityRadius = _firstRadiusIncrease + _secondRadiusIncrease;
+        }
+        else if(KillComboHandler.KillComboCounter >= 15)
+        {
+            usedGravityRadius = _firstRadiusIncrease;
+        }
+
+        RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, usedGravityRadius, Vector3.up, 5, _enemyLayer);
         List<EnemyBehaviour> enemyBehaviours = new List<EnemyBehaviour>();
         
         foreach (RaycastHit hit in raycastHits)
@@ -675,13 +709,14 @@ public class FirstPersonController : MonoBehaviour
 
         foreach (var enemyBehaviour in enemyBehaviours)
         {
-            enemyBehaviour.transform.GetComponent<Rigidbody>().AddForce(Vector3.down * _liftPower*2, ForceMode.Impulse);
+            enemyBehaviour.transform.GetComponent<Rigidbody>().AddForce(Vector3.down * _liftPower*4, ForceMode.Impulse);
         }
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(0.2f);
         CameraEffectsSystem.Instance.ShakeCamera(20, 0.5f);
         foreach (var enemyBehaviour in enemyBehaviours)
         {
-            enemyBehaviour.Death();
+            enemyBehaviour.UpdateExplodePoint(Vector3.zero, true);
+            enemyBehaviour.StartDeath();
         }
         
         AmIGravityLifting = false;
@@ -696,18 +731,24 @@ public class FirstPersonController : MonoBehaviour
 
     private int GetNumberOfFireBeams()
     {
-        if(KillComboHandler.KillComboCounter >= 40)
+        int num = 0;
+        if(PlayerUpgradesData.ShieldFour)
         {
-            return 3;
+            num += 1;
+        }
+        if(KillComboHandler.KillComboCounter >= 60)
+        {
+            num += 3;
         }
         else if(KillComboHandler.KillComboCounter >= 20)
         {
-            return 2;
+            num += 2;
         }
         else
         {
-            return 1;
+            num += 1;
         }
+        return num;
     }
 
     IEnumerator KillHalfOfEnemies()

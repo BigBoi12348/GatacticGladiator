@@ -1115,7 +1115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1099376892688647256
 Transform:
   m_ObjectHideFlags: 0
@@ -3381,7 +3381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1909838242403602513
 Transform:
   m_ObjectHideFlags: 0
@@ -4264,7 +4264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9041707893643718686
 Transform:
   m_ObjectHideFlags: 0
@@ -4479,7 +4479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4294939280921701713
 Transform:
   m_ObjectHideFlags: 0
@@ -5580,7 +5580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8142679684354633556
 Transform:
   m_ObjectHideFlags: 0
@@ -5753,9 +5753,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyType: 0
   _enemyMovementSpeed: 5
-  _enemyMovementSpeedModifier: 0
+  _totalAttackCoolDown: 5
+  _attackCoolDown: 0
+  _enemyAnimSpeedModifier: 0
   _angleOffset: 0
   _explodePoint: {fileID: 5578946142074058885}
+  _shootArrowBehaviour: {fileID: 0}
   _bowAttackRange: 0
   _arrowSpeed: 0
   _archerChild: {fileID: 0}
@@ -5763,8 +5766,7 @@ MonoBehaviour:
   _enemyBowAnim: {fileID: 0}
   _EnemyBowAnimClip: {fileID: 0}
   _enemyAnim: {fileID: 4065816011520564996}
-  _totalAttackCoolDown: 5
-  _attackCoolDown: 0
+  _attackAnimClip: {fileID: 0}
   _wallStopper: {fileID: 642383677586789498}
   _enemyWeaponBehaviour: {fileID: 3176214322861911717}
   _aIDestinationSetter: {fileID: 1764986156352767934}
@@ -6386,7 +6388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4058642874435361637
 Transform:
   m_ObjectHideFlags: 0

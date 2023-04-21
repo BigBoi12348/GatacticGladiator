@@ -206,6 +206,7 @@ public class UpgradeSlotBehaviour : MonoBehaviour
 
             if(didBuy)
             {
+                _boughtSound.Play();
                 RoundData.PlayerPoints -= _upgradeCost;
                 UpgradeSceneManager.Instance.UpdateCurrentUIPlayerPoints();
                 LockMe();
@@ -240,7 +241,6 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     {
         alreadyBought = true;
         _alreadyBoughtUI.SetActive(true);
-        _boughtSound.Play();
         
         HoverOff();
 
