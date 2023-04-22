@@ -1595,7 +1595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeName
-      value: Reflection
+      value: Fire buddy
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeType
@@ -1614,8 +1614,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: 'Any projections that are blocked has a chance to shoot back but takes
-        shield charge
+      value: 'Summon a permanent fire companion that attacks enemies and projectiles
+
+        -
+        Will aim projectiles above all else
 
         - Gain One more Fire Beam'
       objectReference: {fileID: 0}
@@ -3952,8 +3954,8 @@ PrefabInstance:
       propertyPath: _upgradeComboBonus
       value: '- 50x: Small chance to gain cooldown reducation
 
-        - 90x: Projectiles
-        can''t hurt you anymore '
+        - 150x: Projectiles
+        can''t hurt you anymore and fire enemies won''t shoot them'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription

@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     public bool TakeNoFireDamage;
     public bool TakeNoPoisonDamage;
     private int _extraHealth = 0;
+    public bool _isBlocking;
+
     private void Awake() 
     {
         if(PlayerUpgradesData.ShieldTwo)
@@ -43,18 +45,6 @@ public class PlayerHealth : MonoBehaviour
         dead = false;
         maxHealth = RoundData.PlayerMaxHealth + _extraHealth;
         currentHealth = maxHealth;
-    }
-   
-    private void OnCollisionEnter(Collision other) 
-    {
-        if(other.gameObject.CompareTag("EnemyWeapon"))
-        {
-            if(!TakeNoDamage)
-            {
-                PostProcessingEffectManager.Instance.HurtEffect(0.4f);
-            }
-            TakeDamage(20);
-        }
     }
 
     public void AddHealth(int value)
@@ -91,6 +81,10 @@ public class PlayerHealth : MonoBehaviour
                 Destroy(this);
             }
         }
+        else if(_isBlocking)
+        {
+            
+        }
     }
 
     public void TakeFireDamage(int damage)
@@ -122,17 +116,21 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakePoisonDamage(float damage)
     {
-        if(AmIResilient)
+        if(!TakeNoPoisonDamage)
         {
-            if(KillComboHandler.KillComboCounter >= 90)
+            if(AmIResilient)
             {
-                if(currentHealth - damage < maxHealth*0.2f)
+                if(KillComboHandler.KillComboCounter >= 90)
                 {
-                    damage = 0;
-                    currentHealth = maxHealth*0.2f;
+                    if(currentHealth - damage < maxHealth*0.2f)
+                    {
+                        damage = 0;
+                        currentHealth = maxHealth*0.2f;
+                    }
                 }
             }
         }
+
         currentHealth -= damage;
         if (currentHealth <= 0 && !dead)
         {
