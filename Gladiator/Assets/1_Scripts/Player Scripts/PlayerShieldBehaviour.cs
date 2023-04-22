@@ -7,7 +7,6 @@ public class PlayerShieldBehaviour : MonoBehaviour
 {
     private Blocking blocking;
     
-
     [Header("Energy ")]
     [SerializeField] private float _currentEnergy;
     public float MaxTotalEnergy{private get; set;}
@@ -33,6 +32,11 @@ public class PlayerShieldBehaviour : MonoBehaviour
         if(PlayerUpgradesData.ShieldOne)
         {
             _chargeRate = _setChargeRate;
+        }
+
+        if(PlayerUpgradesData.ShieldFour)
+        {
+
         }
 
         if(PlayerUpgradesData.ShieldFive)

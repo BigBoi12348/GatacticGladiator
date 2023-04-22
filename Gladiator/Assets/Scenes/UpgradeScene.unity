@@ -1887,11 +1887,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 100x: Blocking has a small chance to kill melee enemies that hit
-        you
-
-        - 125x: Player cannot go below 10 health but every tick of damage
-        reduces kill combo'
+      value: "- 100x: Extra Fire Companion \n- 125x: Player cannot go below 10 health
+        but every tick of damage reduces kill combo"
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
@@ -5245,10 +5242,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 30x: Faster element Charge
-
-        - 80x: Fire companion that shoots
-        fireballs '
+      value: "- 60x: Fire companion spawns in and shoots fireballs \n- 110x: Fire
+        companions do faster attacks"
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription

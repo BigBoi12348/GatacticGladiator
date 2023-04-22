@@ -22,18 +22,18 @@ public class Blocking : MonoBehaviour
     [Header("Control Varaibles")]
     public bool IAmBlocking;
     private bool ShieldLock;
-    bool _canBlockFire;
+    bool _canBlockElementDmg;
 
     void Start()
     {
         playerShieldBehaviour.Init(this);
         if(PlayerUpgradesData.ShieldThree)
         {
-            _canBlockFire = true;
+            _canBlockElementDmg = true;
         }
         else
         {
-            _canBlockFire = false;
+            _canBlockElementDmg = false;
         }
     }
 
@@ -46,8 +46,9 @@ public class Blocking : MonoBehaviour
 
             _playerhealth.TakeNoDamage = true;
             
-            _antiParticleEffect.SetActive(_canBlockFire);
-            _playerhealth.TakeNoFireDamage = _canBlockFire;
+            _antiParticleEffect.SetActive(_canBlockElementDmg);
+            _playerhealth.TakeNoFireDamage = _canBlockElementDmg;
+            _playerhealth.TakeNoPoisonDamage = _canBlockElementDmg;
             
             playerShieldBehaviour._isBlocking = true;
         }
@@ -58,6 +59,7 @@ public class Blocking : MonoBehaviour
             //BlockedMesh.enabled = true;
             BlockedBattery.SetActive(false);
             _playerhealth.TakeNoDamage = false;
+            _playerhealth.TakeNoPoisonDamage = false;
             //playerCollider.enabled = true;
             _playerhealth.TakeNoFireDamage = false;
             playerShieldBehaviour._isBlocking = false;
