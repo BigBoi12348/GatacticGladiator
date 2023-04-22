@@ -17,6 +17,7 @@ public class SwordBladeProjectileBehaviour : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) 
     {
+        Debug.Log(other.gameObject.name);
         if(_amountOfHitsICanDo <= 0)
         {
             _amountOfHitsICanDo -= 1;
@@ -26,6 +27,7 @@ public class SwordBladeProjectileBehaviour : MonoBehaviour
             ProjectileDeath();
         }
     }
+    
 
     private IEnumerator HomingToEnemy()
     {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6586192632606626234}
   - component: {fileID: 6586192632606626235}
   - component: {fileID: 6586192632606626232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire Buddy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

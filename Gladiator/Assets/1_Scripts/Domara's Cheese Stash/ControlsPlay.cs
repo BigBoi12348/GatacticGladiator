@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using TMPro;
 
 public class ControlsPlay : MonoBehaviour
 {
     public CloseControls closeControls;
-    public GameObject controls;
+    public Image controls;
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -16,6 +14,7 @@ public class ControlsPlay : MonoBehaviour
 
     public void Plays()
     {
-        closeControls.enabled = true;
+        controls.enabled = true;
+        closeControls.LockMe();
     }
 }
