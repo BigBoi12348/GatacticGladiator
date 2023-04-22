@@ -5,9 +5,13 @@ using UnityEngine;
 public class SwordBladeProjectileBehaviour : MonoBehaviour
 {
     private int _amountOfHitsICanDo;
-    public void Init(int hitAmount)
+    public void Init(int hitAmount, bool amIHoming)
     {
         _amountOfHitsICanDo = hitAmount;
+        if(amIHoming)
+        {
+            StartCoroutine(HomingToEnemy());
+        }
         Invoke("ProjectileDeath", 8f);
     }
     
@@ -21,6 +25,11 @@ public class SwordBladeProjectileBehaviour : MonoBehaviour
         {
             ProjectileDeath();
         }
+    }
+
+    private IEnumerator HomingToEnemy()
+    {
+        yield return new WaitForSeconds(0);
     }
 
     private void OnCollisionEnter(Collision other) 

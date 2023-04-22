@@ -164,8 +164,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 265, y: -17.75399}
-  m_SizeDelta: {x: 1414.0212, y: 987.5183}
+  m_AnchoredPosition: {x: 264, y: 16}
+  m_SizeDelta: {x: 1210.6545, y: 818.5585}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217591962
 MonoBehaviour:
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 29ae267f961a252469769ab75b6fa360, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3cd1dff09899a8a47ade3a43f127a0a6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -302,11 +302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Lifts enemies in a certain radius in the air and strikes them down'
+      value: Lifts enemies in a certain radius in the air and strikes them down
       objectReference: {fileID: 0}
     - target: {fileID: 573330229965329394, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1105,10 +1105,10 @@ RectTransform:
   m_Father: {fileID: 217591961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000049829, y: 0.000022888}
-  m_SizeDelta: {x: 1315.3497, y: 794.1939}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 11}
+  m_SizeDelta: {x: -374.7352, y: -305.6632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &538670403
 CanvasRenderer:
@@ -1136,9 +1136,9 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: 100
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -1185,11 +1185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1253,7 +1253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 35x: Permanent increased max health'
+      value: '- 50x: Permanent increased max health'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeCostString
@@ -1261,7 +1261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Killing enemies will grant you health'
+      value: Killing enemies will grant you health
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a
@@ -1535,11 +1535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1607,17 +1607,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 30x: Gain a burst of movement speed when hit by a projectile
+      value: '- 50x: Very small chance to gain cooldown reducation on block
 
         -
-        50x: Very small chance to gain cooldown reducation on block'
+        70x: Gain a burst of movement speed when hit by a projectile'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: 'Any projections that are blocked has a high chance to shoot back
+      value: 'Any projections that are blocked has a chance to shoot back but takes
+        shield charge
 
-        -
-        Gain One more Fire Beam'
+        - Gain One more Fire Beam'
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a
@@ -1815,11 +1815,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1887,15 +1887,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 40x: Blocking has a small chance to kill melee enemies that hit you
+      value: '- 100x: Blocking has a small chance to kill melee enemies that hit
+        you
 
-        -
-        75x: Player cannot go below 10 health but every tick of damage reduces kill
-        combo'
+        - 125x: Player cannot go below 10 health but every tick of damage
+        reduces kill combo'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Move faster, Longer Shield life and more health'
+      value: 'Harder, Better, Faster, Stronger
+
+        - More health and shield
+        recharge
+
+        - Increased movement speed'
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a
@@ -2132,11 +2137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2213,7 +2218,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Shoots a fire beam that kills enemies caught in them'
+      value: Put yourself into a trance and shoot only one fire beams that kills
+        enemies caught in them
       objectReference: {fileID: 0}
     - target: {fileID: 573330229965329394, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2398,6 +2404,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
   m_PrefabInstance: {fileID: 754767901}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &963506278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 573330229056640013, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+  m_PrefabInstance: {fileID: 1163642284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &963506282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963506278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 4442ec6bfe73d5246be09ff1ff4c2122, type: 2}
+  isGlobal: 0
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &989359263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,8 +2486,8 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_Spacing: 70
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -2603,11 +2631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2678,7 +2706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Shield Recharges '
+      value: 'Shield Recharges '
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a
@@ -2750,8 +2778,8 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_Spacing: 70
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -3101,6 +3129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrade Slot UI_1
       objectReference: {fileID: 0}
+    - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3131,11 +3163,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3213,7 +3245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Grants the ability to dash in the direction your facing'
+      value: Grants the ability to dash in the direction your facing
       objectReference: {fileID: 0}
     - target: {fileID: 573330229965329394, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3315,11 +3347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3371,7 +3403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeCost
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeName
@@ -3385,8 +3417,8 @@ PrefabInstance:
       propertyPath: _upgradeComboBonus
       value: '- 30x: More chance of gaining extra kill combo
 
-        - 65x: Chance
-        to gain permanent attack speed on kill  (Not Working)'
+        - 65x: Small
+        chance to gain permanent attack speed on kill'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeCostString
@@ -3394,7 +3426,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: You have a small chance of gaining extra kill combo
+      value: 'You have a small chance of gaining extra kill combo
+
+        - While
+        in forcefield you can shoot laserblades '
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a
@@ -3586,11 +3621,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3660,7 +3695,7 @@ PrefabInstance:
       propertyPath: _upgradeComboBonus
       value: '- 30x: Increases force range
 
-        - 50x: Forcing them into walls
+        - 60x: Forcing them into walls
         kills them'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
@@ -3846,11 +3881,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3920,13 +3955,15 @@ PrefabInstance:
       propertyPath: _upgradeComboBonus
       value: '- 50x: Small chance to gain cooldown reducation
 
-        - 75x: Projectiles
+        - 90x: Projectiles
         can''t hurt you anymore '
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Kills enemies based on half of your current combo but do not count
-        as enemies you killed'
+      value: 'Kills enemies based on half of your current combo
+
+        - Enemies
+        killed don''t count towards kill combo'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229965329394, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4268,11 +4305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4340,7 +4377,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 30x: Poision and Fire can''t damage you under 20% Max health'
+      value: '- 40x: Flying lasers can go through two enemies
+
+        - 90x: Poision
+        and Fire can''t damage you under 20% Max health'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
@@ -4762,11 +4802,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4830,9 +4870,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 20x: Even faster (Not Working)
+      value: '- 20x: Even faster
 
-        - 30x: Even faster (Not Working)'
+        - 60x: Even faster'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeCostString
@@ -4840,7 +4880,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Player will now attack even faster'
+      value: 'Player will now attack even faster
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a
@@ -5131,11 +5173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5203,12 +5245,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 30x: Faster element Charge (Currently Broken - Only Blocks Fire)'
+      value: '- 30x: Faster element Charge
+
+        - 80x: Fire companion that shoots
+        fireballs '
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Allows you to block elements found in environments and use it to
-        shoot a beam once you''ve collected enough'
+      value: 'Blocking stops all elemental damage from hurting you
+
+        - Extra
+        health
+
+        - Dash is now 2 seconds'
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a
@@ -5420,8 +5469,8 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_Spacing: 70
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -5486,11 +5535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5556,10 +5605,10 @@ PrefabInstance:
       propertyPath: _upgradeComboBonus
       value: '- 20x: Guaranteed chance to spawn blade
 
-        - 30x: Can go through
-        two enemies
+        - 75x: Can go through
+        three enemies
 
-        - 75x: Can go through three enemies'
+        - 125x: A chance to be homing'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeCostString
@@ -5567,8 +5616,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Every time you slash, you have a chance that a blade will be shot
-        out that can kill an enemy'
+      value: Every time you slash, you have a chance that a blade will be shot out
+        that can kill an enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a
@@ -6185,11 +6234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 158.9739
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 153.4756
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6253,7 +6302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: '- Player will now attack faster'
+      value: Player will now attack faster
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a

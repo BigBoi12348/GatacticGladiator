@@ -55,7 +55,6 @@ public class FirstPersonController : MonoBehaviour
     public float walkSpeed = 5f;
     public float maxVelocityChange = 10f;
 
-    // Internal Variables
     private bool isWalking = false;
     [SerializeField] private Transform _jumpPoint; 
     #region Sprint
@@ -134,6 +133,7 @@ public class FirstPersonController : MonoBehaviour
     public float GetTotalFireBeamsTime{get{return _fireBeamsCoolDownTime;}}
     public float GetTotalGravityPoundTime{get{return _gravityPoundCoolDownTime;}}
     public float GetTotalThanosSnapTime{get{return _thanosSnapCoolDownTime;}}
+
     [Header("Dashing")]
     [SerializeField] private float dashForce = 5f;
     [SerializeField] private float upgradedDashForceAdd;
@@ -146,7 +146,7 @@ public class FirstPersonController : MonoBehaviour
     private bool isDashing = false;
     private Vector3 dashStartPosition;
     public float dashTimer;
-    [SerializeField] private float dashTotalCooldown;
+    public float dashTotalCooldown;
     public float dashCooldownTimer{get; private set;}
 
 
@@ -163,7 +163,7 @@ public class FirstPersonController : MonoBehaviour
     private float _forceFieldDuration;
     public float _forceFieldTimer{get; private set;}
     private bool _canUseForceField;
-    private bool AmIForceField;
+    public bool AmIForceField{get; private set;}
 
 
     [Header("Shooting Fire Flames")]
@@ -826,21 +826,14 @@ public class FirstPersonController : MonoBehaviour
         _playerCol.enabled = false;
     }
 
+    public void CoolDownReduce(float value)
+    {
+        dashCooldownTimer -= value;
+        _fireBeamsCoolDownTime -= value;
+    }
+
     void FixedUpdate()
     {
-        // if (isDashing)
-        // {
-        //     if (dashTimer > 0)
-        //     {
-        //         dashTimer -= Time.deltaTime;
-        //     }
-        //     else
-        //     {
-        //         isDashing = false;
-        //         dashCooldownTimer = dashTotalCooldown;
-        //     }
-        // }
-
         #region Movement
 
         if (playerCanMove)

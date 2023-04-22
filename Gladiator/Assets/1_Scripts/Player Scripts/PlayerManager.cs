@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private PlayerShieldBehaviour _playerShieldBehaviour;
     [SerializeField] private KillComboHandler _killComboHandler;
     [SerializeField] private FirstPersonController _firstPersonController;
-
+    public float UpgradeFourBonus;
     private void Awake() 
     {
         if(_playerAnim )
@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
             _playerAnim = GameObject.FindGameObjectWithTag("PlayerAnimator").GetComponent<Animator>();
         }
 
-        _playerAnim.speed = 1;
+        _playerAnim.speed = 1 + RoundData.ExtraPlayerAttackSpeed;
         if(PlayerUpgradesData.AttackOne)
         {
             _playerAnim.speed += 0.3f;
@@ -55,35 +55,15 @@ public class PlayerManager : MonoBehaviour
             _playerAnim.speed += 0.5f;
         }
 
+        if(PlayerUpgradesData.ShieldThree)
+        {
+            _firstPersonController.dashTotalCooldown = 2;
+        }
         if(PlayerUpgradesData.ShieldFive)
         {
-            _firstPersonController.walkSpeed += 4;
-            _firstPersonController.sprintSpeed += 5;
+            _firstPersonController.walkSpeed += 5;
         }
-
-        // switch (PlayerUpgradesData.AttackAttribute)
-        // {
-        //     case 0:
-        //         _playerAnim.speed = 1f;
-        //         break;
-        //     case 1:
-        //         _playerAnim.speed = 1.25f;
-        //         break;
-        //     case 2:
-        //         _playerAnim.speed = 1.5f;
-        //         break;
-        //     case 3:
-        //         _playerAnim.speed = 1.75f;
-        //         break;
-        //     case 4:
-        //         _playerAnim.speed = 2f;
-        //         break;
-        //     case 5:
-        //         _playerAnim.speed = 2f;
-        //         break;
-           
-        // }
-
+        
         switch (PlayerUpgradesData.ShieldAttribute)
         {
             case 0:
@@ -107,5 +87,10 @@ public class PlayerManager : MonoBehaviour
            
         }
         _playerShieldBehaviour.ReadyPlayerShield();
+    }
+
+    public void UpdatePlayerAttackSpeed(float value)
+    {
+        _playerAnim.speed += value;
     }
 }

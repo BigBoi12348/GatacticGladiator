@@ -31,6 +31,10 @@ public class PlayerHealth : MonoBehaviour
         {
             AmIABeast = false;
         }
+        if(PlayerUpgradesData.ShieldThree)
+        {
+            _extraHealth = 20;
+        }
         if(PlayerUpgradesData.ShieldFive)
         {
             _extraHealth = 50;
@@ -95,7 +99,7 @@ public class PlayerHealth : MonoBehaviour
             PostProcessingEffectManager.Instance.BurnEffect(0.1f);
             if(AmIResilient)
             {
-                if(KillComboHandler.KillComboCounter >= 45)
+                if(KillComboHandler.KillComboCounter >= 90)
                 {
                     if(currentHealth - damage < maxHealth*0.2f)
                     {
@@ -119,7 +123,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(AmIResilient)
         {
-            if(KillComboHandler.KillComboCounter >= 45)
+            if(KillComboHandler.KillComboCounter >= 90)
             {
                 if(currentHealth - damage < maxHealth*0.2f)
                 {

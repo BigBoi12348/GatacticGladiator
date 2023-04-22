@@ -24,7 +24,7 @@ public class InGameLevelManager : MonoBehaviour
     [SerializeField] private KillComboHandler killComboHandler;
 
     private bool healOnKill;
-
+    private bool _permanentSpeedOn;
     private void Awake() 
     {
         if(Instance == null)
@@ -51,6 +51,15 @@ public class InGameLevelManager : MonoBehaviour
         else
         {
             healOnKill = false;
+        }
+
+        if(PlayerUpgradesData.AttackTwo)
+        {
+            _permanentSpeedOn = true;
+        }
+        else
+        {
+            _permanentSpeedOn = false;
         }
     }
 
@@ -158,12 +167,9 @@ public class InGameLevelManager : MonoBehaviour
     
     public void EnemyHasDied()
     {
-        _totalEnemiesCounter--;
-        _uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
-
         if(healOnKill)
         {
-            if(KillComboHandler.KillComboCounter >= 35)
+            if(KillComboHandler.KillComboCounter >= 50)
             {
                 RoundData.PlayerMaxHealth++;
                 _uIManager.UpdatePlayerHealth();
@@ -171,7 +177,6 @@ public class InGameLevelManager : MonoBehaviour
             _playerHealth.AddHealth(1);
         }
 
-        killComboHandler.AddToCombo(1);
 
         if(PlayerUpgradesData.ShieldOne)
         {
@@ -184,6 +189,22 @@ public class InGameLevelManager : MonoBehaviour
                 }
             }
         }
+
+        if(_permanentSpeedOn)
+        {
+            if(KillComboHandler.KillComboCounter >= 65)
+            {
+                int chance = Random.Range(1,101);
+                if(chance <= 15)
+                {
+                    killComboHandler.GivePlayerAttackSpeed(0.05f);
+                }
+            }
+        }
+
+        _totalEnemiesCounter--;
+        _uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
+        killComboHandler.AddToCombo(1);
 
         if(_totalEnemiesCounter == 0)
         {
