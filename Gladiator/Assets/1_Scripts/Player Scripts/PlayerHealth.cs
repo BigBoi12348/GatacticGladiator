@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     private bool AmIABeast;
     public bool TakeNoDamage;
     public bool TakeNoFireDamage;
+    public bool TakeNoPoisonDamage;
     private int _extraHealth = 0;
     private void Awake() 
     {
@@ -68,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
             PostProcessingEffectManager.Instance.HurtEffect(0.1f);
             if(AmIABeast)
             {
-                if(KillComboHandler.KillComboCounter >= 75)
+                if(KillComboHandler.KillComboCounter >= 125)
                 {
                     if(currentHealth - damage < maxHealth*0.1f)
                     {
