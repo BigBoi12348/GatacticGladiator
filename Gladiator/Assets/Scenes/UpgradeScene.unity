@@ -1151,6 +1151,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1045005522}
     m_Modifications:
+    - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 1c841b62357015440ab46dd35b007bce, type: 3}
     - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Name
       value: Upgrade Slot UI_2
@@ -1500,7 +1504,7 @@ PrefabInstance:
     - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: f7715196f58656c49af493e6529b88d9, type: 3}
+      objectReference: {fileID: 2800000, guid: dbea91e949d5a784894339cf883bfbd7, type: 3}
     - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Name
       value: Upgrade Slot UI_8
@@ -1782,7 +1786,7 @@ PrefabInstance:
     - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: f7715196f58656c49af493e6529b88d9, type: 3}
+      objectReference: {fileID: 2800000, guid: cc01daf37695b7842be4e3e8acf8de8a, type: 3}
     - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Name
       value: Upgrade Slot UI_9
@@ -2595,7 +2599,7 @@ PrefabInstance:
     - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: f7715196f58656c49af493e6529b88d9, type: 3}
+      objectReference: {fileID: 2800000, guid: a0a3248ed2324cf4da5262ad906bffdf, type: 3}
     - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Name
       value: Upgrade Slot UI_5
@@ -3312,6 +3316,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 5e702ff400c628e4681b64cc845759e2, type: 3}
     - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Name
       value: Upgrade Slot UI_1
@@ -4269,7 +4277,7 @@ PrefabInstance:
     - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: f7715196f58656c49af493e6529b88d9, type: 3}
+      objectReference: {fileID: 2800000, guid: 10e26ead4793cc141affb6bd93acd83d, type: 3}
     - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Name
       value: Upgrade Slot UI_6
@@ -4767,6 +4775,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1045005522}
     m_Modifications:
+    - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: fa52dac28773d4b428d71abcdb0abc18, type: 3}
     - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Name
       value: Upgrade Slot UI_3
@@ -5137,7 +5149,7 @@ PrefabInstance:
     - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: f7715196f58656c49af493e6529b88d9, type: 3}
+      objectReference: {fileID: 2800000, guid: 420d32d724c0e2642bead62cff39c7d5, type: 3}
     - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Name
       value: Upgrade Slot UI_7
@@ -5498,6 +5510,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 573330229056640015, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 8e01968453c203948ba8e0e94070c12d, type: 3}
     - target: {fileID: 573330229856771528, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Name
       value: Upgrade Slot UI_4
