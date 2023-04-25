@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1359.8848, g: 803.34375, b: 889.2178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1607,19 +1607,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 50x: Very small chance to gain cooldown reducation on block
-
-        -
-        70x: Gain a burst of movement speed when hit by a projectile'
+      value: '- 70x: Gain a burst of movement speed when hit by a projectile'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
-      value: 'Summon a permanent fire companion that attacks enemies and projectiles
+      value: 'Summon permanent fire companion that attacks enemies and projectiles
+        and allows temporary ones
+
+        - Will aim projectiles above all else
 
         -
-        Will aim projectiles above all else
-
-        - Gain One more Fire Beam'
+        Gain One more Fire Beam'
       objectReference: {fileID: 0}
     - target: {fileID: 5973179263919967325, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: m_Color.a
@@ -1889,8 +1887,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: "- 100x: Extra Fire Companion \n- 125x: Player cannot go below 10 health
-        but every tick of damage reduces kill combo"
+      value: '- 100x: Extra Fire Companion (Needs the Upgrade)
+
+        - 125x: Player
+        cannot go below 10 health but every tick of damage reduces kill combo'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
@@ -2210,10 +2210,10 @@ PrefabInstance:
       propertyPath: _upgradeComboBonus
       value: '- 20x: Extra Beam
 
-        - 40x: Increase Beam Range (Not working)
+        - 40x: Increase Beam Range
 
-        -
-        60x: Extra Beam'
+        - 60x:
+        Extra Beam'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
@@ -3952,10 +3952,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: '- 50x: Small chance to gain cooldown reducation
+      value: '- 60x: Small chance to gain cooldown reducation on kill
 
-        - 150x: Projectiles
-        can''t hurt you anymore and fire enemies won''t shoot them'
+        -
+        150x: Projectiles can''t hurt you anymore and fire buddies won''t shoot them'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription
@@ -5244,8 +5244,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
-      value: "- 60x: Fire companion spawns in and shoots fireballs \n- 110x: Fire
-        companions do faster attacks"
+      value: '- 60x: Fire companion spawns in and shoots fireballs (Needs Upgrade)
+
+        -
+        110x: Fire companions do faster attacks'
       objectReference: {fileID: 0}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeDescription

@@ -167,7 +167,8 @@ public class FirstPersonController : MonoBehaviour
 
 
     [Header("Shooting Fire Flames")]
-    [SerializeField] private PlayerFireLane _fireBeam;
+    [SerializeField] private PlayerFireLane _weakFireBeam;
+    [SerializeField] private PlayerFireLane _strongFireBeam;
     [SerializeField] private float _fireBeamsCoolDownTime;
     public float _fireBeamsTimer{get; private set;}
     private bool _canUseFireBeams;
@@ -725,7 +726,16 @@ public class FirstPersonController : MonoBehaviour
 
     private void ShootFireBeam()
     {
-        PlayerFireLane playerFirelane = Instantiate(_fireBeam, transform.position, camLook.rotation);
+        PlayerFireLane tempFireLane;
+        if(KillComboHandler.KillComboCounter >= 40)
+        {
+            tempFireLane = _strongFireBeam;
+        }
+        else
+        {
+            tempFireLane = _weakFireBeam;
+        }
+        PlayerFireLane playerFirelane = Instantiate(_weakFireBeam, transform.position, camLook.rotation);
         _currentFireBeams.Add(playerFirelane);
     }
 

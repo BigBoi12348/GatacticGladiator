@@ -4884,7 +4884,7 @@ GameObject:
   - component: {fileID: 357206925955104744}
   - component: {fileID: 4364620476092667327}
   m_Layer: 8
-  m_Name: PlayerFire
+  m_Name: PlayerFire_Strong
   m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5042,7 +5042,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 80
       minScalar: 3
       maxCurve:
         serializedVersion: 2
@@ -5740,7 +5740,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 250
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5856,22 +5856,22 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 0.3014397
-          inSlope: 2.0303948
-          outSlope: 2.0303948
+          time: 0.012886597
+          value: 1
+          inSlope: 0.19785728
+          outSlope: 0.19785728
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.2280997
+          outWeight: 0.48874387
         - serializedVersion: 3
-          time: 0.25371876
-          value: 0.7637805
-          inSlope: 1.1772611
-          outSlope: 1.1772611
+          time: 0.27948773
+          value: 0.9935088
+          inSlope: -0.36908972
+          outSlope: -0.36908972
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.5180281
           outWeight: 0.1794823
         - serializedVersion: 3
           time: 0.75156885
@@ -5885,11 +5885,11 @@ ParticleSystem:
         - serializedVersion: 3
           time: 1
           value: 0.5072464
-          inSlope: -1.8411329
-          outSlope: -1.8411329
+          inSlope: -3.8918626
+          outSlope: -3.8918626
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.5086988
+          inWeight: 0.3838528
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -9714,8 +9714,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.1482, y: 3.628973, z: 48.305603}
-  m_Center: {x: -0.33813238, y: 0.16265768, z: 25.63345}
+  m_Size: {x: 3.1482, y: 3.628973, z: 75.88646}
+  m_Center: {x: -0.33813238, y: 0.16265774, z: 39.42388}
 --- !u!114 &4364620476092667327
 MonoBehaviour:
   m_ObjectHideFlags: 0

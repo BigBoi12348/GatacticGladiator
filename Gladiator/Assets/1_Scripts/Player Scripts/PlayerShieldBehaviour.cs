@@ -62,7 +62,7 @@ public class PlayerShieldBehaviour : MonoBehaviour
 
     public void ReadyPlayerShield() 
     {
-        MaxTotalEnergy = RoundData.SheildTotalEnergy + extraShieldEnergy;
+        MaxTotalEnergy = 100 + extraShieldEnergy;
         _currentEnergy = MaxTotalEnergy;
         _energyShieldSlider.maxValue = MaxTotalEnergy;
         _energyShieldSlider.value = _currentEnergy;

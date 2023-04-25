@@ -10,7 +10,7 @@ public class FirebuddyBehaviour : MonoBehaviour
     [Header("Fire Buddies")]
     [SerializeField] private GameObject _fireBuddyOne;
     [SerializeField] private GameObject _fireBuddyTwo;
-    [SerializeField] private GameObject _fireBuddyThre;
+    [SerializeField] private GameObject _fireBuddyThree;
     private bool _fireBuddyOneReady;
     private bool _fireBuddyTwoReady;
     private bool _fireBuddyThreeReady;
@@ -19,6 +19,7 @@ public class FirebuddyBehaviour : MonoBehaviour
 
     [Header("Control Variables")]
     public float _nextTotalTime;
+    private float _usedNextTotalTime;
     private float _nextAttacktimer;
     float closestDistance = Mathf.Infinity;
     Vector3 closestObj;
@@ -35,6 +36,18 @@ public class FirebuddyBehaviour : MonoBehaviour
             _fireBuddyOne.SetActive(true);
             _fireBuddyOneReady = true;
         }
+        if(PlayerUpgradesData.ShieldThree)
+        {
+            _fireBuddyTwoReady = true;
+        }
+        else
+        {
+            _usedNextTotalTime = _nextTotalTime;
+        }
+        if(PlayerUpgradesData.ShieldFive)
+        {
+            _fireBuddyThreeReady = true;
+        }
     }
 
     void Update()
@@ -48,16 +61,40 @@ public class FirebuddyBehaviour : MonoBehaviour
             }
             if(_fireBuddyTwoReady)
             {
-
+                if(KillComboHandler.KillComboCounter >= 60)
+                {
+                    _fireBuddyTwo.SetActive(true);
+                    GoToShoot(_fireBuddyTwo.transform);
+                }
+            }
+            else
+            {
+                _fireBuddyOne.SetActive(false);
             }
             if(_fireBuddyThreeReady)
             {
-
+                if(KillComboHandler.KillComboCounter >= 100)
+                {
+                    _fireBuddyThree.SetActive(true);
+                    GoToShoot(_fireBuddyThree.transform);
+                }
             }
 
             _nextAttacktimer = _nextTotalTime;
         }
         _nextAttacktimer -= Time.deltaTime;
+
+        if(_fireBuddyTwoReady)
+        {
+            if(KillComboHandler.KillComboCounter >= 110)
+            {
+                _usedNextTotalTime = 2;
+            }
+            else
+            {
+                _usedNextTotalTime = _nextTotalTime;
+            }
+        }
     }
 
     private void GoToShoot(Transform targetBuddy)
@@ -66,6 +103,8 @@ public class FirebuddyBehaviour : MonoBehaviour
         float distance = 0;
         if(raycastHits.Length != 0)
         {
+            closestObj = Vector3.zero;
+            float closestDistance = Mathf.Infinity;
             foreach (var hit in raycastHits)
             {
                 distance = Vector3.Distance(targetBuddy.position, hit.transform.position);
@@ -74,7 +113,6 @@ public class FirebuddyBehaviour : MonoBehaviour
                     if(CheckIfAlreadyInUse(hit.transform))
                     {
                         closestDistance = distance;
-                        Debug.Log(hit.transform.position);
                         closestObj = hit.transform.position;
                         _alreadyTargeted.Add(hit.transform);
                     }
@@ -86,6 +124,10 @@ public class FirebuddyBehaviour : MonoBehaviour
             Rigidbody rb = Instantiate(_blueFireBall, targetBuddy.position, transform.rotation).GetComponent<Rigidbody>();
 
             rb.velocity = targetBuddy.transform.forward * 40;
+        }
+        else
+        {
+            Debug.Log("Fire Found nothing");
         }
     }
 

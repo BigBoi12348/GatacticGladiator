@@ -133,9 +133,6 @@ public class InGameLevelManager : MonoBehaviour
             RoundData.PlayerPoints = 0;
             RoundData.DifficultyRank = 0;
             RoundData.PlayerMaxHealth = 100;
-            PlayerUpgradesData.AttackAttribute = 0;
-            PlayerUpgradesData.ShieldAttribute = 0;
-            PlayerUpgradesData.AbilityAttribute = 0;
             ResetPlayerUpgradeData();
         }
         StartCoroutine(delayFinishGame(didPlayerWin));

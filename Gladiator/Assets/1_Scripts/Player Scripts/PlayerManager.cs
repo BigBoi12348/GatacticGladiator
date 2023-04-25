@@ -64,28 +64,6 @@ public class PlayerManager : MonoBehaviour
             _firstPersonController.walkSpeed += 5;
         }
         
-        switch (PlayerUpgradesData.ShieldAttribute)
-        {
-            case 0:
-                RoundData.SheildTotalEnergy = 100;
-                break;
-            case 1:
-                RoundData.SheildTotalEnergy = 125;
-                break;
-            case 2:
-                RoundData.SheildTotalEnergy = 150;
-                break;
-            case 3:
-                RoundData.SheildTotalEnergy = 175;
-                break;
-            case 4:
-                RoundData.SheildTotalEnergy = 200;
-                break;
-            case 5:
-                RoundData.SheildTotalEnergy = 200;
-                break;
-           
-        }
         _playerShieldBehaviour.ReadyPlayerShield();
     }
 

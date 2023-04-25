@@ -3,10 +3,6 @@ using System.Collections.Generic;
 
 public static class PlayerUpgradesData
 {
-    public static int AttackAttribute;
-    public static int ShieldAttribute;
-    public static int AbilityAttribute;
-
     public static bool AttackOne;
     public static bool AttackTwo;
     public static bool AttackThree;
