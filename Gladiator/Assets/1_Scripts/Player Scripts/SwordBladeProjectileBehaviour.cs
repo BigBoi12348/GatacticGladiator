@@ -8,10 +8,10 @@ public class SwordBladeProjectileBehaviour : MonoBehaviour
     public void Init(int hitAmount, bool amIHoming)
     {
         _amountOfHitsICanDo = hitAmount;
-        if(amIHoming)
-        {
-            StartCoroutine(HomingToEnemy());
-        }
+        // if(amIHoming)
+        // {
+        //     StartCoroutine(HomingToEnemy());
+        // }
         Invoke("ProjectileDeath", 8f);
     }
     
@@ -29,10 +29,10 @@ public class SwordBladeProjectileBehaviour : MonoBehaviour
     }
     
 
-    private IEnumerator HomingToEnemy()
-    {
-        yield return new WaitForSeconds(0);
-    }
+    // private IEnumerator HomingToEnemy()
+    // {
+    //     yield return new WaitForSeconds(0);
+    // }
 
     private void OnCollisionEnter(Collision other) 
     {

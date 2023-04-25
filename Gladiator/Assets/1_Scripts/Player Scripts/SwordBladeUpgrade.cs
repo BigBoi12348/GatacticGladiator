@@ -81,16 +81,16 @@ public class SwordBladeUpgrade : MonoBehaviour
 
             Vector3 forceToAdd = direction.normalized * 30f;
 
-            bool homing = false;
-            if(KillComboHandler.KillComboCounter >= 125)
-            {
-                int homingChance = Random.Range(1, 101);
-                if(homingChance <= 35)
-                {
-                    homing = true;
-                }
-            }
-            tempBlade.Init(CheckNumOfHits(), homing);
+            // bool homing = false;
+            // if(KillComboHandler.KillComboCounter >= 125)
+            // {
+            //     int homingChance = Random.Range(1, 101);
+            //     if(homingChance <= 35)
+            //     {
+            //         homing = true;
+            //     }
+            // }
+            tempBlade.Init(CheckNumOfHits(), false);
 
             Rigidbody tempBladeRb = tempBlade.GetComponent<Rigidbody>();
             tempBladeRb.AddForce(forceToAdd, ForceMode.Impulse);

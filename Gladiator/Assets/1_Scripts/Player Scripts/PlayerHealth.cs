@@ -59,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
             PostProcessingEffectManager.Instance.HurtEffect(0.1f);
             if(AmIABeast)
             {
-                if(KillComboHandler.KillComboCounter >= 125)
+                if(KillComboHandler.KillComboCounter >= 175)
                 {
                     if(currentHealth - damage < maxHealth*0.1f)
                     {

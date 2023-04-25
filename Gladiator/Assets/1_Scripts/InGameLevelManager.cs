@@ -9,6 +9,7 @@ public class InGameLevelManager : MonoBehaviour
 
     public int _totalEnemiesCounter{get; private set;}
     public int CurrentRound{get; private set;}
+    public int BonusCredits;
 
     [Header("Environments")]
     [SerializeField] private GameObject _plainLevel;
@@ -126,7 +127,7 @@ public class InGameLevelManager : MonoBehaviour
         if(didPlayerWin)
         {
             RoundData.Wave++;
-            RoundData.PlayerPoints += 3;
+            RoundData.PlayerPoints += 6 + BonusCredits;
         }
         else if(!didPlayerWin)
         {
