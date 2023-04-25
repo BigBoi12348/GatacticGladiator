@@ -700,10 +700,12 @@ public class FirstPersonController : MonoBehaviour
         
         foreach (RaycastHit hit in raycastHits)
         {
-            EnemyBehaviour enemyBehaviour = hit.transform.GetComponent<EnemyBehaviour>();
-            enemyBehaviour.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * (_liftPower), ForceMode.Impulse);
-            enemyBehaviour.StopEnemy(false);
-            enemyBehaviours.Add(enemyBehaviour);
+            if(hit.transform.TryGetComponent<EnemyBehaviour>(out EnemyBehaviour enemyBehaviour))
+            {
+                enemyBehaviour.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * (_liftPower), ForceMode.Impulse);
+                enemyBehaviour.StopEnemy(false);
+                enemyBehaviours.Add(enemyBehaviour);
+            }
         }
 
         yield return new WaitForSeconds(1.3f);
@@ -716,8 +718,11 @@ public class FirstPersonController : MonoBehaviour
         CameraEffectsSystem.Instance.ShakeCamera(20, 0.5f);
         foreach (var enemyBehaviour in enemyBehaviours)
         {
-            enemyBehaviour.UpdateExplodePoint(Vector3.zero, true);
-            enemyBehaviour.StartDeath();
+            if(enemyBehaviour != null)
+            {
+                enemyBehaviour.UpdateExplodePoint(Vector3.zero, true);
+                enemyBehaviour.StartDeath();
+            }
         }
         
         AmIGravityLifting = false;

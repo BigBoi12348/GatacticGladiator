@@ -11749,10 +11749,13 @@ MonoBehaviour:
   _blueFireBall: {fileID: 6586192632606626233, guid: 4780e705f666f374389356d0d7292ab0, type: 3}
   _enemyLayer:
     serializedVersion: 2
+    m_Bits: 512
+  _bothEnemyLayers:
+    serializedVersion: 2
     m_Bits: 2097664
   _fireBuddyOne: {fileID: 6942842454395003629}
   _fireBuddyTwo: {fileID: 7879431929033573286}
-  _fireBuddyThree: {fileID: 0}
+  _fireBuddyThree: {fileID: 1668307258414318063}
   _nextTotalTime: 3
 --- !u!1 &8398974453478344266
 GameObject:
@@ -13346,6 +13349,11 @@ PrefabInstance:
 --- !u!4 &1668307258414318060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6586192632606626234, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
+  m_PrefabInstance: {fileID: 5494919109800742998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1668307258414318063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6586192632606626233, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
   m_PrefabInstance: {fileID: 5494919109800742998}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6533676671149249514
