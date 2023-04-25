@@ -4501,10 +4501,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyType: 0
-  _enemyMovementSpeed: 4
-  _enemyMovementSpeedModifier: 0
+  _enemyWalkSpeed: 0
+  _enemyRunSpeed: 0
+  _distanceAwayUntilWalk: 0
+  _totalAttackCoolDown: 5
+  _attackCoolDown: 0
+  _enemyAnimSpeedModifier: 0
   _angleOffset: 0
+  _meshColliderFollow: {fileID: 0}
   _explodePoint: {fileID: 8075992714396791286}
+  _shootArrowBehaviour: {fileID: 0}
   _bowAttackRange: 0
   _arrowSpeed: 0
   _archerChild: {fileID: 0}
@@ -4512,10 +4518,10 @@ MonoBehaviour:
   _enemyBowAnim: {fileID: 0}
   _EnemyBowAnimClip: {fileID: 0}
   _enemyAnim: {fileID: 4065816011520564996}
-  _totalAttackCoolDown: 5
-  _attackCoolDown: 0
-  _wallStopper: {fileID: 6277154938412816895}
+  _attackAnimClip: {fileID: 0}
   _enemyWeaponBehaviour: {fileID: 4791411402509982439}
+  _wallStopper: {fileID: 6277154938412816895}
+  _normalCol: {fileID: 0}
   _aIDestinationSetter: {fileID: 1764986156352767934}
   _aIPath: {fileID: 2740254262578184790}
 --- !u!114 &2740254262578184790
@@ -4641,7 +4647,7 @@ Animator:
   m_GameObject: {fileID: 7333921120246751172}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b341d09cc57a4e44db23e6204eb93bb6, type: 3}
-  m_Controller: {fileID: 9100000, guid: 272e81e3ff2d6734993887a6ff06e1f3, type: 2}
+  m_Controller: {fileID: 9100000, guid: d6d335a9ae0ca3a479346d7bd295211f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
