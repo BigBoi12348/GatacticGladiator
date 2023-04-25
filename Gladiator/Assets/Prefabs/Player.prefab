@@ -9996,7 +9996,8 @@ MonoBehaviour:
   _forceFieldCoolDownTime: 10
   _forceFieldTotalDuration: 5
   _forceFieldForceFieldEffect: {fileID: 1769005849923127871}
-  _fireBeam: {fileID: 4364620476092667327, guid: 3a1ad0a4bc2a9c440a5eac10f874a0a1, type: 3}
+  _weakFireBeam: {fileID: 4364620476092667327, guid: 3a1ad0a4bc2a9c440a5eac10f874a0a1, type: 3}
+  _strongFireBeam: {fileID: 4364620476092667327, guid: cfe7bd248c9e3354e953a28aef0baf4b, type: 3}
   _fireBeamsCoolDownTime: 10
   _gravitySkillRadius: 10
   _liftPower: 2
@@ -11751,7 +11752,7 @@ MonoBehaviour:
     m_Bits: 2097664
   _fireBuddyOne: {fileID: 6942842454395003629}
   _fireBuddyTwo: {fileID: 7879431929033573286}
-  _fireBuddyThre: {fileID: 1668307258414318063}
+  _fireBuddyThree: {fileID: 0}
   _nextTotalTime: 3
 --- !u!1 &8398974453478344266
 GameObject:
@@ -13345,11 +13346,6 @@ PrefabInstance:
 --- !u!4 &1668307258414318060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6586192632606626234, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
-  m_PrefabInstance: {fileID: 5494919109800742998}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1668307258414318063 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6586192632606626233, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
   m_PrefabInstance: {fileID: 5494919109800742998}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6533676671149249514

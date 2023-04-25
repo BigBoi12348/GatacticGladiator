@@ -6,6 +6,8 @@ public class FirebuddyBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject _blueFireBall; 
     [SerializeField] private LayerMask _enemyLayer;
+    [SerializeField] private LayerMask _bothEnemyLayers;
+    private LayerMask _usedMask;
 
     [Header("Fire Buddies")]
     [SerializeField] private GameObject _fireBuddyOne;
@@ -48,6 +50,8 @@ public class FirebuddyBehaviour : MonoBehaviour
         {
             _fireBuddyThreeReady = true;
         }
+
+        _usedMask = _bothEnemyLayers;
     }
 
     void Update()
@@ -93,6 +97,18 @@ public class FirebuddyBehaviour : MonoBehaviour
             else
             {
                 _usedNextTotalTime = _nextTotalTime;
+            }
+        }
+
+        if(PlayerUpgradesData.StarFive)
+        {
+            if(KillComboHandler.KillComboCounter >= 60)
+            {
+                _usedMask = _enemyLayer;
+            }
+            else
+            {
+                _usedMask = _bothEnemyLayers;
             }
         }
     }

@@ -22,6 +22,7 @@ public class InGameLevelManager : MonoBehaviour
     [SerializeField] private PlayerHealth _playerHealth;
     [SerializeField] private PlayerShieldBehaviour _playerShieldBehaviour;
     [SerializeField] private KillComboHandler killComboHandler;
+    [SerializeField] private FirstPersonController _firstPersonController;
 
     private bool healOnKill;
     private bool _permanentSpeedOn;
@@ -184,6 +185,18 @@ public class InGameLevelManager : MonoBehaviour
                 {
                     _playerShieldBehaviour.AddRecharge(5);
                 }
+            }
+        }
+
+        if(PlayerUpgradesData.StarFive)
+        {
+            if(KillComboHandler.KillComboCounter >= 60)
+            {
+                int chance = Random.Range(1,101);
+                if(chance <= 10)
+                {
+                    _firstPersonController.CoolDownReduce(1);
+                } 
             }
         }
 

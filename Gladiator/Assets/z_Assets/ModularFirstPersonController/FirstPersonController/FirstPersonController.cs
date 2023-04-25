@@ -839,7 +839,10 @@ public class FirstPersonController : MonoBehaviour
     public void CoolDownReduce(float value)
     {
         dashCooldownTimer -= value;
+        _forceFieldCoolDownTime -= value;
         _fireBeamsCoolDownTime -= value;
+        _gravityPoundCoolDownTime -= value;
+        _thanosSnapCoolDownTime -= value;
     }
 
     void FixedUpdate()

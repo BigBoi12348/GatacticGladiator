@@ -44,10 +44,18 @@ public class UpgradeSceneManager : MonoBehaviour
         }
         
         Cursor.lockState = CursorLockMode.None;
-        //_inventoryButton.onClick.AddListener(GoToInventoryScreen);
-        //_upgradesButton.onClick.AddListener(GoToUpgradesScreen);
+
         _exitButton.onClick.AddListener(GoBackToGame);
         _points.text = "Credits: " + RoundData.PlayerPoints.ToString();
+    }
+
+    private void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            RoundData.PlayerPoints = 150;
+            UpdateCurrentUIPlayerPoints();
+        }
     }
 
     public void DisplayThisUpgradeSlot(string UpgradeName, VideoClip videoClip, string UpgradeDescription, string UpgradeComboBonus, string UpgradeCost, Color32 colorOfUpgradeCost)
