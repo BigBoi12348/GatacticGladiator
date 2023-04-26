@@ -6,6 +6,7 @@ public class LeverInteract : MonoBehaviour
 {
     private Animator animator;
     public GameObject player;
+    public GameObject lever;
    
     private void Start()
     {
@@ -27,6 +28,15 @@ public class LeverInteract : MonoBehaviour
         {
             animator.Play("AsD");
         }
+       
+    }
+    void Stay()
+    {
+        lever.SetActive(true);
+    }
+    void Gone()
+    {
+        lever.SetActive(false);
     }
 }
 
