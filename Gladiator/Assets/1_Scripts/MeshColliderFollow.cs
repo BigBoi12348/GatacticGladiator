@@ -34,50 +34,77 @@ public class MeshColliderFollow : MonoBehaviour
     {
         if(delayTimer < 0)
         {
-            _Arm_L_skinnedMesh.BakeMesh(bakedMesh);
+            if(_Arm_L_skinnedMesh != null)
+            {
+                _Arm_L_skinnedMesh.BakeMesh(bakedMesh);
 
-            _Arm_L_meshCollider.sharedMesh = null;
-            _Arm_L_meshCollider.sharedMesh = bakedMesh;
+                _Arm_L_meshCollider.sharedMesh = null;
+                _Arm_L_meshCollider.sharedMesh = bakedMesh;
+            }
+            
+            if(_Arm_R_skinnedMesh != null)
+            {
+                _Arm_R_skinnedMesh.BakeMesh(bakedMesh);
 
-            _Arm_R_skinnedMesh.BakeMesh(bakedMesh);
+                _Arm_R_meshCollider.sharedMesh = null;
+                _Arm_R_meshCollider.sharedMesh = bakedMesh;
+            }
+            
+            if(_ForeArm_L_skinnedMesh != null)
+            {
+                _ForeArm_L_skinnedMesh.BakeMesh(bakedMesh);
 
-            _Arm_R_meshCollider.sharedMesh = null;
-            _Arm_R_meshCollider.sharedMesh = bakedMesh;
+                _ForeArm_L_meshCollider.sharedMesh = null;
+                _ForeArm_L_meshCollider.sharedMesh = bakedMesh;
+            }
 
-            _ForeArm_L_skinnedMesh.BakeMesh(bakedMesh);
+            if(_ForeArm_R_skinnedMesh != null)
+            {
+                _ForeArm_R_skinnedMesh.BakeMesh(bakedMesh);
 
-            _ForeArm_L_meshCollider.sharedMesh = null;
-            _ForeArm_L_meshCollider.sharedMesh = bakedMesh;
+                _ForeArm_R_meshCollider.sharedMesh = null;
+                _ForeArm_R_meshCollider.sharedMesh = bakedMesh;
+            }
+            
+            if(_Calf_L_skinnedMesh != null)
+            {
+                _Calf_L_skinnedMesh.BakeMesh(bakedMesh);
 
-            _ForeArm_R_skinnedMesh.BakeMesh(bakedMesh);
+                _Calf_L_meshCollider.sharedMesh = null;
+                _Calf_L_meshCollider.sharedMesh = bakedMesh;
+            }
 
-            _ForeArm_R_meshCollider.sharedMesh = null;
-            _ForeArm_R_meshCollider.sharedMesh = bakedMesh;
+            if(_Calf_R_skinnedMesh != null)
+            {
+                _Calf_R_skinnedMesh.BakeMesh(bakedMesh);
 
-            _Calf_L_skinnedMesh.BakeMesh(bakedMesh);
+                _Calf_R_meshCollider.sharedMesh = null;
+                _Calf_R_meshCollider.sharedMesh = bakedMesh;
+            }
 
-            _Calf_L_meshCollider.sharedMesh = null;
-            _Calf_L_meshCollider.sharedMesh = bakedMesh;
+            if(_Torso_skinnedMesh != null)
+            {
+                _Torso_skinnedMesh.BakeMesh(bakedMesh);
 
-            _Calf_R_skinnedMesh.BakeMesh(bakedMesh);
+                _Torso_meshCollider.sharedMesh = null;
+                _Torso_meshCollider.sharedMesh = bakedMesh;
+            }
 
-            _Calf_R_meshCollider.sharedMesh = null;
-            _Calf_R_meshCollider.sharedMesh = bakedMesh;
+            if(_Head_skinnedMesh != null)
+            {
+                _Head_skinnedMesh.BakeMesh(bakedMesh);
 
-            _Torso_skinnedMesh.BakeMesh(bakedMesh);
+                _Head_meshCollider.sharedMesh = null;
+                _Head_meshCollider.sharedMesh = bakedMesh;
+            }
+            
+            if(_Legs_skinnedMesh != null)
+            {
+                _Legs_skinnedMesh.BakeMesh(bakedMesh);
 
-            _Torso_meshCollider.sharedMesh = null;
-            _Torso_meshCollider.sharedMesh = bakedMesh;
-
-            _Head_skinnedMesh.BakeMesh(bakedMesh);
-
-            _Head_meshCollider.sharedMesh = null;
-            _Head_meshCollider.sharedMesh = bakedMesh;
-
-            _Legs_skinnedMesh.BakeMesh(bakedMesh);
-
-            _Legs_meshCollider.sharedMesh = null;
-            _Legs_meshCollider.sharedMesh = bakedMesh;
+                _Legs_meshCollider.sharedMesh = null;
+                _Legs_meshCollider.sharedMesh = bakedMesh;
+            }
             
             delayTimer = delayTotalTime;
         }

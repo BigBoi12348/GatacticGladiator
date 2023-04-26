@@ -36,11 +36,11 @@ public class PlayerHealth : MonoBehaviour
         }
         if(PlayerUpgradesData.ShieldThree)
         {
-            _extraHealth = 20;
+            _extraHealth += 20;
         }
         if(PlayerUpgradesData.ShieldFive)
         {
-            _extraHealth = 50;
+            _extraHealth += 50;
         }
         dead = false;
         maxHealth = RoundData.PlayerMaxHealth + _extraHealth;

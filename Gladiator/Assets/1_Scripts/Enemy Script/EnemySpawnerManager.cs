@@ -77,7 +77,7 @@ public class EnemySpawnerManager : MonoBehaviour
         }
         else
         {
-            _currentDifficultyRank = 25;
+            _currentDifficultyRank = 5;
         }
 
         int tempDifficultyScore = _currentDifficultyRank;

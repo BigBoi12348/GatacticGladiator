@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class BuggyBoi : MonoBehaviour
 {
-    
-    public GameObject ad;
+    [SerializeField] private GameObject _circleEffect;
+    [SerializeField] private GameObject _sparkEffect;
 
-    void Spawn()
+    private void Start() 
     {
-        ad.SetActive(true);
+        _circleEffect.SetActive(false);
+        _sparkEffect.SetActive(false);
     }
-   void Despawn()
+
+    void SpawnCircle()
     {
-        ad.SetActive(false);
+        _circleEffect.SetActive(true);
+    }
+
+    void SpawnSpark()
+    {
+        _circleEffect.SetActive(false);
+        _sparkEffect.SetActive(true);
+    }
+
+    void DespawnSpark()
+    {
+        _sparkEffect.SetActive(false);
     }
 }

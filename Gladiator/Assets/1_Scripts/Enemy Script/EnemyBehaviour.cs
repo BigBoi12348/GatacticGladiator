@@ -35,7 +35,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float _arrowSpeed;
     [SerializeField] private Transform _archerChild;
     [SerializeField] private Transform _arrowAttackPoint;
-    bool _canMoveAgain;
+    public bool _canMoveAgain;
     [SerializeField] private Animator _enemyBowAnim;
     [SerializeField] private AnimationClip _EnemyBowAnimClip;
     const string SUBBOW = "Armature|Bow_Fire";
@@ -84,6 +84,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             hasBetterDash = false;
         }
+        _canMoveAgain = true;
     }
 
     private void Update()
@@ -143,12 +144,26 @@ public class EnemyBehaviour : MonoBehaviour
                     _attackCoolDown = _totalAttackCoolDown;
                     StartCoroutine(IncreaseAnimSpeed());
                     StartCoroutine(_enemyWeaponBehaviour.Activate());
+                    _aIPath.canMove = false;
                 }
-                _aIPath.canMove = false;
             }
             else
             {
-                _aIPath.canMove = true;
+                if(_enemyType == EnemyType.Hammer)
+                {
+                    if(_canMoveAgain)
+                    {
+                        _aIPath.canMove = true;
+                    }
+                    else
+                    {
+                        _aIPath.canMove = false;
+                    }
+                }
+                else
+                {
+                    _aIPath.canMove = true;
+                }
             }
         }
 
@@ -164,21 +179,16 @@ public class EnemyBehaviour : MonoBehaviour
             transform.LookAt(playerPos);
         }
     }
-    // Coroutine wallCo;
-    // public void CanDieByWall()
-    // {
-    //     if(wallCo != null)
-    //     {
-    //         StopCoroutine(wallCo);
-    //     }
-    //     StartCoroutine(DieByWall());
-    // }
+    
+    public void CantMove()
+    {
+        _canMoveAgain = false;
+    }
 
-    // IEnumerator DieByWall()
-    // {
-    //     StopEnemy(true);
-    //     yield retutrn new WaitForSeconds(2);
-    // }
+    public void CanMoveAgain()
+    {
+        _canMoveAgain = true;
+    }
 
     IEnumerator IncreaseAnimSpeed()
     {

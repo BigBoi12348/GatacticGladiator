@@ -7665,7 +7665,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6533676671580548026}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.9999999, y: 1, z: 0.81684685}
@@ -8793,6 +8793,7 @@ GameObject:
   - component: {fileID: 7464283242767745777}
   - component: {fileID: 2191889209131791471}
   - component: {fileID: 7740890014809303216}
+  - component: {fileID: 1917923742}
   m_Layer: 7
   m_Name: Weapon
   m_TagString: Untagged
@@ -8871,6 +8872,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1917923742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908814765033835547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00019694734, y: 0.00020294836, z: 0.00601527}
+  m_Center: {x: -4.2330354e-11, y: -0.0000000021726836, z: 0.001507635}
 --- !u!1 &6919387036344732837
 GameObject:
   m_ObjectHideFlags: 0
@@ -10058,7 +10072,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c10ccb6930f7b1645b4127b74a61ca3d, type: 2}
+  - {fileID: 2100000, guid: 91165157bcd884040b0ea7c5fd8bd0c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10142,7 +10156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentEnergy: 0
-  _setChargeRate: 0
+  _setChargeRate: 5
   _decreaseRate: 20
   _isBlocking: 0
   _energyShieldSlider: {fileID: 798253417182283091}
@@ -11946,7 +11960,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: c10ccb6930f7b1645b4127b74a61ca3d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13130,6 +13144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Buddy_1
       objectReference: {fileID: 0}
+    - target: {fileID: 6586192632606626233, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6586192632606626234, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -13209,6 +13227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Buddy
       objectReference: {fileID: 0}
+    - target: {fileID: 6586192632606626233, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6586192632606626234, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -13287,6 +13309,10 @@ PrefabInstance:
     - target: {fileID: 6586192632606626233, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
       propertyPath: m_Name
       value: Fire Buddy_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586192632606626233, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6586192632606626234, guid: cb4806f0b53dc124eb9c1e626a2a4939, type: 3}
       propertyPath: m_RootOrder
@@ -13463,6 +13489,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7586120510859130403, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7729397753050846832, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -13573,6 +13603,34 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4627617167668735870, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627617167668735870, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627617167668735870, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627617167668735870, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627617167668735870, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627617167668735870, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627617167668735870, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4654894245952415515, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -13592,6 +13650,18 @@ PrefabInstance:
     - target: {fileID: 6992827545570943678, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586120510859130403, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_Parameters.m_EndRange
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586120510859130403, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_Parameters.m_StartRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586120510859130403, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
+      propertyPath: m_Parameters.m_GravityCurve.scalar
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7729397753050846832, guid: d2f7de7fcd5fbc7438a430b0cae98a4f, type: 3}
       propertyPath: m_AnchorMax.x

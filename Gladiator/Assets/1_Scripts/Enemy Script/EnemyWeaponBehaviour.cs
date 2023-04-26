@@ -6,7 +6,7 @@ public class EnemyWeaponBehaviour : MonoBehaviour
 {
     private enum WeaponType 
     {
-        Melee, Projectile
+        Melee, Hammer, Projectile
     }
     [SerializeField] private WeaponType _weaponType;
     //[SerializeField] private bool isWeaponAlreadyActive;
@@ -18,7 +18,7 @@ public class EnemyWeaponBehaviour : MonoBehaviour
 
     private void Start() 
     {
-        if(_weaponType == WeaponType.Melee)
+        if(_weaponType == WeaponType.Melee || _weaponType == WeaponType.Hammer)
         {
             _weaponCollider.enabled = false;
         }
@@ -50,7 +50,7 @@ public class EnemyWeaponBehaviour : MonoBehaviour
                 {
                     if(checkCombo)
                     {
-                        if(KillComboHandler.KillComboCounter < 75)
+                        if(KillComboHandler.KillComboCounter < 150)
                         {
                             playerHealth.TakeDamage(WeaponDamage);
                         }
@@ -59,6 +59,12 @@ public class EnemyWeaponBehaviour : MonoBehaviour
                     {
                         playerHealth.TakeDamage(WeaponDamage);
                     }
+                }
+                else if(_weaponType == WeaponType.Hammer)
+                {
+                    playerHealth.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * 2f, ForceMode.Impulse);
+                    playerHealth.TakeDamage(WeaponDamage);
+                    StartCoroutine(HitDelay());
                 }
             }
         }
@@ -70,10 +76,13 @@ public class EnemyWeaponBehaviour : MonoBehaviour
 
     public IEnumerator Activate()
     {
-        yield return new WaitForSeconds(0.45f);
-        _weaponCollider.enabled = true;
-        yield return new WaitForSeconds(0.65f);
-        _weaponCollider.enabled = false;
+        if(_weaponType != WeaponType.Hammer)
+        {
+            yield return new WaitForSeconds(0.45f);
+            _weaponCollider.enabled = true;
+            yield return new WaitForSeconds(0.65f);
+            _weaponCollider.enabled = false;
+        }
     }
 
     IEnumerator HitDelay()
