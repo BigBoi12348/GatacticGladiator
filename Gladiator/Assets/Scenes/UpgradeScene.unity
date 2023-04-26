@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 217591961}
   - component: {fileID: 217591963}
   - component: {fileID: 217591962}
+  - component: {fileID: 217591964}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -164,7 +165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 264, y: 16}
+  m_AnchoredPosition: {x: 1682, y: 16}
   m_SizeDelta: {x: 1210.6545, y: 818.5585}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217591962
@@ -205,6 +206,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217591960}
   m_CullTransparentMesh: 1
+--- !u!95 &217591964
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217591960}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f52bb846d4725ba4e9b37aad6d237a1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &255219638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -506,7 +527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -541, y: -431}
+  m_AnchoredPosition: {x: -541, y: -621}
   m_SizeDelta: {x: 185.6682, y: 77.727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319122912
@@ -1381,8 +1402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.1502, y: -51.362}
-  m_SizeDelta: {x: 655.1312, y: 142.65}
+  m_AnchoredPosition: {x: -2.6261, y: -51.362}
+  m_SizeDelta: {x: 679.7555, y: 142.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581880392
 MonoBehaviour:
@@ -1434,8 +1455,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3582,6 +3603,7 @@ GameObject:
   - component: {fileID: 1249546739}
   - component: {fileID: 1249546741}
   - component: {fileID: 1249546740}
+  - component: {fileID: 1249546742}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -3645,6 +3667,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249546738}
   m_CullTransparentMesh: 1
+--- !u!95 &1249546742
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249546738}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a449d53819b124747b72210a93f0ba34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!224 &1293102091 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 573330229856771531, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
@@ -3889,6 +3931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1366181572}
+  - component: {fileID: 1366181573}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -3918,6 +3961,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1366181573
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366181571}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76811546171368842a20d5f284c9384c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1399439215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4747,8 +4810,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 333, y: -435}
-  m_SizeDelta: {x: 212.9915, y: 80.7936}
+  m_AnchoredPosition: {x: 321, y: -632}
+  m_SizeDelta: {x: 300.0101, y: 113.8022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642943996
 MonoBehaviour:
@@ -5391,8 +5454,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6520,8 +6583,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21
-  m_fontSizeBase: 21
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

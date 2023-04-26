@@ -20,4 +20,11 @@ public class ResumePlay : MonoBehaviour
         pause.SetActive(false);
         music.SetActive(true);
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Plays();
+        }
+    }
 }
