@@ -11,10 +11,10 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     {
         Sword, Shield, Ability
     }
-    
+
     [Header("Details")]
     [SerializeField] private UpgradeType _upgradeType;
-    [Range(1,5)]
+    [Range(1, 5)]
     [SerializeField] private int _thisUpgradeRank;
     [SerializeField] private int _upgradeCost;
 
@@ -22,9 +22,9 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     [Header("Information")]
     [SerializeField] private string _upgradeName;
     [SerializeField] private VideoClip _videoOfUpgrade;
-    [TextArea(1,5)]
+    [TextArea(1, 5)]
     [SerializeField] private string _upgradeDescription;
-    [TextArea(1,4)]
+    [TextArea(1, 4)]
     [SerializeField] private string _upgradeComboBonus;
     private string _upgradeCostString;
 
@@ -44,6 +44,18 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     [SerializeField] private Texture _swordImage;
     [SerializeField] private Texture _shieldImage;
     [SerializeField] private Texture _abilityImage;
+    [SerializeField] private GameObject _effect;
+
+    [Header("Upgrade Effect")]
+    [SerializeField] public GameObject objectToEnable;
+    [SerializeField] public float delay = 5f;
+
+    private bool isEnabled = false;
+
+    private void Start()
+    {
+        Button button = GetComponent<Button>();
+    }
 
     bool alreadyBought;
 
@@ -210,6 +222,9 @@ public class UpgradeSlotBehaviour : MonoBehaviour
                 UpgradeSceneManager.Instance.UpdateCurrentUIPlayerPoints();
                 LockMe();
                 _boughtSound.Play();
+                objectToEnable.SetActive(true);
+                isEnabled = true;
+                Invoke("DisableObject", 3);
             }
             else
             {
@@ -217,6 +232,13 @@ public class UpgradeSlotBehaviour : MonoBehaviour
             }
         }
     }
+
+    private void DisableObject()
+    {
+        objectToEnable.SetActive(false);
+        isEnabled = false;
+    }
+
 
     private Color32 FigureColor()
     {
