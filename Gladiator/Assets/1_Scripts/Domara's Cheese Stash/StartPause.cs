@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class StartPause : MonoBehaviour
 {
+    public GameObject music;
     public GameObject panel;
     [SerializeField] private FirstPersonController _firstPersonController;
 
@@ -20,6 +21,7 @@ public class StartPause : MonoBehaviour
             }
             
             panel.SetActive(true);
+            music.SetActive(false);
         }
     }
 }

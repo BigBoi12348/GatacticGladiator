@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ControlsPlay : MonoBehaviour
 {
+    public GameObject hoverSound;
     public CloseControls closeControls;
     public Image controls;
     void Start()
@@ -16,5 +17,13 @@ public class ControlsPlay : MonoBehaviour
     {
         controls.enabled = true;
         closeControls.LockMe();
+    }
+    public void HoverOver()
+    {
+        hoverSound.SetActive(true);
+    }
+    public void HoverOff()
+    {
+        hoverSound.SetActive(false);
     }
 }

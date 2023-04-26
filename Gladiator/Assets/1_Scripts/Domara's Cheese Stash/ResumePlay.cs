@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ResumePlay : MonoBehaviour
 {
+    public GameObject music;
     public GameObject pause;
     [SerializeField] private FirstPersonController _firstPersonController;
 
@@ -17,5 +18,6 @@ public class ResumePlay : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
         pause.SetActive(false);
+        music.SetActive(true);
     }
 }

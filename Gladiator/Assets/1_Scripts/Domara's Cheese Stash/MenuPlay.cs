@@ -7,6 +7,7 @@ using TMPro;
 
 public class MenuPlay : MonoBehaviour
 {
+    public GameObject hoverSound;
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -15,5 +16,13 @@ public class MenuPlay : MonoBehaviour
     public void Plays()
     {
         GameManager.Instance.LoadThisScene(GameManager.GAMESCENE);
+    }
+    public void HoverOver()
+    {
+        hoverSound.SetActive(true);
+    }
+    public void HoverOff()
+    {
+        hoverSound.SetActive(false);
     }
 }

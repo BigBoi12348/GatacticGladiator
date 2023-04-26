@@ -7,6 +7,7 @@ using TMPro;
 
 public class Quit : MonoBehaviour
 {
+    public GameObject hoverSound;
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -16,5 +17,13 @@ public class Quit : MonoBehaviour
     {
         Debug.Log("Quit!");
         Application.Quit();
+    }
+    public void HoverOver()
+    {
+        hoverSound.SetActive(true);
+    }
+    public void HoverOff()
+    {
+        hoverSound.SetActive(false);
     }
 }
