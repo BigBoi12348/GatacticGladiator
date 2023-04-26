@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class ResumePlay : MonoBehaviour
 {
     public GameObject pause;
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.None;
-    }
+    [SerializeField] private FirstPersonController _firstPersonController;
 
     public void Plays()
     {
-        Time.timeScale = 1f;
+        GameManager.Instance.UnFreezeGame();
+        if(_firstPersonController != null)
+        {
+            _firstPersonController.enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         pause.SetActive(false);
     }
 }

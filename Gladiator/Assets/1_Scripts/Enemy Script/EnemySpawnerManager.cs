@@ -16,6 +16,7 @@ public class EnemySpawnerManager : MonoBehaviour
     [Header("Enemy Control")]
     [SerializeField] private Transform _enemyContainer;
     [SerializeField] private Transform[] _spawnLocations;
+    [SerializeField] private Transform[] _playerCloseSpawnLocations;
     public int TotalEnemiesSpawningThisRound{get; private set;}
     
 

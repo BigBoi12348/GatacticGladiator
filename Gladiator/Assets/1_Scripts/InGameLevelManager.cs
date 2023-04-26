@@ -106,11 +106,11 @@ public class InGameLevelManager : MonoBehaviour
         {
             if(CurrentRound % 2 == 0)
             {
-                _fireLevel.SetActive(true);
+                _poisonLevel.SetActive(true);
             }
             else
             {
-                _poisonLevel.SetActive(true);
+                _fireLevel.SetActive(true);
             }
         }
     }
