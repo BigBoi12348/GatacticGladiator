@@ -3455,8 +3455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BonusCredits: 0
-  _plainLevel: {fileID: 1835812057}
-  _fireLevel: {fileID: 1835812057}
+  _plainLevel: {fileID: 941325871}
+  _fireLevel: {fileID: 2509141820254319135}
   _poisonLevel: {fileID: 1835812057}
   _enemySpawnerManager: {fileID: 679215275}
   _waveComplete: {fileID: 7400000, guid: 5d5545c2d08e4984ea1db4e908a088d9, type: 2}
@@ -5407,6 +5407,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c31446accd2e849b49b859e036861c, type: 3}
+--- !u!1 &941325871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3532635818843937073, guid: b4c31446accd2e849b49b859e036861c, type: 3}
+  m_PrefabInstance: {fileID: 941325870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &954826851
 GameObject:
   m_ObjectHideFlags: 0
@@ -13288,6 +13293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f2dab6f03024fb4fb107a991dc4c247, type: 3}
+--- !u!1 &2509141820254319135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2509141821807519736, guid: 9f2dab6f03024fb4fb107a991dc4c247, type: 3}
+  m_PrefabInstance: {fileID: 2509141820254319134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &2659847365957046793 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9098930713520981893, guid: d227a1315cd963742b77e10dd860610d, type: 3}
