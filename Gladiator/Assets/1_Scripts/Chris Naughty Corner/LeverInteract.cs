@@ -36,13 +36,13 @@ public class LeverInteract : MonoBehaviour
         }
 
     }
-    void Stay()
-    {
-        lever.SetActive(true);
-    }
-    void Gone()
-    {
-        lever.SetActive(false);
-    }
+    //void Stay()
+    //{
+    //    lever.SetActive(true);
+    //}
+    //void Gone()
+    //{
+    //    lever.SetActive(false);
+    //}
 }
 
