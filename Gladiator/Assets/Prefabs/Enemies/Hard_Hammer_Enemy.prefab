@@ -11963,8 +11963,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3257884548666449742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.24}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalPosition: {x: 0, y: 0, z: 2.72}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3761059729599974919}
@@ -16846,7 +16846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponType: 1
   _weaponCollider: {fileID: 3166432440659386945}
-  WeaponDamage: 10
+  WeaponDamage: 30
 --- !u!1 &3367518547549461944
 GameObject:
   m_ObjectHideFlags: 0
@@ -23784,7 +23784,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 428c9910e0ebe7345abd44ae4296d26d, type: 2}
+  - {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23954,8 +23954,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6594622158757529814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.24}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalPosition: {x: 0, y: 0, z: 2.72}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5922175337938813626}
@@ -29274,7 +29274,7 @@ GameObject:
   - component: {fileID: 4065816011520564996}
   - component: {fileID: 3598321745949985426}
   m_Layer: 9
-  m_Name: Noob_Hammer_Enemy
+  m_Name: Hard_Hammer_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29320,9 +29320,9 @@ MonoBehaviour:
   _enemyWalkSpeed: 5
   _enemyRunSpeed: 10
   _distanceAwayUntilWalk: 15
-  _totalAttackCoolDown: 5
+  _totalAttackCoolDown: 9
   _attackCoolDown: 0
-  _enemyAnimSpeedModifier: 0.5
+  _enemyAnimSpeedModifier: 1.5
   _angleOffset: 0
   _meshColliderFollow: {fileID: 0}
   _explodePoint: {fileID: 928134063685330739}
@@ -30478,7 +30478,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 428c9910e0ebe7345abd44ae4296d26d, type: 2}
+  - {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35642,7 +35642,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 93f572a20801ce24997c13c688c03b03, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 428c9910e0ebe7345abd44ae4296d26d, type: 2}
+      objectReference: {fileID: 2100000, guid: 82ae5594f08f7164da5c7382d99dd132, type: 2}
     - target: {fileID: 919132149155446097, guid: 93f572a20801ce24997c13c688c03b03, type: 3}
       propertyPath: m_Name
       value: Battle hammer
