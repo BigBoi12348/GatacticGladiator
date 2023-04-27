@@ -127,14 +127,14 @@ public class InGameLevelManager : MonoBehaviour
         if(didPlayerWin)
         {
             RoundData.Wave++;
-            RoundData.PlayerPoints += 8 + BonusCredits;
+            RoundData.PlayerPoints += 8 ;
         }
         else if(!didPlayerWin)
         {
             RoundData.Wave = 1;
             RoundData.PlayerPoints = 0;
             RoundData.DifficultyRank = 0;
-            RoundData.PlayerMaxHealth = 100;
+            RoundData.PlayerMaxHealth = 60;
             ResetPlayerUpgradeData();
         }
         StartCoroutine(delayFinishGame(didPlayerWin));

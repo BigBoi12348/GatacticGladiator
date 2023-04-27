@@ -712,7 +712,10 @@ public class FirstPersonController : MonoBehaviour
 
         foreach (var enemyBehaviour in enemyBehaviours)
         {
-            enemyBehaviour.transform.GetComponent<Rigidbody>().AddForce(Vector3.down * _liftPower*4, ForceMode.Impulse);
+            if(enemyBehaviour.transform.TryGetComponent<Rigidbody>(out Rigidbody cRB))
+            {
+                cRB.AddForce(Vector3.down * _liftPower*4, ForceMode.Impulse);
+            }
         }
         yield return new WaitForSeconds(0.2f);
         CameraEffectsSystem.Instance.ShakeCamera(20, 0.5f);
@@ -786,9 +789,9 @@ public class FirstPersonController : MonoBehaviour
         
         for (int i = 0; i < num; i++)
         {
-            if(enemyBehaviours[i] != null)
+            if(enemyBehaviours[i].TryGetComponent<EnemyBehaviour>(out EnemyBehaviour newsa))
             {
-                enemyBehaviours[i].Thanosnaped();
+                newsa.Thanosnaped();
             }
         }
 

@@ -394,6 +394,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 878119720}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 2060f22ad2b829b4d9956ed4fa386cc8, type: 3}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 4
       objectReference: {fileID: 0}
@@ -1342,6 +1346,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 738340120}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: d00b3a605f084eb4c833fa55144198a9, type: 3}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 3
       objectReference: {fileID: 0}
@@ -1710,6 +1718,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 964776453}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 19dbf2d160536f049972974f630211ab, type: 3}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 4
       objectReference: {fileID: 0}
@@ -1993,6 +2005,10 @@ PrefabInstance:
       propertyPath: objectToEnable
       value: 
       objectReference: {fileID: 964776453}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: ad6eacbc4a575914ab3fcacbf9cfc102, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 5
@@ -2318,6 +2334,10 @@ PrefabInstance:
       propertyPath: objectToEnable
       value: 
       objectReference: {fileID: 878119720}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 7eb21892e43893a48a0af47cb2f45452, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 3
@@ -2664,8 +2684,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0137, y: 174.91621}
-  m_SizeDelta: {x: 1924.644, y: 1095.4629}
+  m_AnchoredPosition: {x: 1.5205705, y: 179.33722}
+  m_SizeDelta: {x: 1979.3765, y: 1127.5308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016615917
 MonoBehaviour:
@@ -2836,6 +2856,10 @@ PrefabInstance:
       propertyPath: objectToEnable
       value: 
       objectReference: {fileID: 964776453}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 0b60261b2bca81142925db6beeb102fc, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
       value: '- 20x: Faster Recharge
@@ -3373,6 +3397,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 878119720}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 17e0188de88c1ad4195e138fd091cce0, type: 3}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 1
       objectReference: {fileID: 0}
@@ -3560,6 +3588,10 @@ PrefabInstance:
       propertyPath: objectToEnable
       value: 
       objectReference: {fileID: 738340120}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 7f388a73d0b256747b05adb195aa6780, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 2
@@ -3864,6 +3896,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 878119720}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 392b225d803b8a648b0e741d750e5115, type: 3}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 2
       objectReference: {fileID: 0}
@@ -4148,6 +4184,10 @@ PrefabInstance:
       propertyPath: objectToEnable
       value: 
       objectReference: {fileID: 878119720}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: c2d5e12e8a4cd374287a93eb8059fbf1, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 5
@@ -4638,6 +4678,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 964776453}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 2b63697774c1efa4e8a8518d092887c7, type: 3}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 2
       objectReference: {fileID: 0}
@@ -4701,8 +4745,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000019073, y: 175}
-  m_SizeDelta: {x: 1837.6641, y: 1033.6653}
+  m_AnchoredPosition: {x: 2, y: 180}
+  m_SizeDelta: {x: 1936.5461, y: 1089.2854}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &1615465430
 VideoPlayer:
@@ -5236,6 +5280,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 738340120}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 363d5e5781070e84e8328a48d74dcb29, type: 3}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 4
       objectReference: {fileID: 0}
@@ -5715,6 +5763,10 @@ PrefabInstance:
       propertyPath: objectToEnable
       value: 
       objectReference: {fileID: 964776453}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 7824c2e9f661a5e4ebab1071cb194aeb, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 3
@@ -6214,6 +6266,10 @@ PrefabInstance:
       propertyPath: objectToEnable
       value: 
       objectReference: {fileID: 738340120}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 6d67109b92a78b942aa86a302d2a7936, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 5
@@ -6924,6 +6980,10 @@ PrefabInstance:
       propertyPath: objectToEnable
       value: 
       objectReference: {fileID: 738340120}
+    - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
+      propertyPath: _videoOfUpgrade
+      value: 
+      objectReference: {fileID: 32900000, guid: 4b48472a8ba15aa4591c3a231ffaa294, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
       value: '- 25x: Increase chance of extra combo'

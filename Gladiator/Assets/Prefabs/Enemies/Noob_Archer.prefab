@@ -4910,6 +4910,7 @@ MonoBehaviour:
   _arrowSpeed: 30
   _archerChild: {fileID: 422702349743331876}
   _arrowAttackPoint: {fileID: 168608945904179795}
+  _canMoveAgain: 0
   _enemyBowAnim: {fileID: 8779381993248244534}
   _EnemyBowAnimClip: {fileID: -8445932488338245497, guid: a27163053c8c76744952c1baebad9153, type: 3}
   _enemyAnim: {fileID: 5998110088811855966}
@@ -5012,7 +5013,7 @@ BoxCollider:
   m_GameObject: {fileID: 6316840748443753182}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 3.5650544, z: 1.2702467}
   m_Center: {x: 0, y: 1.9001338, z: -0.028941631}
@@ -6117,7 +6118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8044808553854474471
 Transform:
   m_ObjectHideFlags: 0

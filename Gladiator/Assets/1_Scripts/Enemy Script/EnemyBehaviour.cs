@@ -101,8 +101,8 @@ public class EnemyBehaviour : MonoBehaviour
                 }
                 if(changedColType)
                 {
-                    _meshColliderFollow.SetActive(true);
-                    _normalCol.enabled = false;
+                    //_meshColliderFollow.SetActive(true);
+                    //_normalCol.enabled = false;
                     changedColType = false;
                 }
                 _aIPath.canMove = false;
@@ -111,8 +111,8 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 if(!changedColType)
                 {
-                    _meshColliderFollow.SetActive(false);
-                    _normalCol.enabled = true;
+                    //_meshColliderFollow.SetActive(false);
+                    //_normalCol.enabled = true;
                     changedColType = true;
                 }
                 if(_canMoveAgain)

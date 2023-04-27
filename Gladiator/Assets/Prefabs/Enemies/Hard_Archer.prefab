@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e85da085866d3945a0a6395ec02d2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyWeaponBehaviour: {fileID: 8565629720429207799, guid: f26d092261b026848802cc1a23814c4f, type: 3}
+  _enemyWeaponBehaviour: {fileID: 8565629720429207799, guid: abb52fe73cc045541bb3de56598f085b, type: 3}
 --- !u!95 &5998110088811855966
 Animator:
   serializedVersion: 5
@@ -5013,7 +5013,7 @@ BoxCollider:
   m_GameObject: {fileID: 6316840748443753182}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 3.5650544, z: 1.2702467}
   m_Center: {x: 0, y: 1.9001338, z: -0.028941631}
@@ -6118,7 +6118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8044808553854474471
 Transform:
   m_ObjectHideFlags: 0

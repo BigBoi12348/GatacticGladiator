@@ -53,6 +53,10 @@ public class Bonus : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            Time.timeScale = 1;
+        }
         if(_bonusType == BonusType.Sheild)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
@@ -85,23 +89,23 @@ public class Bonus : MonoBehaviour
 
     private void CheckToGiveBonus(bool state)
     {
-        if(ICompletedBonus)
-        {
-            switch (_bonusType)
-            {
-                case BonusType.Sheild:
-                    InGameLevelManager.Instance.BonusCredits = 1;
-                    break;
-                case BonusType.Jump:
-                    InGameLevelManager.Instance.BonusCredits = 1;
-                    break;
-                case BonusType.Ability:
-                    InGameLevelManager.Instance.BonusCredits = 2;
-                    break;
-                case BonusType.Health:
-                    InGameLevelManager.Instance.BonusCredits = 2;
-                    break;
-            }
-        }
+        // if(ICompletedBonus)
+        // {
+        //     switch (_bonusType)
+        //     {
+        //         case BonusType.Sheild:
+        //             RoundData.PlayerPoints += 1;
+        //             break;
+        //         case BonusType.Jump:
+        //             RoundData.PlayerPoints += 1;
+        //             break;
+        //         case BonusType.Ability:
+        //             RoundData.PlayerPoints += 2;
+        //             break;
+        //         case BonusType.Health:
+        //             RoundData.PlayerPoints += 2;
+        //             break;
+        //     }
+        // }
     }   
 }
