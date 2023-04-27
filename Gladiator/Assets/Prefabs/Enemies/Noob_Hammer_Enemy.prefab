@@ -29319,7 +29319,7 @@ MonoBehaviour:
   _enemyType: 2
   _enemyWalkSpeed: 5
   _enemyRunSpeed: 10
-  _distanceAwayUntilWalk: 0
+  _distanceAwayUntilWalk: 15
   _totalAttackCoolDown: 5
   _attackCoolDown: 0
   _enemyAnimSpeedModifier: 0.5

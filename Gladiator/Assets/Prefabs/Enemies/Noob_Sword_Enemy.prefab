@@ -1317,7 +1317,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7227119657948979951, guid: b341d09cc57a4e44db23e6204eb93bb6, type: 3}
+  - {fileID: 2100000, guid: 428c9910e0ebe7345abd44ae4296d26d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6022,6 +6022,7 @@ MonoBehaviour:
   _arrowSpeed: 0
   _archerChild: {fileID: 0}
   _arrowAttackPoint: {fileID: 0}
+  _canMoveAgain: 0
   _enemyBowAnim: {fileID: 0}
   _EnemyBowAnimClip: {fileID: 0}
   _enemyAnim: {fileID: 4065816011520564996}
@@ -6488,7 +6489,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: d7030f6839028f54d9df66569aa7d3d2, type: 2}
   - {fileID: -4172913274624868018, guid: 6b6bc0eea9be1e04685d51c223e91a29, type: 3}
-  - {fileID: 2100000, guid: fcdfc733305b93045a355e52a027c4c2, type: 2}
+  - {fileID: 2100000, guid: 428c9910e0ebe7345abd44ae4296d26d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
