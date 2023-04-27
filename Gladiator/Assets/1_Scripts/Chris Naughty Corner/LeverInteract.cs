@@ -26,9 +26,15 @@ public class LeverInteract : MonoBehaviour
         Debug.Log(other.name);
         if (other.CompareTag("Player"))
         {
+            Debug.Log("baaaad");
             animator.Play("AsD");
         }
-       
+        if (other.name.Equals("Weapon"))
+        {
+            Debug.Log("dab");
+            animator.Play("AsD");
+        }
+
     }
     void Stay()
     {

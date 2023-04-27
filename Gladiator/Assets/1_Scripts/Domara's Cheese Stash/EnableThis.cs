@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnableThis : MonoBehaviour
 {
-    public GameObject thing;
-    public GameObject bye;
+    public GameObject Enable;
+    public GameObject Disable;
+    public GameObject displayDisable;
     private void OnTriggerEnter(Collider other)
     {
-        thing.SetActive(true);
-        bye.SetActive(false);
+        Enable.SetActive(true);
+        Disable.SetActive(false);
+        displayDisable.SetActive(false);
     }
 }
