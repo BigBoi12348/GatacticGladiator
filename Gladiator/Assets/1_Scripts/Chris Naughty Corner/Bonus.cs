@@ -57,15 +57,15 @@ public class Bonus : MonoBehaviour
             Debug.Log("++++");
         }
         //Health Bonus
-        if (_playerHealth.currentHealth = _playerHealth.maxHealth)
-        {
-            PlayerHealthBonus(false);
-            Debug.Log("no");
-        }
-        else
+        if (_playerHealth.currentHealth == _playerHealth.maxHealth)
         {
             PlayerHealthBonus(true);
             Debug.Log("+++++");
+        }
+        else
+        {
+            PlayerHealthBonus(false);
+            Debug.Log("no");
         }
 
     }
