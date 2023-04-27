@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponType: 1
   _weaponCollider: {fileID: 3507944557004399321}
-  WeaponDamage: 25
+  WeaponDamage: 20
 --- !u!65 &3507944557004399321
 BoxCollider:
   m_ObjectHideFlags: 0
