@@ -6,95 +6,102 @@ using static GameEvents;
 
 public class Bonus : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] private PlayerHealth _playerHealth;
-
-    void Awake()
+    private enum BonusType
     {
-        //_playerHealth = GetComponent<PlayerHealth>();
+        Sheild, Jump, Ability, Health
     }
+    [SerializeField] private PlayerHealth _playerHealth;
+    private BonusType _bonusType;
+    private bool ICompletedBonus;
+    
+
     private void OnEnable()
     {
-        GameEvents.gameEndSetUp += NoShieldBonus;
-        GameEvents.gameEndSetUp += NoJumpBonus;
-        GameEvents.gameEndSetUp += NoAbilitiesBonus;
-        GameEvents.gameEndSetUp += PlayerHealthBonus;
+        GameEvents.gameStartSetUp += ChooseBonus;
+        GameEvents.gameEndSetUp += CheckToGiveBonus;
     }
-    // Update is called once per frame
+
+    private void ChooseBonus()
+    {
+        int chance = Random.Range(1,5);
+        switch (chance)
+        {
+            case 1: 
+                _bonusType = BonusType.Sheild;
+                break;
+            case 2: 
+                _bonusType = BonusType.Jump;
+                break;
+            case 3: 
+                if(RoundData.Wave > 6)
+                {
+                    _bonusType = BonusType.Ability;
+                }
+                else
+                {
+                    _bonusType = BonusType.Health;
+                }
+                
+                break;
+            case 4: 
+                _bonusType = BonusType.Health;
+                break;
+        }
+
+        ICompletedBonus = true;
+    }
+
     void Update()
     {
-        //shiled bonus 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if(_bonusType == BonusType.Sheild)
         {
-            NoShieldBonus(false);
-            //Debug.Log("no");
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                ICompletedBonus = false;
+            }
         }
-        else
+        else if(_bonusType == BonusType.Jump)
         {
-            NoShieldBonus(true);
-            //Debug.Log("++");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ICompletedBonus = false;
+            }
         }
-        //kump bonus
-        if (Input.GetKeyDown(KeyCode.Space))
+        else if(_bonusType == BonusType.Ability)
         {
-            NoJumpBonus(false);
-            //Debug.Log("no");
+            if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                ICompletedBonus = false;
+            }
         }
-        else
+        else if(_bonusType == BonusType.Health)
         {
-            NoJumpBonus(true);
-            //Debug.Log("+++");
+            if (_playerHealth.currentHealth > _playerHealth.maxHealth/2)
+            {
+                ICompletedBonus = false;
+            }
         }
-        //ABility bionua
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            NoAbilitiesBonus(false);
-            //Debug.Log("no");
-        }
-        else
-        {
-            NoAbilitiesBonus(true);
-            //Debug.Log("++++");
-        }
-        //Health Bonus
-        if (_playerHealth.currentHealth == _playerHealth.maxHealth)
-        {
-            PlayerHealthBonus(true);
-            //Debug.Log("+++++");
-        }
-        else
-        {
-            PlayerHealthBonus(false);
-            //Debug.Log("no");
-        }
-
     }
-    private void NoShieldBonus(bool ShieldBonus)
+
+    private void CheckToGiveBonus(bool state)
     {
-        
-            InGameLevelManager.Instance.BonusCredits = 2;
-          
-       
-    }
-    private void NoJumpBonus(bool JumpBonus)
-    {
-
-        InGameLevelManager.Instance.BonusCredits = 2;
-
-
-    }
-    private void NoAbilitiesBonus(bool AbilitiesBonus)
-    {
-
-        InGameLevelManager.Instance.BonusCredits = 2;
-
-    }
-    private void PlayerHealthBonus(bool HealthBonus)
-    {
-
-        InGameLevelManager.Instance.BonusCredits = 2;
-
-
-
-    }
+        if(ICompletedBonus)
+        {
+            switch (_bonusType)
+            {
+                case BonusType.Sheild:
+                    InGameLevelManager.Instance.BonusCredits = 1;
+                    break;
+                case BonusType.Jump:
+                    InGameLevelManager.Instance.BonusCredits = 1;
+                    break;
+                case BonusType.Ability:
+                    InGameLevelManager.Instance.BonusCredits = 2;
+                    break;
+                case BonusType.Health:
+                    InGameLevelManager.Instance.BonusCredits = 2;
+                    break;
+            }
+        }
+    }   
 }

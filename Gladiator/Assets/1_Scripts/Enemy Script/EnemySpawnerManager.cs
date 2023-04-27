@@ -100,7 +100,7 @@ public class EnemySpawnerManager : MonoBehaviour
                                 {
                                     break;
                                 }
-                                else if(_enemyContainer.childCount > 0)
+                                else if(_enemyContainer.childCount > 1)
                                 {                                                   
                                     break;                                    
                                 }
@@ -150,13 +150,13 @@ public class EnemySpawnerManager : MonoBehaviour
             }
         }
 
-        if(RoundData.DifficultyRank/10 < 30)
+        if(RoundData.DifficultyRank/10 < 40)
         {
             _spawnEnemyCount = Random.Range(RoundData.DifficultyRank/5, RoundData.DifficultyRank/10);
         }
         else
         {
-            _spawnEnemyCount = Random.Range(18, 30);
+            _spawnEnemyCount = Random.Range(25, 40);
         }
         
         if(_spawnEnemyCount > _enemiesToSpawn.Count)
@@ -216,9 +216,10 @@ public class EnemySpawnerManager : MonoBehaviour
             TotalEnemiesSpawningThisRound++;
         }
 
-        RoundData.DifficultyRank = (int)Mathf.Pow(_currentDifficultyRank, 1.2f);
+        RoundData.DifficultyRank = RoundData.DifficultyRank + 15;
+        // (int)Mathf.Pow(_currentDifficultyRank, 1.1f);
         int chance = Random.Range(1,101);
-        if(chance < 90)
+        if(chance < 60)
         {
             _isUsingWaves = true;
         }

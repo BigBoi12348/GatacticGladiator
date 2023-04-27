@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3886ce8bc166b146bf18ea7d9b653ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponType: 1
+  _weaponType: 2
   _weaponCollider: {fileID: 3507944557004399321}
   WeaponDamage: 10
 --- !u!65 &3507944557004399321

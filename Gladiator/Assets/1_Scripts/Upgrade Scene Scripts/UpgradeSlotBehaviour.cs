@@ -50,8 +50,6 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     [SerializeField] public GameObject objectToEnable;
     [SerializeField] public float delay = 5f;
 
-    private bool isEnabled = false;
-
     private void Start()
     {
         Button button = GetComponent<Button>();
@@ -223,7 +221,6 @@ public class UpgradeSlotBehaviour : MonoBehaviour
                 LockMe();
                 _boughtSound.Play();
                 objectToEnable.SetActive(true);
-                isEnabled = true;
                 Invoke("DisableObject", 3);
             }
             else
@@ -236,7 +233,6 @@ public class UpgradeSlotBehaviour : MonoBehaviour
     private void DisableObject()
     {
         objectToEnable.SetActive(false);
-        isEnabled = false;
     }
 
 

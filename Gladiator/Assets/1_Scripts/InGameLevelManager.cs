@@ -127,7 +127,7 @@ public class InGameLevelManager : MonoBehaviour
         if(didPlayerWin)
         {
             RoundData.Wave++;
-            RoundData.PlayerPoints += 6 + BonusCredits;
+            RoundData.PlayerPoints += 8 + BonusCredits;
         }
         else if(!didPlayerWin)
         {

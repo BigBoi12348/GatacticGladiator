@@ -26,7 +26,6 @@ public class EnemyBehaviour : MonoBehaviour
     [Header("Misc")]
     [SerializeField] private GameObject _meshColliderFollow;
     [SerializeField] private Transform _explodePoint;
-    private bool _alreadyDead;
     bool changedColType;
 
     [Header("Archer Variables")]
@@ -282,9 +281,11 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
         PiecesHandler tempPiecesHandler = EnemyManager.Instance.GetAnDeadEnemy(transform);
-        tempPiecesHandler.StartExplode(_explodePoint.position);
+        if(tempPiecesHandler != null)
+        {
+            tempPiecesHandler.StartExplode(_explodePoint.position);
+        }
 
-        _alreadyDead = true;
         _aIPath.canMove = false;
         _aIDestinationSetter.enabled = false;
         _enemyWeaponBehaviour.enabled = false;

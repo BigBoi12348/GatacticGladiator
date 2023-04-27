@@ -33,7 +33,7 @@ public class EnemyManager : MonoBehaviour
             deadEnemy.transform.parent = _hidePoolObjects;
         }, deadEnemy => {
             Destroy(deadEnemy);
-        }, true, 20, 30);
+        }, true, 15, 30);
 
         _53_deadEnemyStatePool = new ObjectPool<PiecesHandler>(() => 
         {
@@ -58,23 +58,23 @@ public class EnemyManager : MonoBehaviour
     {
         _currentAskingObj = _hidePoolObjects;
         List<PiecesHandler> piecesHandlers = new List<PiecesHandler>();
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 10; i++)
         {
             piecesHandlers.Add(_241_deadEnemyStatePool.Get()); 
         }
 
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 10; i++)
         {
             _241_deadEnemyStatePool.Release(piecesHandlers[i]);
         }
 
         piecesHandlers = new List<PiecesHandler>();
-        for (int i = 0; i < 80; i++)
+        for (int i = 0; i < 40; i++)
         {
             piecesHandlers.Add(_53_deadEnemyStatePool.Get()); 
         }
 
-        for (int i = 0; i < 80; i++)
+        for (int i = 0; i < 40; i++)
         {
             _53_deadEnemyStatePool.Release(piecesHandlers[i]);
         }
@@ -84,7 +84,7 @@ public class EnemyManager : MonoBehaviour
     {
         _currentAskingObj = askingObj;
         PiecesHandler deadEnemy;
-        if(optimisedCounter <= 15)
+        if(optimisedCounter <= 10)
         {
             deadEnemy = _241_deadEnemyStatePool.Get();
             deadEnemy.Init(this, true, false);
@@ -92,13 +92,17 @@ public class EnemyManager : MonoBehaviour
         else
         {
             deadEnemy = _53_deadEnemyStatePool.Get();
-            if(optimisedCounter < 50)
+            if(optimisedCounter <= 30)
             {
                 deadEnemy.Init(this, false, false);
             }
-            else
+            else if(optimisedCounter <= 50)
             {
                 deadEnemy.Init(this, false, true);
+            }
+            else
+            {
+                return null;
             }
         }
         deadEnemy.gameObject.SetActive(true);

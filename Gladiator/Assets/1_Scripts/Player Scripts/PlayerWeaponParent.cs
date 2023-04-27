@@ -32,9 +32,6 @@ public class PlayerWeaponParent : MonoBehaviour
     [Tooltip("The colour of the blade and trail")]
     private Color _colour = Color.red;
 
-    [SerializeField]
-    [Tooltip("The amount of force applied to each side of a slice")]
-    private float _forceAppliedToCut = 3f;
 
     private Mesh _mesh;
     private Vector3[] _vertices;

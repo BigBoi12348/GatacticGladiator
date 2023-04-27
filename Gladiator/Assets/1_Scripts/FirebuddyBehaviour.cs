@@ -23,7 +23,7 @@ public class FirebuddyBehaviour : MonoBehaviour
     public float _nextTotalTime;
     private float _usedNextTotalTime;
     private float _nextAttacktimer;
-    float closestDistance = Mathf.Infinity;
+    //float closestDistance = Mathf.Infinity;
     Vector3 closestObj;
 
     private void Awake() 
@@ -70,17 +70,22 @@ public class FirebuddyBehaviour : MonoBehaviour
                     _fireBuddyTwo.SetActive(true);
                     GoToShoot(_fireBuddyTwo.transform);
                 }
+                else
+                {
+                    _fireBuddyTwo.SetActive(false);
+                }
             }
-            else
-            {
-                _fireBuddyOne.SetActive(false);
-            }
+            
             if(_fireBuddyThreeReady)
             {
                 if(KillComboHandler.KillComboCounter >= 100)
                 {
                     _fireBuddyThree.SetActive(true);
                     GoToShoot(_fireBuddyThree.transform);
+                }
+                else
+                {
+                    _fireBuddyThree.SetActive(false);
                 }
             }
 
