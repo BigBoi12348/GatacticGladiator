@@ -3283,6 +3283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22817c8190880949b0bb54b6bb5adf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerHealth: {fileID: 4459864850776571089}
 --- !u!43 &673235225
 Mesh:
   m_ObjectHideFlags: 0
@@ -3514,6 +3515,12 @@ MonoBehaviour:
   - {fileID: 57340062}
   - {fileID: 1284906730}
   _playerCloseSpawnLocations: []
+  _spawnEnemies: 0
+  _spawnEnemyCount: 0
+  _isUsingWaves: 0
+  _isWaitingForDeath: 0
+  _isUsingWavesTimer: 0
+  _currentEnemiesThisWave: []
   enemyTypes:
   - EnemyObj: {fileID: 7333921120246751172, guid: fd7fd27f45913ee4aa06601f5b862941, type: 3}
     DifficultyRank: 1

@@ -18,6 +18,12 @@ public class EnemySpawnerManager : MonoBehaviour
     [SerializeField] private Transform[] _spawnLocations;
     [SerializeField] private Transform[] _playerCloseSpawnLocations;
     public int TotalEnemiesSpawningThisRound{get; private set;}
+    [SerializeField]private bool _spawnEnemies;
+    [SerializeField]private int _spawnEnemyCount;
+    [SerializeField]private bool _isUsingWaves;
+    [SerializeField]private bool _isWaitingForDeath;
+    [SerializeField]private float _isUsingWavesTimer;
+    [SerializeField]private List<Transform> _currentEnemiesThisWave;
     
 
     [Header("Enemies")]
@@ -36,6 +42,7 @@ public class EnemySpawnerManager : MonoBehaviour
     private void OnDisable() 
     {
         GameEvents.gameStartSetUp -= GameIsStarting;
+        GameEvents.playerStartGame -= PlayerHasStartedGame;
         GameEvents.gameEndSetUp -= GameEndSetUp;
         GameEvents.playerFinsihedGame -= EndOfRound;
     }
@@ -53,13 +60,67 @@ public class EnemySpawnerManager : MonoBehaviour
             {
                 if(_enemiesToSpawn.Count > 0)
                 {
-                    SpawnEnemy(_enemiesToSpawn[0], _spawnLocations[Random.Range(0,_spawnLocations.Length)].position);
-                    _enemiesToSpawn.RemoveAt(0);
-                    _spawnTimer = _spawnInterval;
-                }
-                else
-                {
-
+                    if(_isUsingWaves)
+                    {
+                        if(!_isWaitingForDeath)
+                        {
+                            if(_spawnEnemies)
+                            {
+                                SpawnAEnemy();
+                                _spawnEnemyCount--;
+                            }
+                            if(_isUsingWavesTimer < 0)
+                            {
+                                NewWave();
+                            }
+                            _isUsingWavesTimer -= Time.deltaTime;
+                        }
+                        else
+                        {
+                            if(_spawnEnemies)
+                            {
+                                for (int i = 0; i < _spawnEnemyCount; i++)
+                                {
+                                    SpawnAEnemy();
+                                }
+                                _currentEnemiesThisWave = new List<Transform>();
+                                foreach (Transform enemy in _enemyContainer)
+                                {
+                                    if(enemy.TryGetComponent<EnemyBehaviour>(out EnemyBehaviour enemyBehaviour))
+                                    {
+                                        _currentEnemiesThisWave.Add(enemy);
+                                    }
+                                }
+                                _spawnEnemyCount = 0;
+                                _spawnEnemies = false;
+                            }
+                            for (int i = 0; i < _currentEnemiesThisWave.Count; i++)
+                            {
+                                if(_currentEnemiesThisWave[i] != null)
+                                {
+                                    break;
+                                }
+                                else if(_enemyContainer.childCount > 0)
+                                {                                                   
+                                    break;                                    
+                                }
+                                NewWave();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        SpawnAEnemy();
+                        int chance = Random.Range(1,101);
+                        if(chance < 5)
+                        {
+                            NewWave();
+                        }
+                    }
+                    if(_spawnEnemyCount <= 0)
+                    {
+                        _spawnEnemies = false;
+                    }
                 }
             }
             else
@@ -67,6 +128,49 @@ public class EnemySpawnerManager : MonoBehaviour
                 _spawnTimer -= Time.deltaTime;
             }
         }
+    }
+
+    private void NewWave()
+    {
+        
+        int usingWaveChance = Random.Range(1,101); 
+        
+        if(usingWaveChance < 60)
+        {
+            _isUsingWaves = true;
+            int usingOnDeathChance = Random.Range(1,101); 
+            if(usingOnDeathChance < 60)
+            {
+                _isWaitingForDeath = true;
+            }
+            else
+            {
+                _isWaitingForDeath = false;
+                _isUsingWavesTimer = Random.Range(5,10);
+            }
+        }
+
+        if(RoundData.DifficultyRank/10 < 30)
+        {
+            _spawnEnemyCount = Random.Range(RoundData.DifficultyRank/5, RoundData.DifficultyRank/10);
+        }
+        else
+        {
+            _spawnEnemyCount = Random.Range(18, 30);
+        }
+        
+        if(_spawnEnemyCount > _enemiesToSpawn.Count)
+        {
+            _spawnEnemyCount = _enemiesToSpawn.Count;
+        }
+        _spawnEnemies = true;
+    }
+
+    private void SpawnAEnemy()
+    {
+        SpawnEnemy(_enemiesToSpawn[0], _spawnLocations[Random.Range(0, _spawnLocations.Length)].position);
+        _enemiesToSpawn.RemoveAt(0);
+        _spawnTimer = _spawnInterval;
     }
     
     private void GameIsStarting()
@@ -77,7 +181,7 @@ public class EnemySpawnerManager : MonoBehaviour
         }
         else
         {
-            _currentDifficultyRank = 5;
+            _currentDifficultyRank = 15;
         }
 
         int tempDifficultyScore = _currentDifficultyRank;
@@ -113,11 +217,17 @@ public class EnemySpawnerManager : MonoBehaviour
         }
 
         RoundData.DifficultyRank = (int)Mathf.Pow(_currentDifficultyRank, 1.2f);
+        int chance = Random.Range(1,101);
+        if(chance < 90)
+        {
+            _isUsingWaves = true;
+        }
         GameEvents.playerStartGame?.Invoke();
     }
 
     private void PlayerHasStartedGame()
     {
+        NewWave();
         _canSpawn = true;
     }
 

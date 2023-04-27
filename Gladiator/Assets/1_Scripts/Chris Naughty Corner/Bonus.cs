@@ -11,7 +11,7 @@ public class Bonus : MonoBehaviour
 
     void Awake()
     {
-        _playerHealth = GetComponent<PlayerHealth>();
+        //_playerHealth = GetComponent<PlayerHealth>();
     }
     private void OnEnable()
     {
@@ -27,45 +27,45 @@ public class Bonus : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             NoShieldBonus(false);
-            Debug.Log("no");
+            //Debug.Log("no");
         }
         else
         {
             NoShieldBonus(true);
-            Debug.Log("++");
+            //Debug.Log("++");
         }
         //kump bonus
         if (Input.GetKeyDown(KeyCode.Space))
         {
             NoJumpBonus(false);
-            Debug.Log("no");
+            //Debug.Log("no");
         }
         else
         {
             NoJumpBonus(true);
-            Debug.Log("+++");
+            //Debug.Log("+++");
         }
         //ABility bionua
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4))
         {
             NoAbilitiesBonus(false);
-            Debug.Log("no");
+            //Debug.Log("no");
         }
         else
         {
             NoAbilitiesBonus(true);
-            Debug.Log("++++");
+            //Debug.Log("++++");
         }
         //Health Bonus
         if (_playerHealth.currentHealth == _playerHealth.maxHealth)
         {
             PlayerHealthBonus(true);
-            Debug.Log("+++++");
+            //Debug.Log("+++++");
         }
         else
         {
             PlayerHealthBonus(false);
-            Debug.Log("no");
+            //Debug.Log("no");
         }
 
     }
