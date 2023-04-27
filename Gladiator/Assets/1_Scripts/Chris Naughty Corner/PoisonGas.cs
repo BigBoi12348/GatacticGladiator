@@ -13,7 +13,7 @@ public class PoisonGas : MonoBehaviour
         if (nextTickTime < 0)
         {  
             nextTickTime = _tickInterval;
-            _playerHealth.TakePoisonDamage(0.5f);       
+            _playerHealth.TakePoisonDamage(1f);       
         }
         nextTickTime -= Time.deltaTime;
     }

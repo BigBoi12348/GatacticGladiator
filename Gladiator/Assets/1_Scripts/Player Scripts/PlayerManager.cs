@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
     {
         if(!didPlayerWin)
         {
-            _firstPersonController.enabled = false;
+            Debug.Log("Geting called");
         }
     }
 
