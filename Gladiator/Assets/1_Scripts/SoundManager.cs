@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public enum Sound
     {
-        PlayerAttack, DashEffect, EnemyDeath, Lose, UIClickEnter, UIClickExit
+        PlayerAttack, DashEffect, EnemyDeath, Hammersmash, SwordHit, ArrowShoot, EnemyStep
     }
 
     public static SoundManager Instance;
@@ -22,7 +22,6 @@ public class SoundManager : MonoBehaviour
     {
         if(Instance != null)
         {
-            Destroy(this);
             DontDestroyOnLoad(this);
         }
         else
@@ -73,6 +72,10 @@ public class SoundManager : MonoBehaviour
             }
             if(sound == Sound.EnemyDeath)
             {
+                audioSource.volume = (0.3f);
+            }
+            if(sound == Sound.EnemyStep)
+            {
                 audioSource.volume = (0.2f);
             }
             audioSource.Play();
@@ -85,9 +88,7 @@ public class SoundManager : MonoBehaviour
     {
         switch (sound)
         {
-            default:
-                return true;
-            // case Sound.play:
+            // case Sound.EnemyStep:
             //     if(soundTimerDictionary.ContainsKey(sound))
             //     {
             //         float lastTimePlayed = soundTimerDictionary[sound];
@@ -106,6 +107,8 @@ public class SoundManager : MonoBehaviour
             //     {
             //         return true;
             //     }
+            default:
+                return true;
         }
     }
 

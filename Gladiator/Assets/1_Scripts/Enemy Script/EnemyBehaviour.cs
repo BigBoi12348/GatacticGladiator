@@ -26,6 +26,8 @@ public class EnemyBehaviour : MonoBehaviour
     [Header("Misc")]
     [SerializeField] private GameObject _meshColliderFollow;
     [SerializeField] private Transform _explodePoint;
+    private float _moveSoundIntervalTimer = 0.7f;
+    private float lastTimePlayed;
     bool changedColType;
 
     [Header("Archer Variables")]
@@ -133,6 +135,11 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 _enemyAnim.SetBool("IsRunning", false);
                 _aIPath.maxSpeed = _enemyWalkSpeed;
+                if(lastTimePlayed + _moveSoundIntervalTimer < Time.time)
+                {
+                    SoundManager.Instance.PlaySound3D(SoundManager.Sound.EnemyStep, transform.position);
+                    lastTimePlayed = Time.time;
+                }
             }
 
             if(_aIPath.reachedEndOfPath)
@@ -275,6 +282,8 @@ public class EnemyBehaviour : MonoBehaviour
     
     private IEnumerator ActualDeath()
     {
+        SoundManager.Instance.PlaySound3D(SoundManager.Sound.EnemyDeath, transform.position);
+
         while (!explodePosChange)
         {
             yield return null;
@@ -292,7 +301,6 @@ public class EnemyBehaviour : MonoBehaviour
         _enemyAnim.enabled = false;
         
         InGameLevelManager.Instance.EnemyHasDied();
-        SoundManager.Instance.PlaySound3D(SoundManager.Sound.EnemyDeath, transform.position);
         Destroy(gameObject);
     }
 

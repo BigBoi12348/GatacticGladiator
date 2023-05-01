@@ -49,6 +49,11 @@ public class UpgradeSceneManager : MonoBehaviour
         _points.text = "Credits: " + RoundData.PlayerPoints.ToString();
     }
 
+    private void OnEnable() 
+    {
+        GameManager.Instance.UnFreezeGame();
+    }
+
     private void Update() 
     {
         if(Input.GetKeyDown(KeyCode.P))

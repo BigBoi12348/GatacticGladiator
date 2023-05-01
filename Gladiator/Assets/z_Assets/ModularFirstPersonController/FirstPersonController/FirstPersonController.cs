@@ -164,6 +164,7 @@ public class FirstPersonController : MonoBehaviour
     public float _forceFieldTimer{get; private set;}
     private bool _canUseForceField;
     public bool AmIForceField{get; private set;}
+    private bool _lockKey;
 
 
     [Header("Shooting Fire Flames")]
@@ -515,6 +516,7 @@ public class FirstPersonController : MonoBehaviour
         {
             if(PlayerUpgradesData.StarTwo)
             {
+                _lockKey = true;
                 if(KillComboHandler.KillComboCounter >= 30)
                 {
                     usedForceRange = _forceFieldSkillRadius + _extraForceFieldRadius;
@@ -533,6 +535,10 @@ public class FirstPersonController : MonoBehaviour
                 AmIForceField = true;
                 NotInAbilityState = true;
             }
+        }
+        if(Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            _lockKey = false;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2) && !NotInAbilityState && _canUseFireBeams)
         {
@@ -573,6 +579,10 @@ public class FirstPersonController : MonoBehaviour
                 {
                     ForceField();
                     _forceFieldDuration -= Time.deltaTime;
+                    if(Input.GetKeyDown(KeyCode.Alpha1) && !_lockKey)
+                    {
+                        _forceFieldDuration = 0;
+                    }
                 }
                 else
                 {

@@ -20,6 +20,7 @@ public class BuggyBoi : MonoBehaviour
 
     void SpawnSpark()
     {
+        SoundManager.Instance.PlaySound3D(SoundManager.Sound.Hammersmash, _circleEffect.transform.position);
         _circleEffect.SetActive(false);
         _sparkEffect.SetActive(true);
     }

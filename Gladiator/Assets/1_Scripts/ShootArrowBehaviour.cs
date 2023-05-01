@@ -21,6 +21,7 @@ public class ShootArrowBehaviour : MonoBehaviour
 
     private void ShootArrow()
     {
+        SoundManager.Instance.PlaySound3D(SoundManager.Sound.ArrowShoot, _arrowAttackPoint.position);
         Rigidbody rb = Instantiate(_enemyWeaponBehaviour, _arrowAttackPoint.position, transform.parent.rotation * Quaternion.Euler(0,180,0)).GetComponent<Rigidbody>();
         rb.AddForce(transform.parent.forward * _arrowSpeed, ForceMode.Impulse);
     }
