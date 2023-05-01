@@ -50,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
     public void AddHealth(int value)
     {
         currentHealth += value;
+        PlayerRoundStats.DamageHealed += value;
     }
    
     public void TakeDamage(int damage)
@@ -74,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
                 damage -= 1;
             }
             currentHealth -= damage;
+            PlayerRoundStats.DamageTaken += damage;
             if (currentHealth <= 0 && !dead)
             {
                 dead = true;
@@ -105,6 +107,7 @@ public class PlayerHealth : MonoBehaviour
             }
             
             currentHealth -= damage;
+            PlayerRoundStats.DamageTaken += damage;
             if (currentHealth <= 0 && !dead)
             {
                 dead = true;
@@ -114,7 +117,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void TakePoisonDamage(float damage)
+    public void TakePoisonDamage(int damage)
     {
         if(!TakeNoPoisonDamage)
         {
@@ -132,6 +135,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         currentHealth -= damage;
+        PlayerRoundStats.DamageTaken += damage;
         if (currentHealth <= 0 && !dead)
         {
             dead = true;

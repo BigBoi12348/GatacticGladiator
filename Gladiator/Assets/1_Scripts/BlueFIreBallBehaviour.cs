@@ -10,7 +10,11 @@ public class BlueFIreBallBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) 
     {
-        Death();
+        if(other.TryGetComponent<EnemyBehaviour>(out EnemyBehaviour enemyBehaviour))
+        {
+            PlayerRoundStats.FireCompanionKills++;
+            Death();
+        }
     }
     
     private void Death()

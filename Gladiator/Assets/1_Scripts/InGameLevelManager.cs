@@ -127,7 +127,9 @@ public class InGameLevelManager : MonoBehaviour
         if(didPlayerWin)
         {
             RoundData.Wave++;
-            RoundData.PlayerPoints += 8 ;
+            RoundData.PlayerPoints += 8;
+            PlayerRoundStats.CreditsEarned += 8;
+            PlayerRoundStats.HighestWaveReached = RoundData.Wave;
         }
         else if(!didPlayerWin)
         {
@@ -214,6 +216,7 @@ public class InGameLevelManager : MonoBehaviour
         }
 
         _totalEnemiesCounter--;
+        PlayerRoundStats.TotalEnemiesKilled++;
         _uIManager.EnemiesLeftUpdate(_totalEnemiesCounter);
         killComboHandler.AddToCombo(1);
 

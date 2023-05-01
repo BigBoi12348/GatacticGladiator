@@ -106,6 +106,11 @@ public class KillComboHandler : MonoBehaviour
             _killComboParent.SetActive(false);
         }
         _killComboTimer -= Time.deltaTime;
+
+        if(KillComboHandler.KillComboCounter > PlayerRoundStats.HighestComboRetained)
+        {
+            PlayerRoundStats.HighestComboRetained = KillComboHandler.KillComboCounter;
+        }
     }
 
     public void AddToCombo(int value)

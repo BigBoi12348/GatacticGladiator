@@ -216,6 +216,7 @@ public class UpgradeSlotBehaviour : MonoBehaviour
 
             if(didBuy)
             {
+                PlayerRoundStats.UpgradesGotten++;
                 RoundData.PlayerPoints -= _upgradeCost;
                 UpgradeSceneManager.Instance.UpdateCurrentUIPlayerPoints();
                 LockMe();
