@@ -76,6 +76,7 @@ public class SoundManager : MonoBehaviour
             }
             if(sound == Sound.EnemyStep)
             {
+                audioSource.pitch = Random.Range(0.95f, 1.1f);
                 audioSource.volume = (0.2f);
             }
             audioSource.Play();

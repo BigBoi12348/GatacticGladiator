@@ -4896,7 +4896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyType: 1
-  _enemyWalkSpeed: 4
+  _enemyWalkSpeed: 8
   _enemyRunSpeed: 0
   _distanceAwayUntilWalk: 0
   _totalAttackCoolDown: 1.5
@@ -4906,8 +4906,8 @@ MonoBehaviour:
   _meshColliderFollow: {fileID: 7482787163395661954}
   _explodePoint: {fileID: 7919589954808390031}
   _shootArrowBehaviour: {fileID: 3113376257702966866}
-  _bowAttackRange: 25
-  _arrowSpeed: 50
+  _bowAttackRange: 30
+  _arrowSpeed: 90
   _archerChild: {fileID: 422702349743331876}
   _arrowAttackPoint: {fileID: 168608945904179795}
   _canMoveAgain: 0

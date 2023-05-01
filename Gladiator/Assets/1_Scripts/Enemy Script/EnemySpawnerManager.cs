@@ -208,7 +208,7 @@ public class EnemySpawnerManager : MonoBehaviour
                     }
                 }
             }
-            int randNum = Random.Range(0,tempEnemyToChoseFrom.Count);
+            int randNum = Random.Range(0, tempEnemyToChoseFrom.Count);
 
             GameObject tempEnemyObj = tempEnemyToChoseFrom[randNum].EnemyObj;
             tempDifficultyScore -= tempEnemyToChoseFrom[randNum].DifficultyRank;

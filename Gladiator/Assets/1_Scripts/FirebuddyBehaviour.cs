@@ -120,7 +120,7 @@ public class FirebuddyBehaviour : MonoBehaviour
 
     private void GoToShoot(Transform targetBuddy)
     {
-        RaycastHit[] raycastHits = Physics.SphereCastAll(targetBuddy.position, 15, Vector3.forward, 1, _enemyLayer);
+        RaycastHit[] raycastHits = Physics.SphereCastAll(targetBuddy.position, 40, Vector3.forward, 1, _enemyLayer);
         float distance = 0;
         if(raycastHits.Length != 0)
         {
@@ -144,7 +144,7 @@ public class FirebuddyBehaviour : MonoBehaviour
             targetBuddy.transform.LookAt(closestObj);
             Rigidbody rb = Instantiate(_blueFireBall, targetBuddy.position, transform.rotation).GetComponent<Rigidbody>();
 
-            rb.velocity = targetBuddy.transform.forward * 40;
+            rb.velocity = targetBuddy.transform.forward * 50;
         }
         else
         {

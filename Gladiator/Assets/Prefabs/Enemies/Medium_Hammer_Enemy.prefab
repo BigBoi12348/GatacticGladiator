@@ -29322,7 +29322,7 @@ MonoBehaviour:
   _distanceAwayUntilWalk: 10
   _totalAttackCoolDown: 7
   _attackCoolDown: 0
-  _enemyAnimSpeedModifier: 1
+  _enemyAnimSpeedModifier: 1.1
   _angleOffset: 0
   _meshColliderFollow: {fileID: 0}
   _explodePoint: {fileID: 928134063685330739}

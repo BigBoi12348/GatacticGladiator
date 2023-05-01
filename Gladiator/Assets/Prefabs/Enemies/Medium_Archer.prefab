@@ -4896,17 +4896,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyType: 1
-  _enemyWalkSpeed: 4
+  _enemyWalkSpeed: 6
   _enemyRunSpeed: 0
   _distanceAwayUntilWalk: 0
   _totalAttackCoolDown: 3
   _attackCoolDown: 0
-  _enemyAnimSpeedModifier: 0.7
+  _enemyAnimSpeedModifier: 1.2
   _angleOffset: 0
   _meshColliderFollow: {fileID: 7482787163395661954}
   _explodePoint: {fileID: 7919589954808390031}
   _shootArrowBehaviour: {fileID: 3113376257702966866}
-  _bowAttackRange: 20
+  _bowAttackRange: 25
   _arrowSpeed: 40
   _archerChild: {fileID: 422702349743331876}
   _arrowAttackPoint: {fileID: 168608945904179795}

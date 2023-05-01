@@ -226,18 +226,18 @@ public class EnemyBehaviour : MonoBehaviour
         {
             StartDeath();
         }
-        else if(other.TryGetComponent<DashBehaviour>(out DashBehaviour dashBehaviour))
-        {   
-            if(KillComboHandler.KillComboCounter >= 45)
-            {
-                StartDeath();
-            }
-            else if(KillComboHandler.KillComboCounter >= 10)
-            {
-                dashBehaviour.TurnOffDashKill();
-                StartDeath();
-            }
-        }
+        // else if(other.TryGetComponent<DashBehaviour>(out DashBehaviour dashBehaviour))
+        // {   
+        //     if(KillComboHandler.KillComboCounter >= 45)
+        //     {
+        //         StartDeath();
+        //     }
+        //     else if(KillComboHandler.KillComboCounter >= 10)
+        //     {
+        //         dashBehaviour.TurnOffDashKill();
+        //         StartDeath();
+        //     }
+        // }
     }
 
     public void StopEnemy(bool comesBack)

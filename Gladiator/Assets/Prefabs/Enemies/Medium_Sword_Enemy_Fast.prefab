@@ -6011,7 +6011,7 @@ MonoBehaviour:
   _enemyWalkSpeed: 10
   _enemyRunSpeed: 17
   _distanceAwayUntilWalk: 12
-  _totalAttackCoolDown: 4
+  _totalAttackCoolDown: 3
   _attackCoolDown: 0
   _enemyAnimSpeedModifier: 1.3
   _angleOffset: 0
