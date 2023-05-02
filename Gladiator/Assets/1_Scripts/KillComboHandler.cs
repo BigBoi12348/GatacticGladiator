@@ -156,6 +156,6 @@ public class KillComboHandler : MonoBehaviour
     {
         _killComboText.color = Color.red;
         yield return new WaitForSeconds(0.2f);
-        _killComboText.color = Color.white;
+        _killComboText.color = Color.cyan;
     }
 }

@@ -712,9 +712,9 @@ public class FirstPersonController : MonoBehaviour
         {
             if(hit.transform.TryGetComponent<EnemyBehaviour>(out EnemyBehaviour enemyBehaviour))
             {
+                enemyBehaviours.Add(enemyBehaviour);
                 enemyBehaviour.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * (_liftPower), ForceMode.Impulse);
                 enemyBehaviour.StopEnemy(false);
-                enemyBehaviours.Add(enemyBehaviour);
             }
         }
 
@@ -731,7 +731,7 @@ public class FirstPersonController : MonoBehaviour
         CameraEffectsSystem.Instance.ShakeCamera(20, 0.5f);
         foreach (var enemyBehaviour in enemyBehaviours)
         {
-            if(enemyBehaviour != null)
+            if(enemyBehaviour.transform.TryGetComponent<Rigidbody>(out Rigidbody cRB))
             {
                 enemyBehaviour.UpdateExplodePoint(Vector3.zero, true);
                 enemyBehaviour.StartDeath();
