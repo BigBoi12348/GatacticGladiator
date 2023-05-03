@@ -677,6 +677,7 @@ public class FirstPersonController : MonoBehaviour
     private void ForceField()
     {
         RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, usedForceRange, Vector3.up, 5, _enemyForceFieldLayer);
+        
 
         foreach (RaycastHit hit in raycastHits)
         {
@@ -690,7 +691,12 @@ public class FirstPersonController : MonoBehaviour
             }
         }  
     }
-
+    //spherecast - chris break
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position,_forceFieldSkillRadius);
+    }
     IEnumerator GravityPound()
     {
         CameraEffectsSystem.Instance.ShakeCamera(1, 1f);

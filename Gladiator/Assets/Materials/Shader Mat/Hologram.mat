@@ -185,7 +185,7 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
-    - _Float: 199.95
+    - _Float: 80.53
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
     - _HeightMapParametrization: 0
@@ -259,7 +259,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     - _amount: 0
-    - _doss: 0.49
+    - _doss: 0.6
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
