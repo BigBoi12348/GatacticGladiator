@@ -10,7 +10,9 @@ using UnityEditor;
 public class PiecesHandler : MonoBehaviour
 {
     [SerializeField] private Material _litUpmat;
+    [SerializeField] private Material _shaderMat;
     [SerializeField] private LayerMask _piecesLayer;
+    private Material _usedShaderMat;
 
     [Header("Explosion Control Variables")]
     public float explosionForce = 10.0f;
@@ -24,6 +26,7 @@ public class PiecesHandler : MonoBehaviour
     private EnemyManager _enemyManager;
     bool _type;
     bool _AmIOptimised;
+
     public void Init(EnemyManager enemyManager, bool less, bool optimised)
     {
         _enemyManager = enemyManager;
@@ -34,6 +37,11 @@ public class PiecesHandler : MonoBehaviour
     public void StartExplode(Vector3 pointOfExplosion)
     {
         explosionPosition = pointOfExplosion;
+        _usedShaderMat = new Material(_shaderMat);
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<MeshRenderer>().material = _usedShaderMat;
+        }
         Explode();
     }
 
@@ -57,6 +65,13 @@ public class PiecesHandler : MonoBehaviour
     IEnumerator ReturnThis()
     {
         yield return new WaitForSeconds(3);
+        float alphaValue = 0;
+        while (_usedShaderMat.GetFloat("_Alpha") < 1)
+        {
+            _usedShaderMat.SetFloat("_Alpha", alphaValue);
+            alphaValue += Time.deltaTime;
+            yield return null;
+        }
         NormalState();
         _enemyManager.ReturnDeadEnemy(this, _type);
     }
