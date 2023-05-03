@@ -24551,6 +24551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _litUpmat: {fileID: 2100000, guid: e8faa283bb61b184490e47f7f3c54dd9, type: 2}
+  _shaderMat: {fileID: 2100000, guid: 4b764a91ed0c1e54b93b4a01df06b369, type: 2}
   _piecesLayer:
     serializedVersion: 2
     m_Bits: 524288
