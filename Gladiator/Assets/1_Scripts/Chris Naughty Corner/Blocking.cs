@@ -9,6 +9,7 @@ public class Blocking : MonoBehaviour
     public Transform shieldTransform;
     //public MeshRenderer UnBlockedMesh;
     public GameObject UnBlockedBattery;
+    public GameObject UnblockArm;
     //public MeshRenderer BlockedMesh;
     public GameObject BlockedBattery;
     [SerializeField] private GameObject _antiParticleEffect;
@@ -42,6 +43,7 @@ public class Blocking : MonoBehaviour
         if (Input.GetMouseButton(1) && !ShieldLock)
         {
             UnBlockedBattery.SetActive(false);
+            UnblockArm.SetActive(false);
             BlockedBattery.SetActive(true);
 
             _playerhealth.TakeNoDamage = true;
@@ -56,6 +58,7 @@ public class Blocking : MonoBehaviour
         {   
             //UnBlockedMesh.enabled = true;
             UnBlockedBattery.SetActive(true);
+            UnblockArm.SetActive(true);
             //BlockedMesh.enabled = true;
             BlockedBattery.SetActive(false);
             _playerhealth.TakeNoDamage = false;
