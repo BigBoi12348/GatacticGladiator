@@ -237,7 +237,7 @@ public class EnemySpawnerManager : MonoBehaviour
         
     }
 
-    private void EndOfRound()
+    private void EndOfRound(bool state)
     {
         foreach (Transform enemyTransform in _enemyContainer)
         {

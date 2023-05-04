@@ -158,17 +158,20 @@ public class InGameLevelManager : MonoBehaviour
 
         if(didPlayerWin)
         {
-            GameEvents.playerFinsihedGame?.Invoke();
+            GameEvents.playerFinsihedGame?.Invoke(true);
         }
         else if(!didPlayerWin)
         {
-            GameManager.Instance.LoadThisScene(GameManager.MAINMENUSCENE);
+            GameEvents.playerFinsihedGame?.Invoke(false);
         }
     }
 
-    private void EndOfRound()
+    private void EndOfRound(bool state)
     {
-        GameManager.Instance.LoadThisScene(GameManager.UPGRADESCENE);
+        if(state)
+        {
+            GameManager.Instance.LoadThisScene(GameManager.UPGRADESCENE);
+        }
     }
     
     public void EnemyHasDied()

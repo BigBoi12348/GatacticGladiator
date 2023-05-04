@@ -51,41 +51,41 @@ public class Bonus : MonoBehaviour
         ICompletedBonus = true;
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            Time.timeScale = 1;
-        }
-        if(_bonusType == BonusType.Sheild)
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                ICompletedBonus = false;
-            }
-        }
-        else if(_bonusType == BonusType.Jump)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                ICompletedBonus = false;
-            }
-        }
-        else if(_bonusType == BonusType.Ability)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                ICompletedBonus = false;
-            }
-        }
-        else if(_bonusType == BonusType.Health)
-        {
-            if (_playerHealth.currentHealth > _playerHealth.maxHealth/2)
-            {
-                ICompletedBonus = false;
-            }
-        }
-    }
+    // void Update()
+    // {
+    //     if(Input.GetKeyDown(KeyCode.Alpha0))
+    //     {
+    //         Time.timeScale = 1;
+    //     }
+    //     if(_bonusType == BonusType.Sheild)
+    //     {
+    //         if (Input.GetKeyDown(KeyCode.Mouse1))
+    //         {
+    //             ICompletedBonus = false;
+    //         }
+    //     }
+    //     else if(_bonusType == BonusType.Jump)
+    //     {
+    //         if (Input.GetKeyDown(KeyCode.Space))
+    //         {
+    //             ICompletedBonus = false;
+    //         }
+    //     }
+    //     else if(_bonusType == BonusType.Ability)
+    //     {
+    //         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4))
+    //         {
+    //             ICompletedBonus = false;
+    //         }
+    //     }
+    //     else if(_bonusType == BonusType.Health)
+    //     {
+    //         if (_playerHealth.currentHealth > _playerHealth.maxHealth/2)
+    //         {
+    //             ICompletedBonus = false;
+    //         }
+    //     }
+    // }
 
     private void CheckToGiveBonus(bool state)
     {

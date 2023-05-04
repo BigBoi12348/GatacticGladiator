@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class GameEvents
 {
-    public delegate void PlayerFinsihedGame();
+    public delegate void PlayerFinsihedGame(bool didPlayerWin);
     public delegate void PlayerStartedGame();
     public delegate void GameStartSetUp();
     public delegate void GameEndSetUp(bool didPlayerWin);
