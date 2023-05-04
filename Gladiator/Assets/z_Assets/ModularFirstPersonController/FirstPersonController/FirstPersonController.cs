@@ -165,7 +165,7 @@ public class FirstPersonController : MonoBehaviour
     private bool _canUseForceField;
     public bool AmIForceField{get; private set;}
     private bool _lockKey;
-
+    public GameObject FF;
 
     [Header("Shooting Fire Flames")]
     [SerializeField] private PlayerFireLane _weakFireBeam;
@@ -578,6 +578,7 @@ public class FirstPersonController : MonoBehaviour
                 if(_forceFieldDuration > 0)
                 {
                     ForceField();
+                    FF.SetActive(true);
                     _forceFieldDuration -= Time.deltaTime;
                     if(Input.GetKeyDown(KeyCode.Alpha1) && !_lockKey)
                     {
@@ -595,6 +596,8 @@ public class FirstPersonController : MonoBehaviour
                     _canUseForceField = false;
                     NotInAbilityState = false;
                     AmIForceField = false;
+                    FF.SetActive(false);
+
                 }               
             }
             if(AmIShootingFireBeams)
