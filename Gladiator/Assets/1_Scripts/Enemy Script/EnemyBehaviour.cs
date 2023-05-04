@@ -219,12 +219,16 @@ public class EnemyBehaviour : MonoBehaviour
         yield return new WaitForSeconds(_EnemyBowAnimClip.length*_enemyAnimSpeedModifier);
         _canMoveAgain = true;
     }
-
+    bool lockDeath;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("PlayerWeapon"))
         {
-            StartDeath();
+            if(!lockDeath)
+            {
+                lockDeath = true;
+                StartDeath();
+            }
         }
         // else if(other.TryGetComponent<DashBehaviour>(out DashBehaviour dashBehaviour))
         // {   

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1359.8848, g: 803.34375, b: 889.2178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6977,7 +6977,7 @@ PrefabInstance:
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _videoOfUpgrade
       value: 
-      objectReference: {fileID: 32900000, guid: 4b48472a8ba15aa4591c3a231ffaa294, type: 3}
+      objectReference: {fileID: 32900000, guid: d4f8d64e6919bac47bf8f4033ab96ed9, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _upgradeComboBonus
       value: '- 25x: Increase chance of extra combo'
