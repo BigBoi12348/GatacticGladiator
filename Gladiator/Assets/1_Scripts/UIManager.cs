@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Player Health UI")]
     [SerializeField] private Slider _healthSlider;
-
+    [SerializeField] private GameObject _poisonText;
 
     [Header("Texts")]
     [SerializeField] private TMP_Text _mainWaveText;
@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Animations")]
     [SerializeField] private Animator _whiteScreenAnim;
+    [SerializeField] private AnimationClip _waveInClip;
     const string FLASHWHITE = "WhiteScreen";
     private void OnEnable() 
     {
@@ -80,5 +81,11 @@ public class UIManager : MonoBehaviour
     public void UpdatePlayerHealth()
     {
         _healthSlider.maxValue = RoundData.PlayerMaxHealth;
+    }
+
+    public IEnumerator DisplayPoisonMessage()
+    {
+        yield return new WaitForSeconds(_waveInClip.length);
+        _poisonText.SetActive(true);
     }
 }

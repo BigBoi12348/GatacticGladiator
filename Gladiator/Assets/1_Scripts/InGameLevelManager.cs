@@ -5,6 +5,7 @@ using UnityEngine;
 public class InGameLevelManager : MonoBehaviour
 {   
     public static InGameLevelManager Instance;
+    public static bool RoundIsOver;
     private UIManager _uIManager;
 
     public int _totalEnemiesCounter{get; private set;}
@@ -84,7 +85,7 @@ public class InGameLevelManager : MonoBehaviour
     private void GameIsStarting()
     {
         CurrentRound = RoundData.Wave;
-        
+        InGameLevelManager.RoundIsOver = false;
         //Sets the level
         _plainLevel.SetActive(false);
         _fireLevel.SetActive(false);
@@ -101,6 +102,10 @@ public class InGameLevelManager : MonoBehaviour
         else if(CurrentRound == 3 || CurrentRound == 6)
         {
             _poisonLevel.SetActive(true);
+            if(CurrentRound == 3)
+            {
+                StartCoroutine(_uIManager.DisplayPoisonMessage());
+            }
         }
         else if(CurrentRound >= 7)
         {
@@ -222,6 +227,7 @@ public class InGameLevelManager : MonoBehaviour
 
         if(_totalEnemiesCounter == 0)
         {
+            InGameLevelManager.RoundIsOver = true;
             GameEvents.gameEndSetUp?.Invoke(true);
         }
     }
