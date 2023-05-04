@@ -14,7 +14,6 @@ public class PlayerHealth : MonoBehaviour
     public bool TakeNoFireDamage;
     public bool TakeNoPoisonDamage;
     private int _extraHealth = 0;
-    //public bool _isBlocking;
 
     private void Awake() 
     {
@@ -78,15 +77,15 @@ public class PlayerHealth : MonoBehaviour
             PlayerRoundStats.DamageTaken += damage;
             if (currentHealth <= 0 && !dead)
             {
-                dead = true;
-                GameEvents.gameEndSetUp?.Invoke(false);
-                Destroy(this);
+                if(!InGameLevelManager.RoundIsOver)
+                {
+                    InGameLevelManager.RoundIsOver = true;
+                    dead = true;
+                    GameEvents.gameEndSetUp?.Invoke(false);
+                    Destroy(this);
+                }
             }
         }
-        // else if(_isBlocking)
-        // {
-            
-        // }
     }
 
     public void TakeFireDamage(int damage)
@@ -110,9 +109,13 @@ public class PlayerHealth : MonoBehaviour
             PlayerRoundStats.DamageTaken += damage;
             if (currentHealth <= 0 && !dead)
             {
-                dead = true;
-                GameEvents.gameEndSetUp?.Invoke(false);
-                Destroy(this);
+                if(!InGameLevelManager.RoundIsOver)
+                {
+                    InGameLevelManager.RoundIsOver = true;
+                    dead = true;
+                    GameEvents.gameEndSetUp?.Invoke(false);
+                    Destroy(this);
+                }
             }
         }
     }
@@ -138,9 +141,13 @@ public class PlayerHealth : MonoBehaviour
         PlayerRoundStats.DamageTaken += damage;
         if (currentHealth <= 0 && !dead)
         {
-            dead = true;
-            GameEvents.gameEndSetUp?.Invoke(false);
-            Destroy(this);
+            if(!InGameLevelManager.RoundIsOver)
+            {
+                InGameLevelManager.RoundIsOver = true;
+                dead = true;
+                GameEvents.gameEndSetUp?.Invoke(false);
+                Destroy(this);
+            } 
         }  
     }
 }
