@@ -48,8 +48,16 @@ public class PlayerHealth : MonoBehaviour
 
     public void AddHealth(int value)
     {
-        currentHealth += value;
-        PlayerRoundStats.DamageHealed += value;
+        if(currentHealth + value > maxHealth)
+        {
+            currentHealth += value;
+            PlayerRoundStats.DamageHealed += value;
+        }
+        else
+        {
+            currentHealth = maxHealth;
+            PlayerRoundStats.DamageHealed += maxHealth - value;
+        }
     }
    
     public void TakeDamage(int damage)

@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class BlueFIreBallBehaviour : MonoBehaviour
 {
+    bool _lockFire;
+    
     private void Start() 
     {
         Invoke("Death", 2f);
     }
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.TryGetComponent<EnemyBehaviour>(out EnemyBehaviour enemyBehaviour))
+        if(!_lockFire)
         {
-            PlayerRoundStats.FireCompanionKills++;
-            Death();
+            _lockFire = true;
+            if(other.TryGetComponent<EnemyBodyPart>(out EnemyBodyPart enemyBehaviour))
+            {
+                PlayerRoundStats.FireCompanionKills++;
+                Death();
+            }
         }
     }
     

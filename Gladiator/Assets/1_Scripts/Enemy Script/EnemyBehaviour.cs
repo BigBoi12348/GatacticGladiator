@@ -271,12 +271,16 @@ public class EnemyBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
+    Coroutine tempCo;
     public void StartDeath()
     {
         if(!alreadyDying)
         {
             alreadyDying = true;
-            StartCoroutine(ActualDeath());
+            if(tempCo == null)
+            {
+                tempCo = StartCoroutine(ActualDeath());
+            }
         }
     }
     

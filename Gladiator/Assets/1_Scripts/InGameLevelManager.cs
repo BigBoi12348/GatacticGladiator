@@ -85,7 +85,21 @@ public class InGameLevelManager : MonoBehaviour
     private void GameIsStarting()
     {
         CurrentRound = RoundData.Wave;
+        PlayerRoundStats.HighestWaveReached = RoundData.Wave;
         InGameLevelManager.RoundIsOver = false;
+
+        if(CurrentRound == 1)
+        {
+            PlayerRoundStats.TimePlayed = Time.time;
+            PlayerRoundStats.FireCompanionKills = 0;
+            PlayerRoundStats.TotalEnemiesKilled = 0;
+            PlayerRoundStats.HighestComboRetained = 0;
+            PlayerRoundStats.DamageTaken = 0;
+            PlayerRoundStats.DamageHealed = 0;
+            PlayerRoundStats.UpgradesGotten = 0;
+            PlayerRoundStats.CreditsEarned = 0;
+        }
+
         //Sets the level
         _plainLevel.SetActive(false);
         _fireLevel.SetActive(false);
@@ -131,18 +145,11 @@ public class InGameLevelManager : MonoBehaviour
         Time.timeScale = 1f;
         if(didPlayerWin)
         {
-            RoundData.Wave++;
-            RoundData.PlayerPoints += 8;
-            PlayerRoundStats.CreditsEarned += 8;
-            PlayerRoundStats.HighestWaveReached = RoundData.Wave;
+            
         }
         else if(!didPlayerWin)
         {
-            RoundData.Wave = 1;
-            RoundData.PlayerPoints = 0;
-            RoundData.DifficultyRank = 0;
-            RoundData.PlayerMaxHealth = 60;
-            ResetPlayerUpgradeData();
+            
         }
         StartCoroutine(delayFinishGame(didPlayerWin));
     }
@@ -159,6 +166,7 @@ public class InGameLevelManager : MonoBehaviour
         if(didPlayerWin)
         {
             GameEvents.playerFinsihedGame?.Invoke(true);
+            
         }
         else if(!didPlayerWin)
         {
@@ -170,7 +178,19 @@ public class InGameLevelManager : MonoBehaviour
     {
         if(state)
         {
+            RoundData.Wave++;
+            RoundData.PlayerPoints += 8;
+            PlayerRoundStats.CreditsEarned += 8;
+            PlayerRoundStats.HighestWaveReached = RoundData.Wave;
             GameManager.Instance.LoadThisScene(GameManager.UPGRADESCENE);
+        }
+        else
+        {
+            RoundData.Wave = 1;
+            RoundData.PlayerPoints = 0;
+            RoundData.DifficultyRank = 0;
+            RoundData.PlayerMaxHealth = 60;
+            ResetPlayerUpgradeData();
         }
     }
     
@@ -185,7 +205,6 @@ public class InGameLevelManager : MonoBehaviour
             }
             _playerHealth.AddHealth(1);
         }
-
 
         if(PlayerUpgradesData.ShieldOne)
         {

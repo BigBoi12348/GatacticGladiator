@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using TMPro;
 
 public class EndScreenHandler : MonoBehaviour
@@ -48,8 +49,14 @@ public class EndScreenHandler : MonoBehaviour
             _highestComboRetainedText.text = PlayerRoundStats.HighestComboRetained.ToString();
             _totalDamageTakenText.text = PlayerRoundStats.DamageTaken.ToString();
             _totalDamageHealedText.text = PlayerRoundStats.DamageHealed.ToString();
-            _totalTimePlayedText.text = PlayerRoundStats.TimePlayed.ToString();
-            _highestWaveReachedText.text = PlayerRoundStats.HighestComboRetained.ToString();
+            float tempFloat = Time.time - PlayerRoundStats.TimePlayed;
+            TimeSpan timeSpan = TimeSpan.FromSeconds(tempFloat);
+            string formattedTime = string.Format("{0:D2}:{1:D2}:{2:D3}", 
+            timeSpan.Minutes, 
+            timeSpan.Seconds, 
+            timeSpan.Milliseconds);
+            _totalTimePlayedText.text = tempFloat.ToString();
+            _highestWaveReachedText.text = PlayerRoundStats.HighestWaveReached.ToString();
             _totalUpgradesGottenText.text = PlayerRoundStats.UpgradesGotten.ToString();
             _totalCreditsEarnedText.text = PlayerRoundStats.CreditsEarned.ToString();
             _endScreenAnim.Play(OPEN_ENDSCREEN);
