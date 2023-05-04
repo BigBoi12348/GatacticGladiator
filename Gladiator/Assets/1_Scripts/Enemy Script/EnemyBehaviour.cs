@@ -230,18 +230,6 @@ public class EnemyBehaviour : MonoBehaviour
                 StartDeath();
             }
         }
-        // else if(other.TryGetComponent<DashBehaviour>(out DashBehaviour dashBehaviour))
-        // {   
-        //     if(KillComboHandler.KillComboCounter >= 45)
-        //     {
-        //         StartDeath();
-        //     }
-        //     else if(KillComboHandler.KillComboCounter >= 10)
-        //     {
-        //         dashBehaviour.TurnOffDashKill();
-        //         StartDeath();
-        //     }
-        // }
     }
 
     public void StopEnemy(bool comesBack)
@@ -275,16 +263,12 @@ public class EnemyBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
-    Coroutine tempCo;
     public void StartDeath()
     {
         if(!alreadyDying)
         {
             alreadyDying = true;
-            if(tempCo == null)
-            {
-                tempCo = StartCoroutine(ActualDeath());
-            }
+            StartCoroutine(ActualDeath());
         }
     }
     

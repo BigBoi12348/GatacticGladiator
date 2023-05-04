@@ -805,15 +805,24 @@ public class FirstPersonController : MonoBehaviour
         yield return new WaitForSecondsRealtime(_durationTilWhite.length);
 
         int num = KillComboHandler.KillComboCounter/2;
-        
-        for (int i = 0; i < num; i++)
+        if(num >= enemyBehaviours.Count)
         {
-            if(enemyBehaviours[i].TryGetComponent<EnemyBehaviour>(out EnemyBehaviour newsa))
+            foreach (EnemyBehaviour enemy in enemyBehaviours)
             {
-                newsa.Thanosnaped();
+                enemy.Thanosnaped();
             }
         }
-
+        else
+        {
+            for (int i = 0; i < num; i++)
+            {
+                if(enemyBehaviours[i].TryGetComponent<EnemyBehaviour>(out EnemyBehaviour newsa))
+                {
+                    newsa.Thanosnaped();
+                }
+            }
+        }
+        
         KillComboHandler.SetCombo(num);
         Time.timeScale = 1f;
         
