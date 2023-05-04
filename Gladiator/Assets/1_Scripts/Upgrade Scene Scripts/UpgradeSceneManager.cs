@@ -54,15 +54,6 @@ public class UpgradeSceneManager : MonoBehaviour
         GameManager.Instance.UnFreezeGame();
     }
 
-    private void Update() 
-    {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            RoundData.PlayerPoints = 150;
-            UpdateCurrentUIPlayerPoints();
-        }
-    }
-
     public void DisplayThisUpgradeSlot(string UpgradeName, VideoClip videoClip, string UpgradeDescription, string UpgradeComboBonus, string UpgradeCost, Color32 colorOfUpgradeCost)
     {
         _informationBoardAnim.Play(OPENINFOBOARD);

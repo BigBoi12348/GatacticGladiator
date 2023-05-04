@@ -3892,7 +3892,7 @@ PrefabInstance:
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _videoOfUpgrade
       value: 
-      objectReference: {fileID: 32900000, guid: 392b225d803b8a648b0e741d750e5115, type: 3}
+      objectReference: {fileID: 32900000, guid: d278ca3c24aabb446906a81255c0eae4, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 2
@@ -4181,7 +4181,7 @@ PrefabInstance:
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _videoOfUpgrade
       value: 
-      objectReference: {fileID: 32900000, guid: c2d5e12e8a4cd374287a93eb8059fbf1, type: 3}
+      objectReference: {fileID: 32900000, guid: 610b3439b8f951847b33a344b7ae3538, type: 3}
     - target: {fileID: 573330229856771532, guid: 5f8d290f83971d941bde091ff3a74398, type: 3}
       propertyPath: _thisUpgradeRank
       value: 5

@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void AddHealth(int value)
     {
-        if(currentHealth + value > maxHealth)
+        if(currentHealth + value < maxHealth)
         {
             currentHealth += value;
             PlayerRoundStats.DamageHealed += value;

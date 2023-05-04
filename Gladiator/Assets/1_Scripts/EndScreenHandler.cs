@@ -68,7 +68,7 @@ public class EndScreenHandler : MonoBehaviour
     {
         canPress = false;
         yield return new WaitForSecondsRealtime(_endScreenOpenClip.length);
-        while (Input.GetKeyDown(KeyCode.Space) != true)
+        while (Input.anyKey != true)
         {
             yield return null;
         }

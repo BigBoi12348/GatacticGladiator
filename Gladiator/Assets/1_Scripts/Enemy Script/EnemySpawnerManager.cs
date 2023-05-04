@@ -221,7 +221,7 @@ public class EnemySpawnerManager : MonoBehaviour
         int chance = Random.Range(1,101);
         if(chance < 60)
         {
-            _isUsingWaves = false;
+            _isUsingWaves = true;
         }
         GameEvents.playerStartGame?.Invoke();
     }
